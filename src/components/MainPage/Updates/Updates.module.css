@@ -1,0 +1,63 @@
+.updates {
+  padding: 60px 0;
+}
+.updates h2 {
+  color: #151515;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 0 20px 0;
+}
+.updates .updates__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+}
+.updates .updates__inner > div {
+  height: 435px;
+  width: 600px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FAFAFA;
+}
+.updates .updates__inner > div h3 {
+  overflow: hidden;
+  color: var(--text, #151515);
+  text-overflow: ellipsis;
+  whitespace: nowrap;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 12px;
+}
+.updates .updates__inner > div div {
+  width: 100%;
+  height: 300px;
+}
+.updates .updates__inner > div div img {
+  width: 100%;
+  height: 100%;
+}
+.updates .updates__inner > div p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px;
+}
