@@ -44,11 +44,11 @@
   line-height: normal;
   padding: 12px;
 }
-.updates .updates__inner > div div {
+.updates .updates__inner > div div:nth-child(2) {
   width: 100%;
   height: 300px;
 }
-.updates .updates__inner > div div img {
+.updates .updates__inner > div div:nth-child(2) img {
   width: 100%;
   height: 100%;
 }
@@ -60,4 +60,18 @@
   font-weight: 400;
   line-height: normal;
   padding: 12px;
+}
+.updates .updates__inner > div .updates__hashtag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  whitespace: nowrap;
 }

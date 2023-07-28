@@ -30,9 +30,9 @@ const Updates = () => {
               <img src={slide.img} alt="img" />
             </div>
             <p>{slide.text}</p>
-            <div>
+            <div className={styles.updates__hashtag}>
               {slide.hashtag?.map((item) => (
-                <p></p>
+                <p>{item}</p>
               ))}
             </div>
           </div>
