@@ -16,7 +16,7 @@ const Updates = () => {
       title: "John Doe",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news"],
+      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
     },
   ];
   return (
