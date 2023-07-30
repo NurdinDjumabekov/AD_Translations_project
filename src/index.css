@@ -7,6 +7,16 @@
   width: 1200px;
   margin: 0 auto;
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
 .standartBtn {
   color: #fafafa;
   font-family: Roboto;
