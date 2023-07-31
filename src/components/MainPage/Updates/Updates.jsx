@@ -31,8 +31,8 @@ const Updates = () => {
             </div>
             <p>{slide.text}</p>
             <div className={styles.updates__hashtag}>
-              {slide.hashtag?.map((item) => (
-                <p>{item}</p>
+              {slide.hashtag?.map((item, i) => (
+                <p key={i}>{item}</p>
               ))}
             </div>
           </div>

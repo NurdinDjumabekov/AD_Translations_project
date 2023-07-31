@@ -26,11 +26,11 @@
   gap: 30px;
 }
 .updates .updates__inner > div {
-  height: 435px;
+  height: 440px;
   width: 600px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #FAFAFA;
+  background: #FAFAfa;
 }
 .updates .updates__inner > div h3 {
   overflow: hidden;
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 12px;
+  padding: 12px 12px 8px 12px;
 }
 .updates .updates__inner > div .updates__hashtag {
   display: -webkit-box;
@@ -70,12 +70,12 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 30px;
+  height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   whitespace: nowrap;
   gap: 6px;
-  padding: 12px;
+  padding: 0 12px 0 12px;
 }
 .updates .updates__inner > div .updates__hashtag p {
   color: #151515;
@@ -84,7 +84,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 12px;
-  padding: 2px 4px;
+  padding: 4px 4px;
   border-radius: 2px;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   background: rgba(217, 217, 217, 0.5);
