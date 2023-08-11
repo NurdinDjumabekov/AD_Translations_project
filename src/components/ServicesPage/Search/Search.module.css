@@ -1,0 +1,14 @@
+.search {
+  display: block;
+  text-align: right;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+.search input {
+  text-align: left;
+  padding: 0 10px;
+  width: 470px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

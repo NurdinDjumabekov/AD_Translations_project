@@ -1,16 +1,6 @@
 .offers {
   padding: 60px 0;
 }
-.offers h2 {
-  margin: 0 0 20px 0;
-  color: #151515;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
 .offers .offers__inner {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,16 +1,6 @@
 .updates {
   padding: 60px 0;
 }
-.updates h2 {
-  color: #151515;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 0 0 20px 0;
-}
 .updates .updates__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,68 +14,49 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;
+  position: relative;
+  height: 600px;
+  background: blue;
 }
 .updates .updates__inner > div {
-  height: 440px;
-  width: 600px;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #FAFAfa;
+  background: red;
+  max-width: 100%;
+  height: 500px;
 }
-.updates .updates__inner > div h3 {
-  overflow: hidden;
-  color: var(--text, #151515);
-  text-overflow: ellipsis;
-  whitespace: nowrap;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  padding: 12px;
+.updates .updates__inner > div > div {
+  background: green;
+  height: 400px;
 }
-.updates .updates__inner > div div:nth-child(2) {
+.updates .updates__inner > div > div > div {
+  background: pink;
   width: 100%;
   height: 300px;
 }
-.updates .updates__inner > div div:nth-child(2) img {
+.updates .updates__inner > div > div > div > div {
+  background: orange;
   width: 100%;
-  height: 100%;
+  height: 200px;
 }
-.updates .updates__inner > div > p {
-  color: #151515;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding: 12px 12px 8px 12px;
+.updates .updates__inner > div > div > div > div > div {
+  background: brown;
+  height: 150px;
 }
-.updates .updates__inner > div .updates__hashtag {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  height: 25px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  whitespace: nowrap;
-  gap: 6px;
-  padding: 0 12px 0 12px;
+.updates .updates__inner > div > div > div > div > div > div {
+  background-color: black;
+  height: 100px;
+  width: 200px !important;
 }
-.updates .updates__inner > div .updates__hashtag p {
-  color: #151515;
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 12px;
-  padding: 4px 4px;
-  border-radius: 2px;
-  border: 0.5px solid rgba(0, 0, 0, 0.1);
-  background: rgba(217, 217, 217, 0.5);
+.updates .updates__inner .slick-prev,
+.updates .updates__inner .slick-next {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 6px 10px;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }

@@ -1,1 +1,16 @@
-
+.standartTitle {
+  color: #151515;
+  font-family: Roboto;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 0 20px 0;
+}
+.lineBlock {
+  width: 100%;
+  height: 1px;
+  background-color: #dedede;
+  margin: 0 0 60px 0;
+}

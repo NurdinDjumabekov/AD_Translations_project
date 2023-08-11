@@ -1,0 +1,130 @@
+.services {
+  padding: 60px 0px;
+  border-bottom: 1px solid #DEDEDE;
+}
+.services > p {
+  color: #151515;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 20px 0px;
+}
+.services .services__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+.services .services__inner .services__allContent {
+  overflow-y: scroll;
+  width: 500px;
+  height: 600px;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: left;
+  scrollbar-height: 1000px;
+}
+.services .services__inner .services__allContent > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #DEDEDE;
+  border-radius: 6px;
+  width: 470px;
+}
+.services .services__inner .services__allContent > div img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 8px;
+  border: 1px solid #DEDEDE;
+}
+.services .services__inner .services__allContent > div .services__content {
+  display: block;
+}
+.services .services__inner .services__allContent > div .services__content h5 {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 350px;
+}
+.services .services__inner .services__allContent > div .services__content p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 350px;
+  height: 40px;
+}
+.services .services__inner .services__allContent::-webkit-scrollbar {
+  width: 8px;
+  height: 20px;
+  max-height: 50px;
+}
+.services .services__inner .services__allContent::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+  border-radius: 30px;
+}
+.services .services__inner .services__everyContent {
+  width: 460px;
+  padding: 20px 30px;
+  height: 600px;
+  border-radius: 6px;
+  border: 1px solid #007E1D;
+  background: #FAFAFA;
+}
+.services .services__inner .services__everyContent h4 {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+.services .services__inner .services__everyContent p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  overflow-y: scroll;
+  height: 500px;
+  padding: 0 10px;
+  direction: rtl;
+  text-align: left;
+}
+.services .services__inner .services__everyContent p::-webkit-scrollbar {
+  width: 8px;
+}
+.services .services__inner .services__everyContent p::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+  border-radius: 30px;
+}

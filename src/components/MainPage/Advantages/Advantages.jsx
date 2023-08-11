@@ -28,7 +28,7 @@ const Advantages = () => {
     <div className={styles.advantages}>
       <div className="container">
         <div className={styles.advantages__inner}>
-          <h2>Our Advantages</h2>
+          <h2 className="standartTitle">Our Advantages</h2>
           <ul className={styles.advantages__content}>
             {data?.map((item) => (
               <li key={item.id}>

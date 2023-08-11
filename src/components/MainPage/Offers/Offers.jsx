@@ -27,7 +27,7 @@ const Offers = () => {
   ];
   return (
     <div className={styles.offers}>
-      <h2>Our offers</h2>
+      <h2 className="standartTitle">Our offers</h2>
       <div className={styles.offers__inner}>
         {dataOffers?.map((card) => (
           <div key={card.id}>
