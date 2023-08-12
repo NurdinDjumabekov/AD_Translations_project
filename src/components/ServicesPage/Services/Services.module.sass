@@ -15,7 +15,7 @@
         justify-content: center
         align-items: center
         gap: 60px
-        .services__allContent
+        > .services__allContent
             overflow-y: scroll
             width: 500px
             height: 600px
@@ -27,22 +27,22 @@
                 display: flex
                 justify-content: left
                 gap: 16px
-                // background: green
                 padding: 16px
                 margin-bottom: 10px
                 border: 1px solid #DEDEDE
                 border-radius: 6px
                 width: 470px
+                cursor: pointer
+                color: #151515
                 img
                     display: block
                     width: 88px
                     height: 88px
                     border-radius: 8px
                     border: 1px solid #DEDEDE
-                .services__content
+                > .services__content
                     display: block
                     h5
-                        color: #151515
                         font-family: Roboto
                         font-size: 20px
                         font-style: normal
@@ -56,7 +56,6 @@
                         width: 350px
 
                     p
-                        color: #151515
                         font-family: Roboto
                         font-size: 16px
                         font-style: normal
@@ -67,6 +66,9 @@
                         text-overflow: ellipsis
                         width: 350px
                         height: 40px
+            .activeServicesBlock
+                background-color: green
+                color: #fafafa
         .services__allContent::-webkit-scrollbar 
             width: 8px
             height: 20px
@@ -89,6 +91,13 @@
                 font-weight: 500
                 line-height: normal
                 margin-bottom: 20px
+                animation: lookEveryText 1s
+                @keyframes lookEveryText
+                    0%
+                        opacity: 0
+                        background: red
+                    100%
+                        opacity: 1
             p
                 color: #151515
                 font-family: Roboto
@@ -101,21 +110,14 @@
                 padding: 0 10px
                 direction: rtl
                 text-align: left
+                // animation: lookEveryText 5s
+                // @keyframes lookEveryText
+                //     0%
+                //         opacity: 0
+                //     100%
+                //         opacity: 1
             p::-webkit-scrollbar 
                 width: 8px
             p::-webkit-scrollbar-thumb 
                 background-color: #D9D9D9
                 border-radius: 30px
-
-
-
-
-
-
-
-
-
-
-            
-
-    

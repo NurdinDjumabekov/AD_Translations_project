@@ -8,18 +8,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   gap: 40px;
   padding: 20px 0;
 }
 .offers .offers__inner > div {
   width: 340px;
-  height: 316px;
+  height: 350px;
   border-radius: 6px;
   border: 1px solid #DEDEDE;
   cursor: pointer;
+  padding: 0 0 20px 0;
 }
 .offers .offers__inner > div > div {
   width: 100%;
@@ -51,4 +49,35 @@
   line-height: normal;
   padding: 0 12px;
   height: 95px;
+}
+.offers .offers__inner > div .activeP {
+  height: 280px;
+  -webkit-animation: lookTextOffer 1s;
+          animation: lookTextOffer 1s;
+}
+@-webkit-keyframes lookTextOffer {
+  0% {
+    height: 95px;
+  }
+  50% {
+    opacity: 5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes lookTextOffer {
+  0% {
+    height: 95px;
+  }
+  50% {
+    opacity: 5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.offers .offers__inner .activeBlock {
+  height: auto;
+  padding: 0;
 }

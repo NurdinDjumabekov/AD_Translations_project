@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Services.module.css";
 import Search from "../Search/Search";
 
 const Services = () => {
+  const [count, setCount] = useState(0);
   const arr = [
     {
       id: 1,
@@ -63,7 +64,13 @@ const Services = () => {
           <div className={styles.services__allContent}>
             <Search />
             {arr.map((card) => (
-              <div key={card.id}>
+              <div
+                key={card.id}
+                className={
+                  count === card.id - 1 ? styles.activeServicesBlock : ""
+                }
+                onClick={() => setCount(card.id - 1)}
+              >
                 <div className={styles.services__content}>
                   <h5>{card.title}</h5>
                   <p>{card.text}</p>
@@ -73,8 +80,8 @@ const Services = () => {
             ))}
           </div>
           <div className={styles.services__everyContent}>
-            <h4>{arr[0].title}</h4>
-            <p>{arr[0].text}</p>
+            <h4>{arr[count].title}</h4>
+            <p>{arr[count].text}</p>
           </div>
         </div>
       </div>

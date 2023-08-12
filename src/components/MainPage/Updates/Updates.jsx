@@ -23,7 +23,7 @@ const Updates = () => {
       iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+      hashtag: ["Translation", "Team", "news", "Translation", "Team"],
       icon: image,
     },
     {
@@ -99,15 +99,7 @@ const Updates = () => {
                 <div className={styles.updates__mainImg}>
                   <img src={slide.img} alt="img" />
                 </div>
-                <p>
-                  {slide.text} salkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsk salkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
-                  dhklashlkhdalsk
-                </p>
+                <p>{slide.text}</p>
                 <div className={styles.updates__hashtag}>
                   {slide.hashtag?.map((item, i) => (
                     <p key={i}>{item}</p>
