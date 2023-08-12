@@ -2,61 +2,162 @@
   padding: 60px 0;
 }
 .updates .updates__inner {
+  height: 600px;
+  position: relative !important;
+}
+.updates .updates__inner > div {
+  width: 100%;
+  height: 600px;
+  position: static !important;
+}
+.updates .updates__inner > div button {
+  bottom: -10px !important;
+  top: auto !important;
+}
+.updates .updates__inner > div > button:nth-child(1) {
+  background: gray;
+  position: absolute !important;
+  top: auto !important;
+  width: 50px;
+  height: 50px;
+  left: 40%;
+  z-index: 20;
+}
+.updates .updates__inner > div > button:nth-child(3) {
+  background: gray;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 40%;
+  z-index: 50;
+}
+.updates .updates__inner > div > div {
+  height: 600px;
+  width: 100%;
+}
+.updates .updates__inner > div > div > div {
+  height: 660px;
+}
+.updates .updates__inner > div > div > div > div {
+  min-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin: 0 5px;
+}
+.updates .updates__inner > div > div > div > div > div {
+  height: 500px;
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.updates .updates__inner > div > div > div > div > div > div {
+  height: 450px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FAFAfa;
+  margin: 0 30px;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent {
+  padding: 6px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e1dede;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts {
+  width: 100%;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts h3 {
+  overflow: hidden;
+  color: var(--text, #151515);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 12px;
+  width: 550px;
+  height: 18px;
+  line-height: 5px;
+  padding: 7px 0;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts p {
+  overflow: hidden;
+  color: #5C5C5C;
+  text-overflow: ellipsis;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  width: 550px;
+  height: 15px;
+  white-space: nowrap;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__mainImg {
+  width: 100%;
+  height: 300px;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__mainImg img {
+  width: 100%;
+  height: 100%;
+}
+.updates .updates__inner > div > div > div > div > div > div > p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px 12px 8px 12px;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__hashtag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 30px;
-  position: relative;
-  height: 600px;
-  background: blue;
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  whitespace: nowrap;
+  gap: 6px;
+  padding: 0 12px 0 12px;
 }
-.updates .updates__inner > div {
-  background: red;
-  max-width: 100%;
-  height: 500px;
-}
-.updates .updates__inner > div > div {
-  background: green;
-  height: 400px;
-}
-.updates .updates__inner > div > div > div {
-  background: pink;
-  width: 100%;
-  height: 300px;
-}
-.updates .updates__inner > div > div > div > div {
-  background: orange;
-  width: 100%;
-  height: 200px;
-}
-.updates .updates__inner > div > div > div > div > div {
-  background: brown;
-  height: 150px;
-}
-.updates .updates__inner > div > div > div > div > div > div {
-  background-color: black;
-  height: 100px;
-  width: 200px !important;
-}
-.updates .updates__inner .slick-prev,
-.updates .updates__inner .slick-next {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 99;
-  font-size: 24px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 6px 10px;
-  border-radius: 50%;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+.updates .updates__inner > div > div > div > div > div > div .updates__hashtag p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  padding: 4px 4px;
+  border-radius: 2px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: rgba(217, 217, 217, 0.5);
 }

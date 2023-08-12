@@ -1,56 +1,83 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Updates.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import image from "../../../assets/images/mainPage/teams.svg";
 
 const Updates = () => {
   useEffect(() => {}, []);
   const arrInfo = [
     {
       id: 1,
-      title: "John Doe",
+      title: "John Doe1",
+      iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
       hashtag: ["Translation", "Team", "news"],
+      icon: image,
     },
     {
       id: 2,
-      title: "John Doe",
+      title: "John Doe2",
+      iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
       hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+      icon: image,
     },
     {
       id: 3,
-      title: "John Doe",
+      title: "John Doe3",
+      iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
       hashtag: ["Translation", "Team", "news"],
+      icon: image,
     },
     {
       id: 4,
-      title: "John Doe",
+      title: "John Doe4",
+      iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
       text: "Exciting news! We have expanded our translation services to include more languages.",
       hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+      icon: image,
+    },
+    {
+      id: 5,
+      title: "John Doe5",
+      iconText: "Marketplace for ordering and sending goods",
+      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+      text: "Exciting news! We have expanded our translation services to include more languages.",
+      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+      icon: image,
+    },
+    {
+      id: 6,
+      title: "John Doe6",
+      iconText: "Marketplace for ordering and sending goods",
+      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+      text: "Exciting news! We have expanded our translation services to include more languages.",
+      hashtag: ["Translation", "Team", "news"],
+      icon: image,
+    },
+    {
+      id: 7,
+      title: "John Doe7",
+      iconText: "Marketplace for ordering and sending goods",
+      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+      text: "Exciting news! We have expanded our translation services to include more languages.",
+      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+      icon: image,
     },
   ];
 
   const settings = {
-    infinite: true,
+    infinite: false,
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: true,
-    centerPadding: "0",
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
   };
   return (
     <div className={styles.updates}>
@@ -60,16 +87,32 @@ const Updates = () => {
           <Slider {...settings}>
             {arrInfo?.map((slide) => (
               <div key={slide.id}>
-                {/* <h3>{slide.title}</h3>
-                <div>
+                <div className={styles.updates__iconsContent}>
+                  <div className={styles.updates__iconImg}>
+                    <img src={slide.icon} alt="" />
+                  </div>
+                  <div className={styles.updates__iconTexts}>
+                    <h3>{slide.title}</h3>
+                    <p>{slide.iconText}</p>
+                  </div>
+                </div>
+                <div className={styles.updates__mainImg}>
                   <img src={slide.img} alt="img" />
                 </div>
-                <p>{slide.text}</p>
+                <p>
+                  {slide.text} salkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsk salkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsksalkdanskdh klashdlkhaklsh dlkhasl
+                  dhklashlkhdalsk
+                </p>
                 <div className={styles.updates__hashtag}>
                   {slide.hashtag?.map((item, i) => (
                     <p key={i}>{item}</p>
                   ))}
-                </div> */}
+                </div>
               </div>
             ))}
           </Slider>
