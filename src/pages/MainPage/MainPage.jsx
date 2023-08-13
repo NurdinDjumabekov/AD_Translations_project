@@ -8,7 +8,7 @@ import Header from "../../components/MainPage/Header/Header";
 const MainPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, []); 
 
   return (
     <div>

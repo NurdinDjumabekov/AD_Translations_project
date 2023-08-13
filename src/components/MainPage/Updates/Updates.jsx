@@ -6,8 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import image from "../../../assets/images/mainPage/teams.svg";
 
 const Updates = () => {
-  useEffect(() => {}, []);
-  const arrInfo = [
+  const [data, setData] = useState([
     {
       id: 1,
       title: "John Doe1",
@@ -71,13 +70,22 @@ const Updates = () => {
       hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
       icon: image,
     },
-  ];
+  ]);
+  useEffect(() => {
+    setData(data?.slice(0, 8));
+  }, []);
 
   const settings = {
-    infinite: false,
-    slidesToShow: 2,
+    infinite: true,
+    slidesToShow: 1,
+    speed: 300,
     slidesToScroll: 1,
     arrows: true,
+    dots: true, // Включаем индикаторы
+    centerMode: false,
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
   return (
     <div className={styles.updates}>
@@ -85,7 +93,7 @@ const Updates = () => {
       <div className="container">
         <div className={styles.updates__inner}>
           <Slider {...settings}>
-            {arrInfo?.map((slide) => (
+            {data?.map((slide) => (
               <div key={slide.id}>
                 <div className={styles.updates__iconsContent}>
                   <div className={styles.updates__iconImg}>

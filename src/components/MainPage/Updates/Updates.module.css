@@ -5,35 +5,57 @@
   height: 600px;
   position: relative !important;
 }
+.updates .updates__inner ul {
+  bottom: 0;
+}
+.updates .updates__inner li > button {
+  width: 10px;
+  height: 18px;
+}
+.updates .updates__inner li > button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 4px 0 0 0;
+  background: green;
+  border-radius: 50%;
+}
 .updates .updates__inner > div {
   width: 100%;
   height: 600px;
   position: static !important;
 }
-.updates .updates__inner > div .slick-arrow {
-  background: red;
-}
 .updates .updates__inner > div button {
-  bottom: -10px !important;
+  bottom: -28px !important;
   top: auto !important;
 }
 .updates .updates__inner > div > button:nth-child(1) {
-  background: gray;
-  position: absolute !important;
-  top: auto !important;
-  width: 50px;
-  height: 50px;
-  left: 40%;
+  width: 40px;
+  height: 40px;
+  left: 38%;
   z-index: 20;
 }
+.updates .updates__inner > div > button:nth-child(1)::before {
+  content: "";
+  display: block;
+  background-image: url("../../../assets/images/mainPage/arrow_left.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
 .updates .updates__inner > div > button:nth-child(3) {
-  background: gray;
-  position: absolute;
-  width: 20px;
-  height: 21px;
-  border-radius: 50%;
-  right: 40%;
-  z-index: 50;
+  width: 40px;
+  height: 40px;
+  right: 38%;
+  z-index: 20;
+}
+.updates .updates__inner > div > button:nth-child(3)::before {
+  content: "";
+  display: block;
+  background-image: url("../../../assets/images/mainPage/arrow_right.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
 }
 .updates .updates__inner > div > div {
   height: 600px;

@@ -13,11 +13,15 @@
 }
 .offers .offers__inner > div {
   width: 340px;
-  height: 350px;
+  height: 316px;
   border-radius: 6px;
   border: 1px solid #DEDEDE;
   cursor: pointer;
   padding: 0 0 20px 0;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .offers .offers__inner > div > div {
   width: 100%;
@@ -50,34 +54,9 @@
   padding: 0 12px;
   height: 95px;
 }
-.offers .offers__inner > div .activeP {
-  height: 280px;
-  -webkit-animation: lookTextOffer 1s;
-          animation: lookTextOffer 1s;
+.offers .offers__inner > div:hover {
+  height: 360px;
 }
-@-webkit-keyframes lookTextOffer {
-  0% {
-    height: 95px;
-  }
-  50% {
-    opacity: 5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes lookTextOffer {
-  0% {
-    height: 95px;
-  }
-  50% {
-    opacity: 5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.offers .offers__inner .activeBlock {
+.offers .offers__inner > div:hover .activeP {
   height: auto;
-  padding: 0;
 }

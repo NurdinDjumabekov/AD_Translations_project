@@ -2,21 +2,20 @@
   padding: 60px 0px;
 }
 .languages .languages__inner {
-  padding: 0 0 60px 0;
-  margin-bottom: 60px;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-  padding-bottom: 1px solid;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
 }
 .languages .languages__inner > div {
-  width: 150px;
-  margin: 0 auto;
+  margin: 0 0 60px 0;
+}
+.languages .languages__inner > div > div {
+  max-width: 190px;
+  margin: 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,16 +25,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 21px;
+  cursor: pointer;
 }
-.languages .languages__inner > div p {
+.languages .languages__inner > div > div p {
   color: var(--text, #151515);
   font-family: "Roboto", sans-serif;
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  width: 25px;
+  height: 30px;
+  overflow: hidden;
 }
-.languages .languages__inner > div span {
+.languages .languages__inner > div > div span {
   display: block;
   color: #151515;
   font-family: "Roboto", sans-serif;
@@ -47,5 +50,16 @@
   border: 1px solid #646464;
   text-align: center;
   padding: 6px 10px;
-  width: 104px;
+  width: 124px;
+  max-height: 44px;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.languages .languages__inner > div > div span:hover {
+  background-color: #007E1D;
+  color: #fafafa;
+}
+.languages .languages__inner > div .pushContent {
+  margin-top: 30px;
 }

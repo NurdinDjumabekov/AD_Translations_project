@@ -3,12 +3,26 @@
   text-align: right;
   width: 100%;
   margin: 0 0 20px 0;
+  direction: ltr;
+  unicode-bidi: normal;
+  position: relative;
 }
 .search input {
   text-align: left;
-  padding: 0 10px;
+  padding: 0 35px 0px 10px;
   width: 470px;
   height: 40px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.search .search__loop, .search .search__cross {
+  position: absolute;
+  right: 0px;
+  z-index: 5;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.search .search__cross {
+  cursor: pointer;
 }

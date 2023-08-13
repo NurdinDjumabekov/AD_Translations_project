@@ -23,6 +23,13 @@
             unicode-bidi: bidi-override
             text-align: left
             scrollbar-height: 1000px
+            .empty
+                width: 100%
+                height: 80%
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 30px
             > div
                 display: flex
                 justify-content: left
@@ -83,6 +90,14 @@
             border-radius: 6px
             border: 1px solid #007E1D
             background: #FAFAFA
+            .empty__content
+                width: 100%
+                height: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 30px
+                // background: red
             h4
                 color: #151515
                 font-family: Roboto
@@ -91,11 +106,10 @@
                 font-weight: 500
                 line-height: normal
                 margin-bottom: 20px
-                animation: lookEveryText 1s
-                @keyframes lookEveryText
+                animation: lookEveryTitle 1.5s
+                @keyframes lookEveryTitle
                     0%
                         opacity: 0
-                        background: red
                     100%
                         opacity: 1
             p
@@ -110,12 +124,12 @@
                 padding: 0 10px
                 direction: rtl
                 text-align: left
-                // animation: lookEveryText 5s
-                // @keyframes lookEveryText
-                //     0%
-                //         opacity: 0
-                //     100%
-                //         opacity: 1
+                animation: lookEveryText 1.5s
+                @keyframes lookEveryText
+                    0%
+                        opacity: 0
+                    100%
+                        opacity: 1
             p::-webkit-scrollbar 
                 width: 8px
             p::-webkit-scrollbar-thumb 
