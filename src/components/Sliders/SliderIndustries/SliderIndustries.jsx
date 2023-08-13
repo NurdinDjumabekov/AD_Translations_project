@@ -60,8 +60,8 @@ const SliderIndustries = () => {
     dots: true,
     centerMode: false,
     variableWidth: true,
-    // autoplay: true,
-    // autoplaySpeed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
   return (
     <div className={styles.sliderIndustries}>

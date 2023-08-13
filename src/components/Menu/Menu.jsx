@@ -26,7 +26,7 @@ const Menu = () => {
     {
       id: 4,
       title: "Translate",
-      link: "/translate",
+      link: "/order",
       bool: false,
     },
   ]);

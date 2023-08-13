@@ -4,6 +4,7 @@ import Layout from "./components/hoc/Layout";
 import MainPage from "./pages/MainPage/MainPage";
 import ServicesPage from "./pages/ServicesPage/ServicesPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import OrderPage from "./pages/OrderPage/OrderPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/order" element={<OrderPage />} />
       </Route>
     </Routes>
   );

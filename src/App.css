@@ -14,3 +14,50 @@
   background-color: #dedede;
   margin: 0 0 60px 0;
 }
+.textAboveSelect {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.mySelect {
+  border-radius: 6px;
+  background: var(--background, #fafafa);
+  width: 350px;
+  height: 310px;
+  padding: 10px 20px;
+  margin: 10px 0;
+  overflow-y: scroll;
+  animation: selects 0.6s;
+}
+.mySelect > p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 0;
+  border-bottom: 1px solid #dedede;
+  cursor: pointer;
+}
+@keyframes selects {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mySelect::-webkit-scrollbar {
+  width: 0px;
+}
+
+.mySelect::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  outline: 1px solid #fafafa;
+}

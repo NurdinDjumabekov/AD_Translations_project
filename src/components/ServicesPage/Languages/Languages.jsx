@@ -152,7 +152,7 @@ const Languages = () => {
           <div>
             {data[2]?.map((item) => (
               <div
-                key={item.id} 
+                key={item.id}
                 className={item.letter !== "" ? styles.pushContent : ""}
               >
                 <p>{item.letter}</p>
