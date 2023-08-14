@@ -1,46 +1,11 @@
 import React, { useState } from "react";
-import styles from "./LanguageSelect.module.css";
+import styles from "./ChoiceSelect.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 
-const LanguageSelect = () => {
+const ChoiceSelect = ({ props }) => {
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState("");
-
-  const data = [
-    {
-      choice: "Arabic",
-      id: 1,
-    },
-    {
-      choice: "Azerbaijani",
-      id: 2,
-    },
-    {
-      choice: "Czech",
-      id: 3,
-    },
-    {
-      choice: "English",
-      id: 4,
-    },
-    {
-      choice: "German",
-      id: 5,
-    },
-    {
-      choice: "Hindi",
-      id: 6,
-    },
-    {
-      choice: "Irish",
-      id: 7,
-    },
-    {
-      choice: "Italian",
-      id: 8,
-    },
-  ];
 
   const clickChoice = (lang, id) => {
     setLookSelect(false);
@@ -48,10 +13,10 @@ const LanguageSelect = () => {
   };
 
   return (
-    <div className={styles.languageSelect}>
-      <p className="textAboveSelect">From</p>
+    <div className={styles.choiceSelect}>
+      <p className="textAboveSelect">{props.textAbove}</p>
       <div
-        className={styles.languageSelect_from}
+        className={styles.choiceSelect_from}
         onClick={() => setLookSelect(!lookSelect)}
       >
         <p
@@ -59,7 +24,7 @@ const LanguageSelect = () => {
             choiceLang !== "" && lookSelect !== false ? styles.activeSelect : ""
           }
         >
-          {choiceLang === "" ? "choose language" : choiceLang}
+          {choiceLang === "" ? props.initialText : choiceLang}
         </p>
         {lookSelect ? (
           <img src={arrow_top} alt="arrow" />
@@ -69,7 +34,7 @@ const LanguageSelect = () => {
       </div>
       {lookSelect && (
         <div className="mySelect">
-          {data?.map((lang) => (
+          {props.data?.map((lang) => (
             <p
               key={lang.id}
               onClick={() => clickChoice(lang.choice, lang.id)}
@@ -84,4 +49,4 @@ const LanguageSelect = () => {
   );
 };
 
-export default LanguageSelect;
+export default ChoiceSelect;

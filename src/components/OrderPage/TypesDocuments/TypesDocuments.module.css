@@ -1,0 +1,140 @@
+.docType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  margin: 20px 0px;
+}
+.docType button {
+  border-radius: 6px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  background: rgba(217, 217, 217, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  color: #FAFAFA;
+  text-align: center;
+  text-overflow: ellipsis;
+  whitespace: nowrap;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.docType .activeBtn {
+  background-color: #007E1D;
+  color: #fafafa;
+}
+
+.order__language {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+
+.typeSendData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  margin: 20px 0px;
+}
+.typeSendData .sendDate > p {
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+.typeSendData .sendDate > div {
+  width: 340px;
+  height: 40px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 0 12px;
+}
+.typeSendData .sendDate > div p {
+  overflow: hidden;
+  color: var(--text, #151515);
+  text-overflow: ellipsis;
+  whitespace: nowrap;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.typeSendData .sendDate > div button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FAFAFA;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: #007E1D;
+  border-radius: 0 6px 6px 0;
+  width: 82px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+.typeSendData .sendDate label {
+  display: block;
+  position: relative;
+}
+.typeSendData .sendDate label input {
+  width: 340px;
+  height: 40px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 85px 0 10px;
+  font-size: 18px;
+}
+.typeSendData .sendDate label button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FAFAFA;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: #929292;
+  border-radius: 0 6px 6px 0;
+  width: 82px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
