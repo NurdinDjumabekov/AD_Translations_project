@@ -1,43 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./OrderPage.module.css";
 import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  toTakeIndustries,
+  toTakeLanguage,
+  toTakeServices,
+} from "../../store/reducers/dataSelectSlice";
 
 const OrderPage = () => {
-  const data = [
-    {
-      choice: "Arabic",
-      id: 1,
-    },
-    {
-      choice: "Azerbaijani",
-      id: 2,
-    },
-    {
-      choice: "Czech",
-      id: 3,
-    },
-    {
-      choice: "English",
-      id: 4,
-    },
-    {
-      choice: "German",
-      id: 5,
-    },
-    {
-      choice: "Hindi",
-      id: 6,
-    },
-    {
-      choice: "Irish",
-      id: 7,
-    },
-    {
-      choice: "Italian",
-      id: 8,
-    },
-  ];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(toTakeServices());
+    dispatch(toTakeIndustries());
+    dispatch(toTakeLanguage());
+  }, []);
+
+  const { typeServices, typeIndustries, typeLanguage } = useSelector(
+    (state) => state.dataSelectSlice
+  );
+
+  const { orderData } = useSelector((state) => state.orderPageSlice);
+  console.log(orderData);
 
   return (
     <div className={styles.order}>
@@ -48,20 +34,24 @@ const OrderPage = () => {
           <div className={styles.order__services}>
             <ChoiceSelect
               props={{
-                data,
+                data: typeServices,
                 textAbove: "Services",
                 initialText: "Editing",
               }}
             />
             <ChoiceSelect
               props={{
-                data,
+                data: typeIndustries,
                 textAbove: "Industries",
                 initialText: "General",
               }}
             />
           </div>
-          <TypesDocuments data={data} />
+          <TypesDocuments data={typeLanguage} />
+        </div>
+        <div className={styles.order__btns}>
+          <button>Clear</button>
+          <button>SEND</button>
         </div>
       </div>
     </div>

@@ -31,6 +31,7 @@ const TypesDocuments = ({ data }) => {
       <div className={styles.docType}>
         {typeData.map((btn) => (
           <button
+            key={btn.id}
             onClick={() => setCount(btn.id)}
             className={btn.id === count ? styles.activeBtn : ""}
           >

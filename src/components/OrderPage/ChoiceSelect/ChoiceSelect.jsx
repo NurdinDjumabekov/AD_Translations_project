@@ -1,11 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ChoiceSelect.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { changeOrderData } from "../../../store/reducers/orderPageSlice";
 
 const ChoiceSelect = ({ props }) => {
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState("");
+  const dispatch = useDispatch();
+  const { orderData } = useSelector((state) => state.orderPageSlice);
+
+  useEffect(() => {
+    switch (props.textAbove) {
+      case "Services":
+        dispatch(
+          changeOrderData({
+            ...orderData,
+            services: choiceLang,
+          })
+        );
+        break;
+      case "Industries":
+        dispatch(
+          changeOrderData({
+            ...orderData,
+            industries: choiceLang,
+          })
+        );
+        break;
+      case "From":
+        dispatch(
+          changeOrderData({
+            ...orderData,
+            fromLang: choiceLang,
+          })
+        );
+        break;
+      case "To":
+        dispatch(
+          changeOrderData({
+            ...orderData,
+            toLang: choiceLang,
+          })
+        );
+        break;
+    }
+  }, [choiceLang]);
+
+  // console.log(orderData);
 
   const clickChoice = (lang, id) => {
     setLookSelect(false);
