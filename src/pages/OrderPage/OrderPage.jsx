@@ -8,6 +8,7 @@ import {
   toTakeLanguage,
   toTakeServices,
 } from "../../store/reducers/dataSelectSlice";
+import { sendDataOrder } from "../../store/reducers/orderPageSlice";
 
 const OrderPage = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ const OrderPage = () => {
 
   const { orderData } = useSelector((state) => state.orderPageSlice);
   console.log(orderData);
+
+  const sendRequestData = () => {
+    dispatch(sendDataOrder(orderData));
+  };
 
   return (
     <div className={styles.order}>
@@ -51,7 +56,7 @@ const OrderPage = () => {
         </div>
         <div className={styles.order__btns}>
           <button>Clear</button>
-          <button>SEND</button>
+          <button onClick={sendRequestData}>SEND</button>
         </div>
       </div>
     </div>

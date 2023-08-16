@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TypesDocuments.module.css";
 import ChoiceSelect from "../ChoiceSelect/ChoiceSelect";
 import DataForSend from "../DataForSend/DataForSend";
 import { DataUsers } from "../DataUsers/DataUsers";
+import { useDispatch, useSelector } from "react-redux";
+import { changeOrderData } from "../../../store/reducers/orderPageSlice";
 
 const TypesDocuments = ({ data }) => {
   const typeData = [
@@ -25,6 +27,36 @@ const TypesDocuments = ({ data }) => {
   ];
   const [count, setCount] = useState(1);
   const [date, setDate] = useState(true);
+  const [dateNum, setDateNum] = useState("");
+
+  const dispatch = useDispatch();
+  const { orderData } = useSelector((state) => state.orderPageSlice);
+
+  useEffect(() => {
+    dispatch(
+      changeOrderData({
+        ...orderData,
+        date: dateNum,
+      })
+    );
+  }, [dateNum]);
+
+  // const clickAutoData = () => {
+  //   setDateNum("auto");
+  //   setTimeout(() => {
+  //     if (dateNum === "auto") {
+  //       setDate(false);
+  //     }
+  //   }, 100);
+  // };
+
+  useEffect(() => {
+    if (date === false) {
+      setDateNum("auto");
+    } else {
+      setDateNum("");
+    }
+  }, [date]);
 
   return (
     <>
@@ -57,7 +89,12 @@ const TypesDocuments = ({ data }) => {
           <p>Deadline</p>
           {date ? (
             <label>
-              <input placeholder="DD.MM.YY" type="text" />
+              <input
+                onChange={(e) => setDateNum(e.target.value)}
+                placeholder="DD.MM.YY"
+                type="text"
+                value={dateNum}
+              />
               <button onClick={() => setDate(false)}>Auto</button>
             </label>
           ) : (
