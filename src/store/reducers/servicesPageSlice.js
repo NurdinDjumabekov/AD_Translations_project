@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { addDataID } from "../../helpers/addDataID";
+import { changePreloader } from "./mainPageSlice";
 
 const initialState = {
   dataServices: [],
@@ -12,6 +13,7 @@ export const toTakeAllDataServices = createAsyncThunk(
   "toTakeAllDataServices",
   async (info, { dispatch }) => {
     try {
+      dispatch(changePreloader(true));
       const { data } = await axios({
         method: "GET",
         url: "https://64186f7a29e7e36438e8aa19.mockapi.io/items",
@@ -19,8 +21,10 @@ export const toTakeAllDataServices = createAsyncThunk(
       //   console.log(data);
       dispatch(toTakeDataServices(addDataID(data)));
       dispatch(changeDataForSearch(addDataID(data)));
+      dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
+      // dispatch(changePreloader(false));
     }
   }
 );

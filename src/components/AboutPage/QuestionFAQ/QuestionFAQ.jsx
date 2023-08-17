@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./QuestionFAQ.module.css";
 import arrow from "../../../assets/images/aboutPage/arrow.svg";
+import { useNavigate } from "react-router-dom";
 
 const QuestionFAQ = () => {
   const [arr, setArr] = useState([
@@ -48,6 +49,8 @@ const QuestionFAQ = () => {
     },
   ]);
 
+  const navigate = useNavigate();
+
   const lookAnswer = (id, bool) => {
     const newArr = arr.map((item) => {
       if (item.id === id) {
@@ -79,7 +82,9 @@ const QuestionFAQ = () => {
             </div>
           ))}
         </div>
-        <button className="standartBtn">Start Translation</button>
+        <button className="standartBtn" onClick={() => navigate("/order")}>
+          Start Translation
+        </button>
       </div>
     </div>
   );

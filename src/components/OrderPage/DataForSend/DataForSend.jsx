@@ -1,31 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./DataForSend.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeOrderData } from "../../../store/reducers/orderPageSlice";
 
-const DataForSend = ({ type }) => {
+const DataForSend = ({ doc, setDoc }) => {
   const inputRef = useRef(null);
   const dispatch = useDispatch();
-  const { orderData } = useSelector((state) => state.orderPageSlice);
-
-  const [doc, setDoc] = useState(null);
+  const [activeBtn, setActiveBtn] = useState(false);
 
   const clickSend = () => {
     inputRef.current.click();
   };
+  const { typeDoc } = useSelector((state) => state.orderPageSlice);
 
   useEffect(() => {
-    dispatch(
-      changeOrderData({
-        ...orderData,
-        document: doc,
-      })
-    );
+    if (doc) {
+      setActiveBtn(true);
+    } else {
+      setActiveBtn(false);
+    }
   }, [doc]);
 
-  // console.log(doc);
   //////////Documents/////////
-  if (type === 1) {
+  if (typeDoc === 1) {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
@@ -36,12 +32,17 @@ const DataForSend = ({ type }) => {
             ref={inputRef}
             type="file"
           />
-          <button onClick={clickSend}>Upload files</button>
+          <button
+            onClick={clickSend}
+            className={activeBtn ? styles.activeBtn : ""}
+          >
+            Upload files
+          </button>
         </div>
       </div>
     );
     //////////Video/////////
-  } else if (type === 2) {
+  } else if (typeDoc === 2) {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
@@ -57,7 +58,7 @@ const DataForSend = ({ type }) => {
       </div>
     );
     //////////Audio/////////
-  } else if (type === 3) {
+  } else if (typeDoc === 3) {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
@@ -73,7 +74,7 @@ const DataForSend = ({ type }) => {
       </div>
     );
     //////////Link/////////
-  } else if (type === 4) {
+  } else if (typeDoc === 4) {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>

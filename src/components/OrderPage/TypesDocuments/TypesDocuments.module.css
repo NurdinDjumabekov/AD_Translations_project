@@ -94,8 +94,8 @@
 }
 .typeSendData .sendDate > div button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -2px;
+  right: -2px;
   color: #FAFAFA;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -105,7 +105,7 @@
   background-color: #007E1D;
   border-radius: 0 6px 6px 0;
   width: 82px;
-  height: 40px;
+  height: 41px;
   border: none;
   cursor: pointer;
 }

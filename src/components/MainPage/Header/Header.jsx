@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.header}>
       <div className="container">
@@ -14,7 +16,7 @@ const Header = () => {
               ​​by professional translators at the AD Translates foreign
               language translation agency.
             </p>
-            <button>Translate</button>
+            <button onClick={() => navigate("/order")}>Translate</button>
           </div>
         </div>
       </div>

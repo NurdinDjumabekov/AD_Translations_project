@@ -84,7 +84,7 @@ const Updates = () => {
     dots: true, // Включаем индикаторы
     centerMode: false,
     variableWidth: true,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
   };
   return (

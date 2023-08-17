@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  stateNUR: "RCTVYBU",
+  preloader: false,
 };
 const mainPageSlice = createSlice({
   name: "mainPageSlice",
   initialState,
   reducers: {
-    CHAGNEG: (state, action) => {
-      state.stateNUR = action.payload;
+    changePreloader: (state, action) => {
+      state.preloader = action.payload;
     },
   },
 });
-export const { CHAGNEG } = mainPageSlice.actions;
+export const { changePreloader } = mainPageSlice.actions;
 
 export default mainPageSlice.reducer;

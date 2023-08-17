@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./Advantages.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Advantages = () => {
+  const navigate = useNavigate();
+
   const data = [
     {
       id: 1,
@@ -45,7 +48,9 @@ const Advantages = () => {
         </div>
       </div>
       <div className={styles.lineBlock}></div>
-      <button className="standartBtn">Start Translation</button>
+      <button className="standartBtn" onClick={() => navigate("/order")}>
+        Start Translation
+      </button>
     </div>
   );
 };

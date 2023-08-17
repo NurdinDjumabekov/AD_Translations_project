@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Languages.module.css";
 import { sortLanguages } from "../../../helpers/sortLanguages";
+import { useNavigate } from "react-router-dom";
 
 const Languages = () => {
+  const navigate = useNavigate();
   // const arr = [
   //   {
   //     id: 1,
@@ -161,9 +163,11 @@ const Languages = () => {
             ))}
           </div>
         </div>
-        <div className="lineBlock"></div>
-        <button className="standartBtn">Start Translation</button>
       </div>
+      <div className="lineBlock"></div>
+      <button className="standartBtn" onClick={() => navigate("/order")}>
+        Start Translation
+      </button>
     </div>
   );
 };

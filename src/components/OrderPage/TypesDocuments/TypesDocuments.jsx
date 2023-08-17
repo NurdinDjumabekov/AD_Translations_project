@@ -4,9 +4,12 @@ import ChoiceSelect from "../ChoiceSelect/ChoiceSelect";
 import DataForSend from "../DataForSend/DataForSend";
 import { DataUsers } from "../DataUsers/DataUsers";
 import { useDispatch, useSelector } from "react-redux";
-import { changeOrderData } from "../../../store/reducers/orderPageSlice";
+import {
+  changeOrderData,
+  changeTypeDoc,
+} from "../../../store/reducers/orderPageSlice";
 
-const TypesDocuments = ({ data }) => {
+const TypesDocuments = ({ doc, data, setDoc }) => {
   const typeData = [
     {
       doc: "Documents",
@@ -25,12 +28,12 @@ const TypesDocuments = ({ data }) => {
       id: 4,
     },
   ];
-  const [count, setCount] = useState(1);
+
   const [date, setDate] = useState(true);
   const [dateNum, setDateNum] = useState("");
 
   const dispatch = useDispatch();
-  const { orderData } = useSelector((state) => state.orderPageSlice);
+  const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
 
   useEffect(() => {
     dispatch(
@@ -41,15 +44,6 @@ const TypesDocuments = ({ data }) => {
     );
   }, [dateNum]);
 
-  // const clickAutoData = () => {
-  //   setDateNum("auto");
-  //   setTimeout(() => {
-  //     if (dateNum === "auto") {
-  //       setDate(false);
-  //     }
-  //   }, 100);
-  // };
-
   useEffect(() => {
     if (date === false) {
       setDateNum("auto");
@@ -58,14 +52,19 @@ const TypesDocuments = ({ data }) => {
     }
   }, [date]);
 
+  const clickTypeDoc = (id) => {
+    dispatch(changeTypeDoc(id));
+    setDoc(null);
+  };
+
   return (
     <>
       <div className={styles.docType}>
         {typeData.map((btn) => (
           <button
             key={btn.id}
-            onClick={() => setCount(btn.id)}
-            className={btn.id === count ? styles.activeBtn : ""}
+            onClick={() => clickTypeDoc(btn.id)}
+            className={btn.id === typeDoc ? styles.activeBtn : ""}
           >
             {btn.doc}
           </button>
@@ -84,7 +83,7 @@ const TypesDocuments = ({ data }) => {
         />
       </div>
       <div className={styles.typeSendData}>
-        <DataForSend type={count} />
+        <DataForSend doc={doc} setDoc={setDoc} />
         <div className={styles.sendDate}>
           <p>Deadline</p>
           {date ? (

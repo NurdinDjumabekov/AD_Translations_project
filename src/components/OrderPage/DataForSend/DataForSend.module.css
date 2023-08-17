@@ -46,10 +46,10 @@
 .blockForSend button {
   position: absolute;
   z-index: 5;
-  right: 0;
-  top: 0;
+  right: -1px;
+  top: -1px;
   width: 107px;
-  height: 39px;
+  height: 40px;
   border-radius: 0 6px 6px 0;
   border: none;
   cursor: pointer;
@@ -62,6 +62,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+}
+.blockForSend .activeBtn {
+  background-color: #007E1D;
 }
 
 .linksBlock {
