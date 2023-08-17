@@ -3,13 +3,16 @@ import styles from "./ChoiceSelect.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { changeOrderData } from "../../../store/reducers/orderPageSlice";
+import {
+  changeOrderData,
+  clearAllSelects,
+} from "../../../store/reducers/orderPageSlice";
 
 const ChoiceSelect = ({ props }) => {
   const [lookSelect, setLookSelect] = useState(false);
-  const [choiceLang, setChoiceLang] = useState("");
+  const [choiceLang, setChoiceLang] = useState(props.initialText);
   const dispatch = useDispatch();
-  const { orderData } = useSelector((state) => state.orderPageSlice);
+  const { orderData, clearData } = useSelector((state) => state.orderPageSlice);
 
   useEffect(() => {
     switch (props.textAbove) {
@@ -48,12 +51,17 @@ const ChoiceSelect = ({ props }) => {
     }
   }, [choiceLang]);
 
-  // console.log(orderData);
-
-  const clickChoice = (lang, id) => {
+  const clickChoice = (lang) => {
     setLookSelect(false);
     setChoiceLang(lang);
+    dispatch(clearAllSelects(false)); // для того чтобы можно было еще раз стереть все данные
   };
+
+  useEffect(() => {
+    if (clearData) {
+      setChoiceLang(props.initialText);
+    }
+  }, [clearData]);
 
   return (
     <div className={styles.choiceSelect}>
@@ -80,7 +88,7 @@ const ChoiceSelect = ({ props }) => {
           {props.data?.map((lang) => (
             <p
               key={lang.id}
-              onClick={() => clickChoice(lang.choice, lang.id)}
+              onClick={() => clickChoice(lang.choice)}
               className={lang.choice === choiceLang ? styles.activeSelect : ""}
             >
               {lang.choice}

@@ -94,7 +94,7 @@
 }
 .typeSendData .sendDate > div button {
   position: absolute;
-  top: -2px;
+  top: -1px;
   right: -2px;
   color: #FAFAFA;
   font-family: "Roboto", sans-serif;
@@ -105,7 +105,7 @@
   background-color: #007E1D;
   border-radius: 0 6px 6px 0;
   width: 82px;
-  height: 41px;
+  height: 40px;
   border: none;
   cursor: pointer;
 }
@@ -121,6 +121,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0 85px 0 10px;
   font-size: 18px;
+}
+.typeSendData .sendDate label .badInput {
+  background-color: #F00;
+  color: white;
+  font-size: 20px;
 }
 .typeSendData .sendDate label button {
   position: absolute;

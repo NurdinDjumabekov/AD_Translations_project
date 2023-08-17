@@ -5,45 +5,40 @@ import { changeOrderData } from "../../../store/reducers/orderPageSlice";
 
 export const DataUsers = () => {
   const dispatch = useDispatch();
-  const [data, setData] = useState({
-    email: "",
-    phoneNum: "",
-  });
   const { orderData } = useSelector((state) => state.orderPageSlice);
-
-  useEffect(() => {
-    dispatch(
-      changeOrderData({
-        ...orderData,
-        email: data.email,
-        phoneNum: data.phoneNum,
-      })
-    );
-  }, [data]);
+  const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   return (
     <div className={styles.blockData}>
       <label>
         <input
           type="email"
+          className={errorSend.email ? styles.badInput : ""}
           onChange={(e) =>
-            setData((info) => ({
-              ...info,
-              email: e.target.value,
-            }))
+            dispatch(
+              changeOrderData({
+                ...orderData,
+                email: e.target.value,
+              })
+            )
           }
+          value={orderData.email}
           placeholder="E-mail"
         />
       </label>
       <label>
         <input
+          className={errorSend.phoneNum ? styles.badInput : ""}
           onChange={(e) =>
-            setData((info) => ({
-              ...info,
-              phoneNum: e.target.value,
-            }))
+            dispatch(
+              changeOrderData({
+                ...orderData,
+                phoneNum: e.target.value,
+              })
+            )
           }
           type="phone"
+          value={orderData.phoneNum}
           placeholder="+996(700)754-454"
         />
       </label>

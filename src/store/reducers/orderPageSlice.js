@@ -14,6 +14,7 @@ const initialState = {
   },
   goodSendData: true,
   typeDoc: 1,
+  clearData: false,
 };
 
 export const sendDataOrder = createAsyncThunk(
@@ -40,6 +41,7 @@ export const sendDataOrder = createAsyncThunk(
           )}`,
         });
       } else {
+        /////////////////////отправка ссылки///////////////////////
         const formData = new FormData();
         formData.append("chat_id", chatId);
         formData.append("document", info.doc);
@@ -55,7 +57,6 @@ export const sendDataOrder = createAsyncThunk(
       ///////////////////////////////////////////////////////////////
       dispatch(changePreloader(false));
       dispatch(changeGoodSendData(false));
-      console.log("done");
     } catch (err) {
       console.error(err);
       dispatch(changePreloader(false));
@@ -76,9 +77,16 @@ const orderPageSlice = createSlice({
     changeGoodSendData: (state, action) => {
       state.goodSendData = action.payload;
     },
+    clearAllSelects: (state, action) => {
+      state.clearData = action.payload;
+    },
   },
 });
-export const { changeOrderData, changeTypeDoc, changeGoodSendData } =
-  orderPageSlice.actions;
+export const {
+  changeOrderData,
+  changeTypeDoc,
+  changeGoodSendData,
+  clearAllSelects,
+} = orderPageSlice.actions;
 
 export default orderPageSlice.reducer;

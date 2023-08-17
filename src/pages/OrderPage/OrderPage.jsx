@@ -8,9 +8,10 @@ import {
   toTakeLanguage,
   toTakeServices,
 } from "../../store/reducers/dataSelectSlice";
-import { sendDataOrder } from "../../store/reducers/orderPageSlice";
+
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import Preloader from "../../components/Preloader/Preloader";
+import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 
 const OrderPage = () => {
   const dispatch = useDispatch();
@@ -26,18 +27,13 @@ const OrderPage = () => {
     dispatch(toTakeLanguage());
   }, []);
 
+  const { preloader } = useSelector((state) => state.mainPageSlice);
+
   const { typeServices, typeIndustries, typeLanguage } = useSelector(
     (state) => state.dataSelectSlice
   );
-  const { preloader } = useSelector((state) => state.mainPageSlice);
 
-  const { orderData, goodSendData, typeDoc } = useSelector(
-    (state) => state.orderPageSlice
-  );
-
-  const sendRequestData = () => {
-    dispatch(sendDataOrder({ orderData, doc, typeDoc }));
-  };
+  const { goodSendData } = useSelector((state) => state.orderPageSlice);
 
   // console.log(orderData);
   // console.log(doc);
@@ -67,10 +63,7 @@ const OrderPage = () => {
               </div>
               <TypesDocuments doc={doc} setDoc={setDoc} data={typeLanguage} />
             </div>
-            <div className={styles.order__btns}>
-              <button>Clear</button>
-              <button onClick={sendRequestData}>SEND</button>
-            </div>
+            <ActionBtns doc={doc} setDoc={setDoc} />
           </div>
         </div>
       ) : (

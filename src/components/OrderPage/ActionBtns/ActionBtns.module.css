@@ -1,0 +1,33 @@
+.actionBtns {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 60px;
+  margin: 60px 0 0 0;
+}
+.actionBtns button {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--button, #007E1D);
+  border: none;
+  color: var(--background, #FAFAFA);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+.actionBtns button:nth-child(1) {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid var(--background, #FAFAFA);
+}

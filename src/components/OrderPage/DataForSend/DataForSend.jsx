@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./DataForSend.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const DataForSend = ({ doc, setDoc }) => {
   const inputRef = useRef(null);
-  const dispatch = useDispatch();
   const [activeBtn, setActiveBtn] = useState(false);
 
   const clickSend = () => {
     inputRef.current.click();
   };
   const { typeDoc } = useSelector((state) => state.orderPageSlice);
+  const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   useEffect(() => {
     if (doc) {
@@ -25,7 +25,11 @@ const DataForSend = ({ doc, setDoc }) => {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
-        <div className={styles.blockForSend}>
+        <div
+          className={`${styles.blockForSend} ${
+            errorSend.doc ? styles.badInput : ""
+          }`}
+        >
           <p>Max: 5000 words</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
@@ -46,14 +50,23 @@ const DataForSend = ({ doc, setDoc }) => {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
-        <div className={styles.blockForSend}>
+        <div
+          className={`${styles.blockForSend} ${
+            errorSend.doc ? styles.badInput : ""
+          }`}
+        >
           <p>Max: 5gb</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
             ref={inputRef}
             type="file"
           />
-          <button onClick={clickSend}>Upload files</button>
+          <button
+            onClick={clickSend}
+            className={activeBtn ? styles.activeBtn : ""}
+          >
+            Upload files
+          </button>
         </div>
       </div>
     );
@@ -62,14 +75,23 @@ const DataForSend = ({ doc, setDoc }) => {
     return (
       <div>
         <span className={styles.sendTitle}>Document</span>
-        <div className={styles.blockForSend}>
+        <div
+          className={`${styles.blockForSend} ${
+            errorSend.doc ? styles.badInput : ""
+          }`}
+        >
           <p>Max: 5gb</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
             ref={inputRef}
             type="file"
           />
-          <button onClick={clickSend}>Upload files</button>
+          <button
+            onClick={clickSend}
+            className={activeBtn ? styles.activeBtn : ""}
+          >
+            Upload files
+          </button>
         </div>
       </div>
     );
@@ -80,7 +102,9 @@ const DataForSend = ({ doc, setDoc }) => {
         <span className={styles.sendTitle}>Document</span>
         <div className={styles.linksBlock}>
           <input
-            className={styles.linksInput}
+            className={`${styles.linksInput} ${
+              errorSend.doc ? styles.badInput : ""
+            }`}
             onChange={(e) => setDoc(e.target.value)}
             type="text"
             placeholder="Paste a link"

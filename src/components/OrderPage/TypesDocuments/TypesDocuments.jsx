@@ -29,32 +29,43 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
     },
   ];
 
-  const [date, setDate] = useState(true);
-  const [dateNum, setDateNum] = useState("");
+  const [stateData, setStateData] = useState(true);
 
   const dispatch = useDispatch();
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
+  const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   useEffect(() => {
-    dispatch(
-      changeOrderData({
-        ...orderData,
-        date: dateNum,
-      })
-    );
-  }, [dateNum]);
-
-  useEffect(() => {
-    if (date === false) {
-      setDateNum("auto");
+    if (stateData === false) {
+      dispatch(
+        changeOrderData({
+          ...orderData,
+          date: "auto",
+        })
+      );
     } else {
-      setDateNum("");
+      dispatch(
+        changeOrderData({
+          ...orderData,
+          date: "",
+        })
+      );
     }
-  }, [date]);
+  }, [stateData]);
 
   const clickTypeDoc = (id) => {
     dispatch(changeTypeDoc(id));
     setDoc(null);
+  };
+
+  const clickAutoDate = () => {
+    setStateData(false);
+    dispatch(
+      changeOrderData({
+        ...orderData,
+        date: "auto",
+      })
+    );
   };
 
   return (
@@ -75,31 +86,39 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
           props={{
             data,
             textAbove: "From",
-            initialText: "choose language",
+            initialText: "English",
           }}
         />
         <ChoiceSelect
-          props={{ data, textAbove: "To", initialText: "choose language" }}
+          props={{ data, textAbove: "To", initialText: "Russian" }}
         />
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />
         <div className={styles.sendDate}>
           <p>Deadline</p>
-          {date ? (
+          {stateData ? (
             <label>
               <input
-                onChange={(e) => setDateNum(e.target.value)}
+                className={errorSend.date ? styles.badInput : ""}
+                onChange={(e) =>
+                  dispatch(
+                    changeOrderData({
+                      ...orderData,
+                      date: e.target.value,
+                    })
+                  )
+                }
                 placeholder="DD.MM.YY"
                 type="text"
-                value={dateNum}
+                value={orderData.date}
               />
-              <button onClick={() => setDate(false)}>Auto</button>
+              <button onClick={() => setStateData(false)}>Auto</button>
             </label>
           ) : (
-            <div onClick={() => setDate(true)}>
+            <div onClick={() => setStateData(true)}>
               <p>Auto</p>
-              <button onClick={() => setDate(false)}>Auto</button>
+              <button onClick={() => clickAutoDate()}>Auto</button>
             </div>
           )}
         </div>
