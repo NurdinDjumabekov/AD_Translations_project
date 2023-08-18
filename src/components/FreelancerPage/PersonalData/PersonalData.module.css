@@ -1,0 +1,45 @@
+.personalData {
+  width: 580px;
+  margin: 0 auto;
+}
+.personalData span {
+  display: block;
+  color: #151515;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 5px 0;
+}
+.personalData .inputfullName {
+  width: 100%;
+  display: block;
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FAFAFA;
+  padding: 0 12px;
+}
+.personalData > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.personalData > div > div {
+  margin: 20px 0;
+}
+.personalData > div > div input {
+  width: 272px;
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FAFAFA;
+  padding: 0 12px;
+}

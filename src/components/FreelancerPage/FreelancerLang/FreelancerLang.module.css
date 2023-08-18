@@ -1,0 +1,66 @@
+.freelancerLang {
+  width: 580px;
+  margin: 0 auto;
+}
+.freelancerLang .freelancerLang__from {
+  margin: 20px 0;
+}
+.freelancerLang .freelancerLang__from > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 580px;
+}
+.freelancerLang .freelancerLang__from > div > div > div {
+  width: 272px;
+}
+.freelancerLang .freelancerLang__from > p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0 0 5px 0;
+}
+.freelancerLang .freelancerLang__to {
+  margin: 30px 0;
+}
+.freelancerLang .freelancerLang__to > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 580px;
+}
+.freelancerLang .freelancerLang__to > div > div > div {
+  width: 272px;
+}
+.freelancerLang .freelancerLang__to > p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0 0 5px 0;
+}
+.freelancerLang .btnAddselect {
+  border-radius: 6px;
+  border: 2px solid #646464;
+  background: #FAFAFA;
+  color: #646464;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 8px 20px;
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}

@@ -55,6 +55,9 @@
       -ms-flex-align: center;
           align-items: center;
 }
+.menu .menu__inner ul li {
+  cursor: pointer;
+}
 .menu .menu__inner ul li a {
   display: block;
   color: #151515;
@@ -66,4 +69,15 @@
 }
 .menu .menu__inner ul li .activePage {
   color: #007E1D;
+}
+.menu .menu__inner ul li svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+  color: #151515;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

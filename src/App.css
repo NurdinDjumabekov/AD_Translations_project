@@ -32,6 +32,7 @@
   margin: 10px 0;
   overflow-y: scroll;
   animation: selects 0.6s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .mySelect > p {
   color: #151515;
