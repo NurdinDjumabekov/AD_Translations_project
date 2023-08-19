@@ -1,70 +1,45 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FreelancerLang.module.css";
-import ChoiceSelect from "../../OrderPage/ChoiceSelect/ChoiceSelect";
 import { useDispatch, useSelector } from "react-redux";
 import { toTakeLanguage } from "../../../store/reducers/dataSelectSlice";
 import { arrLevels } from "../../../helpers/arrLevels";
+import LangSelect from "../LangSelect/LangSelect";
 
-const FreelancerLang = () => {
+const FreelancerLang = ({ typeLanguage }) => {
   const dispatch = useDispatch();
   const [langLevel, setLangLevel] = useState(arrLevels());
-  const { typeLanguage } = useSelector((state) => state.dataSelectSlice);
+  const [arr, setArr] = useState([]);
 
   useEffect(() => {
     dispatch(toTakeLanguage());
   }, []);
 
-  const [arr, setArr] = useState([
-    {
-      id: 1,
-      lang: (
-        <ChoiceSelect
-          props={{
-            data: typeLanguage,
-            textAbove: "",
-            initialText: "English",
-          }}
-        />
-      ),
-      level: (
-        <ChoiceSelect
-          props={{
-            data: langLevel,
-            textAbove: "",
-            initialText: "A1",
-          }}
-        />
-      ),
-    },
-  ]);
+  useEffect(() => {
+    if (typeLanguage && typeLanguage.length > 0) {
+      setArr([
+        {
+          id: 1,
+          lang: typeLanguage,
+          level: langLevel,
+        },
+      ]);
+    }
+  }, [typeLanguage]);
 
   const addSelect = () => {
-    setArr((info) => [
-      ...info,
-      {
-        id: 2,
-        lang: (
-          <ChoiceSelect
-            props={{
-              data: typeLanguage,
-              textAbove: "",
-              initialText: "English",
-            }}
-          />
-        ),
-        level: (
-          <ChoiceSelect
-            props={{
-              data: langLevel,
-              textAbove: "",
-              initialText: "A1",
-            }}
-          />
-        ),
-      },
-    ]);
+    if (arr[arr.length - 1].id === 3) {
+      return arr;
+    } else {
+      setArr((info) => [
+        ...info,
+        {
+          id: arr[arr.length - 1].id + 1,
+          lang: typeLanguage,
+          level: langLevel,
+        },
+      ]);
+    }
   };
-  console.log(arr);
 
   return (
     <div className={styles.freelancerLang}>
@@ -72,8 +47,24 @@ const FreelancerLang = () => {
         <p>Language (Translate From)</p>
         {arr?.map((item) => (
           <div key={item.id}>
-            {item.lang}
-            {item.level}
+            <LangSelect
+              props={{
+                data: item.lang,
+                type: "lang",
+                initialText: "English",
+                count: item.id,
+                traslationType: "from",
+              }}
+            />
+            <LangSelect
+              props={{
+                data: item.level,
+                type: "level",
+                initialText: "A1",
+                count: item.id,
+                traslationType: "from",
+              }}
+            />
           </div>
         ))}
         <button className={styles.btnAddselect} onClick={() => addSelect()}>
@@ -84,11 +75,26 @@ const FreelancerLang = () => {
         <p>Language (Translate To)</p>
         {arr?.map((item) => (
           <div key={item.id}>
-            {item.lang}
-            {item.level}
+            <LangSelect
+              props={{
+                data: item.lang,
+                type: "lang",
+                initialText: "Russian",
+                count: item.id,
+                traslationType: "to",
+              }}
+            />
+            <LangSelect
+              props={{
+                data: item.level,
+                type: "level",
+                initialText: "A1",
+                count: item.id,
+                traslationType: "to",
+              }}
+            />
           </div>
         ))}
-        {/* <button className={styles.btnAddselect}>Add one more</button> */}
       </div>
     </div>
   );

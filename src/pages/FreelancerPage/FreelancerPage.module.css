@@ -20,3 +20,18 @@
   line-height: 24px;
   margin: 10px 0 20px;
 }
+.freelancer .sendData {
+  color: var(--background, #FAFAFA);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 16px 30px;
+  border-radius: 8px;
+  background: #646464;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}

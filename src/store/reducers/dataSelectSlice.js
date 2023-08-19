@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { changePreloader } from "./mainPageSlice";
 
 const initialState = {
   typeServices: [],
@@ -42,12 +43,15 @@ export const toTakeIndustries = createAsyncThunk(
 export const toTakeLanguage = createAsyncThunk(
   "toTakeLanguage",
   async (info, { dispatch }) => {
+    dispatch(changePreloader(true));
     try {
       const { data } = await axios({
         method: "GET",
         url: " https://6443c7ca90738aa7c0778850.mockapi.io/infoportal",
       });
       dispatch(toTakeTypeLanguage(data));
+      // console.log(data);
+      dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
     }

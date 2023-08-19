@@ -12,10 +12,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 580px;
-}
-.freelancerLang .freelancerLang__from > div > div > div {
-  width: 272px;
 }
 .freelancerLang .freelancerLang__from > p {
   color: #151515;
