@@ -12,13 +12,12 @@
   line-height: normal;
   margin: 0 0 5px 0;
 }
-.personalData .inputfullName {
+.personalData > input {
   width: 100%;
   display: block;
   height: 44px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #FAFAFA;
   padding: 0 12px;
 }
 .personalData > div {
@@ -42,4 +41,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: #FAFAFA;
   padding: 0 12px;
+}
+.personalData .errInput {
+  background: red;
 }

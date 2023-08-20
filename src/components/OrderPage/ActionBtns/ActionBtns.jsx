@@ -50,13 +50,13 @@ const ActionBtns = ({ doc, setDoc }) => {
 
   // все выборочное селекты на валидацию не проверяю, ибо чел не может выбрать что-то пустое
 
-  useEffect(() => {
-    clearAllData();
-  }, []);
+  // useEffect(() => {
+  //   clearAllData();
+  // }, []);
 
   return (
     <div className={styles.actionBtns}>
-      <button onClick={clearAllData}>Clear</button>
+      <button onClick={() => clearAllData()}>Clear</button>
       <button onClick={checkDocuments}>SEND</button>
     </div>
   );

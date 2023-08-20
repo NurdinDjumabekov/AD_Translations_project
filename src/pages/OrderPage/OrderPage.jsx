@@ -16,6 +16,8 @@ import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 const OrderPage = () => {
   const dispatch = useDispatch();
   const [doc, setDoc] = useState(null);
+  const text =
+    "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,15 +30,12 @@ const OrderPage = () => {
   }, []);
 
   const { preloader } = useSelector((state) => state.mainPageSlice);
+  const { goodSendData } = useSelector((state) => state.orderPageSlice);
 
   const { typeServices, typeIndustries, typeLanguage } = useSelector(
     (state) => state.dataSelectSlice
   );
 
-  const { goodSendData } = useSelector((state) => state.orderPageSlice);
-
-  // console.log(orderData);
-  // console.log(doc);
   return (
     <>
       {goodSendData ? (
@@ -48,16 +47,16 @@ const OrderPage = () => {
               <div className={styles.order__services}>
                 <ChoiceSelect
                   props={{
-                    data: typeServices,
-                    textAbove: "Services",
-                    initialText: "Editing",
+                    data: typeIndustries,
+                    textAbove: "Industries",
+                    initialText: "General",
                   }}
                 />
                 <ChoiceSelect
                   props={{
-                    data: typeIndustries,
-                    textAbove: "Industries",
-                    initialText: "General",
+                    data: typeServices,
+                    textAbove: "Services",
+                    initialText: "Editing",
                   }}
                 />
               </div>
@@ -67,7 +66,7 @@ const OrderPage = () => {
           </div>
         </div>
       ) : (
-        <GoodSendData />
+        <GoodSendData text={text} />
       )}
       {preloader && <Preloader />}
     </>

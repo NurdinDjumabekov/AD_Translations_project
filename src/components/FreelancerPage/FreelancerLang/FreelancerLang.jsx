@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toTakeLanguage } from "../../../store/reducers/dataSelectSlice";
 import { arrLevels } from "../../../helpers/arrLevels";
 import LangSelect from "../LangSelect/LangSelect";
+import { changeAllSelects } from "../../../store/reducers/stateSendDataSlice";
 
 const FreelancerLang = ({ typeLanguage }) => {
   const dispatch = useDispatch();
   const [langLevel, setLangLevel] = useState(arrLevels());
-  const [arr, setArr] = useState([]);
+
+  const { allSelects } = useSelector((state) => state.stateSendDataSlice);
 
   useEffect(() => {
     dispatch(toTakeLanguage());
@@ -16,28 +18,33 @@ const FreelancerLang = ({ typeLanguage }) => {
 
   useEffect(() => {
     if (typeLanguage && typeLanguage.length > 0) {
-      setArr([
-        {
-          id: 1,
-          lang: typeLanguage,
-          level: langLevel,
-        },
-      ]);
+      dispatch(
+        changeAllSelects([
+          {
+            id: 1,
+            lang: typeLanguage,
+            level: langLevel,
+          },
+        ])
+      );
     }
   }, [typeLanguage]);
+  // console.log(allSelects);
 
   const addSelect = () => {
-    if (arr[arr.length - 1].id === 3) {
-      return arr;
+    if (allSelects[allSelects.length - 1].id === 3) {
+      return allSelects;
     } else {
-      setArr((info) => [
-        ...info,
-        {
-          id: arr[arr.length - 1].id + 1,
-          lang: typeLanguage,
-          level: langLevel,
-        },
-      ]);
+      dispatch(
+        changeAllSelects([
+          ...allSelects,
+          {
+            id: allSelects[allSelects.length - 1].id + 1,
+            lang: typeLanguage,
+            level: langLevel,
+          },
+        ])
+      );
     }
   };
 
@@ -45,7 +52,7 @@ const FreelancerLang = ({ typeLanguage }) => {
     <div className={styles.freelancerLang}>
       <div className={styles.freelancerLang__from}>
         <p>Language (Translate From)</p>
-        {arr?.map((item) => (
+        {allSelects?.map((item) => (
           <div key={item.id}>
             <LangSelect
               props={{
@@ -73,7 +80,7 @@ const FreelancerLang = ({ typeLanguage }) => {
       </div>
       <div className={styles.freelancerLang__to}>
         <p>Language (Translate To)</p>
-        {arr?.map((item) => (
+        {allSelects?.map((item) => (
           <div key={item.id}>
             <LangSelect
               props={{

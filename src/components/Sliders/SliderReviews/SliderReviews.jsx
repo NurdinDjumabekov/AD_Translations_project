@@ -79,7 +79,7 @@ const SliderReviews = () => {
 
   return (
     <div className={styles.sliderReviews}>
-      <h2 className="standartTitle">Industries</h2>
+      <h2 className="standartTitle">Reviews</h2>
       <div className="container">
         <div className={styles.sliderReviews__inner}>
           <Slider {...settings}>

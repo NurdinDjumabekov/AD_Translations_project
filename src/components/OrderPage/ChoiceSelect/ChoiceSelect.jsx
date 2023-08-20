@@ -15,41 +15,25 @@ const ChoiceSelect = ({ props }) => {
   const { orderData, clearData } = useSelector((state) => state.orderPageSlice);
 
   useEffect(() => {
-    switch (props.textAbove) {
-      case "Services":
-        dispatch(
-          changeOrderData({
-            ...orderData,
-            services: choiceLang,
-          })
-        );
-        break;
-      case "Industries":
-        dispatch(
-          changeOrderData({
-            ...orderData,
-            industries: choiceLang,
-          })
-        );
-        break;
-      case "From":
-        dispatch(
-          changeOrderData({
-            ...orderData,
-            fromLang: choiceLang,
-          })
-        );
-        break;
-      case "To":
-        dispatch(
-          changeOrderData({
-            ...orderData,
-            toLang: choiceLang,
-          })
-        );
-        break;
-    }
+    const updateOrderData = () => {
+      switch (props.textAbove) {
+        case "Services":
+          return { services: choiceLang };
+        case "Industries":
+          return { industries: choiceLang };
+        case "From":
+          return { fromLang: choiceLang };
+        case "To":
+          return { toLang: choiceLang };
+        default:
+          return {};
+      }
+    };
+    dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
   }, [choiceLang]);
+
+  console.log(orderData);
+  // console.log(props.initialText);
 
   const clickChoice = (lang) => {
     setLookSelect(false);

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeGoodSendData } from "../../store/reducers/orderPageSlice";
 
-const GoodSendData = () => {
+const GoodSendData = ({ text }) => {
   const dispatch = useDispatch();
   const closeBlock = () => {
     dispatch(changeGoodSendData(true));
@@ -17,10 +17,7 @@ const GoodSendData = () => {
           <img src={good} alt="done!" />
         </div>
         <h2>Great!</h2>
-        <p>
-          We have received your order! The translator will contact you within 24
-          hours for a detailed discussion about your message!
-        </p>
+        <p>{text}</p>
         <NavLink onClick={closeBlock} className="standartBtn" to={"/"}>
           Back to Home
         </NavLink>

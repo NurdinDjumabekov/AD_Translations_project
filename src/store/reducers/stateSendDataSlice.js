@@ -11,6 +11,12 @@ const initialState = {
     phoneNum: false,
     doc: false,
   },
+  allSelects: [],
+  errorFreelanceSend: {
+    name: false,
+    email: false,
+    phoneNum: false,
+  },
 };
 const stateSendDataSlice = createSlice({
   name: "stateSendDataSlice",
@@ -19,8 +25,15 @@ const stateSendDataSlice = createSlice({
     changeErrorSend: (state, action) => {
       state.errorSend = action.payload;
     },
+    changeAllSelects: (state, action) => {
+      state.allSelects = action.payload;
+    },
+    changeErrorFreelanceSend: (state, action) => {
+      state.errorFreelanceSend = action.payload;
+    },
   },
 });
-export const { changeErrorSend } = stateSendDataSlice.actions;
+export const { changeErrorSend, changeAllSelects, changeErrorFreelanceSend } =
+  stateSendDataSlice.actions;
 
 export default stateSendDataSlice.reducer;
