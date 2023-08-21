@@ -5,6 +5,7 @@ import orderPageSlice from "./reducers/orderPageSlice";
 import dataSelectSlice from "./reducers/dataSelectSlice";
 import stateSendDataSlice from "./reducers/stateSendDataSlice";
 import freelanceSlice from "./reducers/freelanceSlice";
+import aboutPageSlice from "./reducers/aboutPageSlice";
 
 const reducer = combineReducers({
   mainPageSlice,
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   dataSelectSlice,
   stateSendDataSlice,
   freelanceSlice,
+  aboutPageSlice,
 });
 export const store = configureStore({
   reducer,

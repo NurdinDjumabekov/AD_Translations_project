@@ -21,46 +21,46 @@ export const sendDataOrder = createAsyncThunk(
   "sendDataOrder",
   async (info, { dispatch }) => {
     console.log(info);
-    // dispatch(changePreloader(true));
-    // try {
-    //   const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
-    //   const chatId = "775337596";
-    //   const messageText = `Новый заказ! \n \nServices : ${info.orderData.services}, \nindustries : ${info.orderData.industries}, \nсрок : ${info.orderData.date}, \nc языка : ${info.orderData.fromLang}, \nна язык : ${info.orderData.toLang}, \nemail : ${info.orderData.email}, \nnumber : ${info.orderData.phoneNum}`;
-    //   await axios({
-    //     method: "POST",
-    //     url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-    //       messageText
-    //     )}`,
-    //   });
-    //   /////////////////////отправка документа///////////////////////
-    //   if (info.typeDoc === 4) {
-    //     await axios({
-    //       method: "POST",
-    //       url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-    //         `ссылка : ${info.doc}`
-    //       )}`,
-    //     });
-    //   } else {
-    //     /////////////////////отправка ссылки///////////////////////
-    //     const formData = new FormData();
-    //     formData.append("chat_id", chatId);
-    //     formData.append("document", info.doc);
-    //     await axios({
-    //       method: "POST",
-    //       url: `https://api.telegram.org/bot${botToken}/sendDocument`,
-    //       data: formData,
-    //       headers: {
-    //         "Content-Type": "multipart/form-data",
-    //       },
-    //     });
-    //   }
-    //   ///////////////////////////////////////////////////////////////
-    //   dispatch(changePreloader(false));
-    //   dispatch(changeGoodSendData(false));
-    // } catch (err) {
-    //   console.error(err);
-    //   dispatch(changePreloader(false));
-    // }
+    dispatch(changePreloader(true));
+    try {
+      const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
+      const chatId = "775337596";
+      const messageText = `Новый заказ! \n \nServices : ${info.orderData.services}, \nindustries : ${info.orderData.industries}, \nсрок : ${info.orderData.date}, \nc языка : ${info.orderData.fromLang}, \nна язык : ${info.orderData.toLang}, \nemail : ${info.orderData.email}, \nnumber : ${info.orderData.phoneNum}`;
+      await axios({
+        method: "POST",
+        url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+          messageText
+        )}`,
+      });
+      /////////////////////отправка документа///////////////////////
+      if (info.typeDoc === 4) {
+        await axios({
+          method: "POST",
+          url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+            `ссылка : ${info.doc}`
+          )}`,
+        });
+      } else {
+        /////////////////////отправка ссылки///////////////////////
+        const formData = new FormData();
+        formData.append("chat_id", chatId);
+        formData.append("document", info.doc);
+        await axios({
+          method: "POST",
+          url: `https://api.telegram.org/bot${botToken}/sendDocument`,
+          data: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+      }
+      ///////////////////////////////////////////////////////////////
+      dispatch(changePreloader(false));
+      dispatch(changeGoodSendData(false));
+    } catch (err) {
+      console.error(err);
+      dispatch(changePreloader(false));
+    }
   }
 );
 /// dui.nurdin@gmail.com
