@@ -29,32 +29,6 @@ const Offers = () => {
     },
   ]);
 
-  // const changeBoolOnTrue = (id) => {
-  //   const newArr = data.map((item) => {
-  //     if (item.id === id) {
-  //       return {
-  //         ...item,
-  //         bool: true,
-  //       };
-  //     }
-  //     return item;
-  //   });
-  //   setData(newArr);
-  // };
-
-  // const changeBoolOnFalse = (id) => {
-  //   const newArr = data.map((item) => {
-  //     if (item.id === id) {
-  //       return {
-  //         ...item,
-  //         bool: false,
-  //       };
-  //     }
-  //     return item;
-  //   });
-  //   setData(newArr);
-  // };
-
   const lookMoreData = (id) => {
     const newArr = data.map((item) => {
       if (item.id === id) {
@@ -76,8 +50,6 @@ const Offers = () => {
           <div
             className={card.bool ? styles.activeBlock : ""}
             key={card.id}
-            // onMouseEnter={() => changeBoolOnTrue(card.id)}
-            // onMouseLeave={() => changeBoolOnFalse(card.id)}
             onClick={() => lookMoreData(card.id)}
           >
             <div>

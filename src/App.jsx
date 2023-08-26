@@ -19,10 +19,10 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/freelancer" element={<FreelancerPage />} />
         <Route path="/cookie" element={<CookiePage />} />
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/freelancer" element={<FreelancerPage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

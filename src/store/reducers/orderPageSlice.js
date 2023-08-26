@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { changePreloader } from "./mainPageSlice";
+import { transformWord } from "../../helpers/tranformWord";
 
 const initialState = {
   orderData: {
@@ -10,7 +11,7 @@ const initialState = {
     industries: "",
     date: "",
     email: "",
-    phoneNum: "",
+    phoneNum: "+",
   },
   goodSendData: true,
   typeDoc: 1,
@@ -23,9 +24,10 @@ export const sendDataOrder = createAsyncThunk(
     console.log(info);
     dispatch(changePreloader(true));
     try {
+      // console.log(info);
       const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
       const chatId = "775337596";
-      const messageText = `Новый заказ! \n \nServices : ${info.orderData.services}, \nindustries : ${info.orderData.industries}, \nсрок : ${info.orderData.date}, \nc языка : ${info.orderData.fromLang}, \nна язык : ${info.orderData.toLang}, \nemail : ${info.orderData.email}, \nnumber : ${info.orderData.phoneNum}`;
+      const messageText = transformWord(info);
       await axios({
         method: "POST",
         url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(

@@ -1,6 +1,11 @@
 .offers {
   padding: 60px 0;
 }
+@media screen and (max-width: 850px) {
+  .offers {
+    display: none;
+  }
+}
 .offers .offers__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,6 +15,11 @@
           justify-content: center;
   gap: 40px;
   padding: 20px 0;
+}
+@media screen and (max-width: 1150px) {
+  .offers .offers__inner {
+    padding: 20px 50px;
+  }
 }
 .offers .offers__inner > div {
   width: 340px;

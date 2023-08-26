@@ -8,7 +8,6 @@ import {
   toTakeLanguage,
   toTakeServices,
 } from "../../store/reducers/dataSelectSlice";
-
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
@@ -16,9 +15,6 @@ import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 const OrderPage = () => {
   const dispatch = useDispatch();
   const [doc, setDoc] = useState(null);
-  const text =
-    "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!";
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -66,7 +62,11 @@ const OrderPage = () => {
           </div>
         </div>
       ) : (
-        <GoodSendData text={text} />
+        <GoodSendData
+          text={
+            "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!"
+          }
+        />
       )}
       {preloader && <Preloader />}
     </>

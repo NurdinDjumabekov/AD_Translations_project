@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <p>AD Translations</p>
           </NavLink>
-          <ul>
+          <ul className={styles.first_ul}>
             <li>
               <h6>Pages</h6>
             </li>
@@ -63,7 +63,7 @@ const Footer = () => {
               <NavLink>Bishkek, Kyrgyzstan</NavLink>
             </li>
             <li>
-              <NavLink>Become our member</NavLink>
+              <NavLink to={"/freelancer"}>Become our member</NavLink>
             </li>
           </ul>
         </div>

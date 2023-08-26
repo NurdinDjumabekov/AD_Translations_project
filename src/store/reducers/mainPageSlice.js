@@ -12,9 +12,9 @@ export const toTakeDataUpdates = createAsyncThunk(
     try {
       const { data } = await axios({
         method: "GET",
-        // url: " https://6443c7ca90738aa7c0778850.mockapi.io/infoportal",
+        url: `https://64186f7a29e7e36438e8aa19.mockapi.io/items`,
       });
-      dispatch(changeDataUpdates(data));
+      // dispatch(changeDataUpdates(data));
       // console.log(data);
     } catch (err) {
       console.log(err);

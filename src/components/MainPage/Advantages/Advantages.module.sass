@@ -1,5 +1,5 @@
 .advantages
-    padding: 60px 0
+    padding: 60px 12px
     .advantages__inner
         ul
             display: flex
@@ -8,6 +8,8 @@
             flex-wrap: wrap
             gap: 30px
             margin: 40px 0 80px 0
+            @media screen and ( max-width: 450px )
+                margin: 20px 0 
             li
                 display: flex
                 padding: 16px
@@ -23,6 +25,8 @@
                     display: flex
                     justify-content: center
                     align-items: center
+                    @media screen and ( max-width: 550px )
+                        width: 90px
                     span
                         display: block
                         color: #FAFAFA
@@ -37,6 +41,9 @@
                         border-bottom: 3px solid #fff
                         width: 80%
                         margin: 0 auto
+                        @media screen and ( max-width: 550px )
+                            font-size: 25px
+                            text-align: left
                 h3
                     color: #151515
                     font-family: Roboto
@@ -45,15 +52,23 @@
                     font-weight: 500
                     line-height: 28px
                     margin-bottom: 5px
+                    overflow: hidden
+                    // background: red
+                    height: 25px
                 p
                     color: #151515
                     font-family: Roboto
                     font-size: 16px
                     font-style: normal
                     font-weight: 400
-                    line-height: 24px
+                    line-height: 18px
+                    width: 100%
+                    @media screen and ( max-width: 550px )
+                        font-size: 12px
     .lineBlock
         width: 100%
         border: 1px solid rgba(0, 0, 0, 0.10)
         height: 1px
         margin: 60px 0px
+        @media screen and ( max-width: 450px )
+            display: none

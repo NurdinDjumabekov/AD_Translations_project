@@ -24,6 +24,7 @@ const PersonalData = () => {
             })
           )
         }
+        value={dataFreelance.name}
       />
       <div>
         <div>

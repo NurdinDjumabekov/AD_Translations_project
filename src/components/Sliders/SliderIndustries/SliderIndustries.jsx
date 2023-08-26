@@ -69,7 +69,7 @@ const SliderIndustries = () => {
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
           <Slider {...settings}>
-            {data?.map((slide) => (
+            {data?.slice(0, 5).map((slide) => (
               <div key={slide.id}>
                 <div className={styles.sliderIndustries__mainImg}>
                   <img src={slide.img} alt="" />

@@ -1,11 +1,29 @@
 footer
     border-top: 0.5px solid  #007E1D
-    padding: 60px 0 80px
+    padding: 60px 50px 80px
     background-color: #004610
+    @media screen and ( max-width: 550px )
+        padding: 50px 12px
+        @media screen and ( max-width: 381px )
+            padding: 50px 0
+            
     .footer__inner
         display: flex
         justify-content: space-between
+        flex-wrap: wrap
+        // @media screen and ( max-width: 550px )
+        //     justify-content: start
+        //     gap: 30px
+        //     @media screen and ( max-width: 401px )
+        //         gap: 10px
+                
+            
         > a
+            display: block
+            @media screen and ( max-width: 700px )
+                padding: 20px
+                @media screen and ( max-width: 381px )
+                    padding: 12px
             > div
                 width: 60px
                 height: 60px
@@ -17,6 +35,10 @@ footer
                 font-weight: 500
                 line-height: 36px 
         ul
+            @media screen and ( max-width: 700px )
+                padding: 20px
+                @media screen and ( max-width: 381px )
+                    padding: 10px
             li
                 h6
                     color: #fafafa
@@ -34,6 +56,17 @@ footer
                     font-weight: 400
                     line-height: normal
                     margin: 10px 0 0 0
+                    @media screen and ( max-width: 420px )
+                        font-size: 14px
+        .first_ul
+            @media screen and ( max-width: 475px )
+                display: block
+                width: 190px
+                @media screen and ( max-width: 420px )
+                    width: 170px
+                    @media screen and ( max-width: 381px )
+                        padding: 0px 12px
+                        width: 155px
     .footer__icons
         display: flex
         justify-content: center
@@ -42,7 +75,7 @@ footer
         padding: 60px 0 0 0
         img
             display: block
-            width: 25px
-            height: 25px
+            width: 35px !important
+            height: 35px
             border: 1px solid #fff
             border-radius: 50%

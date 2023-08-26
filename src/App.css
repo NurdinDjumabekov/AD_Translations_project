@@ -68,7 +68,7 @@
   align-items: center;
   gap: 15px;
 }
-.prevPage {
+/* .prevPage {
   color: #929292 !important;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -95,4 +95,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+} */
+@media (max-width: 850px) {
+  .standartTitle {
+    font-weight: 600;
+    font-size: 30px;
+    padding: 0 0 0 12px;
+  }
+}
+@media (max-width: 480px) {
+  .standartTitle {
+    font-size: 20px;
+    text-align: left;
+  }
 }

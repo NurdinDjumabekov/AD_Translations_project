@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 li {
@@ -32,3 +32,9 @@ img {
   margin: 0 auto;
   cursor: pointer;
 }
+/* @media (max-width: 410px) {
+  .standartBtn {
+    width: 100%;
+    padding: 0;
+  }
+} */

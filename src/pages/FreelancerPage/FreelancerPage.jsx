@@ -5,7 +5,10 @@ import FreelancerLang from "../../components/FreelancerPage/FreelancerLang/Freel
 import { useDispatch, useSelector } from "react-redux";
 import { toTakeLanguage } from "../../store/reducers/dataSelectSlice";
 import Preloader from "../../components/Preloader/Preloader";
-import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
+import {
+  changeDataFreelance,
+  sendDataFreelancers,
+} from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
@@ -14,10 +17,8 @@ const FreelancerPage = () => {
   const dispatch = useDispatch();
   const { typeLanguage } = useSelector((state) => state.dataSelectSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
-  const text =
-    "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours.";
   const { preloader } = useSelector((state) => state.mainPageSlice);
-  const { allSelects, errorFreelanceSend } = useSelector(
+  const { selectsLangFrom, selectsLangTo, errorFreelanceSend } = useSelector(
     (state) => state.stateSendDataSlice
   );
   const { dataFreelancers_from, dataFreelancers_to, dataFreelance } =
@@ -36,12 +37,10 @@ const FreelancerPage = () => {
       errorFreelanceSend,
       dataFreelancers_from,
       dataFreelancers_to,
-      allSelects
+      selectsLangFrom,
+      selectsLangTo
     );
   };
-
-  // console.log(dataFreelancers_from);
-  // console.log(dataFreelancers_to);
 
   return (
     <>
@@ -64,7 +63,11 @@ const FreelancerPage = () => {
           </div>
         </div>
       ) : (
-        <GoodSendData text={text} />
+        <GoodSendData
+          text={
+            "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours."
+          }
+        />
       )}
       {preloader && <Preloader />}
     </>

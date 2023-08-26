@@ -8,9 +8,12 @@
 .sliderIndustries .sliderIndustries__inner ul {
   bottom: 0;
 }
+.sliderIndustries .sliderIndustries__inner li {
+  margin: 0;
+}
 .sliderIndustries .sliderIndustries__inner li > button {
   width: 10px;
-  height: 18px;
+  height: 10px;
 }
 .sliderIndustries .sliderIndustries__inner li > button::before {
   content: "";
@@ -32,7 +35,7 @@
 .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1) {
   width: 40px;
   height: 40px;
-  left: 38%;
+  left: 42%;
   z-index: 20;
 }
 .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1)::before {
@@ -46,7 +49,7 @@
 .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3) {
   width: 40px;
   height: 40px;
-  right: 38%;
+  right: 42%;
   z-index: 20;
 }
 .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3)::before {

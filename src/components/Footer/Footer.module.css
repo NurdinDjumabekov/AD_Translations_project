@@ -1,7 +1,17 @@
 footer {
   border-top: 0.5px solid #007E1D;
-  padding: 60px 0 80px;
+  padding: 60px 50px 80px;
   background-color: #004610;
+}
+@media screen and (max-width: 550px) {
+  footer {
+    padding: 50px 12px;
+  }
+}
+@media screen and (max-width: 550px) and (max-width: 381px) {
+  footer {
+    padding: 50px 0;
+  }
 }
 footer .footer__inner {
   display: -webkit-box;
@@ -10,6 +20,21 @@ footer .footer__inner {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+footer .footer__inner > a {
+  display: block;
+}
+@media screen and (max-width: 700px) {
+  footer .footer__inner > a {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 700px) and (max-width: 381px) {
+  footer .footer__inner > a {
+    padding: 12px;
+  }
 }
 footer .footer__inner > a > div {
   width: 60px;
@@ -22,6 +47,16 @@ footer .footer__inner > a p {
   font-style: normal;
   font-weight: 500;
   line-height: 36px;
+}
+@media screen and (max-width: 700px) {
+  footer .footer__inner ul {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 700px) and (max-width: 381px) {
+  footer .footer__inner ul {
+    padding: 10px;
+  }
 }
 footer .footer__inner ul li h6 {
   color: #fafafa;
@@ -41,6 +76,28 @@ footer .footer__inner ul li a {
   line-height: normal;
   margin: 10px 0 0 0;
 }
+@media screen and (max-width: 420px) {
+  footer .footer__inner ul li a {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 475px) {
+  footer .footer__inner .first_ul {
+    display: block;
+    width: 190px;
+  }
+}
+@media screen and (max-width: 475px) and (max-width: 420px) {
+  footer .footer__inner .first_ul {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 475px) and (max-width: 420px) and (max-width: 381px) {
+  footer .footer__inner .first_ul {
+    padding: 0px 12px;
+    width: 155px;
+  }
+}
 footer .footer__icons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,8 +113,8 @@ footer .footer__icons {
 }
 footer .footer__icons img {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 35px !important;
+  height: 35px;
   border: 1px solid #fff;
   border-radius: 50%;
 }

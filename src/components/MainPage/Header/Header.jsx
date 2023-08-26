@@ -16,7 +16,7 @@ const Header = () => {
               ​​by professional translators at the AD Translates foreign
               language translation agency.
             </p>
-            <button onClick={() => navigate("/order")}>Translate</button>
+            <button  onClick={() => navigate("/order")}>Translate</button>
           </div>
         </div>
       </div>

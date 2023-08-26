@@ -9,31 +9,26 @@ import {
 } from "../../../store/reducers/orderPageSlice";
 
 const ChoiceSelect = ({ props }) => {
-  const [lookSelect, setLookSelect] = useState(false);
-  const [choiceLang, setChoiceLang] = useState(props.initialText);
   const dispatch = useDispatch();
+  const [lookSelect, setLookSelect] = useState(false);
+  const [choiceLang, setChoiceLang] = useState(props?.initialText);
   const { orderData, clearData } = useSelector((state) => state.orderPageSlice);
 
   useEffect(() => {
     const updateOrderData = () => {
-      switch (props.textAbove) {
+      switch (props?.textAbove) {
         case "Services":
-          return { services: choiceLang };
+          return { services: choiceLang === "" ? "nurdin" : choiceLang };
         case "Industries":
           return { industries: choiceLang };
-        case "From":
-          return { fromLang: choiceLang };
         case "To":
           return { toLang: choiceLang };
-        default:
-          return {};
+        case "From":
+          return { fromLang: choiceLang };
       }
     };
     dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
   }, [choiceLang]);
-
-  console.log(orderData);
-  // console.log(props.initialText);
 
   const clickChoice = (lang) => {
     setLookSelect(false);
@@ -43,7 +38,7 @@ const ChoiceSelect = ({ props }) => {
 
   useEffect(() => {
     if (clearData) {
-      setChoiceLang(props.initialText);
+      setChoiceLang(props?.initialText);
     }
   }, [clearData]);
 

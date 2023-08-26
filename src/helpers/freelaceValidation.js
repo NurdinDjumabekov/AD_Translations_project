@@ -9,7 +9,8 @@ export const checkFullName = (
   errorFreelanceSend,
   dataFreelancers_from,
   dataFreelancers_to,
-  allSelects
+  selectsLangFrom,
+  selectsLangTo
 ) => {
   if (dataFreelance.name !== "") {
     checkEmail(
@@ -20,7 +21,8 @@ export const checkFullName = (
       errorFreelanceSend,
       dataFreelancers_from,
       dataFreelancers_to,
-      allSelects
+      selectsLangFrom,
+      selectsLangTo
     );
     ///////////////////////
   } else {
@@ -49,7 +51,8 @@ export const checkEmail = (
   errorFreelanceSend,
   dataFreelancers_from,
   dataFreelancers_to,
-  allSelects
+  selectsLangFrom,
+  selectsLangTo
 ) => {
   const regEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   if (regEmail.test(dataFreelance.email)) {
@@ -61,7 +64,8 @@ export const checkEmail = (
       errorFreelanceSend,
       dataFreelancers_from,
       dataFreelancers_to,
-      allSelects
+      selectsLangFrom,
+      selectsLangTo
     );
   } else {
     dispatch(
@@ -89,20 +93,31 @@ export const checkNumPhone = (
   errorFreelanceSend,
   dataFreelancers_from,
   dataFreelancers_to,
-  allSelects
+  selectsLangFrom,
+  selectsLangTo
 ) => {
   const regNumPhone = /[0-9]{7,15}/;
   if (regNumPhone.test(dataFreelance.phone)) {
+    // console.log(
+    //   arrangementData({
+    //     fromLang: checkSendData({
+    //       selectsLangFrom,
+    //       dataFreelancers_from,
+    //       type: "from",
+    //     }),
+    //   }),
+    //   "tfyghuijlok;"
+    // );
     dispatch(
       sendDataFreelancers({
         selects: arrangementData({
           fromLang: checkSendData({
-            allSelects,
+            selectsLangFrom,
             dataFreelancers_from,
             type: "from",
           }),
           toLang: checkSendData({
-            allSelects,
+            selectsLangTo,
             dataFreelancers_to,
             type: "to",
           }),

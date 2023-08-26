@@ -4,15 +4,18 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image from "../../../assets/images/mainPage/teams.svg";
+import { toTakeDataUpdates } from "../../../store/reducers/mainPageSlice";
+import { useDispatch } from "react-redux";
 
 const Updates = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState([
     {
       id: 1,
       title: "John Doe1",
       iconText: "Marketplace for ordering and sending goods",
       img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
+      text: "Exciting news! We have expanded our translation services to include more languages.jasjd lalsjdlkajks jdasldkasldal jldjaklsdkasldhashdahs dhalshdklashl l l l  ld o jaod joas jodjasdaps",
       hashtag: ["Translation", "Team", "news"],
       icon: image,
     },
@@ -72,7 +75,8 @@ const Updates = () => {
     },
   ]);
   useEffect(() => {
-    setData(data?.slice(0, 8));
+    setData(data?.slice(0, 5));
+    dispatch(toTakeDataUpdates());
   }, []);
 
   const settings = {
@@ -109,7 +113,7 @@ const Updates = () => {
                 </div>
                 <p>{slide.text}</p>
                 <div className={styles.updates__hashtag}>
-                  {slide.hashtag?.map((item, i) => (
+                  {slide.hashtag?.slice(0, 4).map((item, i) => (
                     <p key={i}>{item}</p>
                   ))}
                 </div>

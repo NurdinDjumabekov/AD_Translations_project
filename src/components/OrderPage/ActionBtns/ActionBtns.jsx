@@ -21,7 +21,7 @@ const ActionBtns = ({ doc, setDoc }) => {
       changeOrderData({
         date: "",
         email: "",
-        phoneNum: "",
+        phoneNum: "+",
       })
     );
     dispatch(changeTypeDoc(1));
@@ -49,10 +49,6 @@ const ActionBtns = ({ doc, setDoc }) => {
   };
 
   // все выборочное селекты на валидацию не проверяю, ибо чел не может выбрать что-то пустое
-
-  // useEffect(() => {
-  //   clearAllData();
-  // }, []);
 
   return (
     <div className={styles.actionBtns}>

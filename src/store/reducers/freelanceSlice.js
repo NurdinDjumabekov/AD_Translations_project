@@ -32,7 +32,6 @@ const initialState = {
       levelLang: "A1",
     },
   },
-  // data
   dataFreelance: {
     name: "",
     email: "",
@@ -58,6 +57,8 @@ export const sendDataFreelancers = createAsyncThunk(
       });
       dispatch(changePreloader(false));
       dispatch(changeGoodSendData(false));
+      dispatch(changeDataFreelance({ name: "", email: "", phone: "" }));
+      /// очищаю поля
     } catch (err) {
       console.error(err);
       dispatch(changePreloader(false));
