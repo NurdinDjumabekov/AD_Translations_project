@@ -2,8 +2,20 @@
   width: 580px;
   margin: 0 auto;
 }
+@media screen and (max-width: 600px) {
+  .freelancerLang {
+    margin: 30px auto;
+    width: 340px;
+  }
+}
 .freelancerLang .freelancerLang__from {
   margin: 20px 0;
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__from {
+    width: 340px;
+    margin: 0 auto;
+  }
 }
 .freelancerLang .freelancerLang__from > div {
   display: -webkit-box;
@@ -12,6 +24,23 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__from > div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__from > div > div:nth-child(2) {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__from > div > div:nth-child(2) > div {
+    width: 70px;
+  }
 }
 .freelancerLang .freelancerLang__from > p {
   color: #151515;
@@ -22,8 +51,20 @@
   line-height: normal;
   margin: 0 0 5px 0;
 }
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__from > p {
+    width: 340px;
+    margin: 0 auto;
+  }
+}
 .freelancerLang .freelancerLang__to {
   margin: 30px 0;
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__to {
+    width: 340px;
+    margin: 30px auto 0;
+  }
 }
 .freelancerLang .freelancerLang__to > div {
   display: -webkit-box;
@@ -32,10 +73,36 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 580px;
 }
-.freelancerLang .freelancerLang__to > div > div > div {
-  width: 272px;
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__to > div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.freelancerLang .freelancerLang__to > div > div:nth-child(1) > div {
+  width: 268px;
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__to > div > div:nth-child(1) > div img {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__to > div > div:nth-child(2) {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .freelancerLang .freelancerLang__to > div > div:nth-child(2) > div {
+    width: 70px;
+  }
+  .freelancerLang .freelancerLang__to > div > div:nth-child(2) > div img {
+    width: 25px;
+    height: 25px;
+  }
 }
 .freelancerLang .freelancerLang__to > p {
   color: #151515;

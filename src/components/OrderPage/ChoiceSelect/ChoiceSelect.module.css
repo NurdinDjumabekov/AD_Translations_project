@@ -1,3 +1,12 @@
+.choiceSelect {
+  margin: 0 auto;
+}
+@media screen and (max-width: 750px) {
+  .choiceSelect > p {
+    width: 340px;
+    margin: 5px auto;
+  }
+}
 .choiceSelect .choiceSelect_from {
   width: 350px;
   height: 40px;
@@ -15,6 +24,12 @@
           justify-content: space-between;
   padding: 5px 12px;
   cursor: pointer;
+}
+@media screen and (max-width: 750px) {
+  .choiceSelect .choiceSelect_from {
+    margin: 0 auto;
+    width: 340px;
+  }
 }
 .choiceSelect .choiceSelect_from p {
   width: 60%;

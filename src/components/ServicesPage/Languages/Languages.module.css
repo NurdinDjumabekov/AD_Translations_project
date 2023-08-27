@@ -1,6 +1,11 @@
 .languages {
   padding: 60px 0px;
 }
+@media screen and (max-width: 600px) {
+  .languages h4 {
+    padding: 0 0 0 30px;
+  }
+}
 .languages .languages__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,6 +14,16 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 100px;
+}
+@media screen and (max-width: 780px) {
+  .languages .languages__inner {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 780px) and (max-width: 600px) {
+  .languages .languages__inner {
+    display: none;
+  }
 }
 .languages .languages__inner > div {
   margin: 0 0 60px 0;
@@ -62,4 +77,31 @@
 }
 .languages .languages__inner > div .pushContent {
   margin-top: 30px;
+}
+.languages .adaptationLanguages {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .languages .adaptationLanguages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 50px;
+  }
+  .languages .adaptationLanguages p {
+    color: var(--text, #151515);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .languages > button {
+    display: none !important;
+  }
 }

@@ -11,6 +11,7 @@ export const DataUsers = () => {
   return (
     <div className={styles.blockData}>
       <label>
+        <i className={styles.blockData__iconText}>E-mail</i>
         <input
           type="email"
           className={errorSend.email ? styles.badInput : ""}
@@ -27,6 +28,7 @@ export const DataUsers = () => {
         />
       </label>
       <label>
+        <i className={styles.blockData__iconText}>Telegram Phone Number</i>
         <input
           className={errorSend.phoneNum ? styles.badInput : ""}
           onChange={(e) =>

@@ -1,9 +1,19 @@
 .sliderIndustries
     padding: 60px 0
+    @media screen and ( max-width: 450px )
+        padding: 0
+    h2
+        @media screen and ( max-width: 480px )
+            padding: 0 0 0 40px
+            @media screen and ( max-width: 450px )
+                padding: 0 0 0 30px
+                margin: 0
     .sliderIndustries__inner
         height: 450px
         // background: blue
         position: relative !important
+        @media screen and ( max-width: 450px )
+            height: 320px
         ul
             bottom: 0
         li
@@ -23,6 +33,8 @@
             width: 100%
             height: 400px
             position: static !important
+            @media screen and ( max-width: 450px )
+                height: 300px
             button
                 bottom: -28px !important
                 top: auto !important 
@@ -32,6 +44,14 @@
                 height: 40px
                 left: 42%
                 z-index: 20
+                @media screen and ( max-width: 1090px )
+                    left: 39%
+                    @media screen and ( max-width: 790px )
+                        left: 35%
+                        @media screen and ( max-width: 600px )
+                            width: 0
+                            height: 0
+
                 &::before
                     content: ""
                     display: block
@@ -39,12 +59,20 @@
                     width: 30px
                     height: 30px
                     background-repeat: no-repeat
+                    @media screen and ( max-width: 600px )
+                        width: 0
+                        height: 0
             > button:nth-child(3)
                 // background: gray
                 width: 40px
                 height: 40px
                 right: 42%
                 z-index: 20
+                @media screen and ( max-width: 1090px )
+                    right: 39%
+                    @media screen and ( max-width: 790px )
+                        right: 35%
+                        
                 &::before
                     content: ""
                     display: block
@@ -52,6 +80,8 @@
                     width: 30px
                     height: 30px
                     background-repeat: no-repeat
+                    @media screen and ( max-width: 600px )
+                        display: none
             > div
                 // background: green
                 height: 400px
@@ -65,23 +95,34 @@
                         display: flex
                         justify-content: center
                         margin: 0 5px
+                        @media screen and ( max-width: 450px )
+                            min-width: 250px !important
+                            margin: 0 20px
                         > div
                             // background: brown
                             height: 400px
                             width: 350px
                             display: flex
                             align-items: center
+                            @media screen and ( max-width: 450px )
+                                width: 250px 
+                                height: 300px
                             > div
-                                // background-color: black
+                                background-color: black
                                 width: 350px
                                 height: 280px
                                 border-radius: 6px
                                 background: #FAFAfa
                                 border: 1px solid #DEDEDE
                                 margin: 0 30px
+                                @media screen and ( max-width: 450px )
+                                    width: 220px
+                                    height: 240px
                                 .sliderIndustries__mainImg
                                     width: 100%
                                     height: 200px
+                                    @media screen and ( max-width: 450px )
+                                        height: 160px
                                     img
                                         width: 100%
                                         height: 100%
@@ -101,6 +142,9 @@
                                         white-space: nowrap
                                         text-overflow: ellipsis
                                         max-width: 95%
+                                        @media screen and ( max-width: 450px )
+                                            font-size: 16px
+                                            font-weight: 500
                                     p
                                         overflow: hidden
                                         color: var(--text, #151515)
@@ -112,5 +156,10 @@
                                         line-height: 28px
                                         height: 30px
                                         // background-color: blue
+                                        @media screen and ( max-width: 450px )
+                                            font-size: 12px
+                                            line-height: 16px
+                                            font-weight: 400
+                                            // background: red
                                         
-                                
+  

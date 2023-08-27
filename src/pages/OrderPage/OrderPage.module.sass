@@ -1,9 +1,12 @@
 .order
-    // height: 100vh
     background-image: url("../../assets/images/orderPage/back-d_order.jpg")
     padding: 100px 0
     background-repeat: no-repeat
     background-size: cover
+    @media screen and ( max-width: 750px )
+        padding: 60px 12px 30px
+        @media screen and ( max-width: 480px )
+            background: #fff 
     h5
         color: #FAFAFA
         text-align: center
@@ -12,6 +15,8 @@
         font-style: normal
         font-weight: 700
         line-height: normal
+        @media screen and ( max-width: 750px )
+            display: none
     i
         display: block
         color: #FAFAFA
@@ -22,13 +27,18 @@
         font-weight: 400
         line-height: 24px
         margin: 10px 0 20px
+        @media screen and ( max-width: 750px )
+            display: none
     .order__inner
-        width: 750px
+        max-width: 750px
         margin: 0 auto
         .order__services
             display: flex
             justify-content: center
             gap: 30px
+            @media screen and ( max-width: 750px )
+                display: block
+                
    
 
         

@@ -12,6 +12,11 @@
   gap: 60px;
   margin: 60px 0 0 0;
 }
+@media screen and (max-width: 750px) {
+  .actionBtns {
+    margin: 50px 0 0 0;
+  }
+}
 .actionBtns button {
   width: 150px;
   height: 40px;
@@ -26,8 +31,18 @@
   line-height: normal;
   cursor: pointer;
 }
+@media screen and (max-width: 750px) {
+  .actionBtns button {
+    width: 340px;
+  }
+}
 .actionBtns button:nth-child(1) {
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid var(--background, #FAFAFA);
+}
+@media screen and (max-width: 750px) {
+  .actionBtns button:nth-child(1) {
+    display: none;
+  }
 }

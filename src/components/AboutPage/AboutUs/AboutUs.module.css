@@ -1,8 +1,21 @@
 .aboutUs {
-  padding: 60px 0;
+  padding: 60px 30px;
+}
+@media screen and (max-width: 550px) {
+  .aboutUs {
+    padding: 50px 12px 0;
+  }
+}
+.aboutUs h2 {
+  padding: 0;
 }
 .aboutUs .aboutUs__inner {
   padding: 60px 0 0 0;
+}
+@media screen and (max-width: 550px) {
+  .aboutUs .aboutUs__inner {
+    padding: 0;
+  }
 }
 .aboutUs .aboutUs__inner > div {
   display: -webkit-box;
@@ -14,10 +27,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 60px;
+  margin: 0 0 60px 0;
+}
+@media screen and (max-width: 950px) {
+  .aboutUs .aboutUs__inner > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 0px 0;
+  }
 }
 .aboutUs .aboutUs__inner > div > div:nth-child(1) {
   width: 55%;
+}
+@media screen and (max-width: 950px) {
+  .aboutUs .aboutUs__inner > div > div:nth-child(1) {
+    width: 90%;
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 950px) and (max-width: 550px) {
+  .aboutUs .aboutUs__inner > div > div:nth-child(1) {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 .aboutUs .aboutUs__inner > div > div:nth-child(1) h4 {
   color: #151515;
@@ -36,9 +72,29 @@
   font-weight: 400;
   line-height: 24px;
 }
+@media screen and (max-width: 550px) {
+  .aboutUs .aboutUs__inner > div > div:nth-child(1) p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 .aboutUs .aboutUs__inner > div > div:nth-child(2) {
   width: 35%;
   border-radius: 8px;
+}
+@media screen and (max-width: 950px) {
+  .aboutUs .aboutUs__inner > div > div:nth-child(2) {
+    width: 90%;
+    margin: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 950px) and (max-width: 550px) {
+  .aboutUs .aboutUs__inner > div > div:nth-child(2) {
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 .aboutUs .aboutUs__inner > div > div:nth-child(2) img {
   width: 100%;
@@ -49,4 +105,11 @@
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+@media screen and (max-width: 950px) {
+  .aboutUs .aboutUs__inner > div .aboutUs__content {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
 }

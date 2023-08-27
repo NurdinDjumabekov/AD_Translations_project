@@ -122,5 +122,6 @@ export const sortLanguages = (
   newAllArr.push(arr1);
   newAllArr.push(arr2);
   newAllArr.push(arr3);
-  return newAllArr;
+  const data = [newAllArr, arr];
+  return data;
 };

@@ -8,6 +8,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 12px;
   margin: 20px 0px;
 }
@@ -29,6 +31,18 @@
   font-weight: 400;
   line-height: 20px;
 }
+@media screen and (max-width: 750px) {
+  .docType button {
+    width: 162px;
+    text-align: left;
+    padding: 0 0 0 12px;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 480px) {
+  .docType button {
+    background: #929292;
+  }
+}
 .docType .activeBtn {
   background-color: #007E1D;
   color: #fafafa;
@@ -42,6 +56,28 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 30px;
+}
+@media screen and (max-width: 750px) {
+  .order__language {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .order__language > div {
+    max-width: 165px;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  .order__language > div > p {
+    width: 160px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .order__language > div > div {
+    width: 165px !important;
+    margin: 10px 0 0 0 !important;
+  }
 }
 
 .typeSendData {
@@ -57,6 +93,16 @@
   gap: 30px;
   margin: 20px 0px;
 }
+@media screen and (max-width: 750px) {
+  .typeSendData {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 12px;
+    margin: 10px 0 0 0;
+  }
+}
 .typeSendData .sendDate > p {
   color: #FFF;
   font-family: Roboto;
@@ -65,6 +111,11 @@
   font-weight: 400;
   line-height: normal;
   margin-bottom: 5px;
+}
+@media screen and (max-width: 480px) {
+  .typeSendData .sendDate > p {
+    color: #151515;
+  }
 }
 .typeSendData .sendDate > div {
   width: 350px;
@@ -80,6 +131,11 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0 0 0 12px;
+}
+@media screen and (max-width: 750px) {
+  .typeSendData .sendDate > div {
+    width: 340px;
+  }
 }
 .typeSendData .sendDate > div p {
   overflow: hidden;
@@ -112,6 +168,12 @@
 .typeSendData .sendDate label {
   display: block;
   position: relative;
+  width: 350px;
+}
+@media screen and (max-width: 750px) {
+  .typeSendData .sendDate label {
+    width: 340px;
+  }
 }
 .typeSendData .sendDate label input {
   width: 350px;
@@ -122,10 +184,15 @@
   padding: 0 85px 0 10px;
   font-size: 18px;
 }
+@media screen and (max-width: 750px) {
+  .typeSendData .sendDate label input {
+    width: 340px;
+  }
+}
 .typeSendData .sendDate label .badInput {
   background-color: #F00;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 .typeSendData .sendDate label button {
   position: absolute;

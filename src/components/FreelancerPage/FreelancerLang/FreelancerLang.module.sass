@@ -1,11 +1,25 @@
 .freelancerLang
     width: 580px
     margin: 0 auto
+    @media screen and ( max-width: 600px )
+        margin: 30px auto
+        width: 340px
     .freelancerLang__from
         margin: 20px 0
+        @media screen and ( max-width: 600px )
+            width: 340px
+            margin: 0 auto
         > div
             display: flex
             justify-content: space-between
+            @media screen and ( max-width: 600px )
+                justify-content: center
+            > div:nth-child(2)
+                @media screen and ( max-width: 600px )
+                    width: 70px
+                > div
+                    @media screen and ( max-width: 600px )
+                        width: 70px
         > p
             color: #151515
             font-family: Roboto
@@ -13,17 +27,36 @@
             font-style: normal
             font-weight: 500
             line-height: normal
-            margin: 0 0 5px 0         
+            margin: 0 0 5px 0 
+            @media screen and ( max-width: 600px )
+                width: 340px
+                margin: 0 auto
     .freelancerLang__to
         margin: 30px 0
+        @media screen and ( max-width: 600px )
+            width: 340px
+            margin: 30px auto 0
         > div
             display: flex
             justify-content: space-between
-            // background-color: red
-            width: 580px
-            > div
+            @media screen and ( max-width: 600px )
+                justify-content: center
+            > div:nth-child(1)
                 > div
-                    width: 272px
+                    width: 268px
+                    img
+                        @media screen and ( max-width: 600px )
+                            width: 25px
+                            height: 25px
+            > div:nth-child(2)
+                @media screen and ( max-width: 600px )
+                    width: 70px
+                > div
+                    @media screen and ( max-width: 600px )
+                        width: 70px
+                        img
+                            width: 25px
+                            height: 25px
         > p
             color: #151515
             font-family: Roboto
@@ -45,3 +78,4 @@
         padding: 8px 20px
         margin: 10px 0 0 0 
         cursor: pointer
+            

@@ -24,6 +24,11 @@
           align-items: center;
   padding: 0 12px;
 }
+@media screen and (max-width: 750px) {
+  .blockForSend {
+    width: 340px;
+  }
+}
 .blockForSend p {
   overflow: hidden;
   color: #151515;
@@ -85,6 +90,11 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 750px) {
+  .linksBlock {
+    width: 340px;
+  }
+}
 .linksBlock .linksInput {
   width: 350px;
   height: 40px;
@@ -94,4 +104,9 @@
   padding: 0 10px;
   font-size: 18px;
   left: 0 !important;
+}
+@media screen and (max-width: 750px) {
+  .linksBlock .linksInput {
+    width: 340px;
+  }
 }

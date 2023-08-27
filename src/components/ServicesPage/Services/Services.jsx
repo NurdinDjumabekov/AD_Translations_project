@@ -7,12 +7,14 @@ import {
   toTakeDataServices,
 } from "../../../store/reducers/servicesPageSlice";
 import { addDataID } from "../../../helpers/addDataID";
+import SelectServices from "../SelectServices/SelectServices";
 
 const Services = () => {
   const dispatch = useDispatch();
   const { dataServices, dataForSearch, search } = useSelector(
     (state) => state.servicesPageSlice
   );
+  console.log(dataServices, "dataServices");
 
   useEffect(() => {
     dispatch(toTakeAllDataServices());
@@ -26,8 +28,6 @@ const Services = () => {
   }, [search]);
 
   const [count, setCount] = useState(1);
-  // console.log(count, "count");
-  // console.log(dataServices, "dataServices");
 
   return (
     <div className={styles.services}>
@@ -57,6 +57,7 @@ const Services = () => {
               ))
             )}
           </div>
+          <SelectServices setCount={setCount} />
           <div className={styles.services__everyContent}>
             {dataServices?.length === 0 ? (
               <p className={styles.empty__content}>ничего не найдено</p>

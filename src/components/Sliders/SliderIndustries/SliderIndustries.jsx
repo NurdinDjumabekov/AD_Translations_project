@@ -51,32 +51,31 @@ const SliderIndustries = () => {
 
   // сократит данные до 7ми элементов
 
-  const settings = {
+  const mySetting = {
     infinite: true,
     slidesToShow: 4,
     speed: 300,
     slidesToScroll: 1,
-    arrows: true,
     dots: true,
     centerMode: false,
     variableWidth: true,
-    autoplay: true,
     autoplaySpeed: 2000,
+    autoplay: true,
   };
   return (
     <div className={styles.sliderIndustries}>
       <h2 className="standartTitle">Industries</h2>
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
-          <Slider {...settings}>
-            {data?.slice(0, 5).map((slide) => (
-              <div key={slide.id}>
+          <Slider {...mySetting}>
+            {data?.slice(0, 6)?.map((item) => (
+              <div key={item.id}>
                 <div className={styles.sliderIndustries__mainImg}>
-                  <img src={slide.img} alt="" />
+                  <img src={item.img} alt="img" />
                 </div>
                 <div className={styles.sliderIndustries__text}>
-                  <h4>{slide.iconText}</h4>
-                  <p>{slide.text}</p>
+                  <h4>{item.iconText}</h4>
+                  <p>{item.text}</p>
                 </div>
               </div>
             ))}

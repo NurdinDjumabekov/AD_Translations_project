@@ -29,7 +29,7 @@ const AboutUs = () => {
   return (
     <div className={styles.aboutUs}>
       <div className="container">
-        <h4 className="standartTitle">About us</h4>
+        <h2 className="standartTitle">About us</h2>
         <div className={styles.aboutUs__inner}>
           {arr.map((info) => (
             <div key={info.id}>

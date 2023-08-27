@@ -65,7 +65,7 @@ const SliderReviews = () => {
   // сократит данные до 7ми элементов
 
   const settings = {
-    // infinite: true,
+    infinite: true,
     slidesToShow: 2,
     speed: 300,
     slidesToScroll: 1,
@@ -92,7 +92,7 @@ const SliderReviews = () => {
                   <div className={styles.sliderIndustries__mainImg}>
                     <img src={slide.img} alt="user" />
                   </div>
-                  <h5>{slide.title}</h5>
+                  <h5>{slide.title} </h5>
                 </div>
                 <p>{slide.text}</p>
                 <span>{slide.date}</span>

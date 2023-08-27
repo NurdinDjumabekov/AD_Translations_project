@@ -2,6 +2,11 @@
   width: 580px;
   margin: 0 auto;
 }
+@media screen and (max-width: 600px) {
+  .personalData {
+    width: 340px;
+  }
+}
 .personalData span {
   display: block;
   color: #151515;
@@ -31,16 +36,26 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 600px) {
+  .personalData > div {
+    display: block;
+  }
+}
 .personalData > div > div {
   margin: 20px 0;
 }
 .personalData > div > div input {
-  width: 272px;
+  width: 268px;
   height: 44px;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: #FAFAFA;
   padding: 0 12px;
+}
+@media screen and (max-width: 600px) {
+  .personalData > div > div input {
+    width: 100%;
+  }
 }
 .personalData .errInput {
   background: red;

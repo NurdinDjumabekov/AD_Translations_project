@@ -7,6 +7,7 @@
     font-weight: 400
     line-height: normal
     margin-bottom: 5px
+    
 .blockForSend
     border-radius: 6px
     border: 1px solid rgba(0, 0, 0, 0.10)
@@ -17,6 +18,9 @@
     display: flex
     align-items: center
     padding: 0 12px 
+    @media screen and ( max-width: 750px )
+        width: 340px
+
     p
         overflow: hidden
         color: #151515
@@ -67,6 +71,8 @@
     position: relative
     display: flex
     align-items: center
+    @media screen and ( max-width: 750px )
+        width: 340px
     .linksInput
         width: 350px
         height: 40px
@@ -76,3 +82,5 @@
         padding:0 10px
         font-size: 18px
         left: 0 !important
+        @media screen and ( max-width: 750px )
+            width: 340px
