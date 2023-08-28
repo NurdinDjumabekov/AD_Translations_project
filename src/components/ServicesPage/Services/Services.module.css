@@ -2,7 +2,12 @@
   padding: 60px 0px;
   border-bottom: 1px solid #DEDEDE;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
+  .services {
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 600px) and (max-width: 450px) {
   .services {
     border: none;
   }

@@ -25,6 +25,11 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 600px) {
+  .header .header__inner {
+    height: 620px;
+  }
+}
 .header .header__inner > div {
   max-width: 470px;
 }

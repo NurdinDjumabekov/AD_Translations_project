@@ -8,7 +8,6 @@
         position: relative !important
         @media screen and ( max-width: 550px )
             height: 390px
-            
         ul
             bottom: 0
         li
@@ -24,6 +23,9 @@
                     margin: 4px 0 0 0
                     background: green
                     border-radius: 50%
+                    @media screen and ( max-width: 670px )
+                        width: 8px
+                        height: 8px
         > div
             // background: red
             max-width: 100%
@@ -43,8 +45,9 @@
                 z-index: 20
                 @media screen and ( max-width: 1040px )
                     left: 38%
-                    @media screen and ( max-width: 666px )
-                        left: 28%
+                    @media screen and ( max-width: 750px )
+                        height: 0
+                        width: 0
                 &::before
                     content: ""
                     display: block
@@ -52,6 +55,8 @@
                     width: 30px
                     height: 30px
                     background-repeat: no-repeat
+                    @media screen and ( max-width: 750px )
+                        display: none
             > button:nth-child(3)
                 // background: gray
                 width: 40px
@@ -60,8 +65,9 @@
                 z-index: 20
                 @media screen and ( max-width: 1040px )
                     right: 38%
-                    @media screen and ( max-width: 666px )
-                        right: 28%
+                    @media screen and ( max-width: 750px )
+                        height: 0
+                        width: 0
                 &::before
                     content: ""
                     display: block
@@ -69,6 +75,9 @@
                     width: 30px
                     height: 30px
                     background-repeat: no-repeat
+                    @media screen and ( max-width: 750px )
+                        display: none
+
             > div
                 // background: green
                 height: 600px

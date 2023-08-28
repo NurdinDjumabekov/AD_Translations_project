@@ -33,6 +33,12 @@
   background: green;
   border-radius: 50%;
 }
+@media screen and (max-width: 670px) {
+  .updates .updates__inner li > button::before {
+    width: 8px;
+    height: 8px;
+  }
+}
 .updates .updates__inner > div {
   max-width: 100%;
   height: 600px;
@@ -59,9 +65,10 @@
     left: 38%;
   }
 }
-@media screen and (max-width: 1040px) and (max-width: 666px) {
+@media screen and (max-width: 1040px) and (max-width: 750px) {
   .updates .updates__inner > div > button:nth-child(1) {
-    left: 28%;
+    height: 0;
+    width: 0;
   }
 }
 .updates .updates__inner > div > button:nth-child(1)::before {
@@ -71,6 +78,11 @@
   width: 30px;
   height: 30px;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(1)::before {
+    display: none;
+  }
 }
 .updates .updates__inner > div > button:nth-child(3) {
   width: 40px;
@@ -83,9 +95,10 @@
     right: 38%;
   }
 }
-@media screen and (max-width: 1040px) and (max-width: 666px) {
+@media screen and (max-width: 1040px) and (max-width: 750px) {
   .updates .updates__inner > div > button:nth-child(3) {
-    right: 28%;
+    height: 0;
+    width: 0;
   }
 }
 .updates .updates__inner > div > button:nth-child(3)::before {
@@ -95,6 +108,11 @@
   width: 30px;
   height: 30px;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(3)::before {
+    display: none;
+  }
 }
 .updates .updates__inner > div > div {
   height: 600px;

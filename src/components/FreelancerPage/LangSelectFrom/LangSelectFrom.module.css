@@ -1,9 +1,8 @@
 .langSelectFrom {
-  width: 268px;
+  width: 272px;
   margin: 5px 0;
 }
 .langSelectFrom .LangSelectFrom__from {
-  width: 268px;
   height: 40px;
   background: #fafafa;
   border-radius: 6px;
@@ -50,8 +49,10 @@
     width: 25px;
   }
 }
-.langSelectFrom div:nth-child(2) {
-  width: 268px;
+@media screen and (max-width: 600px) {
+  .langSelectFrom div:nth-child(2) {
+    width: 272px;
+  }
 }
 .langSelectFrom .activeSelect {
   overflow: hidden;

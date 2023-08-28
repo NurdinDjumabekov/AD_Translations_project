@@ -7,6 +7,7 @@
         padding: 60px 12px 30px
         @media screen and ( max-width: 480px )
             background: #fff 
+            padding: 20px 12px 40px
     h5
         color: #FAFAFA
         text-align: center
@@ -36,8 +37,13 @@
             display: flex
             justify-content: center
             gap: 30px
+            // чисто для мобилки
             @media screen and ( max-width: 750px )
                 display: block
+                > div
+                    > div:nth-child(3)
+                        left: 50%
+                        transform: translate(-50%) 
                 
    
 

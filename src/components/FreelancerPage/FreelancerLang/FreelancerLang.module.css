@@ -5,7 +5,7 @@
 @media screen and (max-width: 600px) {
   .freelancerLang {
     margin: 30px auto;
-    width: 340px;
+    width: 350px;
   }
 }
 .freelancerLang .freelancerLang__from {
@@ -13,7 +13,7 @@
 }
 @media screen and (max-width: 600px) {
   .freelancerLang .freelancerLang__from {
-    width: 340px;
+    width: 350px;
     margin: 0 auto;
   }
 }
@@ -30,6 +30,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 5px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -51,18 +52,12 @@
   line-height: normal;
   margin: 0 0 5px 0;
 }
-@media screen and (max-width: 600px) {
-  .freelancerLang .freelancerLang__from > p {
-    width: 340px;
-    margin: 0 auto;
-  }
-}
 .freelancerLang .freelancerLang__to {
   margin: 30px 0;
 }
 @media screen and (max-width: 600px) {
   .freelancerLang .freelancerLang__to {
-    width: 340px;
+    width: 350px;
     margin: 30px auto 0;
   }
 }
@@ -79,23 +74,24 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 5px;
+  }
+  .freelancerLang .freelancerLang__to > div > div:nth-child(1) > div {
+    width: 272px;
   }
 }
-.freelancerLang .freelancerLang__to > div > div:nth-child(1) > div {
-  width: 268px;
-}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (max-width: 600px) {
   .freelancerLang .freelancerLang__to > div > div:nth-child(1) > div img {
     width: 25px;
     height: 25px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (max-width: 600px) {
   .freelancerLang .freelancerLang__to > div > div:nth-child(2) {
     width: 70px;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (max-width: 600px) {
   .freelancerLang .freelancerLang__to > div > div:nth-child(2) > div {
     width: 70px;
   }

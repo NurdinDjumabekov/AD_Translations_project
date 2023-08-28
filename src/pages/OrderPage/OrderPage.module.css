@@ -12,6 +12,7 @@
 @media screen and (max-width: 750px) and (max-width: 480px) {
   .order {
     background: #fff;
+    padding: 20px 12px 40px;
   }
 }
 .order h5 {
@@ -60,5 +61,10 @@
 @media screen and (max-width: 750px) {
   .order .order__inner .order__services {
     display: block;
+  }
+  .order .order__inner .order__services > div > div:nth-child(3) {
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
   }
 }

@@ -49,7 +49,6 @@ const MenuBurger = () => {
   };
 
   useEffect(() => {
-    console.log(location.pathname, "-----");
     if (location.pathname === "/") {
       setMainTitlePage("AD Translations");
     } else if (location.pathname === "/services") {
@@ -66,6 +65,8 @@ const MenuBurger = () => {
       setMainTitlePage("Terms and Conditions");
     } else if (location.pathname === "/privacy") {
       setMainTitlePage("Privacy Policy");
+    } else {
+      setMainTitlePage("AD Translations");
     }
   }, [location.pathname]);
   return (

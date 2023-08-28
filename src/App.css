@@ -94,6 +94,7 @@
 }
 @media (max-width: 750px) {
   .mySelect {
+    display: block;
     width: 340px;
     margin: 10px auto 0;
   }
