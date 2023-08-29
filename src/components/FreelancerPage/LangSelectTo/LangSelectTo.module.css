@@ -1,9 +1,13 @@
 .langSelectTo {
-  width: 272px;
+  width: 300px;
   margin: 5px 0;
 }
+@media screen and (max-width: 650px) {
+  .langSelectTo {
+    width: auto;
+  }
+}
 .langSelectTo .langSelectTo__from {
-  width: 272px;
   height: 40px;
   background: #fafafa;
   border-radius: 6px;
@@ -19,6 +23,11 @@
           justify-content: space-between;
   padding: 5px 12px;
   cursor: pointer;
+}
+@media screen and (max-width: 650px) {
+  .langSelectTo .langSelectTo__from {
+    width: 70px;
+  }
 }
 .langSelectTo .langSelectTo__from p {
   width: 60%;
@@ -44,8 +53,21 @@
   width: 40px;
   height: 40px;
 }
+@media screen and (max-width: 650px) {
+  .langSelectTo .langSelectTo__from img {
+    height: 25px;
+    width: 25px;
+  }
+}
 .langSelectTo div:nth-child(2) {
-  width: 272px;
+  width: 300px;
+}
+@media screen and (max-width: 650px) {
+  .langSelectTo div:nth-child(2) {
+    width: 70px;
+    height: 240px;
+    z-index: 5;
+  }
 }
 .langSelectTo .activeSelect {
   overflow: hidden;

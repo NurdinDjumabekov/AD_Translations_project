@@ -76,7 +76,9 @@ const MenuBurger = () => {
           <div className={styles.menuBurger__child}>
             <ul>
               {pages?.map((i) => (
-                <li onClick={() => goOtherPage(i.link)}>{i.title}</li>
+                <li key={i.id} onClick={() => goOtherPage(i.link)}>
+                  {i.title}
+                </li>
               ))}
               <li className={styles.closeMenu}>
                 <img onClick={() => setLookMenu(false)} src={krest} alt="x" />

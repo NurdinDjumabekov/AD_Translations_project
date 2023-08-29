@@ -60,7 +60,7 @@ const SliderIndustries = () => {
     centerMode: false,
     variableWidth: true,
     autoplaySpeed: 2000,
-    autoplay: true,
+    // autoplay: true,
   };
   return (
     <div className={styles.sliderIndustries}>
@@ -68,7 +68,7 @@ const SliderIndustries = () => {
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
           <Slider {...mySetting}>
-            {data?.slice(0, 6)?.map((item) => (
+            {data?.slice(0, 5)?.map((item) => (
               <div key={item.id}>
                 <div className={styles.sliderIndustries__mainImg}>
                   <img src={item.img} alt="img" />

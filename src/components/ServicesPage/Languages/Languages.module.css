@@ -6,6 +6,11 @@
     padding: 0 0 0 30px;
   }
 }
+@media screen and (max-width: 600px) and (max-width: 450px) {
+  .languages h4 {
+    padding: 0 0 0 12px;
+  }
+}
 .languages .languages__inner {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,0 +1,322 @@
+.updates {
+  padding: 60px 0;
+}
+@media screen and (max-width: 550px) {
+  .updates {
+    padding: 100px 0 0 0;
+  }
+}
+.updates .updates__inner {
+  height: 600px;
+  position: relative !important;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner {
+    height: 390px;
+  }
+}
+.updates .updates__inner ul {
+  bottom: 0;
+}
+.updates .updates__inner li {
+  margin: 0;
+}
+.updates .updates__inner li > button {
+  width: 10px;
+  height: 10px;
+}
+.updates .updates__inner li > button::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 4px 0 0 0;
+  background: green;
+  border-radius: 50%;
+}
+@media screen and (max-width: 670px) {
+  .updates .updates__inner li > button::before {
+    width: 8px;
+    height: 8px;
+  }
+}
+.updates .updates__inner > div {
+  max-width: 100%;
+  height: 600px;
+  position: static !important;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner > div {
+    height: 400px;
+    position: relative !important;
+  }
+}
+.updates .updates__inner > div button {
+  bottom: -28px !important;
+  top: auto !important;
+}
+.updates .updates__inner > div > button:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 42%;
+  z-index: 20;
+}
+@media screen and (max-width: 1040px) {
+  .updates .updates__inner > div > button:nth-child(1) {
+    left: 38%;
+  }
+}
+@media screen and (max-width: 1040px) and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(1) {
+    height: 0;
+    width: 0;
+  }
+}
+.updates .updates__inner > div > button:nth-child(1)::before {
+  content: "";
+  display: block;
+  background-image: url("../../../assets/images/mainPage/arrow_left.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(1)::before {
+    display: none;
+  }
+}
+.updates .updates__inner > div > button:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  right: 42%;
+  z-index: 20;
+}
+@media screen and (max-width: 1040px) {
+  .updates .updates__inner > div > button:nth-child(3) {
+    right: 38%;
+  }
+}
+@media screen and (max-width: 1040px) and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(3) {
+    height: 0;
+    width: 0;
+  }
+}
+.updates .updates__inner > div > button:nth-child(3)::before {
+  content: "";
+  display: block;
+  background-image: url("../../../assets/images/mainPage/arrow_right.svg");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 750px) {
+  .updates .updates__inner > div > button:nth-child(3)::before {
+    display: none;
+  }
+}
+.updates .updates__inner > div > div {
+  height: 600px;
+  width: 100%;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner > div > div {
+    height: 336px;
+  }
+}
+.updates .updates__inner > div > div > div {
+  height: 660px;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner > div > div > div {
+    height: 336px;
+  }
+}
+.updates .updates__inner > div > div > div > div {
+  min-width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin: 0 5px;
+}
+@media screen and (max-width: 800px) {
+  .updates .updates__inner > div > div > div > div {
+    min-width: 500px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div {
+    min-width: 300px;
+    height: 336px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div {
+  height: 500px;
+  width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .updates .updates__inner > div > div > div > div > div {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div {
+    width: 300px;
+    height: 336px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div {
+  height: 450px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FAFAfa;
+  margin: 0 30px;
+}
+@media screen and (max-width: 800px) {
+  .updates .updates__inner > div > div > div > div > div > div {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div > div {
+    height: 336px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent {
+  padding: 6px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e1dede;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts {
+  width: 100%;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts h3 {
+  overflow: hidden;
+  color: var(--text, #151515);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 12px;
+  width: 550px;
+  height: 18px;
+  line-height: 5px;
+  padding: 7px 0;
+}
+@media screen and (max-width: 800px) {
+  .updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts h3 {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts h3 {
+    width: 220px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts p {
+  overflow: hidden;
+  color: #5C5C5C;
+  text-overflow: ellipsis;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  width: 550px;
+  height: 15px;
+  white-space: nowrap;
+}
+@media screen and (max-width: 800px) {
+  .updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts p {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div > div .updates__iconsContent .updates__iconTexts p {
+    width: 220px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__mainImg {
+  width: 100%;
+  height: 300px;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div > div .updates__mainImg {
+    height: 200px;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__mainImg img {
+  width: 100%;
+  height: 100%;
+}
+.updates .updates__inner > div > div > div > div > div > div > p {
+  color: #151515;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 12px 12px 8px 12px;
+  max-height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 550px) {
+  .updates .updates__inner > div > div > div > div > div > div > p {
+    font-size: 12px;
+    height: 42px;
+    margin: 0 0 5px 0;
+  }
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__hashtag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  whitespace: nowrap;
+  gap: 6px;
+  padding: 0 12px 0 12px;
+}
+.updates .updates__inner > div > div > div > div > div > div .updates__hashtag p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  padding: 4px 4px;
+  border-radius: 2px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background: rgba(217, 217, 217, 0.5);
+}

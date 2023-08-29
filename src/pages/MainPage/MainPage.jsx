@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import styles from "./MainPage.module.css";
-import Updates from "../../components/MainPage/Updates/Updates";
 import Offers from "../../components/MainPage/Offers/Offers";
 import Advantages from "../../components/MainPage/Advantages/Advantages";
 import Header from "../../components/MainPage/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import Preloader from "../../components/Preloader/Preloader";
 import { toTakeDataUpdates } from "../../store/reducers/mainPageSlice";
+import SliderUpdates from "../../components/Sliders/SliderUpdates/SliderUpdates";
+import Consultation from "../../components/Consultation/Consultation";
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,10 @@ const MainPage = () => {
       ) : (
         <>
           <Header />
-          <Updates />
+          <SliderUpdates />
           <Offers />
           <Advantages />
+          <Consultation />
         </>
       )}
     </div>

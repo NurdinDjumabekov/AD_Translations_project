@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   errorSend: {
@@ -18,7 +19,27 @@ const initialState = {
     email: false,
     phoneNum: false,
   },
+  stateConsultation: true,
 };
+
+export const toTakeDataCansultation = createAsyncThunk(
+  "toTakeDataCansultation",
+  async (data, { dispatch }) => {
+    try {
+      await axios({
+        method: "GET",
+        url: "/////",
+        data: {
+          name: data.name,
+          email: data.email,
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
 const stateSendDataSlice = createSlice({
   name: "stateSendDataSlice",
   initialState,
@@ -35,6 +56,9 @@ const stateSendDataSlice = createSlice({
     changeErrorFreelanceSend: (state, action) => {
       state.errorFreelanceSend = action.payload;
     },
+    changeStateConsultation: (state, action) => {
+      state.stateConsultation = action.payload;
+    },
   },
 });
 export const {
@@ -42,6 +66,7 @@ export const {
   changeSelectsLangFrom,
   changeSelectsLangTo,
   changeErrorFreelanceSend,
+  changeStateConsultation,
 } = stateSendDataSlice.actions;
 
 export default stateSendDataSlice.reducer;

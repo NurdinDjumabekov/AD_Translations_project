@@ -13,7 +13,7 @@
 }
 @media screen and (max-width: 480px) and (max-width: 450px) {
   .sliderIndustries h2 {
-    padding: 0 0 0 30px;
+    padding: 0 0 0 12px;
     margin: 0;
   }
 }
@@ -72,15 +72,10 @@
 }
 @media screen and (max-width: 1090px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1) {
-    left: 39%;
+    left: 38%;
   }
 }
-@media screen and (max-width: 1090px) and (max-width: 790px) {
-  .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1) {
-    left: 35%;
-  }
-}
-@media screen and (max-width: 1090px) and (max-width: 790px) and (max-width: 600px) {
+@media screen and (max-width: 1090px) and (max-width: 700px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1) {
     width: 0;
     height: 0;
@@ -94,7 +89,7 @@
   height: 30px;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(1)::before {
     width: 0;
     height: 0;
@@ -108,12 +103,13 @@
 }
 @media screen and (max-width: 1090px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3) {
-    right: 39%;
+    right: 38%;
   }
 }
-@media screen and (max-width: 1090px) and (max-width: 790px) {
+@media screen and (max-width: 1090px) and (max-width: 700px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3) {
-    right: 35%;
+    width: 0;
+    height: 0;
   }
 }
 .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3)::before {
@@ -124,7 +120,7 @@
   height: 30px;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .sliderIndustries .sliderIndustries__inner > div > button:nth-child(3)::before {
     display: none;
   }
@@ -181,6 +177,7 @@
   .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div {
     width: 220px;
     height: 240px;
+    margin: 0 0 0 12px;
   }
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div .sliderIndustries__mainImg {
