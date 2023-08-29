@@ -5,12 +5,12 @@ footer {
 }
 @media screen and (max-width: 550px) {
   footer {
-    padding: 50px 12px;
+    padding: 40px 12px;
   }
 }
 @media screen and (max-width: 550px) and (max-width: 381px) {
   footer {
-    padding: 50px 0;
+    padding: 20px 0;
   }
 }
 footer .footer__inner {
@@ -121,6 +121,11 @@ footer .footer__icons {
           align-items: center;
   gap: 20px;
   padding: 60px 0 0 0;
+}
+@media screen and (max-width: 450px) {
+  footer .footer__icons {
+    padding: 30px 0 0 0;
+  }
 }
 footer .footer__icons img {
   display: block;

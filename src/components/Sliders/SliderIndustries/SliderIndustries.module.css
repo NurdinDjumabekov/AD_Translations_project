@@ -3,7 +3,7 @@
 }
 @media screen and (max-width: 450px) {
   .sliderIndustries {
-    padding: 0;
+    padding: 30px 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -43,6 +43,12 @@
   margin: 4px 0 0 0;
   background: green;
   border-radius: 50%;
+}
+@media screen and (max-width: 670px) {
+  .sliderIndustries .sliderIndustries__inner li > button::before {
+    width: 8px;
+    height: 8px;
+  }
 }
 .sliderIndustries .sliderIndustries__inner > div {
   width: 100%;

@@ -78,6 +78,7 @@
     padding: 0 0 0 12px;
   }
 }
+
 @media (max-width: 480px) {
   .standartTitle {
     font-size: 20px;
@@ -85,6 +86,9 @@
   }
   .textAboveSelect {
     color: #151515;
+  }
+  .addBlockNav {
+    padding: 0px 0 30px;
   }
 }
 @media (max-width: 600px) {

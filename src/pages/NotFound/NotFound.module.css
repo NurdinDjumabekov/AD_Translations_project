@@ -7,6 +7,12 @@
   width: 520px;
   height: 350px;
 }
+@media screen and (max-width: 650px) {
+  .notFound img {
+    width: 300px;
+    height: 180px;
+  }
+}
 .notFound h2 {
   margin: 50px 0 10px;
   color: var(--text, #151515);
@@ -17,8 +23,21 @@
   font-weight: 700;
   line-height: normal;
 }
+@media screen and (max-width: 650px) {
+  .notFound h2 {
+    font-size: 22px;
+  }
+}
 .notFound a {
   width: 200px;
+}
+@media screen and (max-width: 650px) {
+  .notFound a {
+    width: 120px;
+    font-size: 12px;
+    height: 35px;
+    padding: 10px 0 0 0;
+  }
 }
 .notFound p {
   color: var(--gre, #646464);
@@ -28,4 +47,9 @@
   font-weight: 500;
   line-height: normal;
   margin: 0px 0 20px;
+}
+@media screen and (max-width: 650px) {
+  .notFound p {
+    font-size: 12px;
+  }
 }

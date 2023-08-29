@@ -20,6 +20,12 @@
   display: inline-block;
   animation: slide 1s infinite;
 }
+@media (max-width: 850px) {
+  .dot {
+    width: 35px;
+    height: 35px;
+  }
+}
 
 .dot:nth-child(1) {
   animation-delay: 0.1s;

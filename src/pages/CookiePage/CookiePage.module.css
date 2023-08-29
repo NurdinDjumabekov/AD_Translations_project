@@ -1,6 +1,11 @@
 .cookPage {
   padding: 30px 0 60px;
 }
+@media screen and (max-width: 1250px) {
+  .cookPage {
+    padding: 10px 15px 60px;
+  }
+}
 .cookPage h2 {
   color: var(--text, #151515);
   text-align: center;
@@ -11,6 +16,11 @@
   line-height: normal;
   padding: 0 0 30px 0;
 }
+@media screen and (max-width: 450px) {
+  .cookPage h2 {
+    display: none;
+  }
+}
 .cookPage h3 {
   color: var(--text, #151515);
   font-family: "Roboto", sans-serif;
@@ -20,6 +30,12 @@
   line-height: normal;
   margin: 0 0 5px 0;
 }
+@media screen and (max-width: 450px) {
+  .cookPage h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
 .cookPage p {
   color: var(--text, #151515);
   font-family: "Roboto", sans-serif;
@@ -28,4 +44,10 @@
   font-weight: 500;
   line-height: normal;
   margin: 0 0 20px 0;
+}
+@media screen and (max-width: 450px) {
+  .cookPage p {
+    font-size: 12px;
+    font-weight: 400;
+  }
 }

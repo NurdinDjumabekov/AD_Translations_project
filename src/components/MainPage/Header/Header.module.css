@@ -27,7 +27,7 @@
 }
 @media screen and (max-width: 600px) {
   .header .header__inner {
-    height: 620px;
+    height: 660px;
   }
 }
 .header .header__inner > div {
@@ -95,7 +95,7 @@
   border-radius: 8px;
   cursor: pointer;
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 450px) {
   .header .header__inner > div button {
     width: 100%;
     margin: 0 auto;
