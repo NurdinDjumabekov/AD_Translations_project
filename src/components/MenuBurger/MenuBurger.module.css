@@ -10,7 +10,7 @@
   z-index: 50;
   display: none;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 560px) {
   .menuBurger {
     display: block;
   }
@@ -50,17 +50,48 @@
   right: 26px;
   top: 5px;
 }
+.menuBurger .menuBurger__childShadow {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 49;
+}
 .menuBurger .menuBurger__child {
-  height: 1000px;
+  width: 80%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: red;
+  z-index: 50;
+  -webkit-box-shadow: 0px 4px 15px 0px rgba(36, 86, 151, 0.1);
+          box-shadow: 0px 4px 15px 0px rgba(36, 86, 151, 0.1);
 }
 .menuBurger .menuBurger__child ul {
   background: #FAFAfa;
   position: relative;
-  padding: 10px 0 0 50px;
+  padding: 0px 0 0 40px;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
   .menuBurger .menuBurger__child ul {
-    padding: 10px 0 0 20px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 80px 0 0 40px;
   }
 }
 .menuBurger .menuBurger__child ul li {
@@ -84,11 +115,20 @@
 }
 .menuBurger .menuBurger__child ul .closeMenu {
   position: absolute;
-  top: 0px;
-  right: -44px;
+  top: 25px;
+  right: 50px;
+  width: 25px;
+  height: 25px;
   background: transparent;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width: 450px) {
+  .menuBurger .menuBurger__child ul .closeMenu {
+    right: 30px;
+  }
 }
 .menuBurger .menuBurger__child ul .closeMenu img {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
 }

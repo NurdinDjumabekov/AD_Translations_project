@@ -13,7 +13,7 @@
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
   z-index: 50;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 560px) {
   .menu {
     display: none;
   }
@@ -43,10 +43,21 @@
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 680px) {
+  .menu .menu__inner > div a {
+    gap: 10px;
+  }
+}
 .menu .menu__inner > div a img {
   display: block;
   width: 40px;
   height: 40px;
+}
+@media screen and (max-width: 680px) {
+  .menu .menu__inner > div a img {
+    width: 30px;
+    height: 30px;
+  }
 }
 .menu .menu__inner > div a p {
   color: #151515;
@@ -56,6 +67,16 @@
   font-weight: 500;
   line-height: 36px;
 }
+@media screen and (max-width: 850px) {
+  .menu .menu__inner > div a p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 850px) and (max-width: 680px) {
+  .menu .menu__inner > div a p {
+    font-size: 18px;
+  }
+}
 .menu .menu__inner ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,6 +85,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media screen and (max-width: 770px) {
+  .menu .menu__inner ul {
+    gap: 25px;
+  }
+}
+@media screen and (max-width: 770px) and (max-width: 630px) {
+  .menu .menu__inner ul {
+    gap: 18px;
+  }
 }
 .menu .menu__inner ul li {
   cursor: pointer;
@@ -76,6 +107,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+@media screen and (max-width: 630px) {
+  .menu .menu__inner ul li a {
+    font-size: 14px;
+  }
 }
 .menu .menu__inner ul li .activePage {
   color: #007E1D;

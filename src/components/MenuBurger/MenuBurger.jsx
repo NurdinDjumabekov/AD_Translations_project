@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MenuBurger.module.css";
 import iconImg from "../../assets/images/menu/iconMenu.svg";
-import krest from "../../assets/images/menu/iconMenu.svg";
+import krest from "../../assets/images/menu/x.svg";
 import logo from "../../assets/images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const MenuBurger = () => {
     },
     {
       id: 5,
-      title: "Treelancer",
+      title: "Freelancer",
       link: "/freelancer",
       bool: false,
     },
@@ -69,22 +69,29 @@ const MenuBurger = () => {
       setMainTitlePage("AD Translations");
     }
   }, [location.pathname]);
+
   return (
     <>
       <div className={styles.menuBurger}>
         {lookMenu ? (
-          <div className={styles.menuBurger__child}>
-            <ul>
-              {pages?.map((i) => (
-                <li key={i.id} onClick={() => goOtherPage(i.link)}>
-                  {i.title}
+          <>
+            <div
+              className={styles.menuBurger__childShadow}
+              onClick={() => setLookMenu(false)}
+            ></div>
+            <div className={styles.menuBurger__child}>
+              <ul>
+                {pages?.map((i) => (
+                  <li key={i.id} onClick={() => goOtherPage(i.link)}>
+                    {i.title}
+                  </li>
+                ))}
+                <li className={styles.closeMenu}>
+                  <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
-              ))}
-              <li className={styles.closeMenu}>
-                <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
-              </li>
-            </ul>
-          </div>
+              </ul>
+            </div>
+          </>
         ) : (
           <div className={styles.iconImgParent}>
             <div>

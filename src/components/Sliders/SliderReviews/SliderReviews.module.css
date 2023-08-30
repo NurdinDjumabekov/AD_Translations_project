@@ -170,7 +170,7 @@
 }
 @media screen and (max-width: 800px) {
   .sliderReviews .sliderReviews__inner > div > div > div > div > div {
-    width: 330px;
+    width: 340px;
     height: 250px;
   }
 }

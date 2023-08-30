@@ -20,6 +20,7 @@ const initialState = {
     phoneNum: false,
   },
   stateConsultation: true,
+  goodSendConsultation: false,
 };
 
 export const toTakeDataCansultation = createAsyncThunk(
@@ -32,8 +33,16 @@ export const toTakeDataCansultation = createAsyncThunk(
         data: {
           name: data.name,
           email: data.email,
+          message: data.message,
         },
       });
+      dispatch(changeGoodSendConsultation(true));
+      setTimeout(() => {
+        dispatch(changeGoodSendConsultation(false));
+      }, 2000);
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 3000);
     } catch (err) {
       console.log(err);
     }
@@ -59,6 +68,9 @@ const stateSendDataSlice = createSlice({
     changeStateConsultation: (state, action) => {
       state.stateConsultation = action.payload;
     },
+    changeGoodSendConsultation: (state, action) => {
+      state.goodSendConsultation = action.payload;
+    },
   },
 });
 export const {
@@ -67,6 +79,7 @@ export const {
   changeSelectsLangTo,
   changeErrorFreelanceSend,
   changeStateConsultation,
+  changeGoodSendConsultation,
 } = stateSendDataSlice.actions;
 
 export default stateSendDataSlice.reducer;

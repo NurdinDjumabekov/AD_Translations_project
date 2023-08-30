@@ -10,6 +10,7 @@ import ConditionsPage from "./pages/ConditionsPage/ConditionsPage";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import NotFound from "./pages/NotFound/NotFound";
 import FreelancerPage from "./pages/FreelancerPage/FreelancerPage";
+import ConsultationPage from "./pages/ConsultationPage/ConsultationPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cookie" element={<CookiePage />} />
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/consultation" element={<ConsultationPage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
