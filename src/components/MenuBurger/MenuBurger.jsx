@@ -41,6 +41,30 @@ const MenuBurger = () => {
       link: "/freelancer",
       bool: false,
     },
+    // {
+    //   id: 6,
+    //   title: "Cookie",
+    //   link: "/cookie",
+    //   bool: false,
+    // },
+    // {
+    //   id: 7,
+    //   title: "Conditions",
+    //   link: "/conditions",
+    //   bool: false,
+    // },
+    // {
+    //   id: 8,
+    //   title: "Privacy",
+    //   link: "/Privacy",
+    //   bool: false,
+    // },
+    // {
+    //   id: 9,
+    //   title: "Consultation",
+    //   link: "/consultation",
+    //   bool: false,
+    // },
   ]);
 
   const goOtherPage = (link) => {

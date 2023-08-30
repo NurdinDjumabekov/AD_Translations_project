@@ -18,6 +18,11 @@
 .sliderReviews .sliderReviews__inner ul {
   bottom: 0;
 }
+@media screen and (max-width: 450px) {
+  .sliderReviews .sliderReviews__inner ul {
+    width: 98%;
+  }
+}
 @media screen and (max-width: 520px) {
   .sliderReviews .sliderReviews__inner li {
     margin: 0;
