@@ -5,10 +5,7 @@ import FreelancerLang from "../../components/FreelancerPage/FreelancerLang/Freel
 import { useDispatch, useSelector } from "react-redux";
 import { toTakeLanguage } from "../../store/reducers/dataSelectSlice";
 import Preloader from "../../components/Preloader/Preloader";
-import {
-  changeDataFreelance,
-  sendDataFreelancers,
-} from "../../store/reducers/freelanceSlice";
+import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
@@ -41,7 +38,6 @@ const FreelancerPage = () => {
       selectsLangTo
     );
   };
-
   return (
     <>
       {goodSendData ? (
@@ -55,7 +51,6 @@ const FreelancerPage = () => {
               </p>
               <PersonalData />
             </>
-
             <FreelancerLang typeLanguage={typeLanguage} />
             <button className={styles.sendData} onClick={sendData}>
               Become a Member!
@@ -73,5 +68,4 @@ const FreelancerPage = () => {
     </>
   );
 };
-
 export default FreelancerPage;

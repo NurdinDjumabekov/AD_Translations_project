@@ -12,6 +12,8 @@
         > div
             display: flex
             justify-content: space-between
+            align-items: center
+            gap: 20px
             @media screen and ( max-width: 650px )
                 justify-content: center
                 gap: 5px
@@ -19,6 +21,19 @@
                     width: 265px
                     > div
                         width: 265px
+            .deleteBtn
+                width: 25px
+                height: 25px
+                background: red
+                border-radius: 50%
+                border: none
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+                img
+                    width: 80%
+                    height: 80%
         > p
             color: #151515
             font-family: Roboto

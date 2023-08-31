@@ -7,6 +7,7 @@ import {
   changeSelectsLangFrom,
   changeSelectsLangTo,
 } from "../../../store/reducers/stateSendDataSlice";
+import krest from "../../../assets/images/menu/x.svg";
 import LangSelectFrom from "../LangSelectFrom/LangSelectFrom";
 import LangSelectTo from "../LangSelectTo/LangSelectTo";
 
@@ -17,7 +18,7 @@ const FreelancerLang = ({ typeLanguage }) => {
   const { selectsLangFrom, selectsLangTo } = useSelector(
     (state) => state.stateSendDataSlice
   );
-
+  console.log(selectsLangFrom, "selectsLangFrom");
   useEffect(() => {
     dispatch(toTakeLanguage());
   }, []);
@@ -60,6 +61,23 @@ const FreelancerLang = ({ typeLanguage }) => {
     }
   };
 
+  const deleteSelect = (id) => {
+    // if (selectsLangFrom.length > 1) {
+    let data;
+    dispatch(
+      changeSelectsLangFrom(
+        (data = selectsLangFrom.filter((i) => {
+          if (i.id !== id) {
+            return i;
+          } else if (i.id === 1) {
+            return i;
+          }
+        }))
+      )
+    );
+    // }
+  };
+
   return (
     <div className={styles.freelancerLang}>
       <div className={styles.freelancerLang__from}>
@@ -84,6 +102,12 @@ const FreelancerLang = ({ typeLanguage }) => {
                 traslationType: "from",
               }}
             />
+            <button
+              onClick={() => deleteSelect(item.id)}
+              className={styles.deleteBtn}
+            >
+              <img src={krest} alt="x" />
+            </button>
           </div>
         ))}
         <button
