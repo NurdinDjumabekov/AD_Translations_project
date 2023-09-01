@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ConsultationPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgGood from "../../assets/images/orderPage/good.png";
@@ -12,6 +12,10 @@ const ConsultationPage = () => {
   const { goodSendConsultation } = useSelector(
     (state) => state.stateSendDataSlice
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [sendError, setSendError] = useState({
     name: false,
     email: false,

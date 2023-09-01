@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
 import MenuBurger from "../MenuBurger/MenuBurger";
@@ -11,6 +11,7 @@ const Layout = () => {
       <MenuBurger />
       <Outlet />
       <Footer />
+     
     </>
   );
 };

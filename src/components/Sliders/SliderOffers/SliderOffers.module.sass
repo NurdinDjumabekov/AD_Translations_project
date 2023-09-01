@@ -1,0 +1,150 @@
+.sliderOffers
+    padding: 60px 0
+    @media screen and ( max-width: 550px )
+        padding: 100px 0 0 0
+    .sliderOffers__inner
+        height: 600px
+        // background: blue
+        position: relative !important
+        @media screen and ( max-width: 550px )
+            height: 390px
+        ul
+            bottom: 0
+        li
+            margin: 0
+            > button
+                width: 10px
+                height: 10px
+                // background: red
+                &::before
+                    content: ""
+                    width: 10px
+                    height: 10px
+                    margin: 4px 0 0 0
+                    background: green
+                    border-radius: 50%
+                    @media screen and ( max-width: 670px )
+                        width: 8px
+                        height: 8px
+        > div
+            // background: red
+            max-width: 100%
+            height: 600px
+            position: static !important
+            @media screen and ( max-width: 550px )
+                height: 400px
+                position: relative  !important
+            button
+                bottom: -28px !important
+                top: auto !important 
+            > button:nth-child(1)
+                // background: gray
+                width: 40px
+                height: 40px
+                left: 42%
+                z-index: 20
+                @media screen and ( max-width: 1040px )
+                    left: 38%
+                    @media screen and ( max-width: 750px )
+                        height: 0
+                        width: 0
+                &::before
+                    content: ""
+                    display: block
+                    background-image: url("../../../assets/images/mainPage/arrow_left.svg")
+                    width: 30px
+                    height: 30px
+                    background-repeat: no-repeat
+                    @media screen and ( max-width: 750px )
+                        display: none
+            > button:nth-child(3)
+                // background: gray
+                width: 40px
+                height: 40px
+                right: 42%
+                z-index: 20
+                @media screen and ( max-width: 1040px )
+                    right: 38%
+                    @media screen and ( max-width: 750px )
+                        height: 0
+                        width: 0
+                &::before
+                    content: ""
+                    display: block
+                    background-image: url("../../../assets/images/mainPage/arrow_right.svg")
+                    width: 30px
+                    height: 30px
+                    background-repeat: no-repeat
+                    @media screen and ( max-width: 750px )
+                        display: none
+
+            > div
+                // background: green
+                height: 600px
+                width: 100%
+                @media screen and ( max-width: 550px )
+                    height: 336px
+                > div
+                    // background: pink
+                    height: 660px
+                    @media screen and ( max-width: 550px )
+                        height: 336px
+                    > div
+                        // background: orange
+                        min-width: 700px
+                        display: flex
+                        justify-content: right
+                        margin: 0 5px
+                        @media screen and ( max-width: 800px )
+                            min-width: 500px
+                            @media screen and ( max-width: 550px )
+                                min-width: 300px
+                                height: 336px
+
+                        > div
+                            // background: brown
+                            height: 500px
+                            width: 700px
+                            display: flex
+                            align-items: center
+                            @media screen and ( max-width: 800px )
+                                width: 500px
+                                @media screen and ( max-width: 550px )
+                                    width: 300px
+                                    height: 200px
+                            > div
+                                // background-color: black
+                                height: 450px
+                                border-radius: 6px
+                                border: 1px solid rgba(0, 0, 0, 0.10)
+                                // background: #FAFAfa
+                                margin: 0 30px
+                                cursor: pointer
+                                @media screen and ( max-width: 800px )
+                                    margin: 0 10px
+                                    @media screen and ( max-width: 550px )
+                                        height: 336px
+                                .mainImg
+                                    height: 210px
+                                    border-radius: 6px
+                                    background: red
+                                    > img
+                                        width: 100%
+                                        height: 100%
+                                        border-radius: 6px
+                                        object-fit: cover
+
+                                        //   overflow: hidden
+                                        //     color: var(--text, #151515)
+                                        //     text-overflow: ellipsis
+                                        //     white-space: nowrap
+                                        //     font-family: Roboto
+                                        //     font-size: 16px
+                                        //     font-style: normal
+                                        //     font-weight: 500
+                                        //     padding: 12px
+                                        //     // background: red
+                                        //     width: 550px
+                                        //     height: 18px
+                                        //     line-height: 5px
+                                        //     padding: 7px 0

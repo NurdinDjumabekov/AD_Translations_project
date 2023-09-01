@@ -60,22 +60,19 @@ const FreelancerLang = ({ typeLanguage }) => {
       );
     }
   };
-
   const deleteSelect = (id) => {
-    // if (selectsLangFrom.length > 1) {
     let data;
-    dispatch(
-      changeSelectsLangFrom(
-        (data = selectsLangFrom.filter((i) => {
-          if (i.id !== id) {
-            return i;
-          } else if (i.id === 1) {
-            return i;
-          }
-        }))
-      )
-    );
-    // }
+    if (selectsLangFrom.length > 1) {
+      dispatch(
+        changeSelectsLangFrom(
+          (data = selectsLangFrom.filter((item) => {
+            if (selectsLangFrom[selectsLangFrom.length - 1].id !== item.id) {
+              return item;
+            }
+          }))
+        )
+      );
+    }
   };
 
   return (
@@ -102,12 +99,12 @@ const FreelancerLang = ({ typeLanguage }) => {
                 traslationType: "from",
               }}
             />
-            <button
+            {/* <button
               onClick={() => deleteSelect(item.id)}
               className={styles.deleteBtn}
             >
               <img src={krest} alt="x" />
-            </button>
+            </button> */}
           </div>
         ))}
         <button

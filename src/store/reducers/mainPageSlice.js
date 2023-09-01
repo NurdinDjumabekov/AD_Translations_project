@@ -10,12 +10,12 @@ export const toTakeDataUpdates = createAsyncThunk(
   "toTakeDataUpdates",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios({
+      const data = await axios({
         method: "GET",
-        url: `https://64186f7a29e7e36438e8aa19.mockapi.io/items`,
+        url: `http://baielbekenov.pythonanywhere.com/api/order/list/`,
       });
       // dispatch(changeDataUpdates(data));
-      // console.log(data);
+      console.log(data, "data");
     } catch (err) {
       console.log(err);
     }

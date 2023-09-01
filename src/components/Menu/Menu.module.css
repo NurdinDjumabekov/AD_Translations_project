@@ -127,3 +127,22 @@
   font-weight: 400;
   line-height: normal;
 }
+
+.consultationBlock {
+  position: fixed;
+  bottom: 60px;
+  right: 172px;
+  width: 62px;
+  height: 42px;
+  z-index: 50;
+}
+@media screen and (max-width: 950px) {
+  .consultationBlock {
+    right: 100px;
+  }
+}
+@media screen and (max-width: 950px) and (max-width: 540px) {
+  .consultationBlock {
+    right: 50px;
+  }
+}

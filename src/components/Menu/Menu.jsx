@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Menu.module.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import consultation from "../../assets/images/menu/consultation.svg";
+
 const Menu = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -96,6 +98,9 @@ const Menu = () => {
           </div>
         </div>
       </div>
+      <NavLink className={styles.consultationBlock} to={"/consultation"}>
+        <img src={consultation} alt="consultation" />
+      </NavLink>
     </>
   );
 };

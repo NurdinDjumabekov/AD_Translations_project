@@ -179,6 +179,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: #FAFAfa;
   margin: 0 30px;
+  cursor: pointer;
 }
 @media screen and (max-width: 800px) {
   .updates .updates__inner > div > div > div > div > div > div {
@@ -281,7 +282,8 @@
   font-style: normal;
   font-weight: 400;
   padding: 12px 12px 8px 12px;
-  max-height: 55px;
+  max-height: 52px;
+  margin: 0 0 5px 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
