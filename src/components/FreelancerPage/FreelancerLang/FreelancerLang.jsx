@@ -60,13 +60,27 @@ const FreelancerLang = ({ typeLanguage }) => {
       );
     }
   };
-  const deleteSelect = (id) => {
+  const deleteSelectFrom = () => {
     let data;
     if (selectsLangFrom.length > 1) {
       dispatch(
         changeSelectsLangFrom(
           (data = selectsLangFrom.filter((item) => {
             if (selectsLangFrom[selectsLangFrom.length - 1].id !== item.id) {
+              return item;
+            }
+          }))
+        )
+      );
+    }
+  };
+  const deleteSelectTo = () => {
+    let data;
+    if (selectsLangTo.length > 1) {
+      dispatch(
+        changeSelectsLangTo(
+          (data = selectsLangTo.filter((item) => {
+            if (selectsLangTo[selectsLangTo.length - 1].id !== item.id) {
               return item;
             }
           }))
@@ -100,7 +114,7 @@ const FreelancerLang = ({ typeLanguage }) => {
               }}
             />
             {/* <button
-              onClick={() => deleteSelect(item.id)}
+              onClick={ deleteSelectFrom}
               className={styles.deleteBtn}
             >
               <img src={krest} alt="x" />
@@ -136,6 +150,12 @@ const FreelancerLang = ({ typeLanguage }) => {
                 traslationType: "to",
               }}
             />
+            {/* <button
+              onClick={ deleteSelectTo}
+              className={styles.deleteBtn}
+            >
+              <img src={krest} alt="x" />
+            </button> */}
           </div>
         ))}
         <button
