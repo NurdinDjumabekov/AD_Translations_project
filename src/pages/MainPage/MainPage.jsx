@@ -52,7 +52,7 @@ const MainPage = () => {
           <Header />
           <SliderUpdates />
           <Offers data={data} />
-          <SliderOffers data={data} />
+          {/* <SliderOffers data={data} /> */}
           <Advantages />
         </>
       )}

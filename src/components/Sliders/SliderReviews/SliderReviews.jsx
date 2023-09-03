@@ -62,7 +62,7 @@ const SliderReviews = () => {
     },
   ]);
 
-  // сократит данные до 7ми элементов
+  // сократит данные до 5ми элементов
 
   const settings = {
     infinite: true,

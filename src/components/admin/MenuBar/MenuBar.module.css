@@ -1,0 +1,91 @@
+.menuBar {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.menuBar .adminMenu {
+  position: fixed;
+  top: 0;
+  left: 270px;
+  width: 80%;
+  z-index: 30;
+  padding: 25px 40px 25px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.5px solid var(--fn, #DEDEDE);
+}
+.menuBar .adminMenu h2 {
+  color: var(--Text, #151515);
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.menuBar .adminMenu a img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.menuBar .adminPanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #00320B;
+  padding: 25px 30px;
+  z-index: 30;
+  text-align: center;
+}
+.menuBar .adminPanel h3 {
+  color: var(--Background, #FAFAFA);
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.menuBar .adminPanel li {
+  color: var(--Background, #FAFAFA);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 15px 0px;
+  text-align: left;
+}
+.menuBar .adminPanel li .pageMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin: 30px 0 0 0;
+  border-bottom: 0.5px solid var(--fn, #DEDEDE);
+  padding: 12px;
+}
+.menuBar .adminPanel li .pageMenu > img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.menuBar .adminPanel li > a {
+  color: var(--Background, #FAFAFA);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: block;
+  padding: 5px 12px;
+}

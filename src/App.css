@@ -132,3 +132,13 @@
   border: none;
   cursor: pointer;
 }
+/* /////////////admin//////////// */
+
+.titleText {
+  color: var(--Text, #151515);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
