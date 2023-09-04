@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import styles from "./Languages.module.css";
 import { sortLanguages } from "../../../helpers/sortLanguages";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toTakeAllLang } from "../../../store/reducers/servicesPageSlice";
 
 const Languages = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [data, setData] = useState([]);
   const [dataAdaptation, setDataAdaptation] = useState([]);
   useEffect(() => {
     setData(sortLanguages()[0]); // в helpers зайди, там всё ясно будет
     setDataAdaptation(sortLanguages()[1]);
+    dispatch(toTakeAllLang());
   }, []);
   console.log(dataAdaptation);
   const lengNum = Math.ceil(dataAdaptation.length / 2);

@@ -28,6 +28,21 @@ export const toTakeAllDataServices = createAsyncThunk(
     }
   }
 );
+export const toTakeAllLang = createAsyncThunk(
+  "toTakeAllLang",
+  async (info, { dispatch }) => {
+    try {
+      dispatch(changePreloader(true));
+      const { data } = await axios({
+        method: "GET",
+        url: "",
+      });
+        console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
 
 const servicesPageSlice = createSlice({
   name: "servicesPageSlice",
