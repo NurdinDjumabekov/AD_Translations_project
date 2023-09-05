@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image from "../../../assets/images/mainPage/teams.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toTakeDataUpdates } from "../../../store/reducers/mainPageSlice";
 
 const SliderUpdates = () => {
@@ -74,6 +74,9 @@ const SliderUpdates = () => {
       icon: image,
     },
   ]);
+
+  const { dataUpdates } = useSelector((state) => state.mainPageSlice);
+  console.log(dataUpdates, "dataUpdates");
   useEffect(() => {
     setData(data?.slice(0, 5));
     dispatch(toTakeDataUpdates());
@@ -101,7 +104,7 @@ const SliderUpdates = () => {
               <div key={slide.id}>
                 <div className={styles.updates__iconsContent}>
                   <div className={styles.updates__iconImg}>
-                    <img src={slide.icon} alt="" />
+                    <img src={image} alt="" />
                   </div>
                   <div className={styles.updates__iconTexts}>
                     <h3>{slide.title}</h3>

@@ -3,10 +3,13 @@ import axios from "axios";
 import { addDataID } from "../../helpers/addDataID";
 import { changePreloader } from "./mainPageSlice";
 
+const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
+
 const initialState = {
   dataServices: [],
   dataForSearch: [],
   search: "",
+  dataIndustries: [],
 };
 
 export const toTakeAllDataServices = createAsyncThunk(
@@ -16,7 +19,8 @@ export const toTakeAllDataServices = createAsyncThunk(
       dispatch(changePreloader(true));
       const { data } = await axios({
         method: "GET",
-        url: "https://64186f7a29e7e36438e8aa19.mockapi.io/items",
+        url: `${BASE_URL}services/list/`,
+        // url: "https://64186f7a29e7e36438e8aa19.mockapi.io/items",
       });
       //   console.log(data);
       dispatch(toTakeDataServices(addDataID(data)));
@@ -24,10 +28,11 @@ export const toTakeAllDataServices = createAsyncThunk(
       dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
-      // dispatch(changePreloader(false));
+      dispatch(changePreloader(false));
     }
   }
 );
+
 export const toTakeAllLang = createAsyncThunk(
   "toTakeAllLang",
   async (info, { dispatch }) => {
@@ -37,7 +42,22 @@ export const toTakeAllLang = createAsyncThunk(
         method: "GET",
         url: "",
       });
-        console.log(data);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
+export const toTakeIndustriesData = createAsyncThunk(
+  "toTakeIndustriesData",
+  async (info, { dispatch }) => {
+    dispatch(changePreloader(true));
+    try {
+      const { data } = await axios(`${BASE_URL}industries/list/`);
+      // console.log(data, "toTakeIndustriesData");
+      dispatch(changeDataIndustries(data));
+      dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
     }
@@ -57,9 +77,16 @@ const servicesPageSlice = createSlice({
     changeSearch: (state, action) => {
       state.search = action.payload;
     },
+    changeDataIndustries: (state, action) => {
+      state.dataIndustries = action.payload;
+    },
   },
 });
-export const { toTakeDataServices, changeDataForSearch, changeSearch } =
-  servicesPageSlice.actions;
+export const {
+  toTakeDataServices,
+  changeDataForSearch,
+  changeSearch,
+  changeDataIndustries,
+} = servicesPageSlice.actions;
 
 export default servicesPageSlice.reducer;

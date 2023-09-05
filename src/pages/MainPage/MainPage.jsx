@@ -13,7 +13,7 @@ const MainPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
-    // dispatch(toTakeDataUpdates());
+    dispatch(toTakeDataUpdates());
   }, []);
 
   const [data, setData] = useState([

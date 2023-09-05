@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const initialState = {
   dataReviews: [],
@@ -26,11 +27,8 @@ export const toTakeFAQ = createAsyncThunk(
   "toTakeFAQ",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios({
-        method: "GET",
-        // url: " https://6443c7ca90738aa7c0778850.mockapi.io/infoportal",
-      });
-      dispatch(changeDataReviews(data));
+      const { data } = await axios(`${BASE_URL}faq/list/`);
+      dispatch(changeDataFAQ(data));
       // console.log(data);
     } catch (err) {
       console.log(err);

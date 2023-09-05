@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import styles from "./QuestionFAQ.module.css";
 import arrow from "../../../assets/images/aboutPage/arrow.svg";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { changeDataFAQ } from "../../../store/reducers/aboutPageSlice";
 
 const QuestionFAQ = () => {
+  const dispatch = useDispatch();
   const [arr, setArr] = useState([
     {
       id: 1,
@@ -48,11 +51,13 @@ const QuestionFAQ = () => {
       bool: false,
     },
   ]);
+  const { dataFAQ } = useSelector((state) => state.aboutPageSlice);
+  // console.log(dataFAQ, "dataFAQ");
 
   const navigate = useNavigate();
 
   const lookAnswer = (id, bool) => {
-    const newArr = arr.map((item) => {
+    const newArr = dataFAQ.map((item) => {
       if (item.id === id) {
         return {
           ...item,
@@ -61,16 +66,16 @@ const QuestionFAQ = () => {
       }
       return item;
     });
-    setArr(newArr);
+    // setArr(newArr);
+    dispatch(changeDataFAQ(newArr));
   };
-  //   console.log(arr);
 
   return (
     <div className={styles.question}>
       <div className="container">
         <h4 className="standartTitle">FAQ</h4>
         <div className={styles.question__inner}>
-          {arr.map((item) => (
+          {dataFAQ.map((item) => (
             <div key={item.id} onClick={() => lookAnswer(item.id, item.bool)}>
               <div>
                 <p>{item.question}</p>

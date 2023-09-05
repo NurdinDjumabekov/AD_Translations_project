@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./SliderIndustries.module.css";
 import Slider from "react-slick";
+import { useSelector } from "react-redux";
 
 const SliderIndustries = () => {
   const [data, setData] = useState([
@@ -49,8 +50,11 @@ const SliderIndustries = () => {
     },
   ]);
 
-  // сократит данные до 7ми элементов
+  // сократит данные до 5ти элементов
 
+  const { dataIndustries } = useSelector((state) => state.servicesPageSlice);
+
+  // console.log(dataIndustries, "dataIndustries");
   const mySetting = {
     infinite: true,
     slidesToShow: 4,
@@ -68,7 +72,7 @@ const SliderIndustries = () => {
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
           <Slider {...mySetting}>
-            {data?.slice(0, 5)?.map((item) => (
+            {dataIndustries?.slice(0, 5)?.map((item) => (
               <div key={item.id}>
                 <div className={styles.sliderIndustries__mainImg}>
                   <img src={item.img} alt="img" />

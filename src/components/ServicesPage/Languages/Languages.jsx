@@ -14,11 +14,9 @@ const Languages = () => {
   useEffect(() => {
     setData(sortLanguages()[0]); // в helpers зайди, там всё ясно будет
     setDataAdaptation(sortLanguages()[1]);
-    dispatch(toTakeAllLang());
   }, []);
   console.log(dataAdaptation);
   const lengNum = Math.ceil(dataAdaptation.length / 2);
-  console.log(lengNum);
 
   return (
     <div className={styles.languages}>

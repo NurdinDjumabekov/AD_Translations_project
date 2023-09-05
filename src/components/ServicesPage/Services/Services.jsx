@@ -52,7 +52,7 @@ const Services = () => {
                     <h5>{card.title}</h5>
                     <p>{card.text}</p>
                   </div>
-                  <img src={card.image} alt="картинка" />
+                  <img src={card.img} alt="картинка" />
                 </div>
               ))
             )}
