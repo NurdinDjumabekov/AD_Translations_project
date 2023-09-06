@@ -17,12 +17,7 @@ export const toTakeAllDataServices = createAsyncThunk(
   async (info, { dispatch }) => {
     try {
       dispatch(changePreloader(true));
-      const { data } = await axios({
-        method: "GET",
-        url: `${BASE_URL}services/list/`,
-        // url: "https://64186f7a29e7e36438e8aa19.mockapi.io/items",
-      });
-      //   console.log(data);
+      const { data } = await axios(`${BASE_URL}services/list/`);
       dispatch(toTakeDataServices(addDataID(data)));
       dispatch(changeDataForSearch(addDataID(data)));
       dispatch(changePreloader(false));
@@ -55,7 +50,6 @@ export const toTakeIndustriesData = createAsyncThunk(
     dispatch(changePreloader(true));
     try {
       const { data } = await axios(`${BASE_URL}industries/list/`);
-      // console.log(data, "toTakeIndustriesData");
       dispatch(changeDataIndustries(data));
       dispatch(changePreloader(false));
     } catch (err) {

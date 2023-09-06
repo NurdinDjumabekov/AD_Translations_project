@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./SliderReviews.module.css";
 import Slider from "react-slick";
+import { useSelector } from "react-redux";
 
 const SliderReviews = () => {
   const [data, setData] = useState([
@@ -62,6 +63,9 @@ const SliderReviews = () => {
     },
   ]);
 
+  const { dataReviews } = useSelector((state) => state.aboutPageSlice);
+
+  console.log(dataReviews, "dataReviews");
   // сократит данные до 5ми элементов
 
   const settings = {
@@ -83,7 +87,7 @@ const SliderReviews = () => {
       <div className="container">
         <div className={styles.sliderReviews__inner}>
           <Slider {...settings}>
-            {data?.slice(0, 5)?.map((slide) => (
+            {dataReviews?.slice(0, 5)?.map((slide) => (
               <div key={slide.id}>
                 <div className={styles.sliderIndustries__mainImgs}>
                   <div className={styles.sliderIndustries__logo}>

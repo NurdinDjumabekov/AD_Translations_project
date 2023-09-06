@@ -14,7 +14,6 @@ export const toTakeDataUpdates = createAsyncThunk(
     try {
       const { data } = await axios(`${BASE_URL}latest_updates/list/`);
       dispatch(changeDataUpdates(data));
-      // console.log(data, "toTakeDataUpdates");
     } catch (err) {
       console.log(err);
     }

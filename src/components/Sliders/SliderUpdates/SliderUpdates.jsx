@@ -77,6 +77,7 @@ const SliderUpdates = () => {
 
   const { dataUpdates } = useSelector((state) => state.mainPageSlice);
   console.log(dataUpdates, "dataUpdates");
+
   useEffect(() => {
     setData(data?.slice(0, 5));
     dispatch(toTakeDataUpdates());
@@ -100,7 +101,7 @@ const SliderUpdates = () => {
       <div className="container">
         <div className={styles.updates__inner}>
           <Slider {...settings}>
-            {data?.map((slide) => (
+            {dataUpdates?.map((slide) => (
               <div key={slide.id}>
                 <div className={styles.updates__iconsContent}>
                   <div className={styles.updates__iconImg}>
@@ -116,8 +117,8 @@ const SliderUpdates = () => {
                 </div>
                 <p>{slide.text}</p>
                 <div className={styles.updates__hashtag}>
-                  {slide.hashtag?.slice(0, 4).map((item, i) => (
-                    <p key={i}>{item}</p>
+                  {slide.hashtag?.slice(0, 4).map((item) => (
+                    <p key={item.id}>{item?.name}</p>
                   ))}
                 </div>
               </div>

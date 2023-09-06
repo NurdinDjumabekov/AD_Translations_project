@@ -11,12 +11,8 @@ export const toTakeDataReviews = createAsyncThunk(
   "toTakeDataUpdates",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios({
-        method: "GET",
-        // url: " https://6443c7ca90738aa7c0778850.mockapi.io/infoportal",
-      });
+      const { data } = await axios(`${BASE_URL}reviews/list/`);
       dispatch(changeDataReviews(data));
-      // console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -29,7 +25,6 @@ export const toTakeFAQ = createAsyncThunk(
     try {
       const { data } = await axios(`${BASE_URL}faq/list/`);
       dispatch(changeDataFAQ(data));
-      // console.log(data);
     } catch (err) {
       console.log(err);
     }
