@@ -14,8 +14,22 @@ import ConsultationPage from "./pages/ConsultationPage/ConsultationPage";
 import AdminPage from "./pages/admin/AdminPage/AdminPage";
 import LayoutAdmin from "./components/hoc/LayoutAdmin";
 import DataForAdmin from "./components/admin/DataForAdmin/DataForAdmin";
+import { useEffect } from "react";
+import { toTakeAllLang } from "./store/reducers/servicesPageSlice";
+import { useDispatch } from "react-redux";
+import { toTakeDataUpdates } from "./store/reducers/mainPageSlice";
+import { toTakeDataReviews, toTakeFAQ } from "./store/reducers/aboutPageSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(toTakeAllLang());
+    dispatch(toTakeDataUpdates());
+    dispatch(toTakeDataReviews());
+    dispatch(toTakeFAQ());
+  }, []);
+
   return (
     <>
       <Routes>

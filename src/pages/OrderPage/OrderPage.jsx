@@ -15,11 +15,9 @@ import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 const OrderPage = () => {
   const dispatch = useDispatch();
   const [doc, setDoc] = useState(null);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(toTakeServices());
     dispatch(toTakeIndustries());
     dispatch(toTakeLanguage());

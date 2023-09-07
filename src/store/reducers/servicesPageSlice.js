@@ -33,13 +33,11 @@ export const toTakeAllLang = createAsyncThunk(
   async (info, { dispatch }) => {
     try {
       dispatch(changePreloader(true));
-      const { data } = await axios({
-        method: "GET",
-        url: "",
-      });
+      const { data } = await axios(`${BASE_URL}language/list/`);
       console.log(data);
     } catch (err) {
       console.log(err);
+      alert("ошибка соединения!");
     }
   }
 );

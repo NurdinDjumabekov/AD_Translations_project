@@ -5,16 +5,11 @@ import Advantages from "../../components/MainPage/Advantages/Advantages";
 import Header from "../../components/MainPage/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import Preloader from "../../components/Preloader/Preloader";
-import { toTakeDataUpdates } from "../../store/reducers/mainPageSlice";
 import SliderUpdates from "../../components/Sliders/SliderUpdates/SliderUpdates";
 import SliderOffers from "../../components/Sliders/SliderOffers/SliderOffers";
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(toTakeDataUpdates());
-  }, []);
 
   const [data, setData] = useState([
     {

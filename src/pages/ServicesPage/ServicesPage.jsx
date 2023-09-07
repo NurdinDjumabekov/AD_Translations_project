@@ -8,10 +8,7 @@ import { toTakeIndustriesData } from "../../store/reducers/servicesPageSlice";
 
 const ServicesPage = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(toTakeIndustriesData());
-  }, []);
+
   const { preloader } = useSelector((state) => state.mainPageSlice);
 
   return (
