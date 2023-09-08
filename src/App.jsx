@@ -24,10 +24,10 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(toTakeAllLang());
-    dispatch(toTakeDataUpdates());
-    dispatch(toTakeDataReviews());
-    dispatch(toTakeFAQ());
+    // dispatch(toTakeAllLang());
+    // dispatch(toTakeDataUpdates());
+    // dispatch(toTakeDataReviews());
+    // dispatch(toTakeFAQ());
   }, []);
 
   return (

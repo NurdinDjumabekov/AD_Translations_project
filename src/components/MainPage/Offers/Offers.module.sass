@@ -1,8 +1,5 @@
 .offers
     padding: 60px 0
-    @media screen and ( max-width: 850px )
-        display: none
-        
     .offers__inner
         display: flex
         justify-content: center
@@ -11,6 +8,9 @@
         padding: 20px 0
         @media screen and ( max-width: 1150px )
             padding: 20px 50px
+            @media screen and ( max-width: 1050px )
+                flex-wrap: wrap
+                padding: 20px 12px
         > div
             width: 340px
             height: 316px
@@ -21,6 +21,8 @@
             transition: .8s
             overflow: hidden
             text-overflow: ellipsis
+            @media screen and ( max-width: 744px )
+                height: auto
             > div
                 width: 100%
                 height: 150px
@@ -49,6 +51,8 @@
                 line-height: normal
                 padding: 0 12px
                 height: 95px
+                @media screen and ( max-width: 744px )
+                    height: auto
         > div:hover
             height: 360px
             .activeP

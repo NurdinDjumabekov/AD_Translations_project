@@ -1,11 +1,6 @@
 .offers {
   padding: 60px 0;
 }
-@media screen and (max-width: 850px) {
-  .offers {
-    display: none;
-  }
-}
 .offers .offers__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,6 +16,13 @@
     padding: 20px 50px;
   }
 }
+@media screen and (max-width: 1150px) and (max-width: 1050px) {
+  .offers .offers__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 20px 12px;
+  }
+}
 .offers .offers__inner > div {
   width: 340px;
   height: 316px;
@@ -32,6 +34,11 @@
   transition: 0.8s;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media screen and (max-width: 744px) {
+  .offers .offers__inner > div {
+    height: auto;
+  }
 }
 .offers .offers__inner > div > div {
   width: 100%;
@@ -63,6 +70,11 @@
   line-height: normal;
   padding: 0 12px;
   height: 95px;
+}
+@media screen and (max-width: 744px) {
+  .offers .offers__inner > div p {
+    height: auto;
+  }
 }
 .offers .offers__inner > div:hover {
   height: 360px;
