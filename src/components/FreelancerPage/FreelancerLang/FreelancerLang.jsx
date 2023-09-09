@@ -19,17 +19,13 @@ const FreelancerLang = ({ typeLanguage }) => {
   );
 
   useEffect(() => {
-    setTimeout(() => {
-      if (typeLanguage && typeLanguage.length > 0) {
-        const selectsData = {
-          id: 1,
-          lang: typeLanguage,
-          level: langLevel,
-        };
-        dispatch(changeSelectsLangFrom([selectsData]));
-        dispatch(changeSelectsLangTo([selectsData]));
-      }
-    }, 1000);
+    const selectsData = {
+      id: 1,
+      lang: typeLanguage,
+      level: langLevel,
+    };
+    dispatch(changeSelectsLangFrom([selectsData]));
+    dispatch(changeSelectsLangTo([selectsData]));
   }, []);
 
   const addSelects = (type) => {
@@ -93,19 +89,19 @@ const FreelancerLang = ({ typeLanguage }) => {
           <div key={item.id}>
             <LangSelectFrom
               props={{
-                data: item.lang,
+                data: item?.lang,
                 type: "lang",
                 initialText: "English",
-                count: item.id,
+                count: item?.id,
                 traslationType: "from",
               }}
             />
             <LangSelectFrom
               props={{
-                data: item.level,
+                data: item?.level,
                 type: "level",
                 initialText: "A1",
-                count: item.id,
+                count: item?.id,
                 traslationType: "from",
               }}
             />
