@@ -15,8 +15,6 @@ const FreelancerLang = () => {
   const dispatch = useDispatch();
   const [langLevel, setLangLevel] = useState(arrLevels());
   const { allLang } = useSelector((state) => state.servicesPageSlice);
-  // const [lang, setLang] = useState([]);
-
   const { selectsLangFrom, selectsLangTo } = useSelector(
     (state) => state.stateSendDataSlice
   );

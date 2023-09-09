@@ -1,5 +1,3 @@
-/// для адаптивки
-
 import React, { useState } from "react";
 import styles from "./SelectServices.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
