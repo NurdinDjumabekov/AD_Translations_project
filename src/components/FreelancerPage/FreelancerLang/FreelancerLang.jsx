@@ -6,13 +6,16 @@ import {
   changeSelectsLangFrom,
   changeSelectsLangTo,
 } from "../../../store/reducers/stateSendDataSlice";
-import krest from "../../../assets/images/menu/x.svg";
+import backet from "../../../assets/images/servicesPage/basket.svg";
 import LangSelectFrom from "../LangSelectFrom/LangSelectFrom";
 import LangSelectTo from "../LangSelectTo/LangSelectTo";
+import { updateForSelects } from "../../../helpers/updateForSelects";
 
-const FreelancerLang = ({ typeLanguage }) => {
+const FreelancerLang = () => {
   const dispatch = useDispatch();
   const [langLevel, setLangLevel] = useState(arrLevels());
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
+  // const [lang, setLang] = useState([]);
 
   const { selectsLangFrom, selectsLangTo } = useSelector(
     (state) => state.stateSendDataSlice
@@ -21,12 +24,12 @@ const FreelancerLang = ({ typeLanguage }) => {
   useEffect(() => {
     const selectsData = {
       id: 1,
-      lang: typeLanguage,
+      lang: updateForSelects(allLang, "allLang"),
       level: langLevel,
     };
     dispatch(changeSelectsLangFrom([selectsData]));
     dispatch(changeSelectsLangTo([selectsData]));
-  }, []);
+  }, [allLang]);
 
   const addSelects = (type) => {
     let sel, dispatchFN;
@@ -45,7 +48,7 @@ const FreelancerLang = ({ typeLanguage }) => {
           ...sel,
           {
             id: sel[sel.length - 1].id + 1,
-            lang: typeLanguage,
+            lang: updateForSelects(allLang, "allLang"),
             level: langLevel,
           },
         ])
@@ -86,7 +89,7 @@ const FreelancerLang = ({ typeLanguage }) => {
       <div className={styles.freelancerLang__from}>
         <p>Language (Translate From)</p>
         {selectsLangFrom?.map((item) => (
-          <div key={item.id}>
+          <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectFrom
               props={{
                 data: item?.lang,
@@ -105,15 +108,11 @@ const FreelancerLang = ({ typeLanguage }) => {
                 traslationType: "from",
               }}
             />
-            {/* <button
-              onClick={ deleteSelectFrom}
-              className={styles.deleteBtn}
-            >
-              <img src={krest} alt="x" />
-            </button> */}
+            <button onClick={deleteSelectFrom} className={styles.deleteBtn}>
+              <img src={backet} alt="x" />
+            </button>
           </div>
         ))}
-        {console.log(selectsLangFrom, "selectsLangFrom")}
         <button
           className={styles.btnAddselect}
           onClick={() => addSelects("from")}
@@ -124,7 +123,7 @@ const FreelancerLang = ({ typeLanguage }) => {
       <div className={styles.freelancerLang__to}>
         <p>Language (Translate To)</p>
         {selectsLangTo?.map((item) => (
-          <div key={item.id}>
+          <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectTo
               props={{
                 data: item.lang,
@@ -143,12 +142,9 @@ const FreelancerLang = ({ typeLanguage }) => {
                 traslationType: "to",
               }}
             />
-            {/* <button
-              onClick={ deleteSelectTo}
-              className={styles.deleteBtn}
-            >
-              <img src={krest} alt="x" />
-            </button> */}
+            <button onClick={deleteSelectTo} className={styles.deleteBtn}>
+              <img src={backet} alt="x" />
+            </button>
           </div>
         ))}
         <button

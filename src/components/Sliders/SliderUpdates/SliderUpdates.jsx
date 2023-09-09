@@ -9,77 +9,77 @@ import { toTakeDataUpdates } from "../../../store/reducers/mainPageSlice";
 
 const SliderUpdates = () => {
   const dispatch = useDispatch();
-  const [data, setData] = useState([
-    {
-      id: 1,
-      title: "John Doe1",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.jasjd lalsjdlkajks jdasldkasldal jldjaklsdkasldhashdahs dhalshdklashl l l l  ld o jaod joas jodjasdaps",
-      hashtag: ["Translation", "Team", "news"],
-      icon: image,
-    },
-    {
-      id: 2,
-      title: "John Doe2",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news", "Translation", "Team"],
-      icon: image,
-    },
-    {
-      id: 3,
-      title: "John Doe3",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news"],
-      icon: image,
-    },
-    {
-      id: 4,
-      title: "John Doe4",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
-      icon: image,
-    },
-    {
-      id: 5,
-      title: "John Doe5",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
-      icon: image,
-    },
-    {
-      id: 6,
-      title: "John Doe6",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news"],
-      icon: image,
-    },
-    {
-      id: 7,
-      title: "John Doe7",
-      iconText: "Marketplace for ordering and sending goods",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "Exciting news! We have expanded our translation services to include more languages.",
-      hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
-      icon: image,
-    },
-  ]);
+  // const [data, setData] = useState([
+  //   {
+  //     id: 1,
+  //     title: "John Doe1",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.jasjd lalsjdlkajks jdasldkasldal jldjaklsdkasldhashdahs dhalshdklashl l l l  ld o jaod joas jodjasdaps",
+  //     hashtag: ["Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "John Doe2",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news", "Translation", "Team"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "John Doe3",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "John Doe4",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "John Doe5",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "John Doe6",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "John Doe7",
+  //     iconText: "Marketplace for ordering and sending goods",
+  //     img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
+  //     text: "Exciting news! We have expanded our translation services to include more languages.",
+  //     hashtag: ["Translation", "Team", "news", "Translation", "Team", "news"],
+  //     icon: image,
+  //   },
+  // ]);
 
   const { dataUpdates } = useSelector((state) => state.mainPageSlice);
   // console.log(dataUpdates, "dataUpdates");
 
   useEffect(() => {
-    setData(data?.slice(0, 5));
+    // setData(data?.slice(0, 5));
     dispatch(toTakeDataUpdates());
   }, []);
 

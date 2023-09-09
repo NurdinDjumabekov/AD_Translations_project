@@ -3,13 +3,13 @@ import PersonalData from "../../components/FreelancerPage/PersonalData/PersonalD
 import styles from "./FreelancerPage.module.css";
 import FreelancerLang from "../../components/FreelancerPage/FreelancerLang/FreelancerLang";
 import { useDispatch, useSelector } from "react-redux";
-// import { toTakeLanguage } from "../../store/reducers/dataSelectSlice";
 import Preloader from "../../components/Preloader/Preloader";
 import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import { updateForSelects } from "../../helpers/updateForSelects";
+import { textGoodFreelance } from "../../localData/data";
 
 const FreelancerPage = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,9 @@ const FreelancerPage = () => {
   const { dataFreelancers_from, dataFreelancers_to, dataFreelance } =
     useSelector((state) => state.freelanceSlice);
 
-  const { allLang } = useSelector((state) => state.servicesPageSlice);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const sendData = () => {
     checkFullName(
@@ -50,21 +52,14 @@ const FreelancerPage = () => {
               </p>
               <PersonalData />
             </>
-            <FreelancerLang
-              typeLanguage={updateForSelects(allLang, "allLang")}
-            />
-            {/* {console.log(updateForSelects(allLang, "allLang"))} */}
+            <FreelancerLang />
             <button className={styles.sendData} onClick={sendData}>
               Become a Member!
             </button>
           </div>
         </div>
       ) : (
-        <GoodSendData
-          text={
-            "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours."
-          }
-        />
+        <GoodSendData text={textGoodFreelance} />
       )}
       {preloader && <Preloader />}
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./MainPage.module.css";
 import Offers from "../../components/MainPage/Offers/Offers";
 import Advantages from "../../components/MainPage/Advantages/Advantages";
@@ -10,6 +10,9 @@ import { dataOffers } from "../../localData/data";
 
 const MainPage = () => {
   const { preloader } = useSelector((state) => state.mainPageSlice);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       {preloader ? (

@@ -4,68 +4,9 @@ import Slider from "react-slick";
 import { useSelector } from "react-redux";
 
 const SliderReviews = () => {
-  const [data, setData] = useState([
-    {
-      id: 1,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 2,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 3,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 4,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 5,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 6,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-    {
-      id: 7,
-      title: "Sasha Misho",
-      logo: "https://www.foodmakers.it/wp-content/uploads/2020/10/b2ap3_large_iospedisco.it_partner_di_glovo.jpg",
-      img: "https://vsetreningi.ru/avatars/objects/8-77_1_6.jpg?b4222da8daa8c30cbca255f5e2b8eaec",
-      text: "AD Translate's collaboration with Glovo resulted in the development of a cutting-edge translation system that revolutionized how the company handled its language localization needs. The newly implemented system not only provided maximum levels of quality, control, and cost-effectiveness but also offered several other significant advantages",
-      date: "21.09.2023",
-    },
-  ]);
-
   const { dataReviews } = useSelector((state) => state.aboutPageSlice);
 
-  console.log(dataReviews, "dataReviews");
+  // console.log(dataReviews, "dataReviews");
   // сократит данные до 5ми элементов
 
   const settings = {

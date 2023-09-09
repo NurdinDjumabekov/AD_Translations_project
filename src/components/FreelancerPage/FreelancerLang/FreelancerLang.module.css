@@ -17,7 +17,7 @@
     margin: 0 auto;
   }
 }
-.freelancerLang .freelancerLang__from > div {
+.freelancerLang .freelancerLang__from .freelancerLang__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,39 +29,18 @@
           align-items: center;
 }
 @media screen and (max-width: 650px) {
-  .freelancerLang .freelancerLang__from > div {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 5px;
+  .freelancerLang .freelancerLang__from .freelancerLang__inner > div {
+    width: 165px !important;
   }
-  .freelancerLang .freelancerLang__from > div > div:first-child {
-    width: 265px;
-  }
-  .freelancerLang .freelancerLang__from > div > div:first-child > div {
-    width: 265px;
+  .freelancerLang .freelancerLang__from .freelancerLang__inner > div > div {
+    width: 165px;
   }
 }
-.freelancerLang .freelancerLang__from > div .deleteBtn {
-  width: 25px;
-  height: 25px;
-  background: red;
-  border-radius: 50%;
-  border: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
+.freelancerLang .freelancerLang__from .freelancerLang__inner > div:nth-child(2) {
+  width: 250px;
 }
-.freelancerLang .freelancerLang__from > div .deleteBtn img {
-  width: 80%;
-  height: 80%;
+.freelancerLang .freelancerLang__from .freelancerLang__inner > div:nth-child(2) .langSelectFrom > div:nth-child(2) {
+  width: 250px !important;
 }
 .freelancerLang .freelancerLang__from > p {
   color: #151515;
@@ -81,27 +60,30 @@
     margin: 30px auto 0;
   }
 }
-.freelancerLang .freelancerLang__to > div {
+.freelancerLang .freelancerLang__to .freelancerLang__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media screen and (max-width: 650px) {
-  .freelancerLang .freelancerLang__to > div {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 5px;
+  .freelancerLang .freelancerLang__to .freelancerLang__inner > div {
+    width: 165px !important;
   }
-  .freelancerLang .freelancerLang__to > div > div:first-child {
-    width: 265px;
+  .freelancerLang .freelancerLang__to .freelancerLang__inner > div > div {
+    width: 165px;
   }
-  .freelancerLang .freelancerLang__to > div > div:first-child > div {
-    width: 265px;
-  }
+}
+.freelancerLang .freelancerLang__to .freelancerLang__inner > div:nth-child(2) {
+  width: 250px;
+}
+.freelancerLang .freelancerLang__to .freelancerLang__inner > div:nth-child(2) .langSelectFrom > div:nth-child(2) {
+  width: 250px !important;
 }
 .freelancerLang .freelancerLang__to > p {
   color: #151515;
@@ -111,6 +93,34 @@
   font-weight: 500;
   line-height: normal;
   margin: 0 0 5px 0;
+}
+.freelancerLang .freelancerLang__inner:nth-child(2) > button {
+  display: none;
+}
+.freelancerLang .freelancerLang__inner:nth-child(2) > div:nth-child(2) {
+  width: 300px;
+}
+@media screen and (max-width: 650px) {
+  .freelancerLang .freelancerLang__inner:nth-child(3) > div:nth-child(2),
+.freelancerLang .freelancerLang__inner:nth-child(4) > div:nth-child(2) {
+    width: 115px !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .freelancerLang .freelancerLang__inner:nth-child(3) > div:nth-child(2) > div:nth-child(1),
+.freelancerLang .freelancerLang__inner:nth-child(4) > div:nth-child(2) > div:nth-child(1) {
+    width: 115px !important;
+  }
+}
+.freelancerLang .freelancerLang__inner:nth-child(3) > div:nth-child(2) > div:nth-child(2),
+.freelancerLang .freelancerLang__inner:nth-child(4) > div:nth-child(2) > div:nth-child(2) {
+  width: 250px;
+}
+@media screen and (max-width: 650px) {
+  .freelancerLang .freelancerLang__inner:nth-child(3) > div:nth-child(2) > div:nth-child(2),
+.freelancerLang .freelancerLang__inner:nth-child(4) > div:nth-child(2) > div:nth-child(2) {
+    width: 115px;
+  }
 }
 .freelancerLang .btnAddselect {
   border-radius: 6px;
@@ -125,4 +135,26 @@
   padding: 8px 20px;
   margin: 10px 0 0 0;
   cursor: pointer;
+}
+.freelancerLang .deleteBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--Background, #FAFAFA);
+}
+.freelancerLang .deleteBtn img {
+  width: 70%;
+  height: 70%;
 }

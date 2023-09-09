@@ -17,6 +17,9 @@ const OrderPage = () => {
   const { dataServices, dataIndustries, allLang } = useSelector(
     (state) => state.servicesPageSlice
   );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

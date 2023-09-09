@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import styles from "./ConsultationPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgGood from "../../assets/images/orderPage/good.png";
-import { useNavigate } from "react-router-dom";
 import { toTakeDataCansultation } from "../../store/reducers/stateSendDataSlice";
 
 const ConsultationPage = () => {
-  // const navigate = useNavigate();
   const regEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   const dispatch = useDispatch();
   const { goodSendConsultation } = useSelector(

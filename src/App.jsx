@@ -11,8 +11,6 @@ import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import NotFound from "./pages/NotFound/NotFound";
 import FreelancerPage from "./pages/FreelancerPage/FreelancerPage";
 import ConsultationPage from "./pages/ConsultationPage/ConsultationPage";
-import AdminPage from "./pages/admin/AdminPage/AdminPage";
-import LayoutAdmin from "./components/hoc/LayoutAdmin";
 import { useEffect } from "react";
 import {
   toTakeAllDataServices,
@@ -48,9 +46,6 @@ function App() {
           <Route path="/conditions" element={<ConditionsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
-        </Route>
-        <Route path="/" element={<LayoutAdmin />}>
-          <Route path="/admin" element={<AdminPage />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

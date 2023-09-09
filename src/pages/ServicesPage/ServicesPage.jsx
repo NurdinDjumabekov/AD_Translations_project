@@ -7,7 +7,9 @@ import Preloader from "../../components/Preloader/Preloader";
 
 const ServicesPage = () => {
   const { preloader } = useSelector((state) => state.mainPageSlice);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Services />
