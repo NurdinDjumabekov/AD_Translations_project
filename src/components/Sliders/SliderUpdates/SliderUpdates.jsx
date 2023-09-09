@@ -76,7 +76,7 @@ const SliderUpdates = () => {
   ]);
 
   const { dataUpdates } = useSelector((state) => state.mainPageSlice);
-  console.log(dataUpdates, "dataUpdates");
+  // console.log(dataUpdates, "dataUpdates");
 
   useEffect(() => {
     setData(data?.slice(0, 5));

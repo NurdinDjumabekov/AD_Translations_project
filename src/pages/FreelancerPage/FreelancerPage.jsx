@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import PersonalData from "../../components/FreelancerPage/PersonalData/PersonalData";
 import styles from "./FreelancerPage.module.css";
 import FreelancerLang from "../../components/FreelancerPage/FreelancerLang/FreelancerLang";
 import { useDispatch, useSelector } from "react-redux";
-import { toTakeLanguage } from "../../store/reducers/dataSelectSlice";
+// import { toTakeLanguage } from "../../store/reducers/dataSelectSlice";
 import Preloader from "../../components/Preloader/Preloader";
 import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
+import { updateForSelects } from "../../helpers/updateForSelects";
 
 const FreelancerPage = () => {
   const dispatch = useDispatch();
-  const { typeLanguage } = useSelector((state) => state.dataSelectSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
   const { preloader } = useSelector((state) => state.mainPageSlice);
   const { selectsLangFrom, selectsLangTo, errorFreelanceSend } = useSelector(
@@ -21,10 +21,8 @@ const FreelancerPage = () => {
   const { dataFreelancers_from, dataFreelancers_to, dataFreelance } =
     useSelector((state) => state.freelanceSlice);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(toTakeLanguage());
-  }, []);
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
+
   const sendData = () => {
     checkFullName(
       dispatch,
@@ -38,6 +36,7 @@ const FreelancerPage = () => {
       selectsLangTo
     );
   };
+
   return (
     <>
       {goodSendData ? (
@@ -51,7 +50,10 @@ const FreelancerPage = () => {
               </p>
               <PersonalData />
             </>
-            <FreelancerLang typeLanguage={typeLanguage} />
+            <FreelancerLang
+              typeLanguage={updateForSelects(allLang, "allLang")}
+            />
+            {/* {console.log(updateForSelects(allLang, "allLang"))} */}
             <button className={styles.sendData} onClick={sendData}>
               Become a Member!
             </button>

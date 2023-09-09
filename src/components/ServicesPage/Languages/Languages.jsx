@@ -2,20 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./Languages.module.css";
 import { sortLanguages } from "../../../helpers/sortLanguages";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { toTakeAllLang } from "../../../store/reducers/servicesPageSlice";
+import { useSelector } from "react-redux";
 
 const Languages = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   const [data, setData] = useState([]);
   const [dataAdaptation, setDataAdaptation] = useState([]);
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
   useEffect(() => {
-    setData(sortLanguages()[0]); // в helpers зайди, там всё ясно будет
-    setDataAdaptation(sortLanguages()[1]);
-  }, []);
-  console.log(dataAdaptation);
+    setData(sortLanguages(allLang)[0]); // в helpers зайди, там всё ясно будет
+    setDataAdaptation(sortLanguages(allLang)[1]);
+  }, [allLang]);
   const lengNum = Math.ceil(dataAdaptation.length / 2);
 
   return (
@@ -30,7 +27,7 @@ const Languages = () => {
                 key={item.id}
               >
                 <p>{item.letter}</p>
-                <span>{item.title}</span>
+                <span>{item.name}</span>
               </div>
             ))}
           </div>
@@ -41,7 +38,7 @@ const Languages = () => {
                 key={item.id}
               >
                 <p>{item.letter}</p>
-                <span>{item.title}</span>
+                <span>{item.name}</span>
               </div>
             ))}
           </div>
@@ -52,7 +49,7 @@ const Languages = () => {
                 className={item.letter !== "" ? styles.pushContent : ""}
               >
                 <p>{item.letter}</p>
-                <span>{item.title}</span>
+                <span>{item.name}</span>
               </div>
             ))}
           </div>
@@ -61,12 +58,12 @@ const Languages = () => {
         <div className={styles.adaptationLanguages}>
           <div>
             {dataAdaptation.slice(0, lengNum).map((i) => (
-              <p key={i.id}>{i.title}</p>
+              <p key={i.id}>{i.name}</p>
             ))}
           </div>
           <div>
             {dataAdaptation.slice(lengNum, dataAdaptation?.length).map((i) => (
-              <p key={i.id}>{i.title}</p>
+              <p key={i.id}>{i.name}</p>
             ))}
           </div>
         </div>

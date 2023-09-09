@@ -2,23 +2,18 @@ import React, { useEffect, useState } from "react";
 import styles from "./Services.module.css";
 import Search from "../Search/Search";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  toTakeAllDataServices,
-  toTakeDataServices,
-} from "../../../store/reducers/servicesPageSlice";
+import { toTakeDataServices } from "../../../store/reducers/servicesPageSlice";
 import { addDataID } from "../../../helpers/addDataID";
 import SelectServices from "../SelectServices/SelectServices";
 
 const Services = () => {
   const dispatch = useDispatch();
+  const [count, setCount] = useState(1);
+
   const { dataServices, dataForSearch, search } = useSelector(
     (state) => state.servicesPageSlice
   );
   console.log(dataServices, "dataServices");
-
-  useEffect(() => {
-    dispatch(toTakeAllDataServices());
-  }, []);
 
   useEffect(() => {
     const newData = dataForSearch.filter((item) =>
@@ -26,8 +21,6 @@ const Services = () => {
     );
     dispatch(toTakeDataServices(addDataID(newData)));
   }, [search]);
-
-  const [count, setCount] = useState(1);
 
   return (
     <div className={styles.services}>

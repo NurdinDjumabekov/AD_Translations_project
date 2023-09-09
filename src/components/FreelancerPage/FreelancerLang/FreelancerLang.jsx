@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./FreelancerLang.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { toTakeLanguage } from "../../../store/reducers/dataSelectSlice";
 import { arrLevels } from "../../../helpers/arrLevels";
 import {
   changeSelectsLangFrom,
@@ -18,23 +17,20 @@ const FreelancerLang = ({ typeLanguage }) => {
   const { selectsLangFrom, selectsLangTo } = useSelector(
     (state) => state.stateSendDataSlice
   );
-  console.log(selectsLangFrom, "selectsLangFrom");
+
   useEffect(() => {
-    dispatch(toTakeLanguage());
+    setTimeout(() => {
+      if (typeLanguage && typeLanguage.length > 0) {
+        const selectsData = {
+          id: 1,
+          lang: typeLanguage,
+          level: langLevel,
+        };
+        dispatch(changeSelectsLangFrom([selectsData]));
+        dispatch(changeSelectsLangTo([selectsData]));
+      }
+    }, 1000);
   }, []);
-
-  useEffect(() => {
-    if (typeLanguage && typeLanguage.length > 0) {
-      const selectsData = {
-        id: 1,
-        lang: typeLanguage,
-        level: langLevel,
-      };
-
-      dispatch(changeSelectsLangFrom([selectsData]));
-      dispatch(changeSelectsLangTo([selectsData]));
-    }
-  }, [typeLanguage]);
 
   const addSelects = (type) => {
     let sel, dispatchFN;
@@ -121,6 +117,7 @@ const FreelancerLang = ({ typeLanguage }) => {
             </button> */}
           </div>
         ))}
+        {console.log(selectsLangFrom, "selectsLangFrom")}
         <button
           className={styles.btnAddselect}
           onClick={() => addSelects("from")}

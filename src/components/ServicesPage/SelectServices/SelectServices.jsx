@@ -1,18 +1,15 @@
 /// для адаптивки
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./SelectServices.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const SelectServices = ({ setCount }) => {
-  const dispatch = useDispatch();
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState("Editing");
   const { dataServices } = useSelector((state) => state.servicesPageSlice);
-
-  console.log(dataServices, "dataServices");
 
   const clickChoice = (title, id) => {
     setLookSelect(false);

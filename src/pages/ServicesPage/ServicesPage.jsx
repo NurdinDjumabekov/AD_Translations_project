@@ -4,11 +4,8 @@ import SliderIndustries from "../../components/Sliders/SliderIndustries/SliderIn
 import Languages from "../../components/ServicesPage/Languages/Languages";
 import { useDispatch, useSelector } from "react-redux";
 import Preloader from "../../components/Preloader/Preloader";
-import { toTakeIndustriesData } from "../../store/reducers/servicesPageSlice";
 
 const ServicesPage = () => {
-  const dispatch = useDispatch();
-
   const { preloader } = useSelector((state) => state.mainPageSlice);
 
   return (

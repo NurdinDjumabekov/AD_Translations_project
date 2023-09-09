@@ -11,7 +11,7 @@ const initialState = {
     industries: "",
     date: "",
     email: "",
-    phoneNum: "+",
+    phoneNum: "",
   },
   goodSendData: true,
   typeDoc: 1,

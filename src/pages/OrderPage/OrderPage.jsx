@@ -3,31 +3,19 @@ import styles from "./OrderPage.module.css";
 import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  toTakeIndustries,
-  toTakeLanguage,
-  toTakeServices,
-} from "../../store/reducers/dataSelectSlice";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
+import { updateForSelects } from "../../helpers/updateForSelects";
+import { textGoodSendData } from "../../localData/data";
 
 const OrderPage = () => {
-  const dispatch = useDispatch();
   const [doc, setDoc] = useState(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    dispatch(toTakeServices());
-    dispatch(toTakeIndustries());
-    dispatch(toTakeLanguage());
-  }, []);
 
   const { preloader } = useSelector((state) => state.mainPageSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
-
-  const { typeServices, typeIndustries, typeLanguage } = useSelector(
-    (state) => state.dataSelectSlice
+  const { dataServices, dataIndustries, allLang } = useSelector(
+    (state) => state.servicesPageSlice
   );
 
   return (
@@ -41,30 +29,30 @@ const OrderPage = () => {
               <div className={styles.order__services}>
                 <ChoiceSelect
                   props={{
-                    data: typeIndustries,
+                    data: updateForSelects(dataIndustries, "Industries"),
                     textAbove: "Industries",
                     initialText: "General",
                   }}
                 />
                 <ChoiceSelect
                   props={{
-                    data: typeServices,
+                    data: updateForSelects(dataServices, "Services"),
                     textAbove: "Services",
                     initialText: "Editing",
                   }}
                 />
               </div>
-              <TypesDocuments doc={doc} setDoc={setDoc} data={typeLanguage} />
+              <TypesDocuments
+                doc={doc}
+                setDoc={setDoc}
+                data={updateForSelects(allLang, "allLang")}
+              />
             </div>
             <ActionBtns doc={doc} setDoc={setDoc} />
           </div>
         </div>
       ) : (
-        <GoodSendData
-          text={
-            "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!"
-          }
-        />
+        <GoodSendData text={textGoodSendData} />
       )}
       {preloader && <Preloader />}
     </>

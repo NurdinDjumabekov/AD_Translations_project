@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./ActionBtns.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeErrorSend } from "../../../store/reducers/stateSendDataSlice";
-import { checkDate, checkEmail, checkNum } from "../../../helpers/validation";
+import { checkDate } from "../../../helpers/validation";
 import {
   changeOrderData,
   changeTypeDoc,
@@ -21,7 +21,7 @@ const ActionBtns = ({ doc, setDoc }) => {
       changeOrderData({
         date: "",
         email: "",
-        phoneNum: "+",
+        phoneNum: "",
       })
     );
     dispatch(changeTypeDoc(1));

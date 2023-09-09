@@ -10,6 +10,7 @@ const initialState = {
   dataForSearch: [],
   search: "",
   dataIndustries: [],
+  allLang: [],
 };
 
 export const toTakeAllDataServices = createAsyncThunk(
@@ -34,7 +35,8 @@ export const toTakeAllLang = createAsyncThunk(
     try {
       dispatch(changePreloader(true));
       const { data } = await axios(`${BASE_URL}language/list/`);
-      console.log(data);
+      dispatch(changeAllLang(data));
+      dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
       alert("ошибка соединения!");
@@ -72,6 +74,9 @@ const servicesPageSlice = createSlice({
     changeDataIndustries: (state, action) => {
       state.dataIndustries = action.payload;
     },
+    changeAllLang: (state, action) => {
+      state.allLang = action.payload;
+    },
   },
 });
 export const {
@@ -79,6 +84,7 @@ export const {
   changeDataForSearch,
   changeSearch,
   changeDataIndustries,
+  changeAllLang,
 } = servicesPageSlice.actions;
 
 export default servicesPageSlice.reducer;

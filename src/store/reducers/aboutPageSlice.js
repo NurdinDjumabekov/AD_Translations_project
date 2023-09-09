@@ -31,18 +31,6 @@ export const toTakeFAQ = createAsyncThunk(
   }
 );
 
-export const toTakeData = createAsyncThunk(
-  "toTakeFAQ",
-  async (info, { dispatch }) => {
-    try {
-      const { data } = await axios(`${BASE_URL}faq/list/`);
-      dispatch(changeDataFAQ(data));
-    } catch (err) {
-      console.log(err);
-    }
-  }
-);
-
 const aboutPageSlice = createSlice({
   name: "aboutPageSlice",
   initialState,

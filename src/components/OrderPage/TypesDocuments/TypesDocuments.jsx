@@ -4,31 +4,13 @@ import ChoiceSelect from "../ChoiceSelect/ChoiceSelect";
 import DataForSend from "../DataForSend/DataForSend";
 import { DataUsers } from "../DataUsers/DataUsers";
 import { useDispatch, useSelector } from "react-redux";
+import { typeData } from "../../../localData/data";
 import {
   changeOrderData,
   changeTypeDoc,
 } from "../../../store/reducers/orderPageSlice";
 
 const TypesDocuments = ({ doc, data, setDoc }) => {
-  const typeData = [
-    {
-      doc: "Documents",
-      id: 1,
-    },
-    {
-      doc: "Video",
-      id: 2,
-    },
-    {
-      doc: "Audio",
-      id: 3,
-    },
-    {
-      doc: "Link",
-      id: 4,
-    },
-  ];
-
   const [stateData, setStateData] = useState(true);
 
   const dispatch = useDispatch();
@@ -71,7 +53,7 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
   return (
     <>
       <div className={styles.docType}>
-        {typeData.map((btn) => (
+        {typeData?.map((btn) => (
           <button
             key={btn.id}
             onClick={() => clickTypeDoc(btn.id)}
