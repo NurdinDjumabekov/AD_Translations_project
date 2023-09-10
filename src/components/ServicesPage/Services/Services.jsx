@@ -13,7 +13,6 @@ const Services = () => {
   const { dataServices, dataForSearch, search } = useSelector(
     (state) => state.servicesPageSlice
   );
-  // console.log(dataServices, "dataServices");
 
   useEffect(() => {
     const newData = dataForSearch.filter((item) =>

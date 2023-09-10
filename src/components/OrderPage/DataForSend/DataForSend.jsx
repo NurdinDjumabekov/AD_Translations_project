@@ -9,6 +9,7 @@ const DataForSend = ({ doc, setDoc }) => {
   const clickSend = () => {
     inputRef.current.click();
   };
+
   const { typeDoc } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 

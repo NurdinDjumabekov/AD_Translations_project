@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./OrderPage.module.css";
 import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";

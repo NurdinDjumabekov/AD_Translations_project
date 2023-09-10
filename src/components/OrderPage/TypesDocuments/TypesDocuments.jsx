@@ -9,6 +9,7 @@ import {
   changeOrderData,
   changeTypeDoc,
 } from "../../../store/reducers/orderPageSlice";
+import InputMask from "react-input-mask";
 
 const TypesDocuments = ({ doc, data, setDoc }) => {
   const [stateData, setStateData] = useState(true);
@@ -35,8 +36,8 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
     }
   }, [stateData]);
 
-  const clickTypeDoc = (id) => {
-    dispatch(changeTypeDoc(id));
+  const clickTypeDoc = (type) => {
+    dispatch(changeTypeDoc(type));
     setDoc(null);
   };
 
@@ -81,8 +82,11 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
           <p>Deadline</p>
           {stateData ? (
             <label>
-              <input
+              {/* <input type="text" value={orderData.date} maxLength="10" /> */}
+              <InputMask
                 className={errorSend.date ? styles.badInput : ""}
+                mask="9999-99-99"
+                maskPlaceholder=""
                 onChange={(e) =>
                   dispatch(
                     changeOrderData({
@@ -91,9 +95,8 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
                     })
                   )
                 }
-                placeholder="DD.MM.YY"
-                type="text"
                 value={orderData.date}
+                placeholder="DD-MM-YY"
               />
               <button onClick={() => setStateData(false)}>Auto</button>
             </label>

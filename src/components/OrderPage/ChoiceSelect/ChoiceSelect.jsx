@@ -5,6 +5,7 @@ import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeOrderData,
+  changeidEverySelect,
   clearAllSelects,
 } from "../../../store/reducers/orderPageSlice";
 
@@ -12,13 +13,16 @@ const ChoiceSelect = ({ props }) => {
   const dispatch = useDispatch();
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState(props?.initialText);
-  const { orderData, clearData } = useSelector((state) => state.orderPageSlice);
+  const [langId, setLangId] = useState(1);
+  const { orderData, clearData, idEverySelect } = useSelector(
+    (state) => state.orderPageSlice
+  );
 
   useEffect(() => {
     const updateOrderData = () => {
       switch (props?.textAbove) {
         case "Services":
-          return { services: choiceLang === "" ? "nurdin" : choiceLang };
+          return { services: choiceLang };
         case "Industries":
           return { industries: choiceLang };
         case "To":
@@ -28,11 +32,25 @@ const ChoiceSelect = ({ props }) => {
       }
     };
     dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
+    const updateSelectID = () => {
+      switch (props?.textAbove) {
+        case "Services":
+          return { services: langId };
+        case "Industries":
+          return { industries: langId };
+        case "To":
+          return { toLang: langId };
+        case "From":
+          return { fromLang: langId };
+      }
+    };
+    dispatch(changeidEverySelect({ ...idEverySelect, ...updateSelectID() }));
   }, [choiceLang]);
 
-  const clickChoice = (lang) => {
+  const clickChoice = (lang, id) => {
     setLookSelect(false);
     setChoiceLang(lang);
+    setLangId(id);
     dispatch(clearAllSelects(false)); // для того чтобы можно было еще раз стереть все данные
   };
 
@@ -67,7 +85,7 @@ const ChoiceSelect = ({ props }) => {
           {props.data?.map((lang) => (
             <p
               key={lang.id}
-              onClick={() => clickChoice(lang.choice)}
+              onClick={() => clickChoice(lang.choice, lang.id)}
               className={lang.choice === choiceLang ? styles.activeSelect : ""}
             >
               {lang.choice}

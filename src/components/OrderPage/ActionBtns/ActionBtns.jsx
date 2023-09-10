@@ -11,7 +11,9 @@ import {
 
 const ActionBtns = ({ doc, setDoc }) => {
   const dispatch = useDispatch();
-  const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
+  const { orderData, typeDoc, idEverySelect } = useSelector(
+    (state) => state.orderPageSlice
+  );
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   const clearAllData = () => {
@@ -24,12 +26,12 @@ const ActionBtns = ({ doc, setDoc }) => {
         phoneNum: "",
       })
     );
-    dispatch(changeTypeDoc(1));
+    dispatch(changeTypeDoc("Documents"));
   };
 
   const checkDocuments = () => {
     if (doc) {
-      checkDate(orderData, doc, typeDoc, dispatch, errorSend);
+      checkDate(orderData, doc, typeDoc, dispatch, errorSend, idEverySelect);
     } else {
       dispatch(
         changeErrorSend({
@@ -48,6 +50,7 @@ const ActionBtns = ({ doc, setDoc }) => {
     }
   };
 
+  // console.log(idEverySelect, "idEverySelect");
   // все выборочное селекты на валидацию не проверяю, ибо чел не может выбрать что-то пустое
 
   return (

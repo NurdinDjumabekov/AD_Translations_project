@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { changePreloader } from "./mainPageSlice";
 import { transformWord } from "../../helpers/tranformWord";
+import { transformWordForServer } from "../../helpers/transformWordForServer";
+const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const initialState = {
   orderData: {
@@ -13,18 +15,22 @@ const initialState = {
     email: "",
     phoneNum: "",
   },
+  idEverySelect: {
+    fromLang: 1,
+    toLang: 1,
+    services: 1,
+    industries: 1,
+  },
   goodSendData: true,
   typeDoc: 1,
   clearData: false,
 };
-
+// для отправки данных в телеграмм бот
 export const sendDataOrder = createAsyncThunk(
   "sendDataOrder",
   async (info, { dispatch }) => {
-    console.log(info);
     dispatch(changePreloader(true));
     try {
-      // console.log(info);
       const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
       const chatId = "775337596";
       const messageText = transformWord(info);
@@ -65,7 +71,22 @@ export const sendDataOrder = createAsyncThunk(
     }
   }
 );
-/// dui.nurdin@gmail.com
+
+// данные для отправки на сервер
+export const toSendOrderData = createAsyncThunk(
+  "toSendOrderData",
+  async (data, { dispatch }) => {
+    try {
+      await axios({
+        method: "POST",
+        url: `${BASE_URL}order/create/`,
+        data: transformWordForServer(data),
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
 
 const orderPageSlice = createSlice({
   name: "orderPageSlice",
@@ -83,6 +104,9 @@ const orderPageSlice = createSlice({
     clearAllSelects: (state, action) => {
       state.clearData = action.payload;
     },
+    changeidEverySelect: (state, action) => {
+      state.idEverySelect = action.payload;
+    },
   },
 });
 export const {
@@ -90,6 +114,7 @@ export const {
   changeTypeDoc,
   changeGoodSendData,
   clearAllSelects,
+  changeidEverySelect,
 } = orderPageSlice.actions;
 
 export default orderPageSlice.reducer;
