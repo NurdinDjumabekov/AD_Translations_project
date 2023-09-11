@@ -82,7 +82,6 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
           <p>Deadline</p>
           {stateData ? (
             <label>
-              {/* <input type="text" value={orderData.date} maxLength="10" /> */}
               <InputMask
                 className={errorSend.date ? styles.badInput : ""}
                 mask="9999-99-99"

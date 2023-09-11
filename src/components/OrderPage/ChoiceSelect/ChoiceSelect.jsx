@@ -82,13 +82,13 @@ const ChoiceSelect = ({ props }) => {
       </div>
       {lookSelect && (
         <div className="mySelect">
-          {props.data?.map((lang) => (
+          {props?.data?.map((lang) => (
             <p
-              key={lang.id}
-              onClick={() => clickChoice(lang.choice, lang.id)}
+              key={lang?.id}
+              onClick={() => clickChoice(lang?.choice, lang.id)}
               className={lang.choice === choiceLang ? styles.activeSelect : ""}
             >
-              {lang.choice}
+              {lang?.choice}
             </p>
           ))}
         </div>

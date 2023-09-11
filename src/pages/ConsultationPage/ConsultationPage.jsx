@@ -2,34 +2,45 @@ import React, { useEffect, useState } from "react";
 import styles from "./ConsultationPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgGood from "../../assets/images/orderPage/good.png";
-import { toTakeDataCansultation } from "../../store/reducers/stateSendDataSlice";
+import { sendConsultationData } from "../../store/reducers/onServerSlice";
+import { goodSendConsult } from "../../localData/data";
+import Preloader from "../../components/Preloader/Preloader";
+import { useNavigate } from "react-router-dom";
 
 const ConsultationPage = () => {
   const regEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { goodSendConsultation } = useSelector(
     (state) => state.stateSendDataSlice
   );
+  const { preloader } = useSelector((state) => state.mainPageSlice);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const [sendError, setSendError] = useState({
     name: false,
     email: false,
     message: false,
   });
+
   const [data, setData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
   const sendData = (e) => {
     e.preventDefault();
     if (data.name !== "") {
       if (regEmail.test(data.email)) {
         if (data.message !== "") {
-          dispatch(toTakeDataCansultation(data));
+          dispatch(sendConsultationData(data));
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
         } else {
           setSendError({ ...sendError, message: true });
           setTimeout(() => {
@@ -56,10 +67,7 @@ const ConsultationPage = () => {
         <div className={styles.goodSend}>
           <img src={imgGood} alt="good" />
           <h5>Thank You!</h5>
-          <p>
-            We got Your question. Please, expect a response within 24 hours. The
-            answer will be sent to you by email!
-          </p>
+          <p>{goodSendConsult}</p>
         </div>
       ) : (
         <div className={styles.consultation}>
@@ -103,6 +111,7 @@ const ConsultationPage = () => {
           </form>
         </div>
       )}
+      {preloader && <Preloader />}
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { toSendFreelancerData } from "../store/reducers/onServerSlice";
 import { arrangementData } from "./arrangementData";
 import { checkSendData } from "./checkSendData";
 
@@ -98,16 +99,6 @@ export const checkNumPhone = (
 ) => {
   const regNumPhone = /[0-9]{7,15}/;
   if (regNumPhone.test(dataFreelance.phone)) {
-    // console.log(
-    //   arrangementData({
-    //     fromLang: checkSendData({
-    //       selectsLangFrom,
-    //       dataFreelancers_from,
-    //       type: "from",
-    //     }),
-    //   }),
-    //   "tfyghuijlok;"
-    // );
     dispatch(
       sendDataFreelancers({
         selects: arrangementData({
@@ -125,6 +116,7 @@ export const checkNumPhone = (
         data: dataFreelance,
       })
     );
+    dispatch(toSendFreelancerData(dataFreelance));
   } else {
     dispatch(
       changeErrorFreelanceSend({

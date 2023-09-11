@@ -59,7 +59,15 @@ const Services = () => {
                   return (
                     <div key={item.id}>
                       <h4>{item.title}</h4>
-                      <p>{item.text}</p>
+                      <p
+                        style={
+                          item?.text?.length < 1330
+                            ? { marginLeft: "-20px" }
+                            : {}
+                        }
+                      >
+                        {item.text}
+                      </p>
                     </div>
                   );
                 }

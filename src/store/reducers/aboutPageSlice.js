@@ -12,7 +12,7 @@ export const toTakeDataReviews = createAsyncThunk(
   async (info, { dispatch }) => {
     try {
       const { data } = await axios(`${BASE_URL}reviews/list/`);
-      dispatch(changeDataReviews(data));
+      dispatch(changeDataReviews(data?.results));
     } catch (err) {
       console.log(err);
     }

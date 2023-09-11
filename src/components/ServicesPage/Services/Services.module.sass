@@ -5,7 +5,6 @@
         padding: 10px 0
         @media screen and ( max-width: 450px )
             border: none
-        
     > p
         color: #151515
         text-align: center
@@ -67,6 +66,8 @@
                     border: 1px solid #DEDEDE
                 > .services__content
                     display: block
+                    padding: 0 5px 0 0
+                    width: 340px
                     h5
                         font-family: Roboto
                         font-size: 20px
@@ -74,23 +75,20 @@
                         font-weight: 600
                         line-height: normal
                         margin-bottom: 8px
-                        // background: red
                         overflow: hidden
                         text-overflow: ellipsis
                         white-space: nowrap
-                        width: 350px
-
+                        width: 100%
                     p
                         font-family: Roboto
                         font-size: 16px
                         font-style: normal
                         font-weight: 400
                         line-height: 20px
-                        // background: red
                         overflow: hidden
                         text-overflow: ellipsis
-                        width: 350px
                         height: 40px
+                        width: 100%
             .activeServicesBlock
                 background-color: green
                 color: #fafafa
@@ -120,8 +118,6 @@
                 justify-content: center
                 align-items: center
                 font-size: 30px
-                // background: red
-                    
             h4
                 color: #151515
                 font-family: Roboto
@@ -131,6 +127,10 @@
                 line-height: normal
                 margin-bottom: 20px
                 animation: lookEveryTitle 1.5s
+                height: 35px
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
                 @keyframes lookEveryTitle
                     0%
                         opacity: 0
@@ -159,8 +159,6 @@
                 @media screen and ( max-width: 500px )
                     height: 325px
                     font-size: 12px
-
-                            
             p::-webkit-scrollbar 
                 width: 8px
             p::-webkit-scrollbar-thumb 

@@ -28,7 +28,7 @@ const SliderReviews = () => {
       <div className="container">
         <div className={styles.sliderReviews__inner}>
           <Slider {...settings}>
-            {dataReviews?.slice(0, 5)?.map((slide) => (
+            {dataReviews?.slice(0, 5).map((slide) => (
               <div key={slide.id}>
                 <div className={styles.sliderIndustries__mainImgs}>
                   <div className={styles.sliderIndustries__logo}>

@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   errorSend: {
@@ -22,32 +21,6 @@ const initialState = {
   stateConsultation: true,
   goodSendConsultation: false,
 };
-
-export const toTakeDataCansultation = createAsyncThunk(
-  "toTakeDataCansultation",
-  async (data, { dispatch }) => {
-    try {
-      await axios({
-        method: "GET",
-        url: "/////",
-        data: {
-          name: data.name,
-          email: data.email,
-          message: data.message,
-        },
-      });
-      dispatch(changeGoodSendConsultation(true));
-      setTimeout(() => {
-        dispatch(changeGoodSendConsultation(false));
-      }, 2000);
-      // setTimeout(() => {
-      //   navigate("/");
-      // }, 3000);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-);
 
 const stateSendDataSlice = createSlice({
   name: "stateSendDataSlice",

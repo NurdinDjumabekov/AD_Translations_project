@@ -176,3 +176,6 @@ export const privacyPageData = [
     text: "This website and its owners through their social media platform accounts may share web links to relevant web pages. By default some social media platforms shorten lengthy urls [web addresses] (this is an example: http://bit.ly/1S5wipc). Users are advised to take caution and good judgement before clicking any shortened urls published on social media platforms by this website and its owners. Despite the best efforts to ensure only genuine urls are published many social media platforms are prone to spam and hacking and therefore this website and its owners cannot be held liable for any damages or implications caused by visiting any shortened links.",
   },
 ];
+
+export const goodSendConsult =
+  " We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!";

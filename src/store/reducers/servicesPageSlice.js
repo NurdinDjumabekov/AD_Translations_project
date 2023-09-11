@@ -2,6 +2,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { addDataID } from "../../helpers/addDataID";
 import { changePreloader } from "./mainPageSlice";
+import {
+  changeDataIndustriesForServer,
+  changeDataServicesForServer,
+} from "./onServerSlice";
 
 const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
@@ -19,8 +23,9 @@ export const toTakeAllDataServices = createAsyncThunk(
     try {
       dispatch(changePreloader(true));
       const { data } = await axios(`${BASE_URL}services/list/`);
-      dispatch(toTakeDataServices(addDataID(data)));
-      dispatch(changeDataForSearch(addDataID(data)));
+      dispatch(toTakeDataServices(addDataID(data?.results)));
+      dispatch(changeDataForSearch(addDataID(data?.results)));
+      dispatch(changeDataServicesForServer(data?.results));
       dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
@@ -50,7 +55,8 @@ export const toTakeIndustriesData = createAsyncThunk(
     dispatch(changePreloader(true));
     try {
       const { data } = await axios(`${BASE_URL}industries/list/`);
-      dispatch(changeDataIndustries(data));
+      dispatch(changeDataIndustries(data?.results));
+      dispatch(changeDataIndustriesForServer(data?.results));
       dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);

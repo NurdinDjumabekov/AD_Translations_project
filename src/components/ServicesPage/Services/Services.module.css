@@ -108,6 +108,8 @@
 }
 .services .services__inner > .services__allContent > div > .services__content {
   display: block;
+  padding: 0 5px 0 0;
+  width: 340px;
 }
 .services .services__inner > .services__allContent > div > .services__content h5 {
   font-family: Roboto;
@@ -119,7 +121,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 350px;
+  width: 100%;
 }
 .services .services__inner > .services__allContent > div > .services__content p {
   font-family: Roboto;
@@ -129,8 +131,8 @@
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 350px;
   height: 40px;
+  width: 100%;
 }
 .services .services__inner > .services__allContent .activeServicesBlock {
   background-color: green;
@@ -184,6 +186,10 @@
   margin-bottom: 20px;
   -webkit-animation: lookEveryTitle 1.5s;
           animation: lookEveryTitle 1.5s;
+  height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @-webkit-keyframes lookEveryTitle {
   0% {

@@ -33,12 +33,16 @@
 }
 .choiceSelect .choiceSelect_from p {
   width: 60%;
+  overflow: hidden;
   color: #151515;
+  text-overflow: ellipsis;
+  whitespace: nowrap;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: 20px;
   font-weight: 500;
   line-height: 20px;
+  height: 20px;
 }
 .choiceSelect .choiceSelect_from .activeSelect {
   overflow: hidden;

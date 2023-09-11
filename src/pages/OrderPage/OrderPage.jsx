@@ -14,9 +14,12 @@ const OrderPage = () => {
 
   const { preloader } = useSelector((state) => state.mainPageSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
-  const { dataServices, dataIndustries, allLang } = useSelector(
-    (state) => state.servicesPageSlice
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
+
+  const { dataServices, dataIndustries } = useSelector(
+    (state) => state.onServerSlice
   );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

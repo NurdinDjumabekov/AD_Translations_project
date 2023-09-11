@@ -1,6 +1,7 @@
+import { toSendOrderData } from "../store/reducers/onServerSlice";
 import {
+  changeOrderData,
   sendDataOrder,
-  toSendOrderData,
 } from "../store/reducers/orderPageSlice";
 import { changeErrorSend } from "../store/reducers/stateSendDataSlice";
 
@@ -74,8 +75,16 @@ export const checkNum = (
 ) => {
   const regNumPhone = /[0-9]{7,15}/;
   if (regNumPhone.test(orderData.phoneNum)) {
-    // dispatch(sendDataOrder({ orderData, doc, typeDoc })); // для бота
+    dispatch(sendDataOrder({ orderData, doc, typeDoc })); // для бота
     dispatch(toSendOrderData({ orderData, doc, typeDoc, idEverySelect })); // для сервера
+    // очищаю все input
+    dispatch(
+      changeOrderData({
+        date: "",
+        email: "",
+        phoneNum: "",
+      })
+    );
   } else {
     dispatch(
       changeErrorSend({

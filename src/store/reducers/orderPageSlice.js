@@ -2,8 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { changePreloader } from "./mainPageSlice";
 import { transformWord } from "../../helpers/tranformWord";
-import { transformWordForServer } from "../../helpers/transformWordForServer";
-const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const initialState = {
   orderData: {
@@ -25,6 +23,7 @@ const initialState = {
   typeDoc: 1,
   clearData: false,
 };
+
 // для отправки данных в телеграмм бот
 export const sendDataOrder = createAsyncThunk(
   "sendDataOrder",
@@ -68,22 +67,6 @@ export const sendDataOrder = createAsyncThunk(
     } catch (err) {
       console.error(err);
       dispatch(changePreloader(false));
-    }
-  }
-);
-
-// данные для отправки на сервер
-export const toSendOrderData = createAsyncThunk(
-  "toSendOrderData",
-  async (data, { dispatch }) => {
-    try {
-      await axios({
-        method: "POST",
-        url: `${BASE_URL}order/create/`,
-        data: transformWordForServer(data),
-      });
-    } catch (err) {
-      console.log(err);
     }
   }
 );

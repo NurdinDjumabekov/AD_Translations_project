@@ -79,7 +79,6 @@ const SliderUpdates = () => {
   // console.log(dataUpdates, "dataUpdates");
 
   useEffect(() => {
-    // setData(data?.slice(0, 5));
     dispatch(toTakeDataUpdates());
   }, []);
 
