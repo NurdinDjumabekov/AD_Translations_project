@@ -95,7 +95,7 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
                   )
                 }
                 value={orderData.date}
-                placeholder="DD-MM-YY"
+                placeholder="YYYY-MM-DD"
               />
               <button onClick={() => setStateData(false)}>Auto</button>
             </label>

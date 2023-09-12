@@ -14,7 +14,7 @@ const CookiePage = () => {
       <div className="container">
         <div className="addBlockNav">
           <NavLink to={"/"} className="prevPage">
-            Main
+            Home
           </NavLink>
           <img className="arrowPage" src={arrow} alt="" />
           <NavLink className="nextPage">Cookie</NavLink>

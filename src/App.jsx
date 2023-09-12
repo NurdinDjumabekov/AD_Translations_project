@@ -12,14 +12,14 @@ import NotFound from "./pages/NotFound/NotFound";
 import FreelancerPage from "./pages/FreelancerPage/FreelancerPage";
 import ConsultationPage from "./pages/ConsultationPage/ConsultationPage";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { toTakeDataUpdates } from "./store/reducers/mainPageSlice";
+import { toTakeDataReviews, toTakeFAQ } from "./store/reducers/aboutPageSlice";
 import {
   toTakeAllDataServices,
   toTakeAllLang,
   toTakeIndustriesData,
 } from "./store/reducers/servicesPageSlice";
-import { useDispatch } from "react-redux";
-import { toTakeDataUpdates } from "./store/reducers/mainPageSlice";
-import { toTakeDataReviews, toTakeFAQ } from "./store/reducers/aboutPageSlice";
 
 function App() {
   const dispatch = useDispatch();

@@ -14,7 +14,7 @@ const PrivacyPage = () => {
       <div className="container">
         <div className="addBlockNav">
           <NavLink to={"/"} className="prevPage">
-            Main
+            Home
           </NavLink>
           <img className="arrowPage" src={arrow} alt="" />
           <NavLink className="nextPage">Privacy Policy</NavLink>

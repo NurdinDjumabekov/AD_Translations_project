@@ -7,12 +7,13 @@ const ConditionsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className={styles.conditionsPage}>
       <div className="container">
         <div className="addBlockNav">
           <NavLink to={"/"} className="prevPage">
-            Main
+            Home
           </NavLink>
           <img className="arrowPage" src={arrow} alt="" />
           <NavLink className="nextPage">Terms and Conditions</NavLink>
