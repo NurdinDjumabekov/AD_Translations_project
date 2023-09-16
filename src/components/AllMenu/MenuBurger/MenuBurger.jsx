@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MenuBurger.module.css";
-import iconImg from "../../assets/images/menu/iconMenu.svg";
-import krest from "../../assets/images/menu/x.svg";
-import logo from "../../assets/images/logo.svg";
+import iconImg from "../../../assets/images/menu/iconMenu.svg";
+import krest from "../../../assets/images/menu/x.svg";
+import logo from "../../../assets/images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const MenuBurger = () => {

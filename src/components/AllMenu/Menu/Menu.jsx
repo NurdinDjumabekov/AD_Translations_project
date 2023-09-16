@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./Menu.module.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import consultation from "../../assets/images/menu/consultation.svg";
+import consultation from "../../../assets/images/menu/consultation.svg";
+// import TranslateLang from "../TranslateLang/TranslateLang";
 
 const Menu = () => {
   const location = useLocation();
@@ -80,7 +81,10 @@ const Menu = () => {
                   </NavLink>
                 </li>
               ))}
-              <li onClick={() => navigate("/freelancer")}>
+              <li
+                className={styles.freelancer}
+                onClick={() => navigate("/freelancer")}
+              >
                 <svg
                   width="30"
                   height="30"
@@ -94,6 +98,7 @@ const Menu = () => {
                   />
                 </svg>
               </li>
+              {/* <TranslateLang /> */}
             </ul>
           </div>
         </div>
