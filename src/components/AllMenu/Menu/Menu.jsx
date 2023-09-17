@@ -3,7 +3,7 @@ import styles from "./Menu.module.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import consultation from "../../../assets/images/menu/consultation.svg";
-// import TranslateLang from "../TranslateLang/TranslateLang";
+import TranslateLang from "../TranslateLang/TranslateLang";
 
 const Menu = () => {
   const location = useLocation();
@@ -23,7 +23,7 @@ const Menu = () => {
     },
     {
       id: 3,
-      title: "About",
+      title: "AboutUs",
       link: "/about",
       bool: false,
     },
@@ -98,7 +98,7 @@ const Menu = () => {
                   />
                 </svg>
               </li>
-              {/* <TranslateLang /> */}
+              <TranslateLang />
             </ul>
           </div>
         </div>

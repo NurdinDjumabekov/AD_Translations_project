@@ -29,8 +29,8 @@ const OrderPage = () => {
       {goodSendData ? (
         <div className={styles.order}>
           <div className="container">
-            <h5>Translation</h5>
-            <i>Fill in the features</i>
+            <h5>Get in touch</h5>
+            <i>and let’s start your translation journey</i>
             <div className={styles.order__inner}>
               <div className={styles.order__services}>
                 <ChoiceSelect

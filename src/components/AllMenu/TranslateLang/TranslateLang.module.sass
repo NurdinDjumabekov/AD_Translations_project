@@ -1,0 +1,62 @@
+.traslationBtns
+    position: relative
+    .traslationBtns__inner
+        width: 120px
+        height: 36px
+        border-radius: 3px
+        border: 1px solid #CCC
+        padding: 6px 10px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+        .traslationBtns__imgLang
+            width: 20px
+            height: 14px
+        > p
+            color: var(--Text, #151515)
+            font-family: "Roboto",sans-serif
+            font-size: 14px
+            font-style: normal
+            font-weight: 400
+            line-height: normal
+            margin: 0 5px 0 0
+        .traslationBtns__imgArrow
+            // background: red
+            width: 15px
+            height: 10px
+            color: black
+    .traslationBtns__select
+        position: absolute
+        top: 36px
+        left: 0
+        width: 120px
+        min-height: 36px
+        border-radius: 3px
+        border: 1px solid #CCC
+        padding: 0px 10px
+        cursor: pointer
+        border-radius: 3px
+        background: #FFF
+        animation: selects 1s
+        button
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 8px
+            border: none
+            padding: 4px 0
+            cursor: pointer
+            margin: 5px 0
+            background: transparent
+    @keyframes selects 
+        0% 
+            opacity: 0
+            margin: -20px 0 0 0
+        100% 
+            opacity: 1
+            margin: 0
+        
+
+
+

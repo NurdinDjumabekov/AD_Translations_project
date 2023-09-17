@@ -1,0 +1,90 @@
+.traslationBtns {
+  position: relative;
+}
+.traslationBtns .traslationBtns__inner {
+  width: 120px;
+  height: 36px;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  padding: 6px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+.traslationBtns .traslationBtns__inner .traslationBtns__imgLang {
+  width: 20px;
+  height: 14px;
+}
+.traslationBtns .traslationBtns__inner > p {
+  color: var(--Text, #151515);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 5px 0 0;
+}
+.traslationBtns .traslationBtns__inner .traslationBtns__imgArrow {
+  width: 15px;
+  height: 10px;
+  color: black;
+}
+.traslationBtns .traslationBtns__select {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 120px;
+  min-height: 36px;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  padding: 0px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  background: #FFF;
+  -webkit-animation: selects 1s;
+          animation: selects 1s;
+}
+.traslationBtns .traslationBtns__select button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  margin: 5px 0;
+  background: transparent;
+}
+@-webkit-keyframes selects {
+  0% {
+    opacity: 0;
+    margin: -20px 0 0 0;
+  }
+  100% {
+    opacity: 1;
+    margin: 0;
+  }
+}
+@keyframes selects {
+  0% {
+    opacity: 0;
+    margin: -20px 0 0 0;
+  }
+  100% {
+    opacity: 1;
+    margin: 0;
+  }
+}

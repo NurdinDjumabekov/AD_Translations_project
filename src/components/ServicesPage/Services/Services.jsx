@@ -5,8 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { toTakeDataServices } from "../../../store/reducers/servicesPageSlice";
 import { addDataID } from "../../../helpers/addDataID";
 import SelectServices from "../SelectServices/SelectServices";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
@@ -20,11 +23,10 @@ const Services = () => {
     );
     dispatch(toTakeDataServices(addDataID(newData)));
   }, [search]);
-
   return (
     <div className={styles.services}>
-      <h4 className="standartTitle">Services</h4>
-      <p>Click and read about our services</p>
+      <h4 className="standartTitle">{t("TranslationServices")}</h4>
+      <p>{t("TailoredNeeds")}</p>
       <div className="container">
         <div className={styles.services__inner}>
           <div className={styles.services__allContent}>

@@ -25,7 +25,7 @@ const MenuBurger = () => {
     },
     {
       id: 3,
-      title: "About",
+      title: "AboutUs",
       link: "/about",
       bool: false,
     },

@@ -3,6 +3,7 @@ import styles from "./Languages.module.css";
 import { sortLanguages } from "../../../helpers/sortLanguages";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Languages = () => {
   const navigate = useNavigate();
@@ -15,10 +16,12 @@ const Languages = () => {
   }, [allLang]);
   const lengNum = Math.ceil(dataAdaptation.length / 2);
 
+  const { t } = useTranslation();
+
   return (
     <div className={styles.languages}>
       <div className="container">
-        <h4 className="standartTitle">Languages</h4>
+        <h4 className="standartTitle">{t("language")}</h4>
         <div className={styles.languages__inner}>
           <div>
             {data[0]?.map((item) => (
