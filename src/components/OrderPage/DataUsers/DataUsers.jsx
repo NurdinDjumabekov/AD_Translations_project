@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import styles from "./DataUsers.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeOrderData } from "../../../store/reducers/orderPageSlice";
+import { useTranslation } from "react-i18next";
 
 export const DataUsers = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { orderData } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   return (
     <div className={styles.blockData}>
       <label>
-        <i className={styles.blockData__iconText}>E-mail</i>
+        <i className={styles.blockData__iconText}>{t("E-mail")}</i>
         <input
           type="email"
           className={errorSend.email ? styles.badInput : ""}
@@ -24,11 +26,13 @@ export const DataUsers = () => {
             )
           }
           value={orderData.email}
-          placeholder="E-mail"
+          placeholder={t("E-mail")}
         />
       </label>
       <label>
-        <i className={styles.blockData__iconText}>Telegram Phone Number</i>
+        <i className={styles.blockData__iconText}>
+          {t("Telegram Phone Number")}
+        </i>
         <input
           className={errorSend.phoneNum ? styles.badInput : ""}
           onChange={(e) =>

@@ -73,7 +73,7 @@ const Languages = () => {
       </div>
       <div className="lineBlock"></div>
       <button className="standartBtn" onClick={() => navigate("/order")}>
-        Start Translation
+        {t("btn_allLANG")}
       </button>
     </div>
   );

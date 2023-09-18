@@ -10,9 +10,11 @@ import {
   changeTypeDoc,
 } from "../../../store/reducers/orderPageSlice";
 import InputMask from "react-input-mask";
+import { useTranslation } from "react-i18next";
 
 const TypesDocuments = ({ doc, data, setDoc }) => {
   const [stateData, setStateData] = useState(true);
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
@@ -60,7 +62,7 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
             onClick={() => clickTypeDoc(btn.id)}
             className={btn.id === typeDoc ? styles.activeBtn : ""}
           >
-            {btn.doc}
+            {t(btn.doc)}
           </button>
         ))}
       </div>
@@ -68,18 +70,18 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
         <ChoiceSelect
           props={{
             data,
-            textAbove: "From",
+            textAbove: t("choice_from"),
             initialText: "English",
           }}
         />
         <ChoiceSelect
-          props={{ data, textAbove: "To", initialText: "Russian" }}
+          props={{ data, textAbove: t("choice_to"), initialText: "Russian" }}
         />
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />
         <div className={styles.sendDate}>
-          <p>Deadline</p>
+          <p>{t("Deadline")}</p>
           {stateData ? (
             <label>
               <InputMask

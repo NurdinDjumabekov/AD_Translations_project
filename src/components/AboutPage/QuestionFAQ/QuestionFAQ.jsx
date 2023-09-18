@@ -4,10 +4,12 @@ import arrow from "../../../assets/images/aboutPage/arrow.svg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDataFAQ } from "../../../store/reducers/aboutPageSlice";
+import { useTranslation } from "react-i18next";
 
 const QuestionFAQ = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const { dataFAQ } = useSelector((state) => state.aboutPageSlice);
 
@@ -21,7 +23,7 @@ const QuestionFAQ = () => {
   return (
     <div className={styles.question}>
       <div className="container">
-        <h4 className="standartTitle">FAQ</h4>
+        <h4 className="standartTitle">{t("FAQ")}</h4>
         <div className={styles.question__inner}>
           {dataFAQ?.map((item) => (
             <div key={item.id} onClick={() => lookAnswer(item.id, item.bool)}>
@@ -36,7 +38,7 @@ const QuestionFAQ = () => {
           ))}
         </div>
         <button className="standartBtn" onClick={() => navigate("/order")}>
-          Start Translation
+          {t("FAQ_btn")}
         </button>
       </div>
     </div>

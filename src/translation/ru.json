@@ -1,5 +1,79 @@
 {
   "header": "Сайт перевода",
   "headerDescription": " чтото на русском",
-  "headerBtn": "перевод"
+  "headerBtn": "перевод",
+
+  "TranslationServices": "Tрусскийranslation",
+  "TailoredNeeds": "русский Services Tailored to your Needs",
+  "search": "Поиск",
+
+  "Our offers": "Our offers",
+  "1our_offer_subtitle": "1We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "2our_offer_subtitle": "2We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "3our_offer_subtitle": "3We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "1our_offer_title": "1Text русский",
+  "2our_offer_title": "2Text русский",
+  "3our_offer_title": "3Text русский",
+  "btn_our_offer": "заказать",
+
+  "Our Advantages": "Our Advantages",
+  "1Advantages_title": "русскийHigh quality translation",
+  "2Advantages_title": "русскийHigh quality translation",
+  "3Advantages_title": "русскийHigh quality translation",
+  "4Advantages_title": "русскийHigh quality translation",
+  "1Advantages_subtitle": "русский We ensure high accuracy in translations",
+  "2Advantages_subtitle": "русский We ensure high accuracy in translations",
+  "3Advantages_subtitle": "русский We ensure high accuracy in translations",
+  "4Advantages_subtitle": "русский We ensure high accuracy in translations",
+  "btn_Advantages": "Start Translation",
+
+  "Industries": "ruusssIndustries",
+
+  "language": "russsMost Common Languages we work with",
+  "btn_allLANG": "russsStart translation",
+
+  "About us": "Русский About us",
+  "1About_text_title": "Русский Coverage of Many Countries",
+  "2About_text_title": "Русский Experienced Professionals",
+  "3About_text_title": "Русский Solid Team",
+  "1About_text_subtitle": "Русский The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+  "2About_text_subtitle": "Русский The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+  "3About_text_subtitle": "Русский The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+
+  "Reviews": "РусскийReviews",
+
+  "FAQ": "РусскийFAQ",
+  "FAQ_btn": "РусскийStart Translation",
+
+  "order_title": "Русский_Get in touch",
+  "order_subtitle": "Русский_and let’s start your translation journey",
+
+  "choice_Industries": "Русский_Industries",
+  "choice_Services": "Русский_Services",
+  "choice_from": "Русский_From",
+  "choice_to": "Русский_To",
+
+  "Max: 5000 words": "РусскийMax: 5000 words",
+  "Upload files": "РусскийUpload files",
+  "Document": "РусскийDocument",
+  "Max: 5gb": "РусскийMax: 5gb",
+  "Paste a link": "РусскийPaste a link",
+  "Deadline": "РусскийDeadline",
+  "E-mail": "РусскийE-mail",
+  "Telegram Phone Number": "РусскийTelegram Phone Number",
+  "Clear": "rrrClear",
+  "SEND": "rrrSEND",
+
+  "typeDoc_Documents": "eussDocuments",
+  "typeDoc_Video": "russVideo",
+  "typeDoc_Audio": "russAudio",
+  "typeDoc_link": "russLink",
+
+  "freelancer_title": "rrrrrWelcome freelancer!",
+  "freelancer_subtitle": "rrrrDo You want to join our team? Fill in the fields below and wewill contact You!",
+  "freelancer_btn": "rrrrBecome a Member!",
+  "Full name": "Frrrrrull name",
+  "Enter your full name": "rrrrrEnter your full name",
+  "Email": "Email",
+  "Enter your email": "Enter your email"
 }

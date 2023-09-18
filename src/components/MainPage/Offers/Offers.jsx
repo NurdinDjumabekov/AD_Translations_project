@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./Offers.module.css";
+import { dataOffers } from "../../../localData/data";
+import { useTranslation } from "react-i18next";
 
-const Offers = ({ data }) => {
+const Offers = () => {
+  const { t } = useTranslation();
+
   const lookMoreData = (id) => {
     const newArr = data.map((item) => {
       if (item.id === id) {
@@ -14,11 +18,12 @@ const Offers = ({ data }) => {
     });
     setData(newArr);
   };
+
   return (
     <div className={styles.offers}>
-      <h2 className="standartTitle">Our offers</h2>
+      <h2 className="standartTitle">{t("Our offers")}</h2>
       <div className={styles.offers__inner}>
-        {data?.map((card) => (
+        {dataOffers?.map((card) => (
           <div
             className={card.bool ? styles.activeBlock : ""}
             key={card.id}
@@ -27,12 +32,12 @@ const Offers = ({ data }) => {
             <div>
               <img src={card.img} alt="" />
             </div>
-            <h4>{card.title}</h4>
-            <p className={styles.activeP}>{card.miniText}</p>
+            <h4>{t(card.title)}</h4>
+            <p className={styles.activeP}>{t(card.miniText)}</p>
           </div>
         ))}
       </div>
-      <button className="standartBtn">See All Services</button>
+      <button className="standartBtn">{t("btn_our_offer")}</button>
     </div>
   );
 };

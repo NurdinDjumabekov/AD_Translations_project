@@ -10,9 +10,11 @@ import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import { updateForSelects } from "../../helpers/updateForSelects";
 import { textGoodFreelance } from "../../localData/data";
+import { useTranslation } from "react-i18next";
 
 const FreelancerPage = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
   const { preloader } = useSelector((state) => state.mainPageSlice);
   const { selectsLangFrom, selectsLangTo, errorFreelanceSend } = useSelector(
@@ -45,16 +47,13 @@ const FreelancerPage = () => {
         <div className={styles.freelancer}>
           <div className="container">
             <>
-              <h2>Welcome freelancer!</h2>
-              <p>
-                Do You want to join our team? Fill in the fields below and we
-                will contact You!
-              </p>
+              <h2>{t("freelancer_title")}</h2>
+              <p>{t("freelancer_subtitle")}</p>
               <PersonalData />
             </>
             <FreelancerLang />
             <button className={styles.sendData} onClick={sendData}>
-              Become a Member!
+              {t("freelancer_btn")}
             </button>
           </div>
         </div>

@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./DataForSend.module.css";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const DataForSend = ({ doc, setDoc }) => {
   const inputRef = useRef(null);
   const [activeBtn, setActiveBtn] = useState(false);
+  const { t } = useTranslation();
 
   const clickSend = () => {
     inputRef.current.click();
@@ -25,13 +27,13 @@ const DataForSend = ({ doc, setDoc }) => {
   if (typeDoc === 1) {
     return (
       <div>
-        <span className={styles.sendTitle}>Document</span>
+        <span className={styles.sendTitle}>{t("Document")}</span>
         <div
           className={`${styles.blockForSend} ${
             errorSend.doc ? styles.badInput : ""
           }`}
         >
-          <p>Max: 5000 words</p>
+          <p>{t("Max: 5000 words")}</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
             ref={inputRef}
@@ -41,7 +43,7 @@ const DataForSend = ({ doc, setDoc }) => {
             onClick={clickSend}
             className={activeBtn ? styles.activeBtn : ""}
           >
-            Upload files
+            {t("Upload files")}
           </button>
         </div>
       </div>
@@ -50,13 +52,13 @@ const DataForSend = ({ doc, setDoc }) => {
   } else if (typeDoc === 2) {
     return (
       <div>
-        <span className={styles.sendTitle}>Document</span>
+        <span className={styles.sendTitle}>{t("Document")}</span>
         <div
           className={`${styles.blockForSend} ${
             errorSend.doc ? styles.badInput : ""
           }`}
         >
-          <p>Max: 5gb</p>
+          <p>{t("Max: 5gb")}</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
             ref={inputRef}
@@ -66,7 +68,7 @@ const DataForSend = ({ doc, setDoc }) => {
             onClick={clickSend}
             className={activeBtn ? styles.activeBtn : ""}
           >
-            Upload files
+            {t("Upload files")}
           </button>
         </div>
       </div>
@@ -75,13 +77,13 @@ const DataForSend = ({ doc, setDoc }) => {
   } else if (typeDoc === 3) {
     return (
       <div>
-        <span className={styles.sendTitle}>Document</span>
+        <span className={styles.sendTitle}>{t("Document")}</span>
         <div
           className={`${styles.blockForSend} ${
             errorSend.doc ? styles.badInput : ""
           }`}
         >
-          <p>Max: 5gb</p>
+          <p>{t("Max: 5gb")}</p>
           <input
             onChange={(e) => setDoc(e.target.files[0])}
             ref={inputRef}
@@ -91,7 +93,7 @@ const DataForSend = ({ doc, setDoc }) => {
             onClick={clickSend}
             className={activeBtn ? styles.activeBtn : ""}
           >
-            Upload files
+            {t("Upload files")}
           </button>
         </div>
       </div>
@@ -100,7 +102,7 @@ const DataForSend = ({ doc, setDoc }) => {
   } else if (typeDoc === 4) {
     return (
       <div>
-        <span className={styles.sendTitle}>Document</span>
+        <span className={styles.sendTitle}>{t("Document")}</span>
         <div className={styles.linksBlock}>
           <input
             className={`${styles.linksInput} ${
@@ -108,7 +110,7 @@ const DataForSend = ({ doc, setDoc }) => {
             }`}
             onChange={(e) => setDoc(e.target.value)}
             type="text"
-            placeholder="Paste a link"
+            placeholder={t("Paste a link")}
           />
         </div>
       </div>

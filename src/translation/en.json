@@ -3,9 +3,69 @@
   "headerDescription": " Delivering accurate translations for all your needs. You can order a translation of your document into any of more than 25 languages  ​​by professional translators at the AD Translates foreign  language translation agency.",
   "headerBtn": "Request a quote",
 
-  "LatestUpdates": "Translation Services Tailored to your Needs",
   "TranslationServices": "Translation",
   "TailoredNeeds": "Services Tailored to your Needs",
+  "search": "Search in site",
 
-  "language": "Most Common Languages we work with"
+  "Our offers": "Our offers",
+  "1our_offer_subtitle": "1We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "2our_offer_subtitle": "2We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "3our_offer_subtitle": "3We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
+  "1our_offer_title": "1Text Translation",
+  "2our_offer_title": "2Text Translation",
+  "3our_offer_title": "3Text Translation",
+  "btn_our_offer": "See All Services",
+
+  "Our Advantages": "Our Advantages",
+  "1Advantages_title": "High quality translation",
+  "2Advantages_title": "High quality translation",
+  "3Advantages_title": "High quality translation",
+  "4Advantages_title": "High quality translation",
+  "1Advantages_subtitle": "We ensure high accuracy in translations",
+  "2Advantages_subtitle": "We ensure high accuracy in translations",
+  "3Advantages_subtitle": "We ensure high accuracy in translations",
+  "4Advantages_subtitle": "We ensure high accuracy in translations",
+  "btn_Advantages": "Start Translation",
+
+  "Industries": "Industries",
+
+  "language": "Most Common Languages we work with",
+  "btn_allLANG": "Start translation",
+
+  "About us": "About us",
+  "1About_text_title": "Coverage of Many Countries",
+  "2About_text_title": "Experienced Professionals",
+  "3About_text_title": "Solid Team",
+  "1About_text_subtitle": "The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+  "2About_text_subtitle": "The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+  "3About_text_subtitle": "The purpose of localization is simple enough—speak the language to win business. Here at Native we know that behind every successful localization effort there is efficient project management. While translation, hiring resources, and smart tech integrations are a crucial part of localization projects, the real challenge is managing the process so the content sits right with the target market, gets delivered in time and you get the desired results without needless burnout.Look at it this way – we are fluent in 89 languages and true-blue natives of localization management with a deep understanding of the complexities of language, culture, and technology.",
+
+  "Reviews": "Reviews",
+
+  "FAQ": "FAQ",
+  "FAQ_btn": "Start Translation",
+
+  "order_title": "Get in touch",
+  "order_subtitle": "and let’s start your translation journey",
+
+  "choice_Industries": "Industries",
+  "choice_Services": "Services",
+  "choice_from": "From",
+  "choice_to": "To",
+
+  "Max: 5000 words": "Max: 5000 words",
+  "Upload files": "Upload files",
+  "Document": "Document",
+  "Max: 5gb": "Max: 5gb",
+  "Paste a link": "Paste a link",
+  "Deadline": "Deadline",
+  "E-mail": "E-mail",
+  "Telegram Phone Number": "Telegram Phone Number",
+  "Clear": "Clear",
+  "SEND": "SEND",
+
+  "typeDoc_Documents": "Documents",
+  "typeDoc_Video": "Video",
+  "typeDoc_Audio": "Audio",
+  "typeDoc_link": "Link"
 }

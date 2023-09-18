@@ -23,6 +23,7 @@ const Services = () => {
     );
     dispatch(toTakeDataServices(addDataID(newData)));
   }, [search]);
+
   return (
     <div className={styles.services}>
       <h4 className="standartTitle">{t("TranslationServices")}</h4>

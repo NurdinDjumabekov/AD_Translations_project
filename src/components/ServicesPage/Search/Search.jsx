@@ -4,11 +4,13 @@ import loop from "../../../assets/images/servicesPage/loop_search.svg";
 import cross from "../../../assets/images/servicesPage/krestik.svg";
 import { changeSearch } from "../../../store/reducers/servicesPageSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Search = ({ setCount }) => {
   const { search } = useSelector((state) => state.servicesPageSlice);
   const [lookIcos, setLookIcos] = useState(false);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (search === "") {
@@ -25,7 +27,7 @@ const Search = ({ setCount }) => {
         <input
           type="text"
           onChange={(e) => dispatch(changeSearch(e.target.value))}
-          placeholder="Search in site"
+          placeholder={t("search")}
           value={search}
         />
         {lookIcos ? (

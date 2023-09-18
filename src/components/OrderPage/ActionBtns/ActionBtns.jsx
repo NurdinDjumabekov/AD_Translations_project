@@ -8,9 +8,11 @@ import {
   changeTypeDoc,
   clearAllSelects,
 } from "../../../store/reducers/orderPageSlice";
+import { useTranslation } from "react-i18next";
 
 const ActionBtns = ({ doc, setDoc }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { orderData, typeDoc, idEverySelect } = useSelector(
     (state) => state.orderPageSlice
   );
@@ -55,8 +57,8 @@ const ActionBtns = ({ doc, setDoc }) => {
 
   return (
     <div className={styles.actionBtns}>
-      <button onClick={() => clearAllData()}>Clear</button>
-      <button onClick={checkDocuments}>SEND</button>
+      <button onClick={() => clearAllData()}>{t("Clear")}</button>
+      <button onClick={checkDocuments}>{t("SEND")}</button>
     </div>
   );
 };

@@ -8,9 +8,11 @@ import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 import { updateForSelects } from "../../helpers/updateForSelects";
 import { textGoodSendData } from "../../localData/data";
+import { useTranslation } from "react-i18next";
 
 const OrderPage = () => {
   const [doc, setDoc] = useState(null);
+  const { t } = useTranslation();
 
   const { preloader } = useSelector((state) => state.mainPageSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
@@ -29,21 +31,21 @@ const OrderPage = () => {
       {goodSendData ? (
         <div className={styles.order}>
           <div className="container">
-            <h5>Get in touch</h5>
-            <i>and let’s start your translation journey</i>
+            <h5>{t("order_title")}</h5>
+            <i>{t("order_subtitle")}</i>
             <div className={styles.order__inner}>
               <div className={styles.order__services}>
                 <ChoiceSelect
                   props={{
                     data: updateForSelects(dataIndustries, "Industries"),
-                    textAbove: "Industries",
-                    initialText: "General",
+                    textAbove: t("choice_Industries"),
+                    initialText: "Aviation",
                   }}
                 />
                 <ChoiceSelect
                   props={{
                     data: updateForSelects(dataServices, "Services"),
-                    textAbove: "Services",
+                    textAbove: t("choice_Services"),
                     initialText: "Editing",
                   }}
                 />

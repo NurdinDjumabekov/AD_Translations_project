@@ -2,13 +2,12 @@ import React from "react";
 import styles from "./SliderIndustries.module.css";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const SliderIndustries = () => {
-  // сократит данные до 5ти элементов
-
   const { dataIndustries } = useSelector((state) => state.servicesPageSlice);
+  const { t } = useTranslation();
 
-  // console.log(dataIndustries, "dataIndustries");
   const settings = {
     infinite: true,
     slidesToShow: 4,
@@ -21,7 +20,7 @@ const SliderIndustries = () => {
   };
   return (
     <div className={styles.sliderIndustries}>
-      <h2 className="standartTitle">Industries</h2>
+      <h2 className="standartTitle">{t("Industries")}</h2>
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
           <Slider {...settings}>

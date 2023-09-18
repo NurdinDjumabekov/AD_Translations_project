@@ -2,20 +2,22 @@ import React from "react";
 import styles from "./PersonalData.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { changeDataFreelance } from "../../../store/reducers/freelanceSlice";
+import { useTranslation } from "react-i18next";
 
 const PersonalData = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { dataFreelance } = useSelector((state) => state.freelanceSlice);
   const { errorFreelanceSend } = useSelector(
     (state) => state.stateSendDataSlice
   );
   return (
     <div className={styles.personalData}>
-      <span>Full name</span>
+      <span>{t("Full name")}</span>
       <input
         type="text"
         className={errorFreelanceSend.name ? styles.errInput : ""}
-        placeholder="Enter your full name"
+        placeholder={t("Enter your full name")}
         onChange={(e) =>
           dispatch(
             changeDataFreelance({
@@ -28,10 +30,10 @@ const PersonalData = () => {
       />
       <div>
         <div>
-          <span>Email</span>
+          <span>{t("Email")}</span>
           <input
             type="text"
-            placeholder="Enter your email"
+            placeholder={t("Enter your email")}
             className={errorFreelanceSend.email ? styles.errInput : ""}
             onChange={(e) =>
               dispatch(

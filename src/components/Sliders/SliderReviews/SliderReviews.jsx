@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styles from "./SliderReviews.module.css";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const SliderReviews = () => {
   const { dataReviews } = useSelector((state) => state.aboutPageSlice);
 
-  // console.log(dataReviews, "dataReviews");
-  // сократит данные до 5ми элементов
+  const { t } = useTranslation();
 
   const settings = {
     infinite: true,
@@ -24,7 +24,7 @@ const SliderReviews = () => {
 
   return (
     <div className={styles.sliderReviews}>
-      <h2 className="standartTitle">Reviews</h2>
+      <h2 className="standartTitle">{t("Reviews")}</h2>
       <div className="container">
         <div className={styles.sliderReviews__inner}>
           <Slider {...settings}>
