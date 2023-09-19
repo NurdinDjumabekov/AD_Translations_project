@@ -46,7 +46,7 @@ const PersonalData = () => {
           />
         </div>
         <div>
-          <span>Phone number (with country code)</span>
+          <span>{t("Phone number (with country code)")}</span>
           <input
             type="text"
             placeholder="+996 (000) 000 - 000"

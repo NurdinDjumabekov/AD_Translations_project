@@ -4,8 +4,10 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import consultation from "../../../assets/images/menu/consultation.svg";
 import TranslateLang from "../TranslateLang/TranslateLang";
+import { useTranslation } from "react-i18next";
 
 const Menu = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [pages, setPages] = useState([
@@ -77,7 +79,7 @@ const Menu = () => {
                     to={page.link}
                     className={page.bool ? styles.activePage : ""}
                   >
-                    {page.title}
+                    {t(page.title)}
                   </NavLink>
                 </li>
               ))}

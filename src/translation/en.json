@@ -67,5 +67,32 @@
   "typeDoc_Documents": "Documents",
   "typeDoc_Video": "Video",
   "typeDoc_Audio": "Audio",
-  "typeDoc_link": "Link"
+  "typeDoc_link": "Link",
+
+  "freelancer_title": "Welcome freelancer!",
+  "freelancer_subtitle": "Do You want to join our team? Fill in the fields below and wewill contact You!",
+  "freelancer_btn": "Become a Member!",
+  "Full name": "Full name",
+  "Enter your full name": "Enter your full name",
+  "Email": "Email",
+  "Enter your email": "Enter your email",
+  "Phone number (with country code)": "Phone number (with country code)",
+  "Language (Translate From)": "Language (Translate From)",
+  "Language (Translate To)": "Language (Translate To)",
+  "Add one more": "Add one more",
+
+  "Pages": "Pages",
+  "Security": "Security",
+  "Contact": "Contact",
+  "Bishkek, Kyrgyzstan": "Bishkek, Kyrgyzstan",
+  "Become our member": "Become our member",
+  "Cookie": "Cookie",
+  "Terms and Conditions": "Terms and Conditions",
+  "Privacy Policy": "Privacy Policy",
+
+  "Home": "Home",
+  "Services": "Services",
+  "About": "About",
+  "translate": "translate",
+  "AboutUs": "AboutUs"
 }

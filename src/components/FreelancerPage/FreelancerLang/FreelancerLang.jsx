@@ -10,9 +10,11 @@ import backet from "../../../assets/images/servicesPage/basket.svg";
 import LangSelectFrom from "../LangSelectFrom/LangSelectFrom";
 import LangSelectTo from "../LangSelectTo/LangSelectTo";
 import { updateForSelects } from "../../../helpers/updateForSelects";
+import { useTranslation } from "react-i18next";
 
 const FreelancerLang = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const [langLevel, setLangLevel] = useState(arrLevels());
   const { allLang } = useSelector((state) => state.servicesPageSlice);
   const { selectsLangFrom, selectsLangTo } = useSelector(
@@ -85,7 +87,7 @@ const FreelancerLang = () => {
   return (
     <div className={styles.freelancerLang}>
       <div className={styles.freelancerLang__from}>
-        <p>Language (Translate From)</p>
+        <p>{t("Language (Translate From)")}</p>
         {selectsLangFrom?.map((item) => (
           <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectFrom
@@ -115,11 +117,11 @@ const FreelancerLang = () => {
           className={styles.btnAddselect}
           onClick={() => addSelects("from")}
         >
-          Add one more
+          {t("Add one more")}
         </button>
       </div>
       <div className={styles.freelancerLang__to}>
-        <p>Language (Translate To)</p>
+        <p>{t("Language (Translate To)")}</p>
         {selectsLangTo?.map((item) => (
           <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectTo
@@ -149,7 +151,7 @@ const FreelancerLang = () => {
           className={styles.btnAddselect}
           onClick={() => addSelects("to")}
         >
-          Add one more
+          {t("Add one more")}
         </button>
       </div>
     </div>

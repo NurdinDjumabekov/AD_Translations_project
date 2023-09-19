@@ -6,8 +6,10 @@ import insta from "../../assets/images/footer/instagramm.svg";
 import inn from "../../assets/images/footer/in.svg";
 import twitter from "../../assets/images/footer/twitter.svg";
 import youtube from "../../assets/images/footer/youtube.svg";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer>
       <div className="container">
@@ -20,35 +22,35 @@ const Footer = () => {
           </NavLink>
           <ul className={styles.first_ul}>
             <li>
-              <h6>Pages</h6>
+              <h6>{t("Pages")}</h6>
             </li>
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/"}>{t("Home")}</NavLink>
             </li>
             <li>
-              <NavLink to={"/services"}>Services</NavLink>
+              <NavLink to={"/services"}>{t("Services")}</NavLink>
             </li>
             <li>
-              <NavLink to={"/about"}>About</NavLink>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <h6>Security</h6>
-            </li>
-            <li>
-              <NavLink to={"/cookie"}>Cookie</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/conditions"}>Terms and Conditions</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/privacy"}>Privacy Policy</NavLink>
+              <NavLink to={"/about"}>{t("About")}</NavLink>
             </li>
           </ul>
           <ul>
             <li>
-              <h6>Contact</h6>
+              <h6>{t("Security")}</h6>
+            </li>
+            <li>
+              <NavLink to={"/cookie"}>{t("Cookie")}</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/conditions"}>{t("Terms and Conditions")}</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/privacy"}>{t("Privacy Policy")}</NavLink>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <h6>{t("Contact")}</h6>
             </li>
             <li>
               <NavLink>T: +996(508)107-888</NavLink>
@@ -60,10 +62,10 @@ const Footer = () => {
               <NavLink>E: email@gmail.com</NavLink>
             </li>
             <li>
-              <NavLink>Bishkek, Kyrgyzstan</NavLink>
+              <NavLink>{t("Bishkek, Kyrgyzstan")}</NavLink>
             </li>
             <li>
-              <NavLink to={"/freelancer"}>Become our member</NavLink>
+              <NavLink to={"/freelancer"}>{t("Become our member")}</NavLink>
             </li>
           </ul>
         </div>
