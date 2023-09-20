@@ -20,13 +20,13 @@ const CookiePage = () => {
             {t("Home")}
           </NavLink>
           <img className="arrowPage" src={arrow} alt="" />
-          <NavLink className="nextPage">Cookie</NavLink>
+          <NavLink className="nextPage">{t("Cookie")}</NavLink>
         </div>
-        <h2>Cookie</h2>
+        <h2>{t("Cookie")}</h2>
         {cookiedata?.map((item) => (
           <div key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
+            <h3>{t(item.title)}</h3>
+            <p>{t(item.text)}</p>
           </div>
         ))}
       </div>

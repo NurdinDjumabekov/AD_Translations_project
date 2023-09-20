@@ -7,7 +7,6 @@ import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 import { updateForSelects } from "../../helpers/updateForSelects";
-import { textGoodSendData } from "../../localData/data";
 import { useTranslation } from "react-i18next";
 
 const OrderPage = () => {
@@ -60,7 +59,7 @@ const OrderPage = () => {
           </div>
         </div>
       ) : (
-        <GoodSendData text={textGoodSendData} />
+        <GoodSendData text={t("textGoodSendData")} />
       )}
       {preloader && <Preloader />}
     </>

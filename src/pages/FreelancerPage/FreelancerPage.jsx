@@ -9,7 +9,6 @@ import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlic
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import { updateForSelects } from "../../helpers/updateForSelects";
-import { textGoodFreelance } from "../../localData/data";
 import { useTranslation } from "react-i18next";
 
 const FreelancerPage = () => {
@@ -58,7 +57,7 @@ const FreelancerPage = () => {
           </div>
         </div>
       ) : (
-        <GoodSendData text={textGoodFreelance} />
+        <GoodSendData text={t("textGoodFreelance")} />
       )}
       {preloader && <Preloader />}
     </>

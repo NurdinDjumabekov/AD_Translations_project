@@ -3,7 +3,6 @@ import styles from "./ConsultationPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgGood from "../../assets/images/orderPage/good.png";
 import { sendConsultationData } from "../../store/reducers/onServerSlice";
-import { goodSendConsult } from "../../localData/data";
 import Preloader from "../../components/Preloader/Preloader";
 import { useNavigate } from "react-router-dom";
 
@@ -66,8 +65,8 @@ const ConsultationPage = () => {
       {goodSendConsultation ? (
         <div className={styles.goodSend}>
           <img src={imgGood} alt="good" />
-          <h5>Thank You!</h5>
-          <p>{goodSendConsult}</p>
+          <h5>{t("Thank You!")}</h5>
+          <p>{t("goodSendConsult")}</p>
         </div>
       ) : (
         <div className={styles.consultation}>
