@@ -5,8 +5,10 @@ import imgGood from "../../assets/images/orderPage/good.png";
 import { sendConsultationData } from "../../store/reducers/onServerSlice";
 import Preloader from "../../components/Preloader/Preloader";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ConsultationPage = () => {
+  const { t } = useTranslation();
   const regEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -70,43 +72,43 @@ const ConsultationPage = () => {
         </div>
       ) : (
         <div className={styles.consultation}>
-          <h4>Get a Free Consultation</h4>
-          <p>Have a question? Reach out to us.</p>
+          <h4>{t("Get a Free Consultation")}</h4>
+          <p>{t("Have a question? Reach out to us.")}</p>
           <form action="" onSubmit={sendData}>
             <label>
-              <label className={styles.aboveText}>Name</label>
+              <label className={styles.aboveText}>{t("Name")}</label>
               <input
                 onChange={(e) =>
                   setData((i) => ({ ...i, name: e.target.value }))
                 }
                 type="text"
-                placeholder="Enter your name"
+                placeholder={t("Enter your name")}
                 className={sendError.name ? styles.sendError : ""}
               />
             </label>
             <label>
-              <label className={styles.aboveText}>Email</label>
+              <label className={styles.aboveText}>{t("Email")}</label>
               <input
                 onChange={(e) =>
                   setData((i) => ({ ...i, email: e.target.value }))
                 }
-                type="email"
-                placeholder="Enter your email"
+                type={t("email")}
+                placeholder={t("Enter your email")}
                 className={sendError.email ? styles.sendError : ""}
               />
             </label>
             <label>
-              <label className={styles.aboveText}>Message</label>
+              <label className={styles.aboveText}>{t("Message")}</label>
               <input
                 onChange={(e) =>
                   setData((i) => ({ ...i, message: e.target.value }))
                 }
                 type="text"
-                placeholder="Enter your message here"
+                placeholder={t("Enter your message here")}
                 className={sendError.message ? styles.sendError : ""}
               />
             </label>
-            <button type="submit">Send Message</button>
+            <button type="submit">{t("Send Message")}</button>
           </form>
         </div>
       )}

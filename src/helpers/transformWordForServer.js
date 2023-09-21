@@ -6,10 +6,15 @@ export const transformWordForServer = (data) => {
   const date = `${year}-${month}-${day}`;
 
   const formData = new FormData();
-  formData.append("documents", data?.doc);
   formData.append("industries", data?.idEverySelect.industries);
-  formData.append("services", 3);
+  formData.append("services", 2);
   formData.append("type_file", data.typeDoc);
+  console.log(data, "data.typeDoc");
+  if (data.typeDoc === 4) {
+    formData.append("link", data?.doc);
+  } else {
+    formData.append("documents", data?.doc);
+  }
   formData.append("source_language", data?.idEverySelect.fromLang);
   formData.append("target_language", data?.idEverySelect.toLang);
   formData.append(

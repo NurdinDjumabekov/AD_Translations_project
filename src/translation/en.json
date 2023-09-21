@@ -6,14 +6,11 @@
   "TranslationServices": "Translation",
   "TailoredNeeds": "Services Tailored to your Needs",
   "search": "Search in site",
+  "none": "not found",
+
+  "LatestUpdates": "LatestUpdates",
 
   "Our offers": "Our offers",
-  "1our_offer_subtitle": "1We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "2our_offer_subtitle": "2We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "3our_offer_subtitle": "3We provide expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "1our_offer_title": "1Text Translation",
-  "2our_offer_title": "2Text Translation",
-  "3our_offer_title": "3Text Translation",
   "btn_our_offer": "See All Services",
 
   "Our Advantages": "Our Advantages",
@@ -59,6 +56,8 @@
   "Max: 5gb": "Max: 5gb",
   "Paste a link": "Paste a link",
   "Deadline": "Deadline",
+  "YYYY-MM-DD": "YYYY-MM-DD",
+  "Auto": "Auto",
   "E-mail": "E-mail",
   "Telegram Phone Number": "Telegram Phone Number",
   "Clear": "Clear",
@@ -129,5 +128,19 @@
   "Adverts and Sponsored Links": "Adverts and Sponsored Links",
   "privacy_text8": "Communication, engagement and actions taken through external social media platforms that this website and its owners participate on are custom to the terms and conditions as well as the privacy policies held with each social media platform respectively. Users are advised to use social media platforms wisely and communicate / engage upon them with due care and caution in regard to their own privacy and personal details. This website nor its owners will ever ask for personal or sensitive information through social media platforms and encourage users wishing to discuss sensitive details to contact them through primary communication channels such as by telephone or email. This website may use social sharing buttons which help share web content directly from web pages to the social media platform in question. Users are advised before using such social sharing buttons that they do so at their own discretion and note that the social media platform may track and save your request to share a web page respectively through your social media platform account.",
   "Shortened Links in Social Media": "Shortened Links in Social Media",
-  "privacy_text9": "This website and its owners through their social media platform accounts may share web links to relevant web pages. By default some social media platforms shorten lengthy urls [web addresses] (this is an example: http://bit.ly/1S5wipc). Users are advised to take caution and good judgement before clicking any shortened urls published on social media platforms by this website and its owners. Despite the best efforts to ensure only genuine urls are published many social media platforms are prone to spam and hacking and therefore this website and its owners cannot be held liable for any damages or implications caused by visiting any shortened links."
+  "privacy_text9": "This website and its owners through their social media platform accounts may share web links to relevant web pages. By default some social media platforms shorten lengthy urls [web addresses] (this is an example: http://bit.ly/1S5wipc). Users are advised to take caution and good judgement before clicking any shortened urls published on social media platforms by this website and its owners. Despite the best efforts to ensure only genuine urls are published many social media platforms are prone to spam and hacking and therefore this website and its owners cannot be held liable for any damages or implications caused by visiting any shortened links.",
+
+  "Thank You!": "Thank You!",
+  "Get a Free Consultation": "Get a Free Consultation",
+  "Have a question? Reach out to us.": "Have a question? Reach out to us.",
+  "Enter your name": "Enter your name",
+  "email": "email",
+  "Message": "Message",
+  "Enter your message here": "Enter your message here",
+  "Send Message": "Send Message",
+  "Name": "Name",
+
+  "textGoodSendData": "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!",
+  "textGoodFreelance": "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours.!",
+  "goodSendConsult": "We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!"
 }

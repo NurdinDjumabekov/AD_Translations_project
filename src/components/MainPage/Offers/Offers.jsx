@@ -2,28 +2,18 @@ import React from "react";
 import styles from "./Offers.module.css";
 import { dataOffers } from "../../../localData/data";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const Offers = () => {
   const { t } = useTranslation();
-
-  const lookMoreData = (id) => {
-    const newArr = data.map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          bool: !item.bool,
-        };
-      }
-      return item;
-    });
-    setData(newArr);
-  };
+  const { ourOffers } = useSelector((state) => state.mainPageSlice);
+  // console.log(ourOffers, "ourOffers");
 
   return (
     <div className={styles.offers}>
       <h2 className="standartTitle">{t("Our offers")}</h2>
       <div className={styles.offers__inner}>
-        {dataOffers?.map((card) => (
+        {ourOffers?.map((card) => (
           <div
             className={card.bool ? styles.activeBlock : ""}
             key={card.id}

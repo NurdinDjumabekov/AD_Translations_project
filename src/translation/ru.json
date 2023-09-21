@@ -6,17 +6,14 @@
   "TranslationServices": "Tрусскийranslation",
   "TailoredNeeds": "русский Services Tailored to your Needs",
   "search": "Поиск",
+  "none": "ничего не найдено",
 
-  "Our offers": "Our offers",
-  "1our_offer_subtitle": "1We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "2our_offer_subtitle": "2We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "3our_offer_subtitle": "3We русский expert translation services for documents, manuals, websites, software and more. We guarantee that all your requirements and deadlines will be strictly observed. We guarantee that all your requirements and deadlines will be strictly observed.",
-  "1our_offer_title": "1Text русский",
-  "2our_offer_title": "2Text русский",
-  "3our_offer_title": "3Text русский",
+  "LatestUpdates": "rrrrrrusss LatestUpdates",
+
+  "Our offers": "rrrrOur offers",
   "btn_our_offer": "заказать",
 
-  "Our Advantages": "Our Advantages",
+  "Our Advantages": "rrr Our Advantages",
   "1Advantages_title": "русскийHigh quality translation",
   "2Advantages_title": "русскийHigh quality translation",
   "3Advantages_title": "русскийHigh quality translation",
@@ -59,6 +56,8 @@
   "Max: 5gb": "РусскийMax: 5gb",
   "Paste a link": "РусскийPaste a link",
   "Deadline": "РусскийDeadline",
+  "YYYY-MM-DD": "ГГГГ-ММ-ДД",
+  "Auto": "Авто",
   "E-mail": "РусскийE-mail",
   "Telegram Phone Number": "РусскийTelegram Phone Number",
   "Clear": "rrrClear",
@@ -131,7 +130,17 @@
   "Shortened Links in Social Media": "rruss Shortened Links in Social Media",
   "privacy_text9": "rruss This website and its owners through their social media platform accounts may share web links to relevant web pages. By default some social media platforms shorten lengthy urls [web addresses] (this is an example: http://bit.ly/1S5wipc). Users are advised to take caution and good judgement before clicking any shortened urls published on social media platforms by this website and its owners. Despite the best efforts to ensure only genuine urls are published many social media platforms are prone to spam and hacking and therefore this website and its owners cannot be held liable for any damages or implications caused by visiting any shortened links.",
 
-  "textGoodSendData": "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!",
-  "textGoodFreelance": "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours.!",
-  "goodSendConsult": "We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!"
+  "Thank You!": "ruusss Thank You!",
+  "Get a Free Consultation": "ruusss Get a Free Consultation",
+  "Have a question? Reach out to us.": "ruusss Have a question? Reach out to us.",
+  "Enter your name": "ruusss Enter your name",
+  "email": "ruusss email",
+  "Message": "ruusss Message",
+  "Enter your message here": "ruusss Enter your message here",
+  "Send Message": "ruusss Send Message",
+  "Name": "ruusss Name",
+
+  "textGoodSendData": "ruusss We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!",
+  "textGoodFreelance": "ruusss You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours.!",
+  "goodSendConsult": "ruusss We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!"
 }

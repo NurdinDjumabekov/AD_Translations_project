@@ -1,19 +1,25 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { standartAxios } from "../../helpers/standartAxios";
 
 const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const initialState = {
   preloader: false,
   dataUpdates: [],
+  ourOffers: [],
 };
 
 export const toTakeDataUpdates = createAsyncThunk(
   "toTakeDataUpdates",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios(`${BASE_URL}latest_updates/list/`);
-      dispatch(changeDataUpdates(data.results));
+      const { data } = await standartAxios(info?.url, info.lang);
+      if (info.url === "latest_updates/list") {
+        dispatch(changeDataUpdates(data?.results));
+      } else if (info.url === "our_offers/list") {
+        dispatch(changeOurOffers(data?.results));
+      }
     } catch (err) {
       console.log(err);
     }
@@ -30,8 +36,12 @@ const mainPageSlice = createSlice({
     changeDataUpdates: (state, action) => {
       state.dataUpdates = action.payload;
     },
+    changeOurOffers: (state, action) => {
+      state.ourOffers = action.payload;
+    },
   },
 });
-export const { changePreloader, changeDataUpdates } = mainPageSlice.actions;
+export const { changePreloader, changeDataUpdates, changeOurOffers } =
+  mainPageSlice.actions;
 
 export default mainPageSlice.reducer;

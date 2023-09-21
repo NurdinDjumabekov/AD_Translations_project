@@ -16,6 +16,7 @@ const ActionBtns = ({ doc, setDoc }) => {
   const { orderData, typeDoc, idEverySelect } = useSelector(
     (state) => state.orderPageSlice
   );
+  console.log(idEverySelect);
 
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 

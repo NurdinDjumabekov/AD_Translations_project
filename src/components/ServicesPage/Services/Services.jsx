@@ -33,7 +33,7 @@ const Services = () => {
           <div className={styles.services__allContent}>
             <Search setCount={setCount} />
             {dataServices?.length === 0 ? (
-              <p className={styles.empty}>ничего не найдено</p>
+              <p className={styles.empty}>{t("none")}</p>
             ) : (
               dataServices?.map((card) => (
                 <div
@@ -55,7 +55,7 @@ const Services = () => {
           <SelectServices setCount={setCount} />
           <div className={styles.services__everyContent}>
             {dataServices?.length === 0 ? (
-              <p className={styles.empty__content}>ничего не найдено</p>
+              <p className={styles.empty__content}>{t("none")}</p>
             ) : (
               dataServices?.map((item) => {
                 if (item.id === count) {

@@ -8,7 +8,6 @@ import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
-import { updateForSelects } from "../../helpers/updateForSelects";
 import { useTranslation } from "react-i18next";
 
 const FreelancerPage = () => {

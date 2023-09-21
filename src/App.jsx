@@ -25,9 +25,10 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(toTakeDataUpdates({ url: "latest_updates/list", lang: "ru" }));
+    dispatch(toTakeDataUpdates({ url: "our_offers/list", lang: "ru" }));
     dispatch(toTakeAllLang());
     dispatch(toTakeIndustriesData());
-    dispatch(toTakeDataUpdates());
     dispatch(toTakeDataReviews());
     dispatch(toTakeFAQ());
     dispatch(toTakeAllDataServices());
