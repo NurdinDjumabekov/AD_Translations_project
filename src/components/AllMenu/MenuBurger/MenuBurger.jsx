@@ -103,7 +103,10 @@ const MenuBurger = () => {
               className={styles.menuBurger__childShadow}
               onClick={() => setLookMenu(false)}
             ></div>
-            <div className={styles.menuBurger__child}>
+            <div
+              className={styles.menuBurger__child}
+              onClick={() => setLookMenu(false)}
+            >
               <ul>
                 {pages?.map((i) => (
                   <li key={i.id} onClick={() => goOtherPage(i.link)}>
