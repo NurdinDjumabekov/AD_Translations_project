@@ -10,6 +10,7 @@ const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 const initialState = {
   dataServices: [],
   dataIndustries: [],
+  langData: "en",
 };
 // они нужны для отправки данных  на сервер с актуальными id, а в других states я меняю (перебиваю id)
 
@@ -25,22 +26,6 @@ export const toSendOrderData = createAsyncThunk(
     } catch (err) {
       console.log(err);
     }
-  }
-);
-
-export const toSendFreelancerData = createAsyncThunk(
-  "toSendFreelancerData",
-  async (data) => {
-    console.log(data, "toSendFreelancerData");
-    // try {
-    //   await axios({
-    //     method: "POST",
-    //     // url: `${BASE_URL}consult/create/`,
-    //     // data: data,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
   }
 );
 
@@ -79,9 +64,15 @@ const onServerSlice = createSlice({
     changeDataIndustriesForServer: (state, action) => {
       state.dataIndustries = action.payload;
     },
+    changeLangData: (state, action) => {
+      state.langData = action.payload;
+    },
   },
 });
-export const { changeDataServicesForServer, changeDataIndustriesForServer } =
-  onServerSlice.actions;
+export const {
+  changeDataServicesForServer,
+  changeDataIndustriesForServer,
+  changeLangData,
+} = onServerSlice.actions;
 
 export default onServerSlice.reducer;

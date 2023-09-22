@@ -10,25 +10,29 @@ const Offers = () => {
   // console.log(ourOffers, "ourOffers");
 
   return (
-    <div className={styles.offers}>
-      <h2 className="standartTitle">{t("Our offers")}</h2>
-      <div className={styles.offers__inner}>
-        {ourOffers?.map((card) => (
-          <div
-            className={card.bool ? styles.activeBlock : ""}
-            key={card.id}
-            onClick={() => lookMoreData(card.id)}
-          >
-            <div>
-              <img src={card.img} alt="" />
-            </div>
-            <h4>{t(card.title)}</h4>
-            <p className={styles.activeP}>{t(card.miniText)}</p>
+    <>
+      <div className="container">
+        <div className={styles.offers}>
+          <h2 className="standartTitle">{t("Our offers")}</h2>
+          <div className={styles.offers__inner}>
+            {ourOffers?.slice(0, 3).map((card) => (
+              <div
+                className={card.bool ? styles.activeBlock : ""}
+                key={card.id}
+                onClick={() => lookMoreData(card.id)}
+              >
+                <div>
+                  <img src={card.img} alt="" />
+                </div>
+                <h4>{t(card.title)}</h4>
+                <p className={styles.activeP}>{t(card.miniText)}</p>
+              </div>
+            ))}
           </div>
-        ))}
+          <button className="standartBtn">{t("btn_our_offer")}</button>
+        </div>
       </div>
-      <button className="standartBtn">{t("btn_our_offer")}</button>
-    </div>
+    </>
   );
 };
 

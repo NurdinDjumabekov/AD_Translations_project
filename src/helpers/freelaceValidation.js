@@ -1,4 +1,3 @@
-import { toSendFreelancerData } from "../store/reducers/onServerSlice";
 import { arrangementData } from "./arrangementData";
 import { checkSendData } from "./checkSendData";
 
@@ -116,7 +115,6 @@ export const checkNumPhone = (
         data: dataFreelance,
       })
     );
-    dispatch(toSendFreelancerData(dataFreelance));
   } else {
     dispatch(
       changeErrorFreelanceSend({

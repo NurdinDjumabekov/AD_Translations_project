@@ -4,12 +4,14 @@ import iconImg from "../../../assets/images/menu/iconMenu.svg";
 import krest from "../../../assets/images/menu/x.svg";
 import logo from "../../../assets/images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const MenuBurger = () => {
   const [lookMenu, setLookMenu] = useState(false);
   const [mainTitlePage, setMainTitlePage] = useState("AD Translations");
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [pages, setPages] = useState([
     {
       id: 1,
@@ -110,7 +112,7 @@ const MenuBurger = () => {
               <ul>
                 {pages?.map((i) => (
                   <li key={i.id} onClick={() => goOtherPage(i.link)}>
-                    {i.title}
+                    {t(i.title)}
                   </li>
                 ))}
                 <li className={styles.closeMenu}>

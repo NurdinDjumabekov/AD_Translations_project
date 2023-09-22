@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image from "../../../assets/images/mainPage/teams.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { toTakeDataUpdates } from "../../../store/reducers/mainPageSlice";
 import { useTranslation } from "react-i18next";
 
 const SliderUpdates = () => {
@@ -15,10 +14,6 @@ const SliderUpdates = () => {
   // console.log(dataUpdates, "dataUpdates");
 
   const { t } = useTranslation();
-
-  useEffect(() => {
-    dispatch(toTakeDataUpdates());
-  }, []);
 
   const settings = {
     infinite: true,

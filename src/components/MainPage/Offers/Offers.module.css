@@ -59,6 +59,9 @@
   font-weight: 500;
   line-height: normal;
   padding: 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .offers .offers__inner > div p {
   overflow: hidden;
@@ -72,6 +75,8 @@
   line-height: normal;
   padding: 0 12px;
   height: 95px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media screen and (max-width: 744px) {
   .offers .offers__inner > div p {

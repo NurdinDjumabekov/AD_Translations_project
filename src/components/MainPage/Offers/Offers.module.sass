@@ -3,7 +3,6 @@
     .offers__inner
         display: flex
         justify-content: center
-        // background: red
         flex-wrap: wrap
         gap: 40px
         padding: 20px 0
@@ -40,6 +39,9 @@
                 font-weight: 500
                 line-height: normal
                 padding: 0 12px
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
             p
                 overflow: hidden
                 color: #646464
@@ -52,6 +54,8 @@
                 line-height: normal
                 padding: 0 12px
                 height: 95px
+                overflow: hidden
+                text-overflow: ellipsis
                 @media screen and ( max-width: 744px )
                     height: auto
         > div:hover

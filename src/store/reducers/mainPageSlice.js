@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { standartAxios } from "../../helpers/standartAxios";
-
-const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const initialState = {
   preloader: false,
@@ -10,8 +7,8 @@ const initialState = {
   ourOffers: [],
 };
 
-export const toTakeDataUpdates = createAsyncThunk(
-  "toTakeDataUpdates",
+export const dataMainPage = createAsyncThunk(
+  "dataMainPage",
   async (info, { dispatch }) => {
     try {
       const { data } = await standartAxios(info?.url, info.lang);

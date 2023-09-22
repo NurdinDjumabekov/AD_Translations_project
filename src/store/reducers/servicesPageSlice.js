@@ -1,13 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 import { addDataID } from "../../helpers/addDataID";
 import { changePreloader } from "./mainPageSlice";
 import {
   changeDataIndustriesForServer,
   changeDataServicesForServer,
 } from "./onServerSlice";
-
-const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
+import { standartAxios } from "../../helpers/standartAxios";
 
 const initialState = {
   dataServices: [],
@@ -17,49 +15,26 @@ const initialState = {
   allLang: [],
 };
 
-export const toTakeAllDataServices = createAsyncThunk(
-  "toTakeAllDataServices",
+export const dataServices = createAsyncThunk(
+  "dataServices",
   async (info, { dispatch }) => {
     try {
       dispatch(changePreloader(true));
-      const { data } = await axios(`${BASE_URL}services/list/`);
-      dispatch(toTakeDataServices(addDataID(data?.results)));
-      dispatch(changeDataForSearch(addDataID(data?.results)));
-      dispatch(changeDataServicesForServer(data?.results));
+      const { data } = await standartAxios(info?.url, info.lang);
+      if (info.url === "services/list") {
+        dispatch(toTakeDataServices(addDataID(data?.results)));
+        dispatch(changeDataForSearch(addDataID(data?.results)));
+        dispatch(changeDataServicesForServer(data?.results));
+      } else if (info.url === "language/list") {
+        dispatch(changeAllLang(data));
+      } else if (info.url === "industries/list") {
+        dispatch(changeDataIndustries(data?.results));
+        dispatch(changeDataIndustriesForServer(data?.results));
+      }
       dispatch(changePreloader(false));
     } catch (err) {
       console.log(err);
       dispatch(changePreloader(false));
-    }
-  }
-);
-
-export const toTakeAllLang = createAsyncThunk(
-  "toTakeAllLang",
-  async (info, { dispatch }) => {
-    try {
-      dispatch(changePreloader(true));
-      const { data } = await axios(`${BASE_URL}language/list/`);
-      dispatch(changeAllLang(data));
-      dispatch(changePreloader(false));
-    } catch (err) {
-      console.log(err);
-      alert("ошибка соединения!");
-    }
-  }
-);
-
-export const toTakeIndustriesData = createAsyncThunk(
-  "toTakeIndustriesData",
-  async (info, { dispatch }) => {
-    dispatch(changePreloader(true));
-    try {
-      const { data } = await axios(`${BASE_URL}industries/list/`);
-      dispatch(changeDataIndustries(data?.results));
-      dispatch(changeDataIndustriesForServer(data?.results));
-      dispatch(changePreloader(false));
-    } catch (err) {
-      console.log(err);
     }
   }
 );

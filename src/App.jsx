@@ -12,27 +12,24 @@ import NotFound from "./pages/NotFound/NotFound";
 import FreelancerPage from "./pages/FreelancerPage/FreelancerPage";
 import ConsultationPage from "./pages/ConsultationPage/ConsultationPage";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { toTakeDataUpdates } from "./store/reducers/mainPageSlice";
-import { toTakeDataReviews, toTakeFAQ } from "./store/reducers/aboutPageSlice";
-import {
-  toTakeAllDataServices,
-  toTakeAllLang,
-  toTakeIndustriesData,
-} from "./store/reducers/servicesPageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { dataServices } from "./store/reducers/servicesPageSlice";
+import { dataMainPage } from "./store/reducers/mainPageSlice";
+import { dataAboutPage } from "./store/reducers/aboutPageSlice";
 
 function App() {
   const dispatch = useDispatch();
+  const { langData } = useSelector((state) => state.onServerSlice);
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(toTakeDataUpdates({ url: "latest_updates/list", lang: "ru" }));
-    dispatch(toTakeDataUpdates({ url: "our_offers/list", lang: "ru" }));
-    dispatch(toTakeAllLang());
-    dispatch(toTakeIndustriesData());
-    dispatch(toTakeDataReviews());
-    dispatch(toTakeFAQ());
-    dispatch(toTakeAllDataServices());
-  }, []);
+    dispatch(dataMainPage({ url: "latest_updates/list", lang: langData }));
+    dispatch(dataMainPage({ url: "our_offers/list", lang: langData }));
+    dispatch(dataServices({ url: "services/list", lang: langData }));
+    dispatch(dataServices({ url: "language/list", lang: langData }));
+    dispatch(dataServices({ url: "industries/list", lang: langData }));
+    dispatch(dataAboutPage({ url: "reviews/list", lang: langData }));
+    dispatch(dataAboutPage({ url: "faq/list", lang: langData }));
+  }, [langData]);
 
   return (
     <>

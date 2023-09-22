@@ -1,30 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-const BASE_URL = import.meta.env.VITE_REACT_APP_API_URL;
+import { standartAxios } from "../../helpers/standartAxios";
 
 const initialState = {
   dataReviews: [],
   dataFAQ: [],
 };
 
-export const toTakeDataReviews = createAsyncThunk(
-  "toTakeDataUpdates",
+export const dataAboutPage = createAsyncThunk(
+  "dataAboutPage",
   async (info, { dispatch }) => {
     try {
-      const { data } = await axios(`${BASE_URL}reviews/list/`);
-      dispatch(changeDataReviews(data?.results));
-    } catch (err) {
-      console.log(err);
-    }
-  }
-);
-
-export const toTakeFAQ = createAsyncThunk(
-  "toTakeFAQ",
-  async (info, { dispatch }) => {
-    try {
-      const { data } = await axios(`${BASE_URL}faq/list/`);
-      dispatch(changeDataFAQ(data));
+      const { data } = await standartAxios(info?.url, info.lang);
+      if (info.url === "reviews/list") {
+        dispatch(changeDataReviews(data?.results));
+      } else if (info.url === "faq/list") {
+        dispatch(changeDataFAQ(data));
+      }
     } catch (err) {
       console.log(err);
     }

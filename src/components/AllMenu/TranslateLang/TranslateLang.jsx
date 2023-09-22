@@ -5,8 +5,11 @@ import kg_img from "../../../assets/images/language/kg.svg";
 import ru_img from "../../../assets/images/language/ru.svg";
 import en_img from "../../../assets/images/language/en.svg";
 import arrow from "../../../assets/images/language/arrowLang.svg";
+import { changeLangData } from "../../../store/reducers/onServerSlice";
+import { useDispatch } from "react-redux";
 
 const TranslateLang = () => {
+  const dispatch = useDispatch();
   const translateName = [
     {
       id: 1,
@@ -33,7 +36,7 @@ const TranslateLang = () => {
 
   const changeLang = (e, lang, id) => {
     i18n.changeLanguage(lang);
-    // dispatch(changeLanguage(lang));
+    dispatch(changeLangData(lang));
     setCount(id);
   };
 
