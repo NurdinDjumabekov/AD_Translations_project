@@ -16,12 +16,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { dataServices } from "./store/reducers/servicesPageSlice";
 import { dataMainPage } from "./store/reducers/mainPageSlice";
 import { dataAboutPage } from "./store/reducers/aboutPageSlice";
+import Preloader from "./components/Preloader/Preloader";
 
 function App() {
   const dispatch = useDispatch();
   const { langData } = useSelector((state) => state.onServerSlice);
+  const { preloader } = useSelector((state) => state.mainPageSlice);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     dispatch(dataMainPage({ url: "latest_updates/list", lang: langData }));
     dispatch(dataMainPage({ url: "our_offers/list", lang: langData }));
     dispatch(dataServices({ url: "services/list", lang: langData }));
@@ -33,6 +36,7 @@ function App() {
 
   return (
     <>
+      {preloader && <Preloader />}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<MainPage />} />

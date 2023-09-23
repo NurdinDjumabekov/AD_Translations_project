@@ -3,7 +3,6 @@ import PersonalData from "../../components/FreelancerPage/PersonalData/PersonalD
 import styles from "./FreelancerPage.module.css";
 import FreelancerLang from "../../components/FreelancerPage/FreelancerLang/FreelancerLang";
 import { useDispatch, useSelector } from "react-redux";
-import Preloader from "../../components/Preloader/Preloader";
 import { sendDataFreelancers } from "../../store/reducers/freelanceSlice";
 import { changeErrorFreelanceSend } from "../../store/reducers/stateSendDataSlice";
 import { checkFullName } from "../../helpers/freelaceValidation";
@@ -14,7 +13,6 @@ const FreelancerPage = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
-  const { preloader } = useSelector((state) => state.mainPageSlice);
   const { selectsLangFrom, selectsLangTo, errorFreelanceSend } = useSelector(
     (state) => state.stateSendDataSlice
   );
@@ -58,7 +56,6 @@ const FreelancerPage = () => {
       ) : (
         <GoodSendData text={t("textGoodFreelance")} />
       )}
-      {preloader && <Preloader />}
     </>
   );
 };

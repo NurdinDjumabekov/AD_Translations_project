@@ -4,7 +4,6 @@ import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
 import { useDispatch, useSelector } from "react-redux";
 import GoodSendData from "../../components/GoodSendData/GoodSendData";
-import Preloader from "../../components/Preloader/Preloader";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 import { updateForSelects } from "../../helpers/updateForSelects";
 import { useTranslation } from "react-i18next";
@@ -13,7 +12,6 @@ const OrderPage = () => {
   const [doc, setDoc] = useState(null);
   const { t } = useTranslation();
 
-  const { preloader } = useSelector((state) => state.mainPageSlice);
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
   const { allLang } = useSelector((state) => state.servicesPageSlice);
 
@@ -61,7 +59,6 @@ const OrderPage = () => {
       ) : (
         <GoodSendData text={t("textGoodSendData")} />
       )}
-      {preloader && <Preloader />}
     </>
   );
 };

@@ -3,7 +3,6 @@ import styles from "./ConsultationPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import imgGood from "../../assets/images/orderPage/good.png";
 import { sendConsultationData } from "../../store/reducers/onServerSlice";
-import Preloader from "../../components/Preloader/Preloader";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -15,7 +14,6 @@ const ConsultationPage = () => {
   const { goodSendConsultation } = useSelector(
     (state) => state.stateSendDataSlice
   );
-  const { preloader } = useSelector((state) => state.mainPageSlice);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -112,7 +110,6 @@ const ConsultationPage = () => {
           </form>
         </div>
       )}
-      {preloader && <Preloader />}
     </>
   );
 };
