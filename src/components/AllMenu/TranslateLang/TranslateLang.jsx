@@ -26,7 +26,7 @@ const TranslateLang = () => {
     {
       id: 3,
       name: "Kyrgyz",
-      language: "kg",
+      language: "ky",
       img: kg_img,
     },
   ];

@@ -17,6 +17,7 @@ import { dataServices } from "./store/reducers/servicesPageSlice";
 import { dataMainPage } from "./store/reducers/mainPageSlice";
 import { dataAboutPage } from "./store/reducers/aboutPageSlice";
 import Preloader from "./components/Preloader/Preloader";
+import DetailedPage from "./pages/DetailedPage/DetailedPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/order" element={<OrderPage />} />
           <Route path="/freelancer" element={<FreelancerPage />} />
+          <Route path="/detailed/:id" element={<DetailedPage />} />
           <Route path="/cookie" element={<CookiePage />} />
           <Route path="/conditions" element={<ConditionsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
