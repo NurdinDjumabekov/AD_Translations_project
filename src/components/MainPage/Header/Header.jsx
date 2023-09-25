@@ -15,6 +15,9 @@ const Header = () => {
             <h1>{t("header")}</h1>
             <p>{t("headerDescription")}</p>
             <button onClick={() => navigate("/order")}>{t("headerBtn")}</button>
+            <button className={styles.btn_freelancer} onClick={() => navigate("/freelancer")}>
+              {t("headerBtn_Freelancers")}
+            </button>
           </div>
         </div>
       </div>

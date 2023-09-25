@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./SliderUpdates.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,10 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 const SliderUpdates = () => {
-  const dispatch = useDispatch();
-
   const { dataUpdates } = useSelector((state) => state.mainPageSlice);
-  // console.log(dataUpdates, "dataUpdates");
 
   const { t } = useTranslation();
 

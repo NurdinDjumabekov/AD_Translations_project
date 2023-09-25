@@ -11,10 +11,8 @@ const ServicesPage = () => {
   return (
     <div>
       <Services />
-      <>
-        <SliderIndustries />
-        <Languages />
-      </>
+      <SliderIndustries />
+      <Languages />
     </div>
   );
 };

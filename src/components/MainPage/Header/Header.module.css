@@ -8,7 +8,7 @@
   .header {
     height: 220px;
     max-width: 100%;
-    margin: 0 0 150px 0;
+    margin: 0 0 250px 0;
   }
 }
 @media screen and (max-width: 600px) and (max-width: 480px) {
@@ -27,7 +27,7 @@
 }
 @media screen and (max-width: 600px) {
   .header .header__inner {
-    height: 660px;
+    height: 750px;
   }
 }
 .header .header__inner > div {
@@ -95,9 +95,26 @@
   border-radius: 8px;
   cursor: pointer;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
+  .header .header__inner > div button {
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) and (max-width: 480px) {
   .header .header__inner > div button {
     width: 100%;
-    margin: 0 auto;
+  }
+}
+.header .header__inner > div .btn_freelancer {
+  background: transparent;
+  border: 2px solid #fafafa;
+  margin: 16px 0 0 0;
+  color: #fafafa;
+}
+@media screen and (max-width: 600px) {
+  .header .header__inner > div .btn_freelancer {
+    border: 2px solid #a09e9e;
+    color: #7f7f7f;
   }
 }

@@ -7,12 +7,12 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .sliderIndustries h2 {
+  .sliderIndustries h3 {
     padding: 0 0 0 40px;
   }
 }
 @media screen and (max-width: 480px) and (max-width: 450px) {
-  .sliderIndustries h2 {
+  .sliderIndustries h3 {
     padding: 0px;
     margin: 0;
   }
@@ -150,7 +150,7 @@
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div {
   height: 400px;
-  width: 350px;
+  width: 355px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,12 +165,12 @@
   }
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div {
-  background-color: black;
-  width: 350px;
+  width: 335px;
   height: 280px;
   border-radius: 6px;
   background: #FAFAfa;
   border: 1px solid #DEDEDE;
+  cursor: pointer;
   margin: 0 30px;
 }
 @media screen and (max-width: 450px) {
@@ -181,17 +181,19 @@
   }
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div .sliderIndustries__mainImg {
-  width: 100%;
+  width: 340px;
   height: 200px;
 }
 @media screen and (max-width: 450px) {
   .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div .sliderIndustries__mainImg {
     height: 160px;
+    width: 300px;
   }
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div .sliderIndustries__mainImg img {
   width: 100%;
   height: 100%;
+  border-radius: 5px 5px 0 0;
 }
 .sliderIndustries .sliderIndustries__inner > div > div > div > div > div > div .sliderIndustries__text {
   padding: 12px;

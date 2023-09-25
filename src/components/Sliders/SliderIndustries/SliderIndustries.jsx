@@ -1,37 +1,42 @@
 import React from "react";
 import styles from "./SliderIndustries.module.css";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 const SliderIndustries = () => {
   const { dataIndustries } = useSelector((state) => state.servicesPageSlice);
   const { t } = useTranslation();
+  console.log(dataIndustries, "dataIndustries");
 
   const settings = {
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 1,
     speed: 300,
-    dots: true,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: true, // Включаем индикаторы
     centerMode: false,
     variableWidth: true,
-    autoplaySpeed: 2000,
     autoplay: true,
+    autoplaySpeed: 2000,
   };
   return (
     <div className={styles.sliderIndustries}>
-      <h2 className="standartTitle">{t("Industries")}</h2>
+      <h3 className="standartTitle">{t("Industries")}</h3>
       <div className="container">
         <div className={styles.sliderIndustries__inner}>
           <Slider {...settings}>
-            {dataIndustries?.slice(0, 5)?.map((item) => (
-              <div key={item.id}>
+            {dataIndustries?.map((slid) => (
+              <div key={slid.id}>
                 <div className={styles.sliderIndustries__mainImg}>
-                  <img src={item.img} alt="img" />
+                  <img src={slid.img} alt="img" />
                 </div>
                 <div className={styles.sliderIndustries__text}>
-                  <h4>{item.iconText}</h4>
-                  <p>{item.text}</p>
+                  <h4>{slid.iconText}</h4>
+                  <p>{slid.text}</p>
                 </div>
               </div>
             ))}

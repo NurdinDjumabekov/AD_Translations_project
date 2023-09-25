@@ -11,11 +11,11 @@ const SliderReviews = () => {
 
   const settings = {
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 1,
     speed: 300,
     slidesToScroll: 1,
     arrows: true,
-    dots: true,
+    dots: true, // Включаем индикаторы
     centerMode: false,
     variableWidth: true,
     autoplay: true,

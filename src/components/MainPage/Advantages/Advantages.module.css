@@ -18,6 +18,7 @@
 @media screen and (max-width: 450px) {
   .advantages .advantages__inner ul {
     margin: 20px 0;
+    gap: 10px;
   }
 }
 .advantages .advantages__inner ul li {

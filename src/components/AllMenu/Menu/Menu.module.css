@@ -13,7 +13,7 @@
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
   z-index: 50;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 720px) {
   .menu {
     display: none;
   }
@@ -43,7 +43,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
   .menu .menu__inner > div a {
     gap: 10px;
   }
@@ -53,7 +53,7 @@
   width: 40px;
   height: 40px;
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 780px) {
   .menu .menu__inner > div a img {
     width: 30px;
     height: 30px;
@@ -67,12 +67,12 @@
   font-weight: 500;
   line-height: 36px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
   .menu .menu__inner > div a p {
     font-size: 22px;
   }
 }
-@media screen and (max-width: 850px) and (max-width: 680px) {
+@media screen and (max-width: 920px) and (max-width: 780px) {
   .menu .menu__inner > div a p {
     font-size: 18px;
   }
@@ -86,12 +86,12 @@
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 880px) {
   .menu .menu__inner ul {
     gap: 25px;
   }
 }
-@media screen and (max-width: 770px) and (max-width: 630px) {
+@media screen and (max-width: 880px) and (max-width: 630px) {
   .menu .menu__inner ul {
     gap: 18px;
   }
@@ -108,7 +108,7 @@
   font-weight: 400;
   line-height: normal;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 880px) {
   .menu .menu__inner ul li a {
     font-size: 14px;
   }
@@ -127,6 +127,10 @@
   font-weight: 400;
   line-height: normal;
 }
+.menu .menu__inner ul li:nth-child(5) {
+  display: none;
+}
+
 .consultationBlock {
   position: fixed;
   bottom: 60px;
