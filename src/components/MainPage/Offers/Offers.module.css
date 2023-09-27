@@ -108,6 +108,7 @@
 }
 .offers__slider li {
   margin: 0;
+  width: 8px !important;
 }
 .offers__slider li > button {
   width: 8px;
