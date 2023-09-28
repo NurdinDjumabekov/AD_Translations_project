@@ -46,6 +46,16 @@ export const AdvantagesData = [
     title: "4Advantages_title",
     text: "4Advantages_subtitle",
   },
+  {
+    id: 5,
+    title: "5Advantages_title",
+    text: "5Advantages_subtitle",
+  },
+  {
+    id: 6,
+    title: "6Advantages_title",
+    text: "6Advantages_subtitle",
+  },
 ];
 
 export const aboutUsData = [

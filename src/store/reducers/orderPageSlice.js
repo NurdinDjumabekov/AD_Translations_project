@@ -33,6 +33,7 @@ export const sendDataOrder = createAsyncThunk(
       const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
       const chatId = "775337596";
       const messageText = transformWord(info);
+      console.log(info.orderData.toLang);
       await axios({
         method: "POST",
         url: `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
