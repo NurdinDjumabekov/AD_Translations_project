@@ -14,10 +14,13 @@ const OrderPage = () => {
 
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
   const { allLang } = useSelector((state) => state.servicesPageSlice);
-
+  const { langData } = useSelector((state) => state.onServerSlice);
   const { dataServices, dataIndustries } = useSelector(
     (state) => state.onServerSlice
   );
+  // console.log(dataServices, dataIndustries, "dataIndustries");
+  // console.log(allLang, "allLang");
+  // console.log(dataServices, "dataServices");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,20 +35,24 @@ const OrderPage = () => {
             <i>{t("order_subtitle")}</i>
             <div className={styles.order__inner}>
               <div className={styles.order__services}>
-                <ChoiceSelect
-                  props={{
-                    data: updateForSelects(dataIndustries, "Industries"),
-                    textAbove: t("choice_Industries"),
-                    initialText: "Aviation",
-                  }}
-                />
-                <ChoiceSelect
-                  props={{
-                    data: updateForSelects(dataServices, "Services"),
-                    textAbove: t("choice_Services"),
-                    initialText: "Editing",
-                  }}
-                />
+                {dataIndustries?.length !== 0 && (
+                  <ChoiceSelect
+                    props={{
+                      data: updateForSelects(dataIndustries, "Industries"),
+                      textAbove: t("choice_Industries"),
+                      initialText: dataIndustries?.[0]?.iconText,
+                    }}
+                  />
+                )}
+                {dataServices?.length !== 0 && (
+                  <ChoiceSelect
+                    props={{
+                      data: updateForSelects(dataServices, "Services"),
+                      textAbove: t("choice_Services"),
+                      initialText: dataServices?.[0]?.title,
+                    }}
+                  />
+                )}
               </div>
               <TypesDocuments
                 doc={doc}

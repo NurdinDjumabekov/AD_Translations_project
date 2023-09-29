@@ -37,10 +37,10 @@
 
   "About us": "About us",
   "1About_text_title": "An Overview of Our Company",
-  "2About_text_title": "Professional and original approach  ",
+  "2About_text_title": "Why us?",
   "3About_text_title": "Innovation",
   "1About_text_subtitle": "AD Translations is a language services provider company that offers a wide range of language solutions to businesses, individuals, and government agencies around the world. We provide a variety of language services, including translation, on-site interpretation and phone interpretation, multilingual SEO, localization, voiceover, subtitling, transcription, dubbing, transcreation and other services.AD Translations was founded in 2011 by a team of experienced linguists and project managers who saw a need for high-quality language services in the global marketplace. Since then, our translation company has grown rapidly, expanding its services and client base to become a leading provider of language services worldwide.",
-  "2About_text_subtitle": "Why us? Welcome to AD Translations, a multilingual translation and localization service company. Our goal is to help businesses and individuals communicate effectively across linguistic and cultural barriers. We understand that communication is the key to building successful relationships, and that's why we offer a range of language services tailored to your specific needs. We believe in the importance of clear communication in today's interconnected world, and we are dedicated to delivering exceptional language solutions. Our experienced team is ready to assist you in overcoming language barriers and achieving your communication goals. Trust us to deliver language services you require, that empower individuals to communicate effectively and participate fully in society, regardless of their linguistic abilities or differences. Open global communication with AD Translations - your reliable source for professional language services!",
+  "2About_text_subtitle": "Welcome to AD Translations, a multilingual translation and localization service company. Our goal is to help businesses and individuals communicate effectively across linguistic and cultural barriers. We understand that communication is the key to building successful relationships, and that's why we offer a range of language services tailored to your specific needs. We believe in the importance of clear communication in today's interconnected world, and we are dedicated to delivering exceptional language solutions. Our experienced team is ready to assist you in overcoming language barriers and achieving your communication goals. Trust us to deliver language services you require, that empower individuals to communicate effectively and participate fully in society, regardless of their linguistic abilities or differences. Open global communication with AD Translations - your reliable source for professional language services!",
   "3About_text_subtitle": "We strive to use a cutting-edge linguistic technology and invest in the latest technologies and tools, and we are always exploring new ways to improve the efficiency and quality of our language services.",
 
   "Reviews": "Reviews",
@@ -55,6 +55,12 @@
   "choice_Services": "Services",
   "choice_from": "From",
   "choice_to": "To",
+  "To": "С",
+  "From": "На",
+  "initialLang1": "English",
+  "initialLang2": "Russian",
+  "initialServices": "Editing",
+  "initialIndustries": "Aviation",
 
   "Max: 5000 words": "Max: 5000 words",
   "Upload files": "Upload files",

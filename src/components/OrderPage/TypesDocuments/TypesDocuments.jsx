@@ -67,16 +67,24 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
         ))}
       </div>
       <div className={styles.order__language}>
-        <ChoiceSelect
-          props={{
-            data,
-            textAbove: t("choice_from"),
-            initialText: "English",
-          }}
-        />
-        <ChoiceSelect
-          props={{ data, textAbove: t("choice_to"), initialText: "Russian" }}
-        />
+        {data?.length !== 0 && (
+          <ChoiceSelect
+            props={{
+              data: data, // это языки
+              textAbove: t("choice_from"),
+              initialText: data?.[0]?.name,
+            }}
+          />
+        )}
+        {data?.length !== 0 && (
+          <ChoiceSelect
+            props={{
+              data: data, // это языки
+              textAbove: t("choice_to"),
+              initialText: data?.[1]?.name,
+            }}
+          />
+        )}
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />

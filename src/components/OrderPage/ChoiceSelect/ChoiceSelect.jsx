@@ -8,8 +8,10 @@ import {
   changeidEverySelect,
   clearAllSelects,
 } from "../../../store/reducers/orderPageSlice";
+import { useTranslation } from "react-i18next";
 
 const ChoiceSelect = ({ props }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState(props?.initialText);
@@ -19,33 +21,39 @@ const ChoiceSelect = ({ props }) => {
   );
 
   useEffect(() => {
+    setChoiceLang(props?.initialText);
+  }, [props.initialText]);
+
+  useEffect(() => {
     const updateOrderData = () => {
       switch (props?.textAbove) {
-        case "Services":
+        case t("Services"):
           return { services: choiceLang };
-        case "Industries":
+        case t("Industries"):
           return { industries: choiceLang };
-        case "To":
+        case t("To"):
           return { toLang: choiceLang };
-        case "From":
+        case t("From"):
           return { fromLang: choiceLang };
       }
     };
     dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
     const updateSelectID = () => {
       switch (props?.textAbove) {
-        case "Services":
+        case t("Services"):
           return { services: langId };
-        case "Industries":
+        case t("Industries"):
           return { industries: langId };
-        case "To":
+        case t("To"):
           return { toLang: langId };
-        case "From":
+        case t("From"):
           return { fromLang: langId };
       }
     };
     dispatch(changeidEverySelect({ ...idEverySelect, ...updateSelectID() }));
-  }, [choiceLang]);
+  }, [choiceLang, t]);
+
+  // console.log(choiceLang, "choiceLang");
 
   const clickChoice = (lang, id) => {
     setLookSelect(false);
