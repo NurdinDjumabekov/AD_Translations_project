@@ -19,6 +19,7 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
   const dispatch = useDispatch();
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
+  const { select, choiceLang } = useSelector((state) => state.selectSlice);
 
   useEffect(() => {
     if (stateData === false) {
@@ -68,22 +69,26 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
       </div>
       <div className={styles.order__language}>
         {data?.length !== 0 && (
-          <ChoiceSelect
-            props={{
-              data: data, // это языки
-              textAbove: t("choice_from"),
-              initialText: data?.[0]?.name,
-            }}
-          />
-        )}
-        {data?.length !== 0 && (
-          <ChoiceSelect
-            props={{
-              data: data, // это языки
-              textAbove: t("choice_to"),
-              initialText: data?.[1]?.name,
-            }}
-          />
+          <>
+            <ChoiceSelect
+              props={{
+                data: data, // это языки
+                textAbove: t("choice_from"),
+                initialText: data?.[0]?.choice,
+                state: select.fromLang,
+                choiceData: choiceLang.fromLang,
+              }}
+            />
+            <ChoiceSelect
+              props={{
+                data: data, // это языки
+                textAbove: t("choice_to"),
+                initialText: data?.[1]?.choice,
+                state: select.toLang,
+                choiceData: choiceLang.toLang,
+              }}
+            />
+          </>
         )}
       </div>
       <div className={styles.typeSendData}>
