@@ -24,41 +24,33 @@ const ChoiceSelect = ({ props }) => {
   );
 
   useEffect(() => {
-    switch (props?.textAbove) {
-      case t("Services"):
-        dispatch(
-          changeChoiceLang({ ...choiceLang, services: props?.initialText })
-        );
-        break;
-      case t("Industries"):
-        dispatch(
-          changeChoiceLang({ ...choiceLang, industries: props?.initialText })
-        );
-        break;
-      case t("From"):
-        dispatch(
-          changeChoiceLang({ ...choiceLang, fromLang: props?.initialText })
-        );
-        break;
-      case t("To"):
-        dispatch(
-          changeChoiceLang({ ...choiceLang, toLang: props?.initialText })
-        );
-        break;
-    }
+    const text = props?.initialText;
+    const lookInitialState = () => {
+      switch (props?.type) {
+        case 1:
+          return { industries: props?.initialText };
+        case 2:
+          return { services: text };
+        case 3:
+          return { fromLang: text };
+        case 4:
+          return { toLang: text };
+      }
+    };
+    dispatch(changeChoiceLang({ ...choiceLang, ...lookInitialState() }));
   }, [props?.initialText]);
 
   useEffect(() => {
     const updateOrderData = () => {
-      switch (props?.textAbove) {
-        case t("Services"):
-          return { services: choiceLang.services };
-        case t("Industries"):
+      switch (props?.type) {
+        case 1:
           return { industries: choiceLang.industries };
-        case t("From"):
-          return { toLang: choiceLang.fromLang };
-        case t("To"):
-          return { fromLang: choiceLang.toLang };
+        case 2:
+          return { services: choiceLang.services };
+        case 3:
+          return { fromLang: choiceLang.fromLang };
+        case 4:
+          return { toLang: choiceLang.toLang };
       }
     };
     dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
@@ -69,10 +61,10 @@ const ChoiceSelect = ({ props }) => {
           return { services: langId };
         case t("Industries"):
           return { industries: langId };
-        case t("To"):
-          return { toLang: langId };
         case t("From"):
           return { fromLang: langId };
+        case t("To"):
+          return { toLang: langId };
       }
     };
     dispatch(changeidEverySelect({ ...idEverySelect, ...updateSelectID() }));
@@ -81,37 +73,35 @@ const ChoiceSelect = ({ props }) => {
   const clickSelect = (bool, type) => {
     let updatedPayload = {};
     switch (type) {
-      case t("Services"):
-        updatedPayload = { services: bool };
-        break;
-      case t("Industries"):
+      case 1:
         updatedPayload = { industries: bool };
         break;
-      case t("To"):
-        updatedPayload = { toLang: bool };
+      case 2:
+        updatedPayload = { services: bool };
         break;
-      case t("From"):
+      case 3:
         updatedPayload = { fromLang: bool };
         break;
-      default:
+      case 4:
+        updatedPayload = { toLang: bool };
         break;
     }
     dispatch(changeSelect({ ...select, ...updatedPayload }));
   };
 
   const clickChoice = (lang, id) => {
-    clickSelect(false, props?.textAbove);
-    switch (props?.textAbove) {
-      case t("Services"):
-        dispatch(changeChoiceLang({ ...choiceLang, services: lang }));
-        break;
-      case t("Industries"):
+    clickSelect(false, props?.type);
+    switch (props?.type) {
+      case 1:
         dispatch(changeChoiceLang({ ...choiceLang, industries: lang }));
         break;
-      case t("From"):
+      case 2:
+        dispatch(changeChoiceLang({ ...choiceLang, services: lang }));
+        break;
+      case 3:
         dispatch(changeChoiceLang({ ...choiceLang, fromLang: lang }));
         break;
-      case t("To"):
+      case 4:
         dispatch(changeChoiceLang({ ...choiceLang, toLang: lang }));
         break;
       default:
@@ -123,28 +113,24 @@ const ChoiceSelect = ({ props }) => {
 
   useEffect(() => {
     if (clearData) {
-      switch (props?.textAbove) {
-        case t("Services"):
+      switch (props?.type) {
+        case 1:
+          dispatch(changeChoiceLang({ industries: props?.initialText }));
+          break;
+        case 2:
           dispatch(
             changeChoiceLang({ ...choiceLang, services: props?.initialText })
           );
           break;
-        case t("Industries"):
-          dispatch(
-            changeChoiceLang({ ...choiceLang, industries: props?.initialText })
-          );
-          break;
-        case t("From"):
+        case 3:
           dispatch(
             changeChoiceLang({ ...choiceLang, fromLang: props?.initialText })
           );
           break;
-        case t("To"):
+        case 4:
           dispatch(
             changeChoiceLang({ ...choiceLang, toLang: props?.initialText })
           );
-          break;
-        default:
           break;
       }
     }
@@ -155,7 +141,7 @@ const ChoiceSelect = ({ props }) => {
       <p className="textAboveSelect">{props.textAbove}</p>
       <div
         className={styles.choiceSelect_from}
-        onClick={() => clickSelect(!props.state, props?.textAbove)}
+        onClick={() => clickSelect(!props.state, props?.type)}
       >
         <p
           className={
@@ -164,7 +150,7 @@ const ChoiceSelect = ({ props }) => {
               : ""
           }
         >
-          {props.choiceData === "" ? props.initialText : props.choiceData}
+          {props.choiceData === "" ? props?.initialText : props.choiceData}
         </p>
         {props.state ? (
           <img src={arrow_top} alt="arrow" />

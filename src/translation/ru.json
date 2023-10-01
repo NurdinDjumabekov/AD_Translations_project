@@ -57,10 +57,11 @@
   "choice_to": "На",
   "To": "На",
   "From": "С",
+
   "initialLang1": "Английский",
   "initialLang2": "Русский",
-  "initialServices": "Редактирование",
-  "initialIndustries": "Авиация",
+  "initialServices": "Книги",
+  "initialIndustries": "Энергия",
 
   "Max: 5000 words": "РусскийMax: 5000 words",
   "Upload files": "РусскийUpload files",

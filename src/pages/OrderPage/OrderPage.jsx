@@ -8,6 +8,7 @@ import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 import { updateForSelects } from "../../helpers/updateForSelects";
 import { useTranslation } from "react-i18next";
 import { changeSelect } from "../../store/reducers/selectSlice";
+import { choiceTypeLang } from "../../helpers/choiceTypeLang";
 
 const OrderPage = () => {
   const [doc, setDoc] = useState(null);
@@ -15,14 +16,14 @@ const OrderPage = () => {
   const dispatch = useDispatch();
 
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
-  const { allLang } = useSelector((state) => state.servicesPageSlice);
-  const { select } = useSelector((state) => state.selectSlice);
-  const { dataServices, dataIndustries } = useSelector(
+  const { select, choiceLang } = useSelector((state) => state.selectSlice);
+  const { dataServices, dataIndustries, langData } = useSelector(
     (state) => state.onServerSlice
   );
   // console.log(dataServices, dataIndustries, "dataIndustries");
   // console.log(allLang, "allLang");
   // console.log(dataServices, "dataServices");
+  console.log(choiceLang, "choiceLang");
   // console.log(select, "select");
 
   const closeAllSelects = () => {
@@ -55,8 +56,10 @@ const OrderPage = () => {
                     props={{
                       data: updateForSelects(dataIndustries, "Industries"),
                       textAbove: t("choice_Industries"),
-                      initialText: dataIndustries?.[0]?.iconText,
+                      initialText: t("initialIndustries"),
                       state: select.industries,
+                      choiceData: choiceLang.industries,
+                      type: 1,
                     }}
                   />
                 )}
@@ -65,17 +68,15 @@ const OrderPage = () => {
                     props={{
                       data: updateForSelects(dataServices, "Services"),
                       textAbove: t("choice_Services"),
-                      initialText: dataServices?.[0]?.title,
+                      initialText: t("initialServices"),
                       state: select.services,
+                      choiceData: choiceLang.services,
+                      type: 2,
                     }}
                   />
                 )}
               </div>
-              <TypesDocuments
-                doc={doc}
-                setDoc={setDoc}
-                data={updateForSelects(allLang, "allLang")}
-              />
+              <TypesDocuments doc={doc} setDoc={setDoc} />
             </div>
             <ActionBtns doc={doc} setDoc={setDoc} />
           </div>

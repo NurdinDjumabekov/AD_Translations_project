@@ -11,8 +11,9 @@ import {
 } from "../../../store/reducers/orderPageSlice";
 import InputMask from "react-input-mask";
 import { useTranslation } from "react-i18next";
+import { updateForSelects } from "../../../helpers/updateForSelects";
 
-const TypesDocuments = ({ doc, data, setDoc }) => {
+const TypesDocuments = ({ doc, setDoc }) => {
   const [stateData, setStateData] = useState(true);
   const { t } = useTranslation();
 
@@ -20,6 +21,7 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
   const { select, choiceLang } = useSelector((state) => state.selectSlice);
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
 
   useEffect(() => {
     if (stateData === false) {
@@ -53,7 +55,6 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
       })
     );
   };
-
   return (
     <>
       <div className={styles.docType}>
@@ -68,28 +69,34 @@ const TypesDocuments = ({ doc, data, setDoc }) => {
         ))}
       </div>
       <div className={styles.order__language}>
-        {data?.length !== 0 && (
-          <>
+        <>
+          {allLang?.length !== 0 && (
             <ChoiceSelect
               props={{
-                data: data, // это языки
+                data: updateForSelects(allLang, "allLang"), // это языки
                 textAbove: t("choice_from"),
-                initialText: data?.[0]?.choice,
+                initialText: t("initialLang1"),
                 state: select.fromLang,
                 choiceData: choiceLang.fromLang,
+                type: 3,
               }}
             />
+          )}
+        </>
+        <>
+          {allLang?.length !== 0 && (
             <ChoiceSelect
               props={{
-                data: data, // это языки
+                data: updateForSelects(allLang, "allLang"), // это языки
                 textAbove: t("choice_to"),
-                initialText: data?.[1]?.choice,
+                initialText: t("initialLang2"),
                 state: select.toLang,
                 choiceData: choiceLang.toLang,
+                type: 4,
               }}
             />
-          </>
-        )}
+          )}
+        </>
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />
