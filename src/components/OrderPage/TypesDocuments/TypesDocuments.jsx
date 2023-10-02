@@ -21,7 +21,9 @@ const TypesDocuments = ({ doc, setDoc }) => {
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
   const { select, choiceLang } = useSelector((state) => state.selectSlice);
-  const { allLang } = useSelector((state) => state.servicesPageSlice);
+  const { allLang, allLangForSelect } = useSelector(
+    (state) => state.servicesPageSlice
+  );
 
   useEffect(() => {
     if (stateData === false) {
@@ -55,6 +57,8 @@ const TypesDocuments = ({ doc, setDoc }) => {
       })
     );
   };
+
+  // console.log(allLangForSelect, "allLangForSelect");
   return (
     <>
       <div className={styles.docType}>
@@ -70,10 +74,10 @@ const TypesDocuments = ({ doc, setDoc }) => {
       </div>
       <div className={styles.order__language}>
         <>
-          {allLang?.length !== 0 && (
+          {allLangForSelect?.length !== 0 && (
             <ChoiceSelect
               props={{
-                data: updateForSelects(allLang, "allLang"), // это языки
+                data: updateForSelects(allLangForSelect, "allLang"), // это языки
                 textAbove: t("choice_from"),
                 initialText: t("initialLang1"),
                 state: select.fromLang,

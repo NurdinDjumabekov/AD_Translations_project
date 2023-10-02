@@ -13,6 +13,7 @@ const initialState = {
   search: "",
   dataIndustries: [],
   allLang: [],
+  allLangForSelect: [],
 };
 
 export const dataServices = createAsyncThunk(
@@ -27,6 +28,7 @@ export const dataServices = createAsyncThunk(
         dispatch(changeDataServicesForServer(data?.results));
       } else if (info.url === "language/list") {
         dispatch(changeAllLang(data));
+        dispatch(toTakeAllLangForSelect(data));
       } else if (info.url === "industries/list") {
         dispatch(changeDataIndustries(data?.results));
         dispatch(changeDataIndustriesForServer(data?.results));
@@ -58,6 +60,9 @@ const servicesPageSlice = createSlice({
     changeAllLang: (state, action) => {
       state.allLang = action.payload;
     },
+    toTakeAllLangForSelect: (state, action) => {
+      state.allLangForSelect = action.payload;
+    },
   },
 });
 export const {
@@ -66,6 +71,7 @@ export const {
   changeSearch,
   changeDataIndustries,
   changeAllLang,
+  toTakeAllLangForSelect,
 } = servicesPageSlice.actions;
 
 export default servicesPageSlice.reducer;
