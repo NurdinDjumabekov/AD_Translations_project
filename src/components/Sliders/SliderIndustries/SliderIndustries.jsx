@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 const SliderIndustries = () => {
   const { dataIndustries } = useSelector((state) => state.servicesPageSlice);
@@ -30,7 +31,11 @@ const SliderIndustries = () => {
         <div className={styles.sliderIndustries__inner}>
           <Slider {...settings}>
             {dataIndustries?.map((slid) => (
-              <div key={slid.id}>
+              <NavLink
+                to={`/detailed/:industries/:${slid.id}`}
+                className={styles.every_slide}
+                key={slid.id}
+              >
                 <div className={styles.sliderIndustries__mainImg}>
                   <img src={slid.img} alt="img" />
                 </div>
@@ -38,7 +43,7 @@ const SliderIndustries = () => {
                   <h4>{slid.iconText}</h4>
                   <p>{slid.text}</p>
                 </div>
-              </div>
+              </NavLink>
             ))}
           </Slider>
         </div>

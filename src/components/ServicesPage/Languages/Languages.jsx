@@ -17,6 +17,7 @@ const Languages = () => {
   const lengNum = Math.ceil(dataAdaptation.length / 2);
 
   const { t } = useTranslation();
+  console.log(allLang);
 
   return (
     <div className={styles.languages}>
