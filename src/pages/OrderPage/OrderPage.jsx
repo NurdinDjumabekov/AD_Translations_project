@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./OrderPage.module.css";
 import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
@@ -41,6 +41,28 @@ const OrderPage = () => {
     window.scrollTo(0, 0);
     closeAllSelects();
   }, []);
+  // console.log(dataIndustries?.[0]?.iconText, "dataIndustries[0].iconText");
+
+  const arr = [
+    {
+      id: 1,
+      type: 1,
+      data: updateForSelects(dataIndustries, "Industries"),
+      textAbove: "choice_Industries",
+      initialText: dataIndustries?.[0]?.iconText,
+      state: select.industries,
+      choiceData: choiceLang.industries,
+    },
+    {
+      id: 2,
+      type: 2,
+      data: updateForSelects(dataServices, "Services"),
+      textAbove: "choice_Services",
+      initialText: "initialServices",
+      state: select.services,
+      choiceData: choiceLang.services,
+    },
+  ];
 
   return (
     <>
@@ -51,30 +73,19 @@ const OrderPage = () => {
             <i>{t("order_subtitle")}</i>
             <div className={styles.order__inner}>
               <div className={styles.order__services}>
-                {dataIndustries?.length !== 0 && (
+                {arr?.map((i, k) => (
                   <ChoiceSelect
+                    key={k}
                     props={{
-                      data: updateForSelects(dataIndustries, "Industries"),
-                      textAbove: t("choice_Industries"),
-                      initialText: t("initialIndustries"),
-                      state: select.industries,
-                      choiceData: choiceLang.industries,
-                      type: 1,
+                      data: i?.data,
+                      textAbove: t(i?.textAbove),
+                      initialText: t(i.initialText),
+                      state: i?.state,
+                      choiceData: i?.choiceData,
+                      type: i?.type,
                     }}
                   />
-                )}
-                {dataServices?.length !== 0 && (
-                  <ChoiceSelect
-                    props={{
-                      data: updateForSelects(dataServices, "Services"),
-                      textAbove: t("choice_Services"),
-                      initialText: t("initialServices"),
-                      state: select.services,
-                      choiceData: choiceLang.services,
-                      type: 2,
-                    }}
-                  />
-                )}
+                ))}
               </div>
               <TypesDocuments doc={doc} setDoc={setDoc} />
             </div>

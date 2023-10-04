@@ -30,11 +30,11 @@ const ChoiceSelect = ({ props }) => {
         case 1:
           return { industries: props?.initialText };
         case 2:
-          return { services: text };
+          return { services: props?.initialText };
         case 3:
-          return { fromLang: text };
+          return { fromLang: props?.initialText };
         case 4:
-          return { toLang: text };
+          return { toLang: props?.initialText };
       }
     };
     dispatch(changeChoiceLang({ ...choiceLang, ...lookInitialState() }));
@@ -53,6 +53,7 @@ const ChoiceSelect = ({ props }) => {
           return { toLang: choiceLang.toLang };
       }
     };
+
     dispatch(changeOrderData({ ...orderData, ...updateOrderData() }));
 
     const updateSelectID = () => {
@@ -150,7 +151,7 @@ const ChoiceSelect = ({ props }) => {
               : ""
           }
         >
-          {props.choiceData === "" ? props?.initialText : props.choiceData}
+          {props?.initialText || props.choiceData}
         </p>
         {props.state ? (
           <img src={arrow_top} alt="arrow" />
@@ -165,7 +166,7 @@ const ChoiceSelect = ({ props }) => {
               key={lang?.id}
               onClick={() => clickChoice(lang?.choice, lang.id)}
               className={
-                lang.choice === props.choiceData ? styles.activeSelect : ""
+                lang?.choice === props?.choiceData ? styles.activeSelect : ""
               }
             >
               {lang?.choice}

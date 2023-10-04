@@ -24,6 +24,7 @@ const TypesDocuments = ({ doc, setDoc }) => {
   const { allLang, allLangForSelect } = useSelector(
     (state) => state.servicesPageSlice
   );
+  console.log(allLang);
 
   useEffect(() => {
     if (stateData === false) {
@@ -58,7 +59,25 @@ const TypesDocuments = ({ doc, setDoc }) => {
     );
   };
 
-  // console.log(allLangForSelect, "allLangForSelect");
+  const arr = [
+    {
+      type: 3,
+      data: updateForSelects(allLang, "allLang"),
+      textAbove: "choice_from",
+      initialText: allLang?.[0]?.name,
+      state: select.fromLang,
+      choiceData: choiceLang.fromLang,
+    },
+    {
+      type: 4,
+      data: updateForSelects(allLang, "allLang"),
+      textAbove: "choice_to",
+      initialText: allLang?.[1]?.name,
+      state: select.toLang,
+      choiceData: choiceLang.toLang,
+    },
+  ];
+
   return (
     <>
       <div className={styles.docType}>
@@ -73,7 +92,20 @@ const TypesDocuments = ({ doc, setDoc }) => {
         ))}
       </div>
       <div className={styles.order__language}>
-        <>
+        {arr?.map((i) => (
+          <ChoiceSelect
+            key={i.type}
+            props={{
+              data: i?.data,
+              textAbove: t(i?.textAbove),
+              initialText: t(i.initialText),
+              state: i?.state,
+              choiceData: i?.choiceData,
+              type: i?.type,
+            }}
+          />
+        ))}
+        {/* <>
           {allLangForSelect?.length !== 0 && (
             <ChoiceSelect
               props={{
@@ -100,7 +132,7 @@ const TypesDocuments = ({ doc, setDoc }) => {
               }}
             />
           )}
-        </>
+        </> */}
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />
