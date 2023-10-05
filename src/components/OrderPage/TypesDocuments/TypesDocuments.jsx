@@ -12,6 +12,7 @@ import {
 import InputMask from "react-input-mask";
 import { useTranslation } from "react-i18next";
 import { updateForSelects } from "../../../helpers/updateForSelects";
+import { changeChoiceLang } from "../../../store/reducers/selectSlice";
 
 const TypesDocuments = ({ doc, setDoc }) => {
   const [stateData, setStateData] = useState(true);
@@ -24,7 +25,8 @@ const TypesDocuments = ({ doc, setDoc }) => {
   const { allLang, allLangForSelect } = useSelector(
     (state) => state.servicesPageSlice
   );
-  console.log(allLang);
+  // console.log(choiceLang);
+  // надо удалить allLangForSelect
 
   useEffect(() => {
     if (stateData === false) {
@@ -61,20 +63,20 @@ const TypesDocuments = ({ doc, setDoc }) => {
 
   const arr = [
     {
-      type: 3,
       data: updateForSelects(allLang, "allLang"),
       textAbove: "choice_from",
       initialText: allLang?.[0]?.name,
-      state: select.fromLang,
-      choiceData: choiceLang.fromLang,
+      state: select?.fromLang,
+      choiceData: choiceLang?.fromLang,
+      key: "fromLang",
     },
     {
-      type: 4,
       data: updateForSelects(allLang, "allLang"),
       textAbove: "choice_to",
       initialText: allLang?.[1]?.name,
-      state: select.toLang,
-      choiceData: choiceLang.toLang,
+      state: select?.toLang,
+      choiceData: choiceLang?.toLang,
+      key: "toLang",
     },
   ];
 
@@ -92,47 +94,20 @@ const TypesDocuments = ({ doc, setDoc }) => {
         ))}
       </div>
       <div className={styles.order__language}>
-        {arr?.map((i) => (
+        {arr?.map((i, index) => (
           <ChoiceSelect
-            key={i.type}
+            key={index}
             props={{
               data: i?.data,
               textAbove: t(i?.textAbove),
-              initialText: t(i.initialText),
+              initialText: i.initialText,
               state: i?.state,
               choiceData: i?.choiceData,
               type: i?.type,
+              key: i?.key,
             }}
           />
         ))}
-        {/* <>
-          {allLangForSelect?.length !== 0 && (
-            <ChoiceSelect
-              props={{
-                data: updateForSelects(allLangForSelect, "allLang"), // это языки
-                textAbove: t("choice_from"),
-                initialText: t("initialLang1"),
-                state: select.fromLang,
-                choiceData: choiceLang.fromLang,
-                type: 3,
-              }}
-            />
-          )}
-        </>
-        <>
-          {allLang?.length !== 0 && (
-            <ChoiceSelect
-              props={{
-                data: updateForSelects(allLang, "allLang"), // это языки
-                textAbove: t("choice_to"),
-                initialText: t("initialLang2"),
-                state: select.toLang,
-                choiceData: choiceLang.toLang,
-                type: 4,
-              }}
-            />
-          )}
-        </> */}
       </div>
       <div className={styles.typeSendData}>
         <DataForSend doc={doc} setDoc={setDoc} />

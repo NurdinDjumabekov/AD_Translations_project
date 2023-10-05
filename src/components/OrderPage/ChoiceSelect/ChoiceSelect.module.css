@@ -59,6 +59,11 @@
   width: 40px;
   height: 40px;
 }
+.choiceSelect .shadow__select {
+  background: red;
+  position: absolute;
+  z-index: 10;
+}
 .choiceSelect .activeSelect {
   overflow: hidden;
   color: #007e1d;

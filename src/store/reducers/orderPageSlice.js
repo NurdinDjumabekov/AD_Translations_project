@@ -13,12 +13,6 @@ const initialState = {
     email: "",
     phoneNum: "",
   },
-  idEverySelect: {
-    fromLang: 1,
-    toLang: 1,
-    services: 1,
-    industries: 1,
-  },
   goodSendData: true,
   typeDoc: 1,
   clearData: false,
@@ -87,9 +81,6 @@ const orderPageSlice = createSlice({
     clearAllSelects: (state, action) => {
       state.clearData = action.payload;
     },
-    changeidEverySelect: (state, action) => {
-      state.idEverySelect = action.payload;
-    },
   },
 });
 export const {
@@ -97,7 +88,6 @@ export const {
   changeTypeDoc,
   changeGoodSendData,
   clearAllSelects,
-  changeidEverySelect,
 } = orderPageSlice.actions;
 
 export default orderPageSlice.reducer;

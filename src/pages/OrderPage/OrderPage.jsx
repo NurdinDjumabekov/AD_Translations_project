@@ -7,8 +7,11 @@ import GoodSendData from "../../components/GoodSendData/GoodSendData";
 import ActionBtns from "../../components/OrderPage/ActionBtns/ActionBtns";
 import { updateForSelects } from "../../helpers/updateForSelects";
 import { useTranslation } from "react-i18next";
-import { changeSelect } from "../../store/reducers/selectSlice";
-import { choiceTypeLang } from "../../helpers/choiceTypeLang";
+import {
+  changeSelect,
+  clearIdEverySelect,
+} from "../../store/reducers/selectSlice";
+import { choiceTypeLang } from "../../helpers/choiceTypeLang"; // надо удалить
 
 const OrderPage = () => {
   const [doc, setDoc] = useState(null);
@@ -20,13 +23,14 @@ const OrderPage = () => {
   const { dataServices, dataIndustries, langData } = useSelector(
     (state) => state.onServerSlice
   );
-  // console.log(dataServices, dataIndustries, "dataIndustries");
+  console.log(dataServices, dataIndustries, "dataIndustries");
   // console.log(allLang, "allLang");
   // console.log(dataServices, "dataServices");
-  console.log(choiceLang, "choiceLang");
+  // console.log(choiceLang, "choiceLang");
   // console.log(select, "select");
 
-  const closeAllSelects = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(
       changeSelect({
         services: false,
@@ -35,32 +39,28 @@ const OrderPage = () => {
         toLang: false,
       })
     );
-  };
+  }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    closeAllSelects();
-  }, []);
-  // console.log(dataIndustries?.[0]?.iconText, "dataIndustries[0].iconText");
+    dispatch(clearIdEverySelect());
+  }, [langData]);
 
   const arr = [
     {
-      id: 1,
-      type: 1,
       data: updateForSelects(dataIndustries, "Industries"),
       textAbove: "choice_Industries",
       initialText: dataIndustries?.[0]?.iconText,
-      state: select.industries,
-      choiceData: choiceLang.industries,
+      state: select?.industries,
+      choiceData: choiceLang?.industries,
+      key: "industries",
     },
     {
-      id: 2,
-      type: 2,
       data: updateForSelects(dataServices, "Services"),
       textAbove: "choice_Services",
-      initialText: "initialServices",
-      state: select.services,
-      choiceData: choiceLang.services,
+      initialText: dataServices?.[0]?.title,
+      state: select?.services,
+      choiceData: choiceLang?.services,
+      key: "services",
     },
   ];
 
@@ -73,16 +73,17 @@ const OrderPage = () => {
             <i>{t("order_subtitle")}</i>
             <div className={styles.order__inner}>
               <div className={styles.order__services}>
-                {arr?.map((i, k) => (
+                {arr?.map((i, index) => (
                   <ChoiceSelect
-                    key={k}
+                    key={index}
                     props={{
                       data: i?.data,
                       textAbove: t(i?.textAbove),
-                      initialText: t(i.initialText),
+                      initialText: i.initialText,
                       state: i?.state,
                       choiceData: i?.choiceData,
                       type: i?.type,
+                      key: i?.key,
                     }}
                   />
                 ))}

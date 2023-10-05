@@ -13,10 +13,12 @@ import { useTranslation } from "react-i18next";
 const ActionBtns = ({ doc, setDoc }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { orderData, typeDoc, idEverySelect } = useSelector(
-    (state) => state.orderPageSlice
+  const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
+  const { choiceLang, idEverySelect } = useSelector(
+    (state) => state.selectSlice
   );
-  // console.log(idEverySelect);
+  // console.log(choiceLang, "choiceLang");
+  console.log(idEverySelect, "idEverySelect");
 
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
