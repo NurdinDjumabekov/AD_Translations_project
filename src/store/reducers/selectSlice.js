@@ -34,7 +34,7 @@ const selectSlice = createSlice({
     changeidEverySelect: (state, action) => {
       state.idEverySelect = { ...state.idEverySelect, ...action.payload };
     },
-    clearIdEverySelect: (state, action) => {
+    clearIdEverySelect: (state) => {
       state.idEverySelect = {
         services: 1,
         industries: 1,

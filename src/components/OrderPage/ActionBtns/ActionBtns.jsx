@@ -6,14 +6,21 @@ import { checkDate } from "../../../helpers/validation";
 import {
   changeOrderData,
   changeTypeDoc,
-  clearAllSelects,
 } from "../../../store/reducers/orderPageSlice";
 import { useTranslation } from "react-i18next";
+import {
+  changeChoiceLang,
+  clearIdEverySelect,
+} from "../../../store/reducers/selectSlice";
 
 const ActionBtns = ({ doc, setDoc }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
+  const { dataServices, dataIndustries, langData } = useSelector(
+    (state) => state.onServerSlice
+  );
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
   const { choiceLang, idEverySelect } = useSelector(
     (state) => state.selectSlice
   );
@@ -24,12 +31,20 @@ const ActionBtns = ({ doc, setDoc }) => {
 
   const clearAllData = () => {
     setDoc(null);
-    dispatch(clearAllSelects(true));
     dispatch(
       changeOrderData({
         date: "",
         email: "",
         phoneNum: "",
+      })
+    );
+    dispatch(clearIdEverySelect({}));
+    dispatch(
+      changeChoiceLang({
+        fromLang: allLang?.[0]?.name,
+        toLang: allLang?.[1]?.name,
+        industries: dataIndustries?.[0]?.iconText,
+        services: dataServices?.[0]?.title,
       })
     );
     dispatch(changeTypeDoc(1));
@@ -60,7 +75,7 @@ const ActionBtns = ({ doc, setDoc }) => {
 
   return (
     <div className={styles.actionBtns}>
-      <button onClick={() => clearAllData()}>{t("Clear")}</button>
+      <button onClick={clearAllData}>{t("Clear")}</button>
       <button onClick={checkDocuments}>{t("SEND")}</button>
     </div>
   );

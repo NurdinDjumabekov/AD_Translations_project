@@ -3,11 +3,7 @@ import styles from "./ChoiceSelect.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changeOrderData,
-  clearAllSelects,
-} from "../../../store/reducers/orderPageSlice";
-import { useTranslation } from "react-i18next";
+import { changeOrderData } from "../../../store/reducers/orderPageSlice";
 import {
   changeChoiceLang,
   changeSelect,
@@ -40,14 +36,7 @@ const ChoiceSelect = ({ props }) => {
     clickSelect(false);
     dispatch(changeChoiceLang({ [props.key]: lang }));
     dispatch(changeidEverySelect({ [props.key]: id }));
-    dispatch(clearAllSelects(false)); // для того чтобы можно было еще раз стереть все данные
   };
-
-  useEffect(() => {
-    if (clearData) {
-      dispatch(changeChoiceLang({ [props.key]: props?.initialTetx }));
-    }
-  }, [clearData]);
 
   return (
     <div className={styles.choiceSelect}>

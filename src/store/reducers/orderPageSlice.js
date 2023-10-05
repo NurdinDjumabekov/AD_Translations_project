@@ -78,16 +78,9 @@ const orderPageSlice = createSlice({
     changeGoodSendData: (state, action) => {
       state.goodSendData = action.payload;
     },
-    clearAllSelects: (state, action) => {
-      state.clearData = action.payload;
-    },
   },
 });
-export const {
-  changeOrderData,
-  changeTypeDoc,
-  changeGoodSendData,
-  clearAllSelects,
-} = orderPageSlice.actions;
+export const { changeOrderData, changeTypeDoc, changeGoodSendData } =
+  orderPageSlice.actions;
 
 export default orderPageSlice.reducer;
