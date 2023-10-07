@@ -157,5 +157,7 @@
 
   "textGoodSendData": "We have received your order! The translator will contact you within 24 hours for a detailed discussion about your message!",
   "textGoodFreelance": "You have successfully submitted an application to join our team. Recruiter will answer you within 24 hours.!",
-  "goodSendConsult": "We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!"
+  "goodSendConsult": "We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!",
+
+  "languages": "languages"
 }

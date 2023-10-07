@@ -1,3 +1,47 @@
-.detailed {
+.detailed__parent {
   padding: 60px 0px;
+}
+.detailed__parent .detailed__innner .detailed__every {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+  margin: 0px auto 80px;
+}
+.detailed__parent .detailed__innner .detailed__every .detailed__img {
+  width: 500px;
+  height: 260px;
+  border-radius: 6x;
+}
+.detailed__parent .detailed__innner .detailed__every .detailed__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.detailed__parent .detailed__innner .detailed__every .detailed__text {
+  width: 100%;
+}
+.detailed__parent .detailed__innner .detailed__every .detailed__text h5 {
+  color: var(--Text, #151515);
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 20px 0;
+}
+.detailed__parent .detailed__innner .detailed__every .detailed__text p {
+  color: var(--Text, #151515);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }

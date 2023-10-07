@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { standartAxios } from "../../helpers/standartAxios";
 
 const initialState = {
-  everyLang: {},
+  everyLang: [],
 };
 
 export const dataDetailedPage = createAsyncThunk(
@@ -10,9 +10,8 @@ export const dataDetailedPage = createAsyncThunk(
   async (info, { dispatch }) => {
     try {
       const { data } = await standartAxios(info?.url, info.lang);
-      if (info.url === "latest_updates/list") {
-        dispatch(changeEveryLang(data?.results));
-      }
+      console.log(data);
+      //   dispatch(changeEveryLang(data?.results));
     } catch (err) {
       console.log(err);
     }

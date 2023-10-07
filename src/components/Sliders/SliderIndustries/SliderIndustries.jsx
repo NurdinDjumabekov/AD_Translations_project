@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 const SliderIndustries = () => {
   const { dataIndustries } = useSelector((state) => state.servicesPageSlice);
   const { t } = useTranslation();
-  console.log(dataIndustries, "dataIndustries");
+  // console.log(dataIndustries, "dataIndustries");
 
   const settings = {
     infinite: true,
