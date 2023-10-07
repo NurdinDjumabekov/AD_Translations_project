@@ -5,17 +5,12 @@ import { transformWord } from "../../helpers/tranformWord";
 
 const initialState = {
   orderData: {
-    fromLang: "",
-    toLang: "",
-    services: "",
-    industries: "",
     date: "",
     email: "",
     phoneNum: "",
   },
   goodSendData: true,
   typeDoc: 1,
-  clearData: false,
 };
 
 // для отправки данных в телеграмм бот

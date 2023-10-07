@@ -31,7 +31,8 @@
     width: 340px;
   }
 }
-.choiceSelect .choiceSelect_from p {
+.choiceSelect .choiceSelect_from b {
+  display: block;
   width: 60%;
   overflow: hidden;
   color: #151515;
@@ -59,10 +60,6 @@
   width: 40px;
   height: 40px;
 }
-.choiceSelect .shadow__select {
-  background: red;
-  z-index: 10;
-}
 .choiceSelect .activeSelect {
   overflow: hidden;
   color: #007e1d;
@@ -72,4 +69,5 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  display: block;
 }

@@ -3,18 +3,13 @@ import styles from "./LangSelectFrom.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  changeDataFreelancers_from,
-  changeDataFreelancers_to,
-} from "../../../store/reducers/freelanceSlice";
+import { changeDataFreelancers_from } from "../../../store/reducers/freelanceSlice";
 
 const LangSelectFrom = ({ props }) => {
   const dispatch = useDispatch();
   const [lookSelect, setLookSelect] = useState(false);
   const [choiceLang, setChoiceLang] = useState(props.initialText);
-  const { dataFreelancers_from, dataFreelancers_to } = useSelector(
-    (state) => state.freelanceSlice
-  );
+  const { dataFreelancers_from } = useSelector((state) => state.freelanceSlice);
 
   useEffect(() => {
     if (props.count === 1) {
@@ -90,30 +85,45 @@ const LangSelectFrom = ({ props }) => {
     }
   }, [choiceLang]);
 
+  useEffect(() => {
+    setChoiceLang(props?.initialText);
+  }, [props?.initialText]);
+
   const clickChoice = (lang) => {
     setLookSelect(false);
     setChoiceLang(lang);
   };
 
+  const handleOutsideClick = (e) => {
+    if (e.target.tagName === "SECTION" || e.target.tagName === "B") {
+    } else {
+      setLookSelect(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+  }, []);
+
   return (
     <div className={styles.langSelectFrom}>
-      <div
+      <section
         className={styles.LangSelectFrom__from}
         onClick={() => setLookSelect(!lookSelect)}
       >
-        <p
+        <b
           className={
             choiceLang !== "" && lookSelect !== false ? styles.activeSelect : ""
           }
         >
           {choiceLang === "" ? props.initialText : choiceLang}
-        </p>
+        </b>
         {lookSelect ? (
           <img src={arrow_top} alt="arrow" />
         ) : (
           <img src={arrow_bottom} alt="arrow" />
         )}
-      </div>
+      </section>
       {lookSelect && (
         <div className="mySelect">
           {props.data?.map((lang) => (

@@ -15,6 +15,7 @@
   margin: 0 0 60px 0;
 }
 .textAboveSelect {
+  display: block;
   color: #fff;
   font-family: Roboto;
   font-size: 14px;
@@ -37,6 +38,18 @@
   z-index: 20;
 }
 .mySelect > p {
+  color: #151515;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 0;
+  border-bottom: 1px solid #dedede;
+  cursor: pointer;
+}
+.mySelect > b {
+  display: block;
   color: #151515;
   font-family: Roboto;
   font-size: 14px;

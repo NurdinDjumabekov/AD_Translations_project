@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Languages.module.css";
-import { sortLanguages } from "../../../helpers/sortLanguages";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import imgsss from "../../../assets/images/menu/consultation.svg";
 
 const Languages = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState([]);
-  const [dataAdaptation, setDataAdaptation] = useState([]);
   const { allLang } = useSelector((state) => state.servicesPageSlice);
-  useEffect(() => {
-    setData(sortLanguages(allLang)[0]); // в helpers зайди, там всё ясно будет
-    setDataAdaptation(sortLanguages(allLang)[1]);
-  }, [allLang]);
-  const lengNum = Math.ceil(dataAdaptation.length / 2);
 
   const { t } = useTranslation();
   console.log(allLang);
@@ -24,52 +17,16 @@ const Languages = () => {
       <div className="container">
         <h4 className="standartTitle">{t("language")}</h4>
         <div className={styles.languages__inner}>
-          <div>
-            {data[0]?.map((item) => (
-              <div
-                className={item.letter !== "" ? styles.pushContent : ""}
-                key={item.id}
-              >
-                <p>{item.letter}</p>
-                <span>{item.name}</span>
-              </div>
-            ))}
-          </div>
-          <div>
-            {data[1]?.map((item) => (
-              <div
-                className={item.letter !== "" ? styles.pushContent : ""}
-                key={item.id}
-              >
-                <p>{item.letter}</p>
-                <span>{item.name}</span>
-              </div>
-            ))}
-          </div>
-          <div>
-            {data[2]?.map((item) => (
-              <div
-                key={item.id}
-                className={item.letter !== "" ? styles.pushContent : ""}
-              >
-                <p>{item.letter}</p>
-                <span>{item.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* //////для адаптивки */}
-        <div className={styles.adaptationLanguages}>
-          <div>
-            {dataAdaptation.slice(0, lengNum).map((i) => (
-              <p key={i.id}>{i.name}</p>
-            ))}
-          </div>
-          <div>
-            {dataAdaptation.slice(lengNum, dataAdaptation?.length).map((i) => (
-              <p key={i.id}>{i.name}</p>
-            ))}
-          </div>
+          {allLang?.map((lang) => (
+            <NavLink
+              key={lang.id}
+              to={`/detailed/language/${lang.id}`}
+              className={styles.languages__innerBlock}
+            >
+              <img src={imgsss} alt="language" />
+              <p>{lang.name} </p>
+            </NavLink>
+          ))}
         </div>
       </div>
       <div className="lineBlock"></div>

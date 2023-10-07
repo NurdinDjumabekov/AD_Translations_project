@@ -32,7 +32,7 @@ const SliderIndustries = () => {
           <Slider {...settings}>
             {dataIndustries?.map((slid) => (
               <NavLink
-                to={`/detailed/:industries/:${slid.id}`}
+                to={`/detailed/industries/${slid.id}`}
                 className={styles.every_slide}
                 key={slid.id}
               >

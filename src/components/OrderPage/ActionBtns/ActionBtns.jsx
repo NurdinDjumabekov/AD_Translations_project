@@ -25,7 +25,8 @@ const ActionBtns = ({ doc, setDoc }) => {
     (state) => state.selectSlice
   );
   // console.log(choiceLang, "choiceLang");
-  console.log(idEverySelect, "idEverySelect");
+  // console.log(idEverySelect, "idEverySelect");
+  // console.log(orderData, "orderData");
 
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
@@ -38,7 +39,7 @@ const ActionBtns = ({ doc, setDoc }) => {
         phoneNum: "",
       })
     );
-    dispatch(clearIdEverySelect({}));
+    dispatch(clearIdEverySelect());
     dispatch(
       changeChoiceLang({
         fromLang: allLang?.[0]?.name,
@@ -52,7 +53,15 @@ const ActionBtns = ({ doc, setDoc }) => {
 
   const checkDocuments = () => {
     if (doc) {
-      checkDate(orderData, doc, typeDoc, dispatch, errorSend, idEverySelect);
+      checkDate(
+        orderData,
+        doc,
+        typeDoc,
+        dispatch,
+        errorSend,
+        idEverySelect,
+        choiceLang
+      );
     } else {
       dispatch(
         changeErrorSend({

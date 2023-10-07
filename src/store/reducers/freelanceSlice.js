@@ -10,17 +10,17 @@ const initialState = {
       levelLang: "A1",
     },
     langTwo: {
-      lang: "English",
+      lang: "Russian",
       levelLang: "A1",
     },
     langThree: {
-      lang: "English",
+      lang: "Spanish",
       levelLang: "A1",
     },
   },
   dataFreelancers_to: {
     langOne: {
-      lang: "Russian",
+      lang: "English",
       levelLang: "A1",
     },
     langTwo: {
@@ -28,7 +28,7 @@ const initialState = {
       levelLang: "A1",
     },
     langThree: {
-      lang: "Russian",
+      lang: "Spanish",
       levelLang: "A1",
     },
   },

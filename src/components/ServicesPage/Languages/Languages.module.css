@@ -4,9 +4,10 @@
 @media screen and (max-width: 600px) {
   .languages h4 {
     padding: 0 0 0 30px;
+    font-size: 25px;
   }
 }
-@media screen and (max-width: 600px) and (max-width: 450px) {
+@media screen and (max-width: 600px) and (max-width: 510px) {
   .languages h4 {
     padding: 0 0 0 12px;
     font-size: 17px;
@@ -16,94 +17,69 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 100px;
-}
-@media screen and (max-width: 780px) {
-  .languages .languages__inner {
-    gap: 30px;
-  }
-}
-@media screen and (max-width: 780px) and (max-width: 600px) {
-  .languages .languages__inner {
-    display: none;
-  }
-}
-.languages .languages__inner > div {
-  margin: 0 0 60px 0;
-}
-.languages .languages__inner > div > div {
-  max-width: 190px;
-  margin: 10px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 650px;
+  height: auto;
+  margin: 30px auto 60px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .languages .languages__inner {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 700px) and (max-width: 560px) {
+  .languages .languages__inner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media screen and (max-width: 700px) and (max-width: 560px) and (max-width: 500px) {
+  .languages .languages__inner {
+    width: 360px;
+  }
+}
+.languages .languages__inner .languages__innerBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 21px;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--gre, #646464);
+  padding: 6px 10px;
+  margin: 7px 40px;
+  width: 130px;
+  min-width: 100px;
+  height: 36px;
   cursor: pointer;
 }
-.languages .languages__inner > div > div p {
-  color: var(--text, #151515);
-  font-family: "Roboto", sans-serif;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  width: 25px;
-  height: 30px;
-  overflow: hidden;
+@media screen and (max-width: 700px) {
+  .languages .languages__inner .languages__innerBlock {
+    margin: 7px 10px;
+  }
 }
-.languages .languages__inner > div > div span {
+.languages .languages__inner .languages__innerBlock > img {
+  width: 28px;
+  height: 22px;
   display: block;
-  color: #151515;
-  font-family: "Roboto", sans-serif;
+}
+.languages .languages__inner .languages__innerBlock p {
+  color: var(--Text, #151515);
+  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  border-radius: 2px;
-  border: 1px solid #646464;
-  text-align: center;
-  padding: 6px 10px;
-  width: 124px;
-  max-height: 44px;
   overflow: hidden;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-.languages .languages__inner > div > div span:hover {
-  background-color: #007E1D;
-  color: #fafafa;
-}
-.languages .languages__inner > div .pushContent {
-  margin-top: 30px;
-}
-.languages .adaptationLanguages {
-  display: none;
-}
-@media screen and (max-width: 600px) {
-  .languages .adaptationLanguages {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  .languages .adaptationLanguages p {
-    color: var(--text, #151515);
-    font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-  }
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @media screen and (max-width: 600px) {
   .languages > button {

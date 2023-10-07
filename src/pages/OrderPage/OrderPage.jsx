@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./OrderPage.module.css";
 import ChoiceSelect from "../../components/OrderPage/ChoiceSelect/ChoiceSelect";
 import TypesDocuments from "../../components/OrderPage/TypesDocuments/TypesDocuments";
@@ -11,7 +11,6 @@ import {
   changeSelect,
   clearIdEverySelect,
 } from "../../store/reducers/selectSlice";
-import { choiceTypeLang } from "../../helpers/choiceTypeLang"; // надо удалить
 
 const OrderPage = () => {
   const [doc, setDoc] = useState(null);
@@ -23,7 +22,7 @@ const OrderPage = () => {
   const { dataServices, dataIndustries, langData } = useSelector(
     (state) => state.onServerSlice
   );
-  console.log(dataServices, dataIndustries, "dataIndustries");
+  // console.log(dataServices, dataIndustries, "dataIndustries");
   // console.log(allLang, "allLang");
   // console.log(dataServices, "dataServices");
   // console.log(choiceLang, "choiceLang");

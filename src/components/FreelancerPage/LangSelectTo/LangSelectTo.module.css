@@ -29,7 +29,7 @@
     width: 70px;
   }
 }
-.langSelectTo .langSelectTo__from p {
+.langSelectTo .langSelectTo__from b {
   width: 60%;
   color: #151515;
   font-family: "Roboto", sans-serif;

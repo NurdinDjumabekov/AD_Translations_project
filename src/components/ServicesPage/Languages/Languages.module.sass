@@ -3,73 +3,57 @@
     h4
         @media screen and ( max-width: 600px )
             padding: 0 0 0 30px
-            @media screen and ( max-width: 450px )
+            font-size: 25px
+            @media screen and ( max-width: 510px )
                 padding: 0 0 0 12px
                 font-size: 17px
     .languages__inner
         display: flex
-        justify-content: center
-        gap: 100px
-        @media screen and ( max-width: 780px )
-            gap: 30px
-            @media screen and ( max-width: 600px )
-                display: none
-        > div
-            margin: 0 0 60px 0
-            > div
-                max-width: 190px
-                // background: red 
-                margin: 10px auto
-                display: flex
-                justify-content: space-between
-                align-items: center
-                gap: 21px
-                cursor: pointer
-                p
-                    color: var(--text, #151515)
-                    font-family: "Roboto",sans-serif
-                    font-size: 26px
-                    font-style: normal
-                    font-weight: 400
-                    // background: red
-                    width: 25px
-                    height: 30px
-                    overflow: hidden
-                    // text-overflow: ellipsis
-                span
-                    display: block
-                    color: #151515
-                    font-family: "Roboto",sans-serif
-                    font-size: 14px
-                    font-style: normal
-                    font-weight: 400
-                    line-height: normal
-                    border-radius: 2px
-                    border: 1px solid #646464
-                    text-align: center
-                    padding: 6px 10px
-                    width: 124px
-                    max-height: 44px
-                    overflow: hidden
-                    transition: 0.5s
-                    // background: green
-                span:hover
-                    background-color: #007E1D
-                    color: #fafafa
-            .pushContent
-                margin-top: 30px
-    .adaptationLanguages
-        display: none
-        @media screen and ( max-width: 600px )
+        justify-content: space-between
+        width: 650px
+        height: auto
+        margin: 30px auto 60px
+        flex-wrap: wrap
+        // background: #bdbdc4
+        @media screen and ( max-width: 700px )
+            width: 450px
+            @media screen and ( max-width: 560px )
+                justify-content: center
+                @media screen and ( max-width: 500px )
+                    width: 360px
+        .languages__innerBlock
             display: flex
-            justify-content: space-evenly
+            align-items: center
+            gap: 8px
+            border-radius: 4px
+            border: 1px solid var(--gre, #646464)
+            padding: 6px 10px
+            margin: 7px 40px
+            width: 130px
+            min-width: 100px
+            // max-width: 150px
+            height: 36px
+            cursor: pointer
+            @media screen and ( max-width: 700px )
+                margin: 7px 10px
+
+            > img
+                width: 28px
+                height: 22px
+                display: block
             p
-                color: var(--text, #151515)
+                color: var(--Text, #151515)
                 font-family: Roboto
                 font-size: 14px
                 font-style: normal
                 font-weight: 400
-                line-height: 25px  
+                line-height: normal
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
+
+
+      
     > button
         @media screen and ( max-width: 600px )
             display: none !important

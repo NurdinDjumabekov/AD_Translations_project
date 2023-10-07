@@ -31,6 +31,8 @@ const FreelancerLang = () => {
     dispatch(changeSelectsLangTo([selectsData]));
   }, [allLang]);
 
+  // console.log(selectsLangFrom, "selectsLangFrom");
+
   const addSelects = (type) => {
     let sel, dispatchFN;
     if (type === "from") {
@@ -55,30 +57,30 @@ const FreelancerLang = () => {
       );
     }
   };
+
   const deleteSelectFrom = () => {
-    let data;
     if (selectsLangFrom.length > 1) {
       dispatch(
         changeSelectsLangFrom(
-          (data = selectsLangFrom.filter((item) => {
+          selectsLangFrom.filter((item) => {
             if (selectsLangFrom[selectsLangFrom.length - 1].id !== item.id) {
               return item;
             }
-          }))
+          })
         )
       );
     }
   };
+
   const deleteSelectTo = () => {
-    let data;
     if (selectsLangTo.length > 1) {
       dispatch(
         changeSelectsLangTo(
-          (data = selectsLangTo.filter((item) => {
+          selectsLangTo.filter((item) => {
             if (selectsLangTo[selectsLangTo.length - 1].id !== item.id) {
               return item;
             }
-          }))
+          })
         )
       );
     }
@@ -88,13 +90,13 @@ const FreelancerLang = () => {
     <div className={styles.freelancerLang}>
       <div className={styles.freelancerLang__from}>
         <p>{t("Language (Translate From)")}</p>
-        {selectsLangFrom?.map((item) => (
+        {selectsLangFrom?.map((item, index) => (
           <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectFrom
               props={{
                 data: item?.lang,
                 type: "lang",
-                initialText: "English",
+                initialText: allLang?.[index]?.name,
                 count: item?.id,
                 traslationType: "from",
               }}
@@ -122,13 +124,13 @@ const FreelancerLang = () => {
       </div>
       <div className={styles.freelancerLang__to}>
         <p>{t("Language (Translate To)")}</p>
-        {selectsLangTo?.map((item) => (
+        {selectsLangTo?.map((item, index) => (
           <div className={styles.freelancerLang__inner} key={item.id}>
             <LangSelectTo
               props={{
                 data: item.lang,
                 type: "lang",
-                initialText: "Russian",
+                initialText: allLang?.[index]?.name,
                 count: item.id,
                 traslationType: "to",
               }}

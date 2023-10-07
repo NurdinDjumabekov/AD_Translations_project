@@ -11,12 +11,21 @@ export const checkDate = (
   typeDoc,
   dispatch,
   errorSend,
-  idEverySelect
+  idEverySelect,
+  choiceLang
 ) => {
   const regDate = /^\d{4}\-(0[1-9]|1[0-2])\-(0[1-9]|[12][0-9]|3[01])$/;
 
   if (regDate.test(orderData.date) || orderData.date === "auto") {
-    checkEmail(orderData, doc, typeDoc, dispatch, errorSend, idEverySelect);
+    checkEmail(
+      orderData,
+      doc,
+      typeDoc,
+      dispatch,
+      errorSend,
+      idEverySelect,
+      choiceLang
+    );
   } else {
     dispatch(
       changeErrorSend({
@@ -41,12 +50,21 @@ export const checkEmail = (
   typeDoc,
   dispatch,
   errorSend,
-  idEverySelect
+  idEverySelect,
+  choiceLang
 ) => {
   const regEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
   if (regEmail.test(orderData.email)) {
-    checkNum(orderData, doc, typeDoc, dispatch, errorSend, idEverySelect);
+    checkNum(
+      orderData,
+      doc,
+      typeDoc,
+      dispatch,
+      errorSend,
+      idEverySelect,
+      choiceLang
+    );
   } else {
     dispatch(
       changeErrorSend({
@@ -71,12 +89,15 @@ export const checkNum = (
   typeDoc,
   dispatch,
   errorSend,
-  idEverySelect
+  idEverySelect,
+  choiceLang
 ) => {
   const regNumPhone = /[0-9]{7,15}/;
   if (regNumPhone.test(orderData.phoneNum)) {
-    dispatch(sendDataOrder({ orderData, doc, typeDoc })); // для бота
-    dispatch(toSendOrderData({ orderData, doc, typeDoc, idEverySelect })); // для сервера
+    dispatch(sendDataOrder({ orderData, doc, typeDoc, choiceLang })); // для бота
+    dispatch(
+      toSendOrderData({ orderData, doc, typeDoc, idEverySelect, choiceLang })
+    ); // для сервера
     // очищаю все input
     dispatch(
       changeOrderData({

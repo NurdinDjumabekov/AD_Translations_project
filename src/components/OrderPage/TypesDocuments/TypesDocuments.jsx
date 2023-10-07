@@ -12,7 +12,6 @@ import {
 import InputMask from "react-input-mask";
 import { useTranslation } from "react-i18next";
 import { updateForSelects } from "../../../helpers/updateForSelects";
-import { changeChoiceLang } from "../../../store/reducers/selectSlice";
 
 const TypesDocuments = ({ doc, setDoc }) => {
   const [stateData, setStateData] = useState(true);
@@ -22,11 +21,7 @@ const TypesDocuments = ({ doc, setDoc }) => {
   const { orderData, typeDoc } = useSelector((state) => state.orderPageSlice);
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
   const { select, choiceLang } = useSelector((state) => state.selectSlice);
-  const { allLang, allLangForSelect } = useSelector(
-    (state) => state.servicesPageSlice
-  );
-  // console.log(choiceLang);
-  // надо удалить allLangForSelect
+  const { allLang } = useSelector((state) => state.servicesPageSlice);
 
   useEffect(() => {
     if (stateData === false) {

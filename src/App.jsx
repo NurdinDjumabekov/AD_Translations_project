@@ -25,7 +25,6 @@ function App() {
   const { preloader } = useSelector((state) => state.mainPageSlice);
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
     dispatch(dataMainPage({ url: "latest_updates/list", lang: langData }));
     dispatch(dataMainPage({ url: "our_offers/list", lang: langData }));
     dispatch(dataServices({ url: "services/list", lang: langData }));
