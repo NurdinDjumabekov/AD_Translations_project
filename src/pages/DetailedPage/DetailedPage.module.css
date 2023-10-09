@@ -1,6 +1,19 @@
 .detailed__parent {
   padding: 60px 0px;
 }
+@media screen and (max-width: 1240px) {
+  .detailed__parent {
+    padding: 60px 15px;
+  }
+}
+@media screen and (max-width: 1240px) and (max-width: 480px) {
+  .detailed__parent {
+    padding: 30px 15px;
+  }
+}
+.detailed__parent > h4 {
+  padding: 0;
+}
 .detailed__parent .detailed__innner .detailed__every {
   width: 100%;
   display: -webkit-box;
@@ -15,10 +28,37 @@
   gap: 60px;
   margin: 0px auto 80px;
 }
+@media screen and (max-width: 1000px) {
+  .detailed__parent .detailed__innner .detailed__every {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1000px) and (max-width: 750px) {
+  .detailed__parent .detailed__innner .detailed__every {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0px auto 50px;
+  }
+}
 .detailed__parent .detailed__innner .detailed__every .detailed__img {
   width: 500px;
   height: 260px;
   border-radius: 6x;
+}
+@media screen and (max-width: 750px) {
+  .detailed__parent .detailed__innner .detailed__every .detailed__img {
+    width: 400px;
+    -webkit-box-ordinal-group: 2 !important;
+        -ms-flex-order: 1 !important;
+            order: 1 !important;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 430px) {
+  .detailed__parent .detailed__innner .detailed__every .detailed__img {
+    width: 100%;
+  }
 }
 .detailed__parent .detailed__innner .detailed__every .detailed__img img {
   width: 100%;
@@ -27,6 +67,13 @@
 }
 .detailed__parent .detailed__innner .detailed__every .detailed__text {
   width: 100%;
+}
+@media screen and (max-width: 750px) {
+  .detailed__parent .detailed__innner .detailed__every .detailed__text {
+    -webkit-box-ordinal-group: 3 !important;
+        -ms-flex-order: 2 !important;
+            order: 2 !important;
+  }
 }
 .detailed__parent .detailed__innner .detailed__every .detailed__text h5 {
   color: var(--Text, #151515);
@@ -37,6 +84,12 @@
   line-height: normal;
   margin: 0 0 20px 0;
 }
+@media screen and (max-width: 750px) {
+  .detailed__parent .detailed__innner .detailed__every .detailed__text h5 {
+    text-align: left !important;
+    margin: 10px 0px 20px;
+  }
+}
 .detailed__parent .detailed__innner .detailed__every .detailed__text p {
   color: var(--Text, #151515);
   font-family: "Roboto", sans-serif;
@@ -44,4 +97,19 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+@media screen and (max-width: 1000px) {
+  .detailed__parent .detailed__innner .detailed__every .detailed__text p {
+    font-size: 14px;
+  }
+}
+.detailed__parent .noneData {
+  color: var(--Text, #151515);
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+  padding: 150px 0 200px;
 }

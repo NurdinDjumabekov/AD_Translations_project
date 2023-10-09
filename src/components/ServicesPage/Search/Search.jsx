@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 
 const Search = ({ setCount }) => {
   const { search } = useSelector((state) => state.servicesPageSlice);
+  const { langData } = useSelector((state) => state.onServerSlice);
+
   const [lookIcos, setLookIcos] = useState(false);
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -20,6 +22,10 @@ const Search = ({ setCount }) => {
       setCount(1);
     }
   }, [search]);
+
+  useEffect(() => {
+    dispatch(changeSearch(""));
+  }, [langData]);
 
   return (
     <>

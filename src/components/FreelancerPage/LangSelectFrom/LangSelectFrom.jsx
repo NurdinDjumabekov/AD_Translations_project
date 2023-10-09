@@ -118,11 +118,16 @@ const LangSelectFrom = ({ props }) => {
         >
           {choiceLang === "" ? props.initialText : choiceLang}
         </b>
-        {lookSelect ? (
-          <img src={arrow_top} alt="arrow" />
-        ) : (
-          <img src={arrow_bottom} alt="arrow" />
-        )}
+        <section className="shadow"></section>
+        <img
+          src={arrow_bottom}
+          style={
+            lookSelect
+              ? { transform: "rotate(180deg)", transition: ".7s" }
+              : { transform: "rotate(0deg)", transition: ".7s" }
+          }
+          alt="arrow"
+        />
       </section>
       {lookSelect && (
         <div className="mySelect">

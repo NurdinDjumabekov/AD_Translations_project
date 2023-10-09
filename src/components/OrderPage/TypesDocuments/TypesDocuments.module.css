@@ -10,8 +10,26 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   margin: 20px 0px;
+}
+@media screen and (max-width: 750px) {
+  .docType {
+    width: 400px;
+    margin: 20px auto;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 450px) {
+  .docType {
+    width: auto;
+    gap: 12px;
+  }
+}
+@media screen and (max-width: 750px) and (max-width: 450px) and (max-width: 360px) {
+  .docType {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 .docType button {
   border-radius: 6px;
@@ -69,12 +87,12 @@
   }
 }
 @media screen and (max-width: 750px) {
-  .order__language > div > p {
+  .order__language > div > b {
     width: 160px;
   }
 }
 @media screen and (max-width: 750px) {
-  .order__language > div > div {
+  .order__language > div > div, .order__language > div section {
     width: 165px !important;
   }
 }

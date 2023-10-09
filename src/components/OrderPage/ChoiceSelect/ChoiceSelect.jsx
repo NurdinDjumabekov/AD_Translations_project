@@ -56,11 +56,17 @@ const ChoiceSelect = ({ props }) => {
             ? props?.initialText
             : choiceLang[props.key]}
         </b>
-        {props.state ? (
-          <img src={arrow_top} alt="arrow" />
-        ) : (
-          <img src={arrow_bottom} alt="arrow" />
-        )}
+
+        <section className="shadow"></section>
+        <img
+          src={arrow_bottom}
+          style={
+            props.state
+              ? { transform: "rotate(180deg)", transition: ".7s" }
+              : { transform: "rotate(0deg)", transition: ".7s" }
+          }
+          alt="arrow"
+        />
       </section>
       {props.state && (
         <div className="mySelect">

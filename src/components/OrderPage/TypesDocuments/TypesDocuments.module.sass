@@ -3,8 +3,16 @@
     justify-content: center
     align-items: center
     flex-wrap: wrap
-    gap: 12px
-    margin: 20px 0px
+    gap: 15px
+    margin: 20px 0px 
+    @media screen and ( max-width: 750px )
+        width: 400px
+        margin: 20px auto 
+        @media screen and ( max-width: 450px )
+            width: auto
+            gap: 12px
+            @media screen and ( max-width: 360px )
+                flex-wrap: nowrap
     button
         border-radius: 6px
         width: 120px
@@ -42,10 +50,10 @@
         @media screen and ( max-width: 750px )
             max-width: 165px
             margin: 0
-        > p
+        > b
             @media screen and ( max-width: 750px )
                 width: 160px
-        > div
+        > div,section
             @media screen and ( max-width: 750px )
                 width: 165px !important
 

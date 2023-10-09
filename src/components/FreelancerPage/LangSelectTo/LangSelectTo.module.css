@@ -23,6 +23,7 @@
           justify-content: space-between;
   padding: 5px 12px;
   cursor: pointer;
+  position: relative;
 }
 @media screen and (max-width: 650px) {
   .langSelectTo .langSelectTo__from {

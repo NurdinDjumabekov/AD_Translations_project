@@ -20,10 +20,10 @@ const Languages = () => {
           {allLang?.map((lang) => (
             <NavLink
               key={lang.id}
-              to={`/detailed/language/${lang.id}`}
+              to={`/detailed/languages/${lang.id}`}
               className={styles.languages__innerBlock}
             >
-              <img src={imgsss} alt="language" />
+              <img src={lang?.img} alt="none" />
               <p>{lang.name} </p>
             </NavLink>
           ))}

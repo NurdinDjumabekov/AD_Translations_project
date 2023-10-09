@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SelectServices.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
 import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
@@ -15,25 +15,41 @@ const SelectServices = ({ setCount }) => {
     setCount(id);
   };
 
+  const handleOutsideClick = (e) => {
+    if (e.target.tagName === "SECTION" || e.target.tagName === "B") {
+    } else {
+      setLookSelect(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+  }, []);
+
   return (
     <div className={styles.selectServices}>
-      <div
+      <section
         className={styles.selectServices__from}
         onClick={() => setLookSelect(!lookSelect)}
       >
-        <p
+        <b
           className={
             choiceLang !== "" && lookSelect !== false ? styles.activeSelect : ""
           }
         >
           {choiceLang === "" ? props.initialText : choiceLang}
-        </p>
-        {lookSelect ? (
-          <img src={arrow_top} alt="arrow" />
-        ) : (
-          <img src={arrow_bottom} alt="arrow" />
-        )}
-      </div>
+        </b>
+        <section className="shadow"></section>
+        <img
+          src={arrow_bottom}
+          style={
+            lookSelect
+              ? { transform: "rotate(180deg)", transition: ".7s" }
+              : { transform: "rotate(0deg)", transition: ".7s" }
+          }
+          alt="arrow"
+        />
+      </section>
       {lookSelect && (
         <div className={styles.choiceSelect}>
           {dataServices?.map((i) => (

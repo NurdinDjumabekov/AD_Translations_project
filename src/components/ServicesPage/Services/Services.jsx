@@ -52,6 +52,7 @@ const Services = () => {
               ))
             )}
           </div>
+          {/* // для адаптивки */}
           <SelectServices setCount={setCount} />
           <div className={styles.services__everyContent}>
             {dataServices?.length === 0 ? (

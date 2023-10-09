@@ -23,13 +23,14 @@
           justify-content: space-between;
   padding: 5px 12px;
   cursor: pointer;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .selectServices .selectServices__from {
     width: 350px;
   }
 }
-.selectServices .selectServices__from p {
+.selectServices .selectServices__from b {
   width: 60%;
   color: #151515;
   font-family: "Roboto", sans-serif;
@@ -53,6 +54,12 @@
   width: 40px;
   height: 40px;
 }
+@media screen and (max-width: 650px) {
+  .selectServices .selectServices__from img {
+    width: 30px;
+    height: 30px;
+  }
+}
 .selectServices .choiceSelect {
   border-radius: 6px;
   background: var(--background, #fafafa);
@@ -66,6 +73,8 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: absolute;
   z-index: 10;
+  -webkit-animation: selects_services 0.6s;
+          animation: selects_services 0.6s;
 }
 @media screen and (max-width: 500px) {
   .selectServices .choiceSelect {
@@ -82,6 +91,22 @@
   padding: 10px 0;
   border-bottom: 1px solid #dedede;
   cursor: pointer;
+}
+@-webkit-keyframes selects_services {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes selects_services {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .selectServices .activeSelect {
   overflow: hidden;

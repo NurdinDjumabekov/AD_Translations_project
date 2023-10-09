@@ -23,6 +23,7 @@
           justify-content: space-between;
   padding: 5px 12px;
   cursor: pointer;
+  position: relative;
 }
 @media screen and (max-width: 650px) {
   .langSelectFrom .LangSelectFrom__from {
@@ -30,6 +31,7 @@
   }
 }
 .langSelectFrom .LangSelectFrom__from b {
+  display: block;
   width: 60%;
   color: #151515;
   font-family: "Roboto", sans-serif;
