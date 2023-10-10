@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SelectServices.module.css";
 import arrow_bottom from "../../../assets/images/orderPage/arrow_bottom.svg";
-import arrow_top from "../../../assets/images/orderPage/arrow_top.svg";
 import { useSelector } from "react-redux";
 
 const SelectServices = ({ setCount }) => {
   const [lookSelect, setLookSelect] = useState(false);
-  const [choiceLang, setChoiceLang] = useState("Editing");
   const { dataServices } = useSelector((state) => state.servicesPageSlice);
+  const [choiceLang, setChoiceLang] = useState("Books");
 
   const clickChoice = (title, id) => {
     setLookSelect(false);
@@ -37,7 +36,7 @@ const SelectServices = ({ setCount }) => {
             choiceLang !== "" && lookSelect !== false ? styles.activeSelect : ""
           }
         >
-          {choiceLang === "" ? props.initialText : choiceLang}
+          {choiceLang === "" ? dataServices?.[0]?.title : choiceLang}
         </b>
         <section className="shadow"></section>
         <img

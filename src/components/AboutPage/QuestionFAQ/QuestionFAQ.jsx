@@ -26,7 +26,11 @@ const QuestionFAQ = () => {
         <h4 className="standartTitle">{t("FAQ")}</h4>
         <div className={styles.question__inner}>
           {dataFAQ?.map((item) => (
-            <div key={item.id} onClick={() => lookAnswer(item.id, item.bool)}>
+            <div
+              style={{ background: "red" }}
+              key={item.id}
+              onClick={() => lookAnswer(item.id, item.bool)}
+            >
               <div>
                 <p>{item.question}</p>
                 <button className={item.bool ? styles.activeBtn : ""}>
