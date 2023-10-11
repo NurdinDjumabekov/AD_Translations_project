@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import i18n from "../../../i18n";
 import styles from "./TranslateLang.module.css";
 import kg_img from "../../../assets/images/language/kg.svg";
@@ -40,9 +40,20 @@ const TranslateLang = () => {
     setCount(id);
   };
 
+  const handleOutsideClick = (e) => {
+    if (e.target.tagName === "SECTION" || e.target.tagName === "B") {
+    } else {
+      setActiveSelect(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+  }, []);
+
   return (
     <div className={styles.traslationBtns}>
-      <div
+      <section
         onClick={() => setActiveSelect(!activeSelect)}
         className={styles.traslationBtns__inner}
       >
@@ -55,14 +66,18 @@ const TranslateLang = () => {
         <img
           style={
             activeSelect
-              ? { transform: "rotate(180deg)", transition: ".5s" }
-              : {}
+              ? { transform: "rotate(180deg)", transition: ".7s" }
+              : { transform: "rotate(0deg)", transition: ".7s" }
           }
           className={styles.traslationBtns__imgArrow}
           src={arrow}
           alt="|"
         />
-      </div>
+      </section>
+      <section
+        onClick={() => setActiveSelect(!activeSelect)}
+        className={styles.shadow}
+      ></section>
       {activeSelect && (
         <div
           className={styles.traslationBtns__select}
