@@ -169,3 +169,6 @@
   font-weight: 400;
   line-height: 16px;
 }
+.offers__slider > div > button {
+  display: none !important;
+}
