@@ -1,0 +1,3 @@
+<!-- образец env:
+VITE_REACT_APP_API_URL=
+VITE_APP_SKIP_PREFLIGHT_CHECK =  -->

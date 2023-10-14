@@ -5,6 +5,8 @@ import krest from "../../../assets/images/menu/x.svg";
 import logo from "../../../assets/images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import TranslateLang from "../TranslateLang/TranslateLang";
 
 const MenuBurger = () => {
   const [lookMenu, setLookMenu] = useState(false);
@@ -12,6 +14,7 @@ const MenuBurger = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { langData } = useSelector((state) => state.onServerSlice);
   const [pages, setPages] = useState([
     {
       id: 1,
@@ -68,6 +71,7 @@ const MenuBurger = () => {
     //   bool: false,
     // },
   ]);
+  console.log(langData, "langData");
 
   const goOtherPage = (link) => {
     navigate(link);
@@ -118,13 +122,16 @@ const MenuBurger = () => {
                 <li className={styles.closeMenu}>
                   <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
+                <li onClick={() => setLookMenu(false)}>
+                  <TranslateLang />
+                </li>
               </ul>
             </div>
           </>
         ) : (
           <div className={styles.iconImgParent}>
             <div>
-              <img src={logo} alt="" />
+              <img src={logo} alt="logo" />
               <p>{mainTitlePage}</p>
             </div>
             <img onClick={() => setLookMenu(true)} src={iconImg} alt="|||" />
