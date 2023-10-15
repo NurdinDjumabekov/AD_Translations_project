@@ -14,7 +14,6 @@ const MenuBurger = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { langData } = useSelector((state) => state.onServerSlice);
   const [pages, setPages] = useState([
     {
       id: 1,
@@ -46,32 +45,7 @@ const MenuBurger = () => {
       link: "/freelancer",
       bool: false,
     },
-    // {
-    //   id: 6,
-    //   title: "Cookie",
-    //   link: "/cookie",
-    //   bool: false,
-    // },
-    // {
-    //   id: 7,
-    //   title: "Conditions",
-    //   link: "/conditions",
-    //   bool: false,
-    // },
-    // {
-    //   id: 8,
-    //   title: "Privacy",
-    //   link: "/Privacy",
-    //   bool: false,
-    // },
-    // {
-    //   id: 9,
-    //   title: "Consultation",
-    //   link: "/consultation",
-    //   bool: false,
-    // },
   ]);
-  console.log(langData, "langData");
 
   const goOtherPage = (link) => {
     navigate(link);
@@ -82,19 +56,19 @@ const MenuBurger = () => {
     if (location.pathname === "/") {
       setMainTitlePage("AD Translations");
     } else if (location.pathname === "/services") {
-      setMainTitlePage("Services");
+      setMainTitlePage(t("Services"));
     } else if (location.pathname === "/about") {
-      setMainTitlePage("About");
+      setMainTitlePage(t("About"));
     } else if (location.pathname === "/order") {
-      setMainTitlePage("Translate");
+      setMainTitlePage(t("Translate"));
     } else if (location.pathname === "/freelancer") {
-      setMainTitlePage("Treelancer");
+      setMainTitlePage(t("Freelancer"));
     } else if (location.pathname === "/cookie") {
-      setMainTitlePage("Cookie");
+      setMainTitlePage(t("Cookie"));
     } else if (location.pathname === "/conditions") {
-      setMainTitlePage("Terms and Conditions");
+      setMainTitlePage(t("Terms and Conditions"));
     } else if (location.pathname === "/privacy") {
-      setMainTitlePage("Privacy Policy");
+      setMainTitlePage(t("Privacy Policy"));
     } else {
       setMainTitlePage("AD Translations");
     }
@@ -111,7 +85,7 @@ const MenuBurger = () => {
             ></div>
             <div
               className={styles.menuBurger__child}
-              onClick={() => setLookMenu(false)}
+              // onClick={() => setLookMenu(false)}
             >
               <ul>
                 {pages?.map((i) => (
@@ -122,7 +96,7 @@ const MenuBurger = () => {
                 <li className={styles.closeMenu}>
                   <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
-                <li onClick={() => setLookMenu(false)}>
+                <li onClick={() => setLookMenu(true)}>
                   <TranslateLang />
                 </li>
               </ul>

@@ -19,6 +19,7 @@ const initialState = {
     fromLang: 1,
     toLang: 2,
   },
+  langData: 1,
 };
 
 const selectSlice = createSlice({
@@ -42,6 +43,9 @@ const selectSlice = createSlice({
         toLang: 2,
       };
     },
+    choiceLangData: (state, action) => {
+      state.langData = action.payload;
+    },
   },
 });
 export const {
@@ -49,6 +53,7 @@ export const {
   changeChoiceLang,
   changeidEverySelect,
   clearIdEverySelect,
+  choiceLangData,
 } = selectSlice.actions;
 
 export default selectSlice.reducer;

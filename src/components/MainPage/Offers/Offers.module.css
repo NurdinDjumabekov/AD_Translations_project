@@ -69,10 +69,7 @@
   white-space: nowrap;
 }
 .offers .offers__inner > div p {
-  overflow: hidden;
   color: #646464;
-  text-overflow: ellipsis;
-  whitespace: nowrap;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -80,13 +77,15 @@
   line-height: normal;
   padding: 0 12px;
   height: 95px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-y: scroll;
 }
 @media screen and (max-width: 744px) {
   .offers .offers__inner > div p {
     height: auto;
   }
+}
+.offers .offers__inner > div p::-webkit-scrollbar {
+  width: 5px;
 }
 
 .offers__slider {

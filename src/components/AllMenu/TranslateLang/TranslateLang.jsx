@@ -6,7 +6,8 @@ import ru_img from "../../../assets/images/language/ru.svg";
 import en_img from "../../../assets/images/language/en.svg";
 import arrow from "../../../assets/images/language/arrowLang.svg";
 import { changeLangData } from "../../../store/reducers/onServerSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { choiceLangData } from "../../../store/reducers/selectSlice";
 
 const TranslateLang = () => {
   const dispatch = useDispatch();
@@ -31,13 +32,15 @@ const TranslateLang = () => {
     },
   ];
 
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
   const [activeSelect, setActiveSelect] = useState(false);
+  const { langData } = useSelector((state) => state.selectSlice);
 
   const changeLang = (e, lang, id) => {
     i18n.changeLanguage(lang);
     dispatch(changeLangData(lang));
-    setCount(id);
+    // setCount(id);
+    dispatch(choiceLangData(id));
   };
 
   const handleOutsideClick = (e) => {
@@ -59,10 +62,10 @@ const TranslateLang = () => {
       >
         <img
           className={styles.traslationBtns__imgLang}
-          src={translateName[count - 1].img}
+          src={translateName[langData - 1].img}
           alt="en"
         />
-        <p>{translateName[count - 1].name}</p>
+        <p>{translateName[langData - 1].name}</p>
         <img
           style={
             activeSelect
@@ -87,7 +90,7 @@ const TranslateLang = () => {
             <button
               key={lang.id}
               onClick={(e) => changeLang(e, lang.language, lang.id)}
-              style={count === lang.id ? { display: "none" } : {}}
+              style={langData === lang.id ? { display: "none" } : {}}
             >
               <img src={lang.img} alt="lang" />
               <p>{lang.name}</p>
