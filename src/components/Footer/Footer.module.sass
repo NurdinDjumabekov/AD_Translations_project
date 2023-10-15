@@ -9,12 +9,13 @@ footer
     .footer__inner
         display: flex
         justify-content: space-between
-        text-align: center
         flex-wrap: wrap
-        @media screen and ( max-width: 700px )
-            justify-content: center
-            @media screen and ( max-width: 480px )
-                flex-direction: column
+        @media screen and ( max-width: 800px )
+            text-align: center
+            @media screen and ( max-width: 700px )
+                justify-content: center
+                @media screen and ( max-width: 480px )
+                    flex-direction: column
         > a
             display: block
             @media screen and ( max-width: 700px )
