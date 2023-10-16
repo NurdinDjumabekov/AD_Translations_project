@@ -14,6 +14,7 @@ const MenuBurger = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { langData } = useSelector((state) => state.onServerSlice);
   const [pages, setPages] = useState([
     {
       id: 1,
@@ -46,7 +47,6 @@ const MenuBurger = () => {
       bool: false,
     },
   ]);
-
   const goOtherPage = (link) => {
     navigate(link);
     setLookMenu(false);
@@ -56,19 +56,19 @@ const MenuBurger = () => {
     if (location.pathname === "/") {
       setMainTitlePage("AD Translations");
     } else if (location.pathname === "/services") {
-      setMainTitlePage(t("Services"));
+      setMainTitlePage("Services");
     } else if (location.pathname === "/about") {
-      setMainTitlePage(t("About"));
+      setMainTitlePage("About");
     } else if (location.pathname === "/order") {
-      setMainTitlePage(t("Translate"));
+      setMainTitlePage("Translate");
     } else if (location.pathname === "/freelancer") {
-      setMainTitlePage(t("Freelancer"));
+      setMainTitlePage("Treelancer");
     } else if (location.pathname === "/cookie") {
-      setMainTitlePage(t("Cookie"));
+      setMainTitlePage("Cookie");
     } else if (location.pathname === "/conditions") {
-      setMainTitlePage(t("Terms and Conditions"));
+      setMainTitlePage("Terms and Conditions");
     } else if (location.pathname === "/privacy") {
-      setMainTitlePage(t("Privacy Policy"));
+      setMainTitlePage("Privacy Policy");
     } else {
       setMainTitlePage("AD Translations");
     }
@@ -85,7 +85,7 @@ const MenuBurger = () => {
             ></div>
             <div
               className={styles.menuBurger__child}
-              // onClick={() => setLookMenu(false)}
+              onClick={() => setLookMenu(false)}
             >
               <ul>
                 {pages?.map((i) => (
@@ -96,9 +96,9 @@ const MenuBurger = () => {
                 <li className={styles.closeMenu}>
                   <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
-                <li onClick={() => setLookMenu(true)}>
+                {/* <li onClick={() => setLookMenu(false)}>
                   <TranslateLang />
-                </li>
+                </li> */}
               </ul>
             </div>
           </>

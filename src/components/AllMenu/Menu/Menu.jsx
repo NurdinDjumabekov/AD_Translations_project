@@ -10,6 +10,7 @@ const Menu = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+
   const [pages, setPages] = useState([
     {
       id: 1,
