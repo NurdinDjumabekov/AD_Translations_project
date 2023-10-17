@@ -33,11 +33,6 @@ function App() {
     dispatch(dataAboutPage({ url: "reviews/list", lang: langData }));
     dispatch(dataAboutPage({ url: "faq/list", lang: langData }));
   }, [langData]);
-  const beka = 10;
-
-  let nur = 20;
-  nu = 50;
-  console.log(beka, nur);
 
   return (
     <>

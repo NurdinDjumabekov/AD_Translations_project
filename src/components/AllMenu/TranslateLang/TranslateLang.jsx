@@ -37,7 +37,7 @@ const TranslateLang = () => {
   const { langData } = useSelector((state) => state.selectSlice);
 
   const changeLang = (e, lang, id) => {
-    i18n.changeLanguage(lang);
+    i18n.changeLanguage(lang === "ky" ? "kg" : lang);
     dispatch(changeLangData(lang));
     // setCount(id);
     dispatch(choiceLangData(id));
