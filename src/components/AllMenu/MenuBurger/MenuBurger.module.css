@@ -126,6 +126,14 @@
     text-align: left;
   }
 }
+.menuBurger .menuBurger__child ul li section {
+  margin: 0 auto !important;
+}
+@media screen and (max-width: 450px) {
+  .menuBurger .menuBurger__child ul li section {
+    margin: 0px !important;
+  }
+}
 .menuBurger .menuBurger__child ul .closeMenu {
   position: absolute;
   top: 25px;

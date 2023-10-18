@@ -46,6 +46,7 @@ const MenuBurger = () => {
       bool: false,
     },
   ]);
+
   const goOtherPage = (link) => {
     navigate(link);
     setLookMenu(false);
@@ -55,19 +56,19 @@ const MenuBurger = () => {
     if (location.pathname === "/") {
       setMainTitlePage("AD Translations");
     } else if (location.pathname === "/services") {
-      setMainTitlePage("Services");
+      setMainTitlePage(t("Services"));
     } else if (location.pathname === "/about") {
-      setMainTitlePage("About");
+      setMainTitlePage(t("About"));
     } else if (location.pathname === "/order") {
-      setMainTitlePage("Translate");
+      setMainTitlePage(t("Translate"));
     } else if (location.pathname === "/freelancer") {
-      setMainTitlePage("Treelancer");
+      setMainTitlePage(t("Freelancer"));
     } else if (location.pathname === "/cookie") {
-      setMainTitlePage("Cookie");
+      setMainTitlePage(t("Cookie"));
     } else if (location.pathname === "/conditions") {
-      setMainTitlePage("Terms and Conditions");
+      setMainTitlePage(t("Terms and Conditions"));
     } else if (location.pathname === "/privacy") {
-      setMainTitlePage("Privacy Policy");
+      setMainTitlePage(t("Privacy Policy"));
     } else {
       setMainTitlePage("AD Translations");
     }
@@ -84,7 +85,7 @@ const MenuBurger = () => {
             ></div>
             <div
               className={styles.menuBurger__child}
-              onClick={() => setLookMenu(false)}
+              // onClick={() => setLookMenu(false)}
             >
               <ul>
                 {pages?.map((i) => (
@@ -95,9 +96,9 @@ const MenuBurger = () => {
                 <li className={styles.closeMenu}>
                   <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
-                {/* <li onClick={() => setLookMenu(false)}>
+                <li onClick={() => setLookMenu(true)}>
                   <TranslateLang />
-                </li> */}
+                </li>
               </ul>
             </div>
           </>
