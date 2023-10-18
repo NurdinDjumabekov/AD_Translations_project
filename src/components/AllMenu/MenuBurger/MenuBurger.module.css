@@ -10,7 +10,7 @@
   z-index: 50;
   display: none;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1010px) {
   .menuBurger {
     display: block;
   }
@@ -113,7 +113,7 @@
   line-height: 30px;
   background-color: #fafafa;
   padding: 20px;
-  width: 150px;
+  width: 100%;
   margin: 5px auto;
   text-align: center;
 }

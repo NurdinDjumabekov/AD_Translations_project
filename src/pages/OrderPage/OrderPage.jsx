@@ -22,11 +22,6 @@ const OrderPage = () => {
   const { dataServices, dataIndustries, langData } = useSelector(
     (state) => state.onServerSlice
   );
-  // console.log(dataServices, dataIndustries, "dataIndustries");
-  // console.log(allLang, "allLang");
-  // console.log(dataServices, "dataServices");
-  // console.log(choiceLang, "choiceLang");
-  // console.log(select, "select");
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -16,7 +16,7 @@ const Footer = () => {
         <div className={styles.footer__inner}>
           <NavLink to={"/"}>
             <div>
-              <img src="/src/assets/images/logo.svg" alt="" />
+              <img src="/src/assets/images/logo.svg" alt="logo" />
             </div>
             <p>AD Translations</p>
           </NavLink>
@@ -53,13 +53,13 @@ const Footer = () => {
               <h6>{t("Contact")}</h6>
             </li>
             <li>
-              <NavLink>T: +996(508)107-888</NavLink>
+              <NavLink>T: +996(995)333-037</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink>+996(508)107-888</NavLink>
-            </li>
+            </li> */}
             <li>
-              <NavLink>E: email@gmail.com</NavLink>
+              <NavLink>E: adTranslations01@gmail.com</NavLink>
             </li>
             <li>
               <NavLink>{t("Bishkek, Kyrgyzstan")}</NavLink>

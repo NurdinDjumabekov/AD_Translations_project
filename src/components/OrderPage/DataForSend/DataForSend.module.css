@@ -61,12 +61,13 @@
   background-color: #929292;
   overflow: hidden;
   color: #FAFAFA;
+  padding: 5px;
   text-overflow: ellipsis;
-  font-family: Roboto;
-  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 15px;
 }
 .blockForSend .activeBtn {
   background-color: #007E1D;

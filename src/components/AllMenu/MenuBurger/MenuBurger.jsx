@@ -14,7 +14,6 @@ const MenuBurger = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { langData } = useSelector((state) => state.onServerSlice);
   const [pages, setPages] = useState([
     {
       id: 1,
