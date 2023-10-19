@@ -6,6 +6,7 @@ import insta from "../../assets/images/footer/instagramm.svg";
 import inn from "../../assets/images/footer/in.svg";
 import twitter from "../../assets/images/footer/twitter.svg";
 import youtube from "../../assets/images/footer/youtube.svg";
+import logo from "../../assets/images/logo.svg";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
         <div className={styles.footer__inner}>
           <NavLink to={"/"}>
             <div>
-              <img src="/src/assets/images/logo.svg" alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
             <p>AD Translations</p>
           </NavLink>

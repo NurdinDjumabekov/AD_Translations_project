@@ -1,6 +1,6 @@
 {
   "header": "AD Translations",
-  "headerDescription": "Is the language service provider that understands needs and expectations of business owners and personal users and strives to provide the best language solutions in many different industries. With over 12 years of experience in the translation industry, our team can provide multilingual translation services for over 200 languages all around the globe.",
+  "headerDescription": "is the language service provider that understands needs and expectations of business owners and personal users and strives to provide the best language solutions in many different industries. With over 12 years of experience in the translation industry, our team can provide multilingual translation services for over 200 languages all around the globe.",
   "headerBtn": "Request a quote",
   "headerBtn_Freelancers": "Freelancers",
 
@@ -160,5 +160,7 @@
   "goodSendConsult": "We got Your question. Please, expect a response within 24 hours. Theanswer will be sent to you by email!",
 
   "languages": "languages",
-  "noneData": "there's nothing yet"
+  "noneData": "there's nothing yet",
+  "Back to Home": "Back to Home",
+  "Great": "Great"
 }

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import consultation from "../../../assets/images/menu/consultation.svg";
 import TranslateLang from "../TranslateLang/TranslateLang";
 import { useTranslation } from "react-i18next";
+import logo from "../../../assets/images/logo.svg";
 
 const Menu = () => {
   const { t } = useTranslation();
@@ -69,7 +70,7 @@ const Menu = () => {
           <div className={styles.menu__inner}>
             <div>
               <NavLink to={"/"}>
-                <img src="/src/assets/images/logo.svg" alt="logo" />
+                <img src={logo} alt="logo" />
                 <p>AD Translations</p>
               </NavLink>
             </div>
