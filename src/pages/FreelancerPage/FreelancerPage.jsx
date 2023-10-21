@@ -22,13 +22,9 @@ const FreelancerPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  // console.log(selectsLangFrom, "selectsLangFrom");
-  // console.log(dataFreelance, "dataFreelance");
-  console.log(dataFreelancers_from, "dataFreelancers_from");
-  // console.log(dataFreelancers_to, "dataFreelancers_to");
-  // console.log(selectsLangTo, "selectsLangTo");
+
   const sendData = () => {
-    checkFullName(  
+    checkFullName(
       dispatch,
       dataFreelance,
       sendDataFreelancers, // функции
