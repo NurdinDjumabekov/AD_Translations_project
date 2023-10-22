@@ -5,29 +5,29 @@ import { changeGoodSendData } from "./orderPageSlice";
 
 const initialState = {
   dataFreelancers_from: {
-    langOne: {
+    lang1: {
       lang: "English",
       levelLang: "A1",
     },
-    langTwo: {
+    lang2: {
       lang: "Russian",
       levelLang: "A1",
     },
-    langThree: {
+    lang3: {
       lang: "Spanish",
       levelLang: "A1",
     },
   },
   dataFreelancers_to: {
-    langOne: {
+    lang1: {
       lang: "English",
       levelLang: "A1",
     },
-    langTwo: {
+    lang2: {
       lang: "Russian",
       levelLang: "A1",
     },
-    langThree: {
+    lang3: {
       lang: "Spanish",
       levelLang: "A1",
     },
@@ -44,7 +44,6 @@ export const sendDataFreelancers = createAsyncThunk(
   async (info, { dispatch }) => {
     dispatch(changePreloader(true));
     try {
-      // console.log(info.data);
       const botToken = `6218914835:AAGGZBiQ7OZlp2o7SMUGZScr_4kgy56-daA`; // токен
       const chatId = "775337596";
       const userData = `\nФИО: ${info.data.name} \nEmail: ${info.data.email} \nНомер: ${info.data.phone} \n`;

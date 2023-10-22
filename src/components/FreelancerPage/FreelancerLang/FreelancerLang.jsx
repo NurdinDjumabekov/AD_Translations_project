@@ -31,7 +31,6 @@ const FreelancerLang = () => {
     dispatch(changeSelectsLangTo([selectsData]));
   }, [allLang]);
 
-  // console.log(selectsLangFrom, "selectsLangFrom");
 
   const addSelects = (type) => {
     let sel, dispatchFN;
@@ -95,19 +94,17 @@ const FreelancerLang = () => {
             <LangSelectFrom
               props={{
                 data: item?.lang,
-                type: "lang",
                 initialText: allLang?.[index]?.name,
-                count: item?.id,
-                traslationType: "from",
+                path:`lang${item?.id}`,
+                pathInner:"lang"
               }}
             />
             <LangSelectFrom
               props={{
                 data: item?.level,
-                type: "level",
                 initialText: "A1",
-                count: item?.id,
-                traslationType: "from",
+                path:`lang${item?.id}`,
+                pathInner:"levelLang"
               }}
             />
             <button onClick={deleteSelectFrom} className={styles.deleteBtn}>
@@ -129,19 +126,17 @@ const FreelancerLang = () => {
             <LangSelectTo
               props={{
                 data: item.lang,
-                type: "lang",
                 initialText: allLang?.[index]?.name,
-                count: item.id,
-                traslationType: "to",
+                path:`lang${item?.id}`,
+                pathInner:"lang"
               }}
             />
             <LangSelectTo
               props={{
                 data: item.level,
-                type: "level",
                 initialText: "A1",
-                count: item.id,
-                traslationType: "to",
+                path:`lang${item?.id}`,
+                pathInner:"levelLang"
               }}
             />
             <button onClick={deleteSelectTo} className={styles.deleteBtn}>

@@ -11,79 +11,15 @@ const LangSelectFrom = ({ props }) => {
   const [choiceLang, setChoiceLang] = useState(props.initialText);
   const { dataFreelancers_from } = useSelector((state) => state.freelanceSlice);
 
-  useEffect(() => {
-    if (props.count === 1) {
-      if (props.type === "lang") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langOne: {
-              ...dataFreelancers_from.langOne,
-              lang: choiceLang,
-            },
-          })
-        );
-      } else if (props.type === "level") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langOne: {
-              ...dataFreelancers_from.langOne,
-              levelLang: choiceLang,
-            },
-          })
-        );
+  useEffect(()=>{
+    dispatch(changeDataFreelancers_from({
+      ...dataFreelancers_from,
+      [props?.path]:{
+        ...dataFreelancers_from?.[props?.path],
+        [props.pathInner]: choiceLang
       }
-    }
-    if (props.count === 2) {
-      if (props.type === "lang") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langTwo: {
-              ...dataFreelancers_from.langTwo,
-              lang: choiceLang,
-            },
-          })
-        );
-      }
-      if (props.type === "level") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langTwo: {
-              ...dataFreelancers_from.langTwo,
-              levelLang: choiceLang,
-            },
-          })
-        );
-      }
-    }
-    if (props.count === 3) {
-      if (props.type === "lang") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langThree: {
-              ...dataFreelancers_from.langThree,
-              lang: choiceLang,
-            },
-          })
-        );
-      }
-      if (props.type === "level") {
-        dispatch(
-          changeDataFreelancers_from({
-            ...dataFreelancers_from,
-            langThree: {
-              ...dataFreelancers_from.langThree,
-              levelLang: choiceLang,
-            },
-          })
-        );
-      }
-    }
-  }, [choiceLang]);
+    }))
+  },[choiceLang])
 
   useEffect(() => {
     setChoiceLang(props?.initialText);
