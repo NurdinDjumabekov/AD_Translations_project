@@ -5,7 +5,6 @@ import krest from "../../../assets/images/menu/x.svg";
 import logo from "../../../assets/images/logo.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 import TranslateLang from "../TranslateLang/TranslateLang";
 
 const MenuBurger = () => {
@@ -85,7 +84,6 @@ const MenuBurger = () => {
             ></div>
             <div
               className={styles.menuBurger__child}
-              // onClick={() => setLookMenu(false)}
             >
               <ul>
                 {pages?.map((i) => (
@@ -96,7 +94,7 @@ const MenuBurger = () => {
                 <li className={styles.closeMenu}>
                   <img onClick={() => setLookMenu(false)} src={krest} alt="x" />
                 </li>
-                <li onClick={() => setLookMenu(true)}>
+                <li className={styles.languages} onClick={() => setLookMenu(true)}>
                   <TranslateLang />
                 </li>
               </ul>

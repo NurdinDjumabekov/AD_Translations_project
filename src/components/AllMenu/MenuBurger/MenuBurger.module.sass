@@ -28,7 +28,7 @@
                 font-size: 20px
                 font-style: normal
                 font-weight: 500
-                line-height: 24px 
+                line-height: 24px
         > img
             width: 24px
             height: 24px
@@ -89,6 +89,15 @@
                     margin: 0 auto !important
                     @media screen and ( max-width: 450px )
                         margin: 0px !important
+            .languages
+                > div
+                    > div
+                        left: 50%
+                        transform: translateX(-50%)
+                        @media screen and ( max-width: 450px )
+                            left: 0
+                            transform: none
+
             .closeMenu
                 position: absolute
                 top: 25px
@@ -103,11 +112,11 @@
                 img
                     width: 25px
                     height: 25px
-              
-    @keyframes menu 
-        0% 
+
+    @keyframes menu
+        0%
             opacity: 0
             margin: 0 -250px 0 0
-        100% 
+        100%
             opacity: 1
             margin: 0
