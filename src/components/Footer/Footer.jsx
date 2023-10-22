@@ -71,11 +71,21 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.footer__icons}>
-          <img src={inn} alt="in" />
-          <img src={insta} alt="insta" />
-          <img src={facebook} alt="facebook" />
-          <img src={twitter} alt="twitter" />
-          <img src={youtube} alt="youtube" />
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src={inn} alt="in" />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src={insta} alt="insta" />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src={facebook} alt="facebook" />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src={twitter} alt="twitter" />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img src={youtube} alt="youtube" />
+          </a>
         </div>
       </div>
     </footer>

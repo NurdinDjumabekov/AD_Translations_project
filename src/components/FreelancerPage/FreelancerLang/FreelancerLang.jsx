@@ -31,7 +31,6 @@ const FreelancerLang = () => {
     dispatch(changeSelectsLangTo([selectsData]));
   }, [allLang]);
 
-
   const addSelects = (type) => {
     let sel, dispatchFN;
     if (type === "from") {
