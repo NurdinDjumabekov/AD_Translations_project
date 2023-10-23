@@ -176,6 +176,11 @@
           align-items: center;
   font-size: 30px;
 }
+@media screen and (max-width: 500px) {
+  .services .services__inner .services__everyContent .empty__content {
+    font-size: 22px;
+  }
+}
 .services .services__inner .services__everyContent h4 {
   color: #151515;
   font-family: Roboto;

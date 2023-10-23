@@ -146,6 +146,9 @@
             transform: none;
   }
 }
+.menuBurger .menuBurger__child ul .languages > div section:nth-child(1) {
+  padding: 6px 8px !important;
+}
 .menuBurger .menuBurger__child ul .closeMenu {
   position: absolute;
   top: 25px;

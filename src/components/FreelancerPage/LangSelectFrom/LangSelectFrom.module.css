@@ -40,6 +40,14 @@
   font-weight: 500;
   line-height: 20px;
 }
+@media screen and (max-width: 650px) {
+  .langSelectFrom .LangSelectFrom__from b {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 .langSelectFrom .LangSelectFrom__from .activeSelect {
   overflow: hidden;
   color: #007e1d;

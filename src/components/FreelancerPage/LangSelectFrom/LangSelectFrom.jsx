@@ -11,15 +11,17 @@ const LangSelectFrom = ({ props }) => {
   const [choiceLang, setChoiceLang] = useState(props.initialText);
   const { dataFreelancers_from } = useSelector((state) => state.freelanceSlice);
 
-  useEffect(()=>{
-    dispatch(changeDataFreelancers_from({
-      ...dataFreelancers_from,
-      [props?.path]:{
-        ...dataFreelancers_from?.[props?.path],
-        [props.pathInner]: choiceLang
-      }
-    }))
-  },[choiceLang])
+  useEffect(() => {
+    dispatch(
+      changeDataFreelancers_from({
+        ...dataFreelancers_from,
+        [props?.path]: {
+          ...dataFreelancers_from?.[props?.path],
+          [props.pathInner]: choiceLang,
+        },
+      })
+    );
+  }, [choiceLang]);
 
   useEffect(() => {
     setChoiceLang(props?.initialText);
