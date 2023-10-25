@@ -3,14 +3,12 @@ import styles from "./Languages.module.css";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import imgsss from "../../../assets/images/menu/consultation.svg";
 
 const Languages = () => {
   const navigate = useNavigate();
   const { allLang } = useSelector((state) => state.servicesPageSlice);
 
   const { t } = useTranslation();
-  console.log(allLang);
 
   return (
     <div className={styles.languages}>

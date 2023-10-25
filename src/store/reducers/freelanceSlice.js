@@ -6,7 +6,7 @@ import { changeGoodSendData } from "./orderPageSlice";
 const initialState = {
   dataFreelancers_from: {
     lang1: {
-      lang: "English",
+      lang: "Kyrgyz",
       levelLang: "A1",
     },
     lang2: {
@@ -14,13 +14,13 @@ const initialState = {
       levelLang: "A1",
     },
     lang3: {
-      lang: "Spanish",
+      lang: "English",
       levelLang: "A1",
     },
   },
   dataFreelancers_to: {
     lang1: {
-      lang: "English",
+      lang: "Kyrgyz",
       levelLang: "A1",
     },
     lang2: {
@@ -28,7 +28,7 @@ const initialState = {
       levelLang: "A1",
     },
     lang3: {
-      lang: "Spanish",
+      lang: "English",
       levelLang: "A1",
     },
   },

@@ -13,6 +13,7 @@ const FreelancerPage = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { goodSendData } = useSelector((state) => state.orderPageSlice);
+  const { langData } = useSelector((state) => state.onServerSlice);
   const { selectsLangFrom, selectsLangTo, errorFreelanceSend } = useSelector(
     (state) => state.stateSendDataSlice
   );
