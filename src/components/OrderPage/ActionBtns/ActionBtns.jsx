@@ -24,10 +24,6 @@ const ActionBtns = ({ doc, setDoc }) => {
   const { choiceLang, idEverySelect } = useSelector(
     (state) => state.selectSlice
   );
-  // console.log(choiceLang, "choiceLang");
-  // console.log(idEverySelect, "idEverySelect");
-  // console.log(orderData, "orderData");
-
   const { errorSend } = useSelector((state) => state.stateSendDataSlice);
 
   const clearAllData = () => {

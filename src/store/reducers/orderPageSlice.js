@@ -20,7 +20,8 @@ export const sendDataOrder = createAsyncThunk(
     dispatch(changePreloader(true));
     try {
       const botToken = "6190276020:AAFquYinOVhl-Q5Kq4zPBajiL8QBXuaWIjE"; // токен
-      const chatId = "775337596";
+      // const chatId = "775337596";
+      const chatId = "5042411135";
       const messageText = transformWord(info);
       await axios({
         method: "POST",

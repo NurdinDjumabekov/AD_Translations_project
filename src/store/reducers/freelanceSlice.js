@@ -45,7 +45,8 @@ export const sendDataFreelancers = createAsyncThunk(
     dispatch(changePreloader(true));
     try {
       const botToken = `6218914835:AAGGZBiQ7OZlp2o7SMUGZScr_4kgy56-daA`; // токен
-      const chatId = "775337596";
+      // const chatId = "775337596";
+      const chatId = "5042411135";
       const userData = `\nФИО: ${info.data.name} \nEmail: ${info.data.email} \nНомер: ${info.data.phone} \n`;
       let messageText = `Работник: ${userData} \nязыки: \n${info.selects}`;
       await axios({

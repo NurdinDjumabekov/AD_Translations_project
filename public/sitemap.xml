@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://adjtranslations.com/</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/services</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/about</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/order</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/freelancer</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/detailed</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/cookie</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/conditions</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/consultation</loc>
+  </url>
+  <url>
+    <loc>https://adjtranslations.com/*</loc>
+    <disallow>/*</disallow>
+  </url>
+</urlset>
